@@ -1,0 +1,32 @@
+PODS:
+  - Cosmos (21.0.0)
+  - CTHelp (0.4.0)
+  - IQKeyboardManagerSwift (6.3.0)
+  - Kingfisher (4.10.1)
+  - TinyConstraints (4.0.1)
+
+DEPENDENCIES:
+  - Cosmos
+  - CTHelp
+  - IQKeyboardManagerSwift (= 6.3.0)
+  - Kingfisher (~> 4.0)
+  - TinyConstraints
+
+SPEC REPOS:
+  trunk:
+    - Cosmos
+    - CTHelp
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - TinyConstraints
+
+SPEC CHECKSUMS:
+  Cosmos: 3dfb6e4ba48bd48b8c9aa2a77048ae11ed114f96
+  CTHelp: 9b6cac769bc805ae559b235f0150c0b1eec27cdf
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
+
+PODFILE CHECKSUM: 580675625d21ec0535aa668e5987ac53e5d8ef2f
+
+COCOAPODS: 1.8.4
