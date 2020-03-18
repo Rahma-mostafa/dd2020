@@ -22,6 +22,10 @@
 		52E8672B241D2C2C00D7CBBC /* catagoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8672A241D2C2C00D7CBBC /* catagoryTableViewController.swift */; };
 		52E8672D241D2C7200D7CBBC /* catagoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8672C241D2C7100D7CBBC /* catagoryTableViewCell.swift */; };
 		52E8672F241D2CBF00D7CBBC /* products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8672E241D2CBF00D7CBBC /* products.swift */; };
+		CD472DF02422509D0017E43C /* DriversMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DEF2422509D0017E43C /* DriversMapVC.swift */; };
+		CD472DF3242259660017E43C /* DriversVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DF2242259660017E43C /* DriversVC.swift */; };
+		CD472DF5242259870017E43C /* DriversCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DF4242259870017E43C /* DriversCell.swift */; };
+		CD472DFF24226D9F0017E43C /* MapAnnotationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DFE24226D9F0017E43C /* MapAnnotationsView.swift */; };
 		FA1FEF24240ED1FE002AABE7 /* PremiumProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FEF23240ED1FE002AABE7 /* PremiumProductsVC.swift */; };
 		FA1FEF26240ED23F002AABE7 /* PremiumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FEF25240ED23F002AABE7 /* PremiumVC.swift */; };
 		FA25201823FC3D4C004D8F32 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA25201723FC3D4C004D8F32 /* CategoryVC.swift */; };
@@ -121,6 +125,10 @@
 		52E8672C241D2C7100D7CBBC /* catagoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = catagoryTableViewCell.swift; sourceTree = "<group>"; };
 		52E8672E241D2CBF00D7CBBC /* products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = products.swift; sourceTree = "<group>"; };
 		7CD42E7013F938C7FA37C420 /* Pods_D2020.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_D2020.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD472DEF2422509D0017E43C /* DriversMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversMapVC.swift; sourceTree = "<group>"; };
+		CD472DF2242259660017E43C /* DriversVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversVC.swift; sourceTree = "<group>"; };
+		CD472DF4242259870017E43C /* DriversCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversCell.swift; sourceTree = "<group>"; };
+		CD472DFE24226D9F0017E43C /* MapAnnotationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationsView.swift; sourceTree = "<group>"; };
 		E7C056DC252C8D810D8813CA /* Pods-D2020.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-D2020.release.xcconfig"; path = "Target Support Files/Pods-D2020/Pods-D2020.release.xcconfig"; sourceTree = "<group>"; };
 		FA1FEF23240ED1FE002AABE7 /* PremiumProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumProductsVC.swift; sourceTree = "<group>"; };
 		FA1FEF25240ED23F002AABE7 /* PremiumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumVC.swift; sourceTree = "<group>"; };
@@ -237,6 +245,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CD472DF1242250A60017E43C /* Drivers */ = {
+			isa = PBXGroup;
+			children = (
+				CD472DEF2422509D0017E43C /* DriversMapVC.swift */,
+				CD472DF2242259660017E43C /* DriversVC.swift */,
+			);
+			path = Drivers;
+			sourceTree = "<group>";
+		};
 		FA25201923FC3DE1004D8F32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +291,8 @@
 				FA2BAEE524210086002E6505 /* CountryTableViewCell.swift */,
 				FA6294732406D03700308F25 /* PageControlTests.swift */,
 				FA6294752406D0A000308F25 /* PageControlUITests.swift */,
+				CD472DF4242259870017E43C /* DriversCell.swift */,
+				CD472DFE24226D9F0017E43C /* MapAnnotationsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -411,6 +430,7 @@
 				FA2BAEEB24214C7A002E6505 /* profileViewController.swift */,
 				FA2BAEED24214CAB002E6505 /* editProfileViewController.swift */,
 				FA2BAEEF2421518A002E6505 /* updateProfileViewController.swift */,
+				CD472DF1242250A60017E43C /* Drivers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -540,15 +560,18 @@
 				52E64931241E792100B2B0AE /* cityTableViewCell.swift in Sources */,
 				FA6D98E62411242500D71D3C /* AddShopVC.swift in Sources */,
 				FA6E33D1241FF5F000BFAFED /* CurrentLocationVC.swift in Sources */,
+				CD472DFF24226D9F0017E43C /* MapAnnotationsView.swift in Sources */,
 				FA64D31F23FEB97300D18958 /* AfterSelectingCell.swift in Sources */,
 				52E8672B241D2C2C00D7CBBC /* catagoryTableViewController.swift in Sources */,
 				FA2BAEDE2420D9A0002E6505 /* slideShowCollectionViewCell.swift in Sources */,
 				52E64933241E7CA700B2B0AE /* city.swift in Sources */,
+				CD472DF02422509D0017E43C /* DriversMapVC.swift in Sources */,
 				521CC4B7241F898F007803FD /* changeCityViewController.swift in Sources */,
 				FA66C90F2403565E00CD6B95 /* NewAdsMan.swift in Sources */,
 				FA2BAEE624210086002E6505 /* CountryTableViewCell.swift in Sources */,
 				FA53ED88240687DE00A037E9 /* WalkthroughVC.swift in Sources */,
 				FA5E6E4F240BDC1F00041736 /* ForRentCell.swift in Sources */,
+				CD472DF3242259660017E43C /* DriversVC.swift in Sources */,
 				FA62945E2406B4F200308F25 /* UIColor.swift in Sources */,
 				FA25202423FC473B004D8F32 /* Constants.swift in Sources */,
 				FA68E21A240EEDF70015C96E /* PremiumProductsCell.swift in Sources */,
@@ -617,6 +640,7 @@
 				FA5C34B223FD40740016DBFE /* CategoryCell.swift in Sources */,
 				FA66FE8124101CB200AFC774 /* SavedShopsVC.swift in Sources */,
 				FA66FE7D2410027B00AFC774 /* SavedVC.swift in Sources */,
+				CD472DF5242259870017E43C /* DriversCell.swift in Sources */,
 				FACD6512240176F500B65A08 /* ProfileContentVC.swift in Sources */,
 				52E6492F241E749300B2B0AE /* cityViewController.swift in Sources */,
 				FA6294762406D0A000308F25 /* PageControlUITests.swift in Sources */,
@@ -767,7 +791,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WL75LZVNWR;
+				DEVELOPMENT_TEAM = F7S769X964;
 				INFOPLIST_FILE = D2020/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -786,7 +810,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WL75LZVNWR;
+				DEVELOPMENT_TEAM = F7S769X964;
 				INFOPLIST_FILE = D2020/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
