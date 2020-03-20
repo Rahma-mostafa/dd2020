@@ -15,9 +15,9 @@ class countryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     @IBOutlet weak var languageButtton2: RoundedButton!
     
     
-    var country:[Country] = [Country(backgroundImage: .opaqueSeparator, image: "2000px-Flag_of_Egypt.svg", name: "مصر"),
+    var country:[Country] = [Country(backgroundImage: .gray, image: "2000px-Flag_of_Egypt.svg", name: "مصر"),
                              Country(backgroundImage: .white, image: "4641082361_37d32d0bb3_z", name: "السعودية"),
-                             Country(backgroundImage: .opaqueSeparator, image: "280px-Flag_of_Algeria.svg", name: "الجزائر "),
+                             Country(backgroundImage: .gray, image: "280px-Flag_of_Algeria.svg", name: "الجزائر "),
                              Country(backgroundImage:.white, image: "280px-Flag_of_Libya.svg", name:"ليبيا")]
     
     var color:UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)

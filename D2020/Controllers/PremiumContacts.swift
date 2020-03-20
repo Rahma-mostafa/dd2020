@@ -19,7 +19,7 @@ struct PremiumCommunication {
 class PremiumContacts: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     
-    var premiumCommunicate:[PremiumCommunication] = [PremiumCommunication(contactImage: "twitter (8)", contactTitle: "حساب تويتر", coloreView: .systemBlue),PremiumCommunication(contactImage: "facebook", contactTitle: "حساب الفيس بوك", coloreView : .link),PremiumCommunication(contactImage: "whatsapp", contactTitle: "رقم الواتس", coloreView: .green),PremiumCommunication(contactImage: "instagram", contactTitle: "حساب الانستجرام", coloreView: .systemPink),PremiumCommunication(contactImage: "snapchat", contactTitle: "حساب السناب شات", coloreView: .systemYellow),PremiumCommunication(contactImage: "internet", contactTitle: "الموقع الالكتروني", coloreView: .systemGreen)]
+    var premiumCommunicate:[PremiumCommunication] = [PremiumCommunication(contactImage: "twitter (8)", contactTitle: "حساب تويتر", coloreView: .systemBlue),PremiumCommunication(contactImage: "facebook", contactTitle: "حساب الفيس بوك", coloreView : .gray),PremiumCommunication(contactImage: "whatsapp", contactTitle: "رقم الواتس", coloreView: .green),PremiumCommunication(contactImage: "instagram", contactTitle: "حساب الانستجرام", coloreView: .systemPink),PremiumCommunication(contactImage: "snapchat", contactTitle: "حساب السناب شات", coloreView: .systemYellow),PremiumCommunication(contactImage: "internet", contactTitle: "الموقع الالكتروني", coloreView: .systemGreen)]
     
     
     @IBOutlet weak var Tb: UITableView!

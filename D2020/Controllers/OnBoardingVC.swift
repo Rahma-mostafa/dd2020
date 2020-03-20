@@ -20,7 +20,7 @@ class OnBoardingVC: UIViewController,  ATCWalkthroughViewControllerDelegate{
     super.viewDidLoad()
     let walkthroughVC = self.walkthroughVC()
     walkthroughVC.delegate = self
-    self.addChildViewControllerWithView(walkthroughVC)
+    self.addChild(walkthroughVC)
   }
     
     

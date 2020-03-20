@@ -1,32 +1,62 @@
 PODS:
+  - Alamofire (4.9.1)
+  - AlamofireImage (3.6.0):
+    - Alamofire (~> 4.9)
+  - BSGridCollectionViewLayout (1.2.5)
+  - BSImagePicker (2.10.3):
+    - BSGridCollectionViewLayout (= 1.2.5)
+    - BSImageView (= 1.0.3)
+  - BSImageView (1.0.3)
   - Cosmos (21.0.0)
-  - CTHelp (0.4.0)
+  - GoogleMaps (3.0.3):
+    - GoogleMaps/Maps (= 3.0.3)
+  - GoogleMaps/Base (3.0.3)
+  - GoogleMaps/Maps (3.0.3):
+    - GoogleMaps/Base
+  - GooglePlaces (3.0.3):
+    - GoogleMaps/Base (= 3.0.3)
   - IQKeyboardManagerSwift (6.3.0)
-  - Kingfisher (4.10.1)
+  - lottie-ios (3.1.6)
   - TinyConstraints (4.0.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - AlamofireImage (~> 3.0)
+  - BSImagePicker (~> 2.0)
   - Cosmos
-  - CTHelp
-  - IQKeyboardManagerSwift (= 6.3.0)
-  - Kingfisher (~> 4.0)
+  - GoogleMaps (= 3.0.3)
+  - GooglePlaces (= 3.0.3)
+  - IQKeyboardManagerSwift
+  - lottie-ios
   - TinyConstraints
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - AlamofireImage
+    - BSGridCollectionViewLayout
+    - BSImagePicker
+    - BSImageView
     - Cosmos
-    - CTHelp
+    - GoogleMaps
+    - GooglePlaces
     - IQKeyboardManagerSwift
-    - Kingfisher
+    - lottie-ios
     - TinyConstraints
 
 SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  BSGridCollectionViewLayout: 333dcb457a5a3bdd9212607ab5756553dcfe06cb
+  BSImagePicker: 07404254f2fcdaf5a2eb403c0f8c337267ce8738
+  BSImageView: a149459433a2687157d034c78e059d30ac7f2544
   Cosmos: 3dfb6e4ba48bd48b8c9aa2a77048ae11ed114f96
-  CTHelp: 9b6cac769bc805ae559b235f0150c0b1eec27cdf
+  GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
+  GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
-  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
   TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: 580675625d21ec0535aa668e5987ac53e5d8ef2f
+PODFILE CHECKSUM: a9c2891cdd7be7024416f08e1b5c7549121b9705
 
 COCOAPODS: 1.8.4

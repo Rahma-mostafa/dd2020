@@ -103,7 +103,7 @@ class EachCategoryVC: UIViewController ,UITableViewDelegate,UITableViewDataSourc
 
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
            
-            performSegue(withIdentifier: Segues.ToPremium, sender: self)
+            //performSegue(withIdentifier: Segues.ToPremium, sender: self)
             
         }
     
@@ -208,7 +208,7 @@ extension EachCategoryVC : UICollectionViewDelegateFlowLayout, UICollectionViewD
 //
 ////        selectedCategory = UIImage(named: categoryimages[indexPath.item])
 //
-        performSegue(withIdentifier: Segues.ToSelectedCategory, sender: self)
+        //performSegue(withIdentifier: Segues.ToSelectedCategory, sender: self)
 
         }
     

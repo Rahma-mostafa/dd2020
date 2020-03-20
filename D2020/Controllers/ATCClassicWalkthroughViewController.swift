@@ -30,7 +30,7 @@ class ATCClassicWalkthroughViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    imageView.image = UIImage.localImage(model.icon, template: true)
+    imageView.image = UIImage(named: model.icon)
     imageView.contentMode = .scaleAspectFill
     imageView.clipsToBounds = true
 //    imageView.tintColor = .white
@@ -44,6 +44,6 @@ class ATCClassicWalkthroughViewController: UIViewController {
     subtitleLabel.font = UIFont.systemFont(ofSize: 14.0)
     subtitleLabel.textColor = .white
     
-    containerView.backgroundColor = UIColor(hexString: "#EBECEA")
+    containerView.backgroundColor = UIColor(red: 235, green: 236, blue: 234, alpha: 1)
   }
 }

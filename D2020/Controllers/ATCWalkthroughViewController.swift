@@ -39,7 +39,7 @@ class ATCWalkthroughViewController: UIViewController, UIPageViewControllerDataSo
   
   override func viewDidLoad() {
     pageController.setViewControllers([viewControllers[0]], direction: .forward, animated: true, completion: nil)
-    self.addChildViewControllerWithView(pageController)
+    self.addChild(pageController)
     pageControl.numberOfPages = viewControllers.count
     self.view.bringSubviewToFront(pageControl)
     super.viewDidLoad()
@@ -79,7 +79,18 @@ class ATCWalkthroughViewController: UIViewController, UIPageViewControllerDataSo
   
   public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
     if pendingViewControllers.first == self.fakeVC {
-      self.removeChildViewController(self.pageController)
+        if self.children.count > 0 {
+            let viewControllers:[UIViewController] = self.children
+            for viewContoller in viewControllers {
+                if viewContoller == self.pageController {
+                    viewContoller.willMove(toParent: nil)
+                    viewContoller.view.removeFromSuperview()
+                    viewContoller.removeFromParent()
+                }
+                
+            }
+        }
+        
       self.delegate?.walkthroughViewControllerDidFinishFlow(self)
     }
   }

@@ -49,11 +49,11 @@ class PageViewControllerA: UIPageViewController,UIPageViewControllerDelegate,UIP
     }
     
     func newVC(viewController:String) -> UIViewController {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: viewController)
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: viewController)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = orderViewController.index(of: viewController)else{
+        guard let viewControllerIndex = orderViewController.firstIndex(of: viewController)else{
             return nil
         }
         let previousIndex = viewControllerIndex - 1

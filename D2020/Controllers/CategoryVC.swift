@@ -131,8 +131,7 @@ extension CategoryVC : UITableViewDelegate,UITableViewDataSource {
         
         
         if tableView == self.tableView {
-            performSegue(withIdentifier: Segues.ToMyShops
-                , sender: self)
+           // performSegue(withIdentifier: Segues.ToMyShops, sender: self)
         
     }
         performSegue(withIdentifier: "toEachCategory", sender: self)

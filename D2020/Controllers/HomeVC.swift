@@ -413,7 +413,7 @@ extension HomeVC : UICollectionViewDelegateFlowLayout, UICollectionViewDelegate,
         selectedCategory = items[indexPath.item].description
 //        selectedCategory = UIImage(named: items[indexPath.item].imageName!)
         
-                performSegue(withIdentifier: Segues.ToProducts, sender: self)
+              //  performSegue(withIdentifier: Segues.ToProducts, sender: self)
 
         }
 //        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -55,7 +55,7 @@ class SelectedCategoryVC: UIViewController,UITableViewDelegate,UITableViewDataSo
            }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Segues.ToProfileVC, sender: self)
+        //performSegue(withIdentifier: Segues.ToProfileVC, sender: self)
     }
     
     @IBAction func onOptionButtonTapped(_ sender: Any) {

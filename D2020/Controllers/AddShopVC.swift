@@ -93,7 +93,7 @@ class AddShopVC: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        performSegue(withIdentifier: Segues.ToAddShopDetails, sender: self)
+        //performSegue(withIdentifier: Segues.ToAddShopDetails, sender: self)
 
     }
 }
