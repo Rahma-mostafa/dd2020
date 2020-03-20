@@ -94,68 +94,6 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
         
     }
-    
-    
-    @IBAction func panPerformed(_ sender: UIPanGestureRecognizer) {
-        
-        if sender.state == .began || sender.state == .changed {
-            
-            let translation = sender.translation(in: self.view).x
-            
-            
-            //swipe right
-            if translation < 0 {
-                if sizeMenuConstraint.constant > 20 {
-
-                    UIView.animate(withDuration: 0.2, animations: {
-                        self.sizeMenuConstraint.constant += translation / 10
-
-                        self.view.layoutIfNeeded()
-                    })
-                    
-                }
-            }else{
-                //swipe left
-                if sizeMenuConstraint.constant > -325 {
-
-                                 UIView.animate(withDuration: 0.2, animations: {
-                                     self.sizeMenuConstraint.constant += translation / 10
-
-                                     self.view.layoutIfNeeded()
-                                 })
-                
-            }
-            }
-            
-        }else if sender.state == .ended {
-            
-            if sizeMenuConstraint.constant > 100 {
-                
-                UIView.animate(withDuration: 0.2, animations: {
-                                                   self.sizeMenuConstraint.constant = 325
-
-                                                   self.view.layoutIfNeeded()
-                                               })
-                
-            }else{
-                
-                UIView.animate(withDuration: 0.2, animations: {
-                                                   self.sizeMenuConstraint.constant = 0
-
-                                                   self.view.layoutIfNeeded()
-                                               })
-                
-            }
-            
-            
-        }
-        
-        
-        
-        
-    }
-    
-    
     @IBAction func organizeBtnPressedB(_ sender: Any) {
         
        if isSideMenuHidden {

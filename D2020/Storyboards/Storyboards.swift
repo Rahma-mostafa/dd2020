@@ -11,4 +11,8 @@ import Foundation
 public enum Storyboards: String {
     case main = "Main"
     case auth = "Auth"
+    case category = "Category"
+    case store = "StoreDetail"
+    case createStore = "CreateStore"
+    case pop = "Popup"
 }

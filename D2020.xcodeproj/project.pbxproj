@@ -91,7 +91,11 @@
 		8033E90424254FF900D0F2A0 /* TTGSnackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033E88724254FF900D0F2A0 /* TTGSnackbar.swift */; };
 		8033E90624254FF900D0F2A0 /* UITabHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033E88A24254FF900D0F2A0 /* UITabHelper.swift */; };
 		8033E91B2425554E00D0F2A0 /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033E91A2425554E00D0F2A0 /* UIStoryboardExtensions.swift */; };
-		8033E91F24256BC800D0F2A0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8033E91E24256BC800D0F2A0 /* Login.storyboard */; };
+		8033E91F24256BC800D0F2A0 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8033E91E24256BC800D0F2A0 /* Auth.storyboard */; };
+		8033E92324257BD500D0F2A0 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8033E92224257BD500D0F2A0 /* Category.storyboard */; };
+		8033E92524257C5600D0F2A0 /* StoreDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8033E92424257C5600D0F2A0 /* StoreDetail.storyboard */; };
+		8033E92724257D5B00D0F2A0 /* CreateStore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8033E92624257D5B00D0F2A0 /* CreateStore.storyboard */; };
+		8033E92924257E5F00D0F2A0 /* Popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8033E92824257E5F00D0F2A0 /* Popup.storyboard */; };
 		CD472DF02422509D0017E43C /* DriversMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DEF2422509D0017E43C /* DriversMapVC.swift */; };
 		CD472DF3242259660017E43C /* DriversVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DF2242259660017E43C /* DriversVC.swift */; };
 		CD472DF5242259870017E43C /* DriversCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DF4242259870017E43C /* DriversCell.swift */; };
@@ -261,7 +265,11 @@
 		8033E88724254FF900D0F2A0 /* TTGSnackbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTGSnackbar.swift; sourceTree = "<group>"; };
 		8033E88A24254FF900D0F2A0 /* UITabHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabHelper.swift; sourceTree = "<group>"; };
 		8033E91A2425554E00D0F2A0 /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
-		8033E91E24256BC800D0F2A0 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		8033E91E24256BC800D0F2A0 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		8033E92224257BD500D0F2A0 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
+		8033E92424257C5600D0F2A0 /* StoreDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreDetail.storyboard; sourceTree = "<group>"; };
+		8033E92624257D5B00D0F2A0 /* CreateStore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateStore.storyboard; sourceTree = "<group>"; };
+		8033E92824257E5F00D0F2A0 /* Popup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popup.storyboard; sourceTree = "<group>"; };
 		CD472DEF2422509D0017E43C /* DriversMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversMapVC.swift; sourceTree = "<group>"; };
 		CD472DF2242259660017E43C /* DriversVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversVC.swift; sourceTree = "<group>"; };
 		CD472DF4242259870017E43C /* DriversCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversCell.swift; sourceTree = "<group>"; };
@@ -386,8 +394,12 @@
 			children = (
 				FA5F547123F5933B00E7F40B /* Main.storyboard */,
 				FA5F547623F5934000E7F40B /* LaunchScreen.storyboard */,
-				8033E91E24256BC800D0F2A0 /* Login.storyboard */,
+				8033E91E24256BC800D0F2A0 /* Auth.storyboard */,
 				8033E78E24254D3600D0F2A0 /* Storyboards.swift */,
+				8033E92224257BD500D0F2A0 /* Category.storyboard */,
+				8033E92424257C5600D0F2A0 /* StoreDetail.storyboard */,
+				8033E92624257D5B00D0F2A0 /* CreateStore.storyboard */,
+				8033E92824257E5F00D0F2A0 /* Popup.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -855,7 +867,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA62946C2406B73100308F25 /* ATCWalkthroughViewController.xib in Resources */,
-				8033E91F24256BC800D0F2A0 /* Login.storyboard in Resources */,
+				8033E91F24256BC800D0F2A0 /* Auth.storyboard in Resources */,
+				8033E92924257E5F00D0F2A0 /* Popup.storyboard in Resources */,
+				8033E92324257BD500D0F2A0 /* Category.storyboard in Resources */,
 				8033E8D924254FF900D0F2A0 /* Menu.storyboard in Resources */,
 				8033E76E24254CA200D0F2A0 /* loading-animation.json in Resources */,
 				8033E8FC24254FF900D0F2A0 /* Radio.xib in Resources */,
@@ -867,9 +881,11 @@
 				8033E8C424254FF900D0F2A0 /* ImageDisplayController.storyboard in Resources */,
 				FA5680F323FB51B40099F94C /* ArbFONTS-Sukar Bold.ttf in Resources */,
 				8033E76F24254CA200D0F2A0 /* material-loader.json in Resources */,
+				8033E92524257C5600D0F2A0 /* StoreDetail.storyboard in Resources */,
 				8033E8FF24254FF900D0F2A0 /* RadioView.xib in Resources */,
 				FA5F547523F5934000E7F40B /* Assets.xcassets in Resources */,
 				8033E77524254CE700D0F2A0 /* Localizable.strings in Resources */,
+				8033E92724257D5B00D0F2A0 /* CreateStore.storyboard in Resources */,
 				FA64D31C23FEB91A00D18958 /* SubCategoryCell.xib in Resources */,
 				FA5F547323F5933B00E7F40B /* Main.storyboard in Resources */,
 				8033E76C24254CA200D0F2A0 /* loading.json in Resources */,
