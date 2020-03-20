@@ -26,6 +26,9 @@
 		CD472DF3242259660017E43C /* DriversVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DF2242259660017E43C /* DriversVC.swift */; };
 		CD472DF5242259870017E43C /* DriversCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DF4242259870017E43C /* DriversCell.swift */; };
 		CD472DFF24226D9F0017E43C /* MapAnnotationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DFE24226D9F0017E43C /* MapAnnotationsView.swift */; };
+		CDBE4D392424C60D0034511B /* SendOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBE4D382424C60D0034511B /* SendOrderVC.swift */; };
+		CDBE4D3B2424E4960034511B /* ExtIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBE4D3A2424E4960034511B /* ExtIndicator.swift */; };
+		CDC916C72424A71A00639528 /* Drivers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDC916C62424A71A00639528 /* Drivers.storyboard */; };
 		FA1FEF24240ED1FE002AABE7 /* PremiumProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FEF23240ED1FE002AABE7 /* PremiumProductsVC.swift */; };
 		FA1FEF26240ED23F002AABE7 /* PremiumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FEF25240ED23F002AABE7 /* PremiumVC.swift */; };
 		FA25201823FC3D4C004D8F32 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA25201723FC3D4C004D8F32 /* CategoryVC.swift */; };
@@ -129,6 +132,9 @@
 		CD472DF2242259660017E43C /* DriversVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversVC.swift; sourceTree = "<group>"; };
 		CD472DF4242259870017E43C /* DriversCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversCell.swift; sourceTree = "<group>"; };
 		CD472DFE24226D9F0017E43C /* MapAnnotationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationsView.swift; sourceTree = "<group>"; };
+		CDBE4D382424C60D0034511B /* SendOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOrderVC.swift; sourceTree = "<group>"; };
+		CDBE4D3A2424E4960034511B /* ExtIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtIndicator.swift; sourceTree = "<group>"; };
+		CDC916C62424A71A00639528 /* Drivers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drivers.storyboard; sourceTree = "<group>"; };
 		E7C056DC252C8D810D8813CA /* Pods-D2020.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-D2020.release.xcconfig"; path = "Target Support Files/Pods-D2020/Pods-D2020.release.xcconfig"; sourceTree = "<group>"; };
 		FA1FEF23240ED1FE002AABE7 /* PremiumProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumProductsVC.swift; sourceTree = "<group>"; };
 		FA1FEF25240ED23F002AABE7 /* PremiumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumVC.swift; sourceTree = "<group>"; };
@@ -245,13 +251,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CD472DF1242250A60017E43C /* Drivers */ = {
+		CDC916C22424A68C00639528 /* Drivers */ = {
+			isa = PBXGroup;
+			children = (
+				CDC916C62424A71A00639528 /* Drivers.storyboard */,
+				CDC916C52424A6E600639528 /* Model */,
+				CDC916C32424A6A700639528 /* View */,
+				CDC916C42424A6D400639528 /* Controller */,
+				CDBE4D3A2424E4960034511B /* ExtIndicator.swift */,
+			);
+			path = Drivers;
+			sourceTree = "<group>";
+		};
+		CDC916C32424A6A700639528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD472DF4242259870017E43C /* DriversCell.swift */,
+				CD472DFE24226D9F0017E43C /* MapAnnotationsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CDC916C42424A6D400639528 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				CD472DEF2422509D0017E43C /* DriversMapVC.swift */,
 				CD472DF2242259660017E43C /* DriversVC.swift */,
+				CDBE4D382424C60D0034511B /* SendOrderVC.swift */,
 			);
-			path = Drivers;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CDC916C52424A6E600639528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FA25201923FC3DE1004D8F32 /* Model */ = {
@@ -291,8 +326,6 @@
 				FA2BAEE524210086002E6505 /* CountryTableViewCell.swift */,
 				FA6294732406D03700308F25 /* PageControlTests.swift */,
 				FA6294752406D0A000308F25 /* PageControlUITests.swift */,
-				CD472DF4242259870017E43C /* DriversCell.swift */,
-				CD472DFE24226D9F0017E43C /* MapAnnotationsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -342,6 +375,7 @@
 		FA5F546A23F5933B00E7F40B /* D2020 */ = {
 			isa = PBXGroup;
 			children = (
+				CDC916C22424A68C00639528 /* Drivers */,
 				FA25202223FC4729004D8F32 /* Utils */,
 				FA25202123FC3E4E004D8F32 /* Xibs */,
 				FA6294612406B57100308F25 /* Helpers */,
@@ -430,7 +464,6 @@
 				FA2BAEEB24214C7A002E6505 /* profileViewController.swift */,
 				FA2BAEED24214CAB002E6505 /* editProfileViewController.swift */,
 				FA2BAEEF2421518A002E6505 /* updateProfileViewController.swift */,
-				CD472DF1242250A60017E43C /* Drivers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -495,6 +528,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDC916C72424A71A00639528 /* Drivers.storyboard in Resources */,
 				FA62946C2406B73100308F25 /* ATCWalkthroughViewController.xib in Resources */,
 				FA6294682406B6EA00308F25 /* ATCClassicWalkthroughViewController.xib in Resources */,
 				FA5F547823F5934000E7F40B /* LaunchScreen.storyboard in Resources */,
@@ -583,6 +617,7 @@
 				FA6294672406B6EA00308F25 /* ATCClassicWalkthroughViewController.swift in Sources */,
 				521CC4B3241F7379007803FD /* optionTableViewCell.swift in Sources */,
 				FA64D31823FEB6D000D18958 /* EachCategoryVC.swift in Sources */,
+				CDBE4D3B2424E4960034511B /* ExtIndicator.swift in Sources */,
 				5202ECEC241EE6AD007E10F6 /* optionViewController.swift in Sources */,
 				FA2BAEDA2420D884002E6505 /* AddProductShopVC.swift in Sources */,
 				FA6D98E4241121F400D71D3C /* ShopsAddedCell.swift in Sources */,
@@ -605,6 +640,7 @@
 				FA2BAEE42421001E002E6505 /* countryViewController.swift in Sources */,
 				FA6E33CF241FF50C00BFAFED /* FirstVC.swift in Sources */,
 				FA25201823FC3D4C004D8F32 /* CategoryVC.swift in Sources */,
+				CDBE4D392424C60D0034511B /* SendOrderVC.swift in Sources */,
 				FA85AEC424180320008EAD50 /* ShopOwnerProducts.swift in Sources */,
 				FA6294602406B56600308F25 /* UIViewController.swift in Sources */,
 				FA842A352416A0F40042DB49 /* AddShopDetailVC.swift in Sources */,

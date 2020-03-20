@@ -13,6 +13,7 @@ class DriversMapVC: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var searchTxt: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +56,20 @@ class DriversMapVC: UIViewController {
             }
         }
     }
+    
+    @IBAction func locationBtn(_ sender: Any) {
+    }
+    
+    @IBAction func backBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func chatBtn(_ sender: Any) {
+    }
+    
+    
+    
+    
     
 }
 

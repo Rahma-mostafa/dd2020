@@ -325,7 +325,10 @@ fileprivate func getViewController(atIndex index: Int) -> PromoContentVC {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == self.tableView {
-            performSegue(withIdentifier: "toDriversMapVC", sender: self)
+            let storyboard = UIStoryboard(name: "Drivers", bundle: nil)
+            let navC = storyboard.instantiateViewController(withIdentifier: "navC") as! UINavigationController
+//            let driversMapVC = (navC.viewControllers[0] as? DriversMapVC)!
+            self.present(navC, animated: false, completion: nil)
         }
     }
 }

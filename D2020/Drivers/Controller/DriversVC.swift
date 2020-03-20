@@ -13,7 +13,7 @@ class DriversVC: UIViewController {
     @IBOutlet weak var driversView: RoundedShadowView!
     @IBOutlet weak var tableView: UITableView!
     
-    let fullView: CGFloat = 100
+    let fullView: CGFloat = 57
     var partialView: CGFloat {
         return UIScreen.main.bounds.height - 300
     }
@@ -114,17 +114,18 @@ extension DriversVC: UITableViewDelegate, UITableViewDataSource {
 //    }
 //
 //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "\(stores.count) " + " Place".localized
+//        return "الاقرب الي موقعك"
 //    }
 //
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //            let headerView = UIView()
-//            headerView.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1)
+//            headerView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 //
-//            let headerLabel = UILabel(frame: CGRect(x: 8, y: 8, width:
-//                tableView.bounds.size.width, height: tableView.bounds.size.height))
-//            headerLabel.font = UIFont(name: "Almarai-Regular", size: 15)
-//            headerLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+//        let headerLabel = UILabel(frame: CGRect(x: 8, y: 8, width:
+//            tableView.frame.width, height: 30))
+//        headerLabel.textAlignment = .center
+//            headerLabel.font = UIFont(name: "ArbFONTS-Sukar Bold.ttf", size: 15)
+//            headerLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 //            headerLabel.text = self.tableView(self.tableView, titleForHeaderInSection: section)
 //            headerLabel.sizeToFit()
 //            headerView.addSubview(headerLabel)
@@ -145,7 +146,7 @@ extension DriversVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: "toSend", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
