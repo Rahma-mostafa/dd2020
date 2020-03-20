@@ -83,3 +83,21 @@ struct Identifiers {
     static let MenuTableViewA = "MenuTableViewA"
     
 }
+
+extension UIColor {
+    public var appGreen: UIColor {
+        return UIColor(named: "greenColor") ?? UIColor()
+    }
+    public var appBlue: UIColor {
+        return UIColor(named: "blueColor") ?? UIColor()
+    }
+    public var appRed: UIColor {
+        return UIColor(named: "redColor") ?? UIColor()
+    }
+    public var appOrange: UIColor {
+        return UIColor(named: "orangeColor") ?? UIColor()
+    }
+    public var textColor: UIColor {
+        return UIColor(named: "textColor") ?? UIColor()
+    }
+}
