@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class newCustomer: UIViewController
 , UIPickerViewDelegate,UIPickerViewDataSource {
    
@@ -47,6 +49,7 @@ class newCustomer: UIViewController
     
     @IBAction func showPassword1(_ sender: Any) {
            
+        
            isSecure = !isSecure
                          password.isSecureTextEntry = isSecure
            

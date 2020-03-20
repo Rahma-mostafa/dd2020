@@ -322,12 +322,6 @@ fileprivate func getViewController(atIndex index: Int) -> PromoContentVC {
                  }
        
 }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView == self.tableView {
-            performSegue(withIdentifier: "toDriversMapVC", sender: self)
-        }
-    }
 }
 //extension uipageviewcontrollerdatasource
 
@@ -415,13 +409,12 @@ extension HomeVC : UICollectionViewDelegateFlowLayout, UICollectionViewDelegate,
     
     
        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedCategory = items[indexPath.item].name
+        selectedCategory = items[indexPath.item].description
+//        selectedCategory = UIImage(named: items[indexPath.item].imageName!)
         
-            selectedCategory = items[indexPath.item].name
-                    selectedCategory = items[indexPath.item].description
-            //        selectedCategory = UIImage(named: items[indexPath.item].imageName!)
-                    
-                            performSegue(withIdentifier: Segues.ToProducts, sender: self)
-        
+                performSegue(withIdentifier: Segues.ToProducts, sender: self)
+
         }
 //        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //            if segue.identifier == Segues.ToProducts {

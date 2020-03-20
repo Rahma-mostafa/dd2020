@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 struct Identifiers {
+    static let RegisterTableView = "RegisterTableView"
     static let CategoryCell = "HomeShopCell"
     static let AgentCell = "AgentCell"
     static let ProductCell = "ProductCell"
@@ -25,6 +26,7 @@ struct Identifiers {
     static let ShopsAddedCell = "ShopsAddedCell"
     static let ShopOwnerProducts = "ShopOwnerProducts"
     static let MenuTableViewA = "MenuTableViewA"
+    
 }
 struct Segues {
     static let ToProducts = "toProductsVC"
@@ -34,6 +36,7 @@ struct Segues {
     static let ToPremium = "ToPremium"
     static let ToMyShops = "ToMyShops"
     static let ToAddShopDetails = "ToAddShopDetails"
+    static let ToNewUser = "ToNewUser"
     
    
     

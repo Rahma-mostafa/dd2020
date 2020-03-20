@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
-class ViewController: UIViewController {
+class LoginVC: UIViewController {
     //showing password
     var isSecure = true
 
 
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var usernameTxt: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
 //        loginPressed outlet for disable btn & it's gray color
     @IBOutlet weak var loginPressedOutlet: RoundedButton!
     
@@ -36,7 +38,7 @@ class ViewController: UIViewController {
     @IBAction func showPassword(_ sender: Any) {
         
         isSecure = !isSecure
-               password.isSecureTextEntry = isSecure
+               passwordTxt.isSecureTextEntry = isSecure
         
         
     }
@@ -45,16 +47,34 @@ class ViewController: UIViewController {
     
     
     
-    @IBAction func loginPressed(_ sender: Any) {
+    @IBAction func login_click(_ sender: Any) {
         loginPressedOutlet.isEnabled = false
         
+        // if no text entered
+               if usernameTxt.text!.isEmpty || passwordTxt.text!.isEmpty {
+                 
+                   // red placeholders
+                usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+                passwordTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+                   
+               // text is entered
+               } else {
+                   
+                   // remove keyboard
+                   self.view.endEditing(true)
+        
+        
+        
+        
+        
 
+    }
     }
    
     
     @IBAction func textDidChange(_ sender: UITextField) {
          
-        if (email.text!.count>0  && password.text!.count>0 ) {
+        if (usernameTxt.text!.count>0  && passwordTxt.text!.count>0 ) {
             loginPressedOutlet.isEnabled = true
             
             loginPressedOutlet.backgroundColor = .systemOrange
