@@ -22,6 +22,7 @@
 		52E8672B241D2C2C00D7CBBC /* catagoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8672A241D2C2C00D7CBBC /* catagoryTableViewController.swift */; };
 		52E8672D241D2C7200D7CBBC /* catagoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8672C241D2C7100D7CBBC /* catagoryTableViewCell.swift */; };
 		52E8672F241D2CBF00D7CBBC /* products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8672E241D2CBF00D7CBBC /* products.swift */; };
+		8033E91D242569DF00D0F2A0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8033E91C242569DF00D0F2A0 /* Login.storyboard */; };
 		CD472DF02422509D0017E43C /* DriversMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DEF2422509D0017E43C /* DriversMapVC.swift */; };
 		CD472DF3242259660017E43C /* DriversVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DF2242259660017E43C /* DriversVC.swift */; };
 		CD472DF5242259870017E43C /* DriversCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DF4242259870017E43C /* DriversCell.swift */; };
@@ -125,6 +126,7 @@
 		52E8672C241D2C7100D7CBBC /* catagoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = catagoryTableViewCell.swift; sourceTree = "<group>"; };
 		52E8672E241D2CBF00D7CBBC /* products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = products.swift; sourceTree = "<group>"; };
 		7CD42E7013F938C7FA37C420 /* Pods_D2020.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_D2020.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8033E91C242569DF00D0F2A0 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		CD472DEF2422509D0017E43C /* DriversMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversMapVC.swift; sourceTree = "<group>"; };
 		CD472DF2242259660017E43C /* DriversVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversVC.swift; sourceTree = "<group>"; };
 		CD472DF4242259870017E43C /* DriversCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversCell.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				FA5680E923FB519C0099F94C /* Font */,
 				FA6294622406B64500308F25 /* Controllers */,
 				FA5F547123F5933B00E7F40B /* Main.storyboard */,
+				8033E91C242569DF00D0F2A0 /* Login.storyboard */,
 				FA5F547423F5934000E7F40B /* Assets.xcassets */,
 				FA5F547623F5934000E7F40B /* LaunchScreen.storyboard */,
 				52E8672C241D2C7100D7CBBC /* catagoryTableViewCell.swift */,
@@ -495,6 +498,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8033E91D242569DF00D0F2A0 /* Login.storyboard in Resources */,
 				FA62946C2406B73100308F25 /* ATCWalkthroughViewController.xib in Resources */,
 				FA6294682406B6EA00308F25 /* ATCClassicWalkthroughViewController.xib in Resources */,
 				FA5F547823F5934000E7F40B /* LaunchScreen.storyboard in Resources */,
