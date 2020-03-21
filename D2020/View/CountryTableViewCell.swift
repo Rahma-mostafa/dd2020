@@ -8,45 +8,30 @@
 
 import UIKit
 
-class CountryTableViewCell: UITableViewCell {
+class CountryTableViewCell: UITableViewCell, CellProtocol {
     @IBOutlet weak var countryImageView: UIImageView!
     
     @IBOutlet weak var backgroundImageView: RoundedImageView!
     @IBOutlet weak var counrtyNameLabel: UILabel!
     @IBOutlet weak var button: UIButton!
     
-    var BackgroundImageColor: (()->())!
-
+    var onClick: HandlerView?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+   
+    func setup() {
+        guard let model = model as? Country.CountryData else { return }
+        countryImageView.setImage(url: model.file)
+        counrtyNameLabel.text = model.name
+                      
+                         
     }
-    
-    
-//    override var frame: CGRect {
-//               get {
-//                   return super.frame
-//               }
-//               set (newFrame) {
-//                   var frame =  newFrame
-//                   frame.origin.y += 4
-//                   frame.size.height -= 2 * 4
-//                   super.frame = frame
-//
-    
-    
-    
-//}
-    
     @IBAction func onButtonTapped(_ sender: Any) {
-        
-        BackgroundImageColor()
+        onClick?()
+        //BackgroundImageColor()
 
     }
     

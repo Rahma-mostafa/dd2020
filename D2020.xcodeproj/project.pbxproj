@@ -106,9 +106,9 @@
 		FA2BAEDE2420D9A0002E6505 /* slideShowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2BAEDD2420D9A0002E6505 /* slideShowCollectionViewCell.swift */; };
 		FA2BAEE02420D9CB002E6505 /* slideShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2BAEDF2420D9CB002E6505 /* slideShow.swift */; };
 		FA2BAEE22420D9D7002E6505 /* productsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2BAEE12420D9D7002E6505 /* productsCollectionViewCell.swift */; };
-		FA2BAEE42421001E002E6505 /* countryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2BAEE32421001E002E6505 /* countryViewController.swift */; };
+		FA2BAEE42421001E002E6505 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2BAEE32421001E002E6505 /* CountryViewController.swift */; };
 		FA2BAEE624210086002E6505 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2BAEE524210086002E6505 /* CountryTableViewCell.swift */; };
-		FA2BAEE8242100F6002E6505 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2BAEE7242100F6002E6505 /* Country.swift */; };
+		FA2BAEE8242100F6002E6505 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2BAEE7242100F6002E6505 /* CountryModel.swift */; };
 		FA2BAEEC24214C7A002E6505 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2BAEEB24214C7A002E6505 /* profileViewController.swift */; };
 		FA2BAEEE24214CAB002E6505 /* editProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2BAEED24214CAB002E6505 /* editProfileViewController.swift */; };
 		FA2BAEF02421518B002E6505 /* updateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2BAEEF2421518A002E6505 /* updateProfileViewController.swift */; };
@@ -277,9 +277,9 @@
 		FA2BAEDD2420D9A0002E6505 /* slideShowCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = slideShowCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA2BAEDF2420D9CB002E6505 /* slideShow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = slideShow.swift; sourceTree = "<group>"; };
 		FA2BAEE12420D9D7002E6505 /* productsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productsCollectionViewCell.swift; sourceTree = "<group>"; };
-		FA2BAEE32421001E002E6505 /* countryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = countryViewController.swift; sourceTree = "<group>"; };
+		FA2BAEE32421001E002E6505 /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		FA2BAEE524210086002E6505 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
-		FA2BAEE7242100F6002E6505 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		FA2BAEE7242100F6002E6505 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		FA2BAEEB24214C7A002E6505 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
 		FA2BAEED24214CAB002E6505 /* editProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editProfileViewController.swift; sourceTree = "<group>"; };
 		FA2BAEEF2421518A002E6505 /* updateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateProfileViewController.swift; sourceTree = "<group>"; };
@@ -641,7 +641,7 @@
 				FA25201A23FC3DF4004D8F32 /* Category.swift */,
 				52E8672E241D2CBF00D7CBBC /* products.swift */,
 				FA2BAEDF2420D9CB002E6505 /* slideShow.swift */,
-				FA2BAEE7242100F6002E6505 /* Country.swift */,
+				FA2BAEE7242100F6002E6505 /* CountryModel.swift */,
 				FA62946D2406B86400308F25 /* ATCWalkthroughModel.swift */,
 			);
 			path = Model;
@@ -783,7 +783,7 @@
 				FA6E33C8241FF50C00BFAFED /* ThirdVC.swift */,
 				FA2BAED92420D883002E6505 /* AddProductShopVC.swift */,
 				FA2BAEDB2420D8A8002E6505 /* EditAddProductVC.swift */,
-				FA2BAEE32421001E002E6505 /* countryViewController.swift */,
+				FA2BAEE32421001E002E6505 /* CountryViewController.swift */,
 				FA2BAEEB24214C7A002E6505 /* profileViewController.swift */,
 				FA2BAEED24214CAB002E6505 /* editProfileViewController.swift */,
 				FA2BAEEF2421518A002E6505 /* updateProfileViewController.swift */,
@@ -1015,9 +1015,9 @@
 				FA5D914F23F984C90004CBEB /* RegisterLocationVC.swift in Sources */,
 				8033E8BD24254FF900D0F2A0 /* ApiProtocol.swift in Sources */,
 				8033E78F24254D3600D0F2A0 /* Storyboards.swift in Sources */,
-				FA2BAEE8242100F6002E6505 /* Country.swift in Sources */,
+				FA2BAEE8242100F6002E6505 /* CountryModel.swift in Sources */,
 				FAAC60F623F839DD007EB8E7 /* RoundedViews.swift in Sources */,
-				FA2BAEE42421001E002E6505 /* countryViewController.swift in Sources */,
+				FA2BAEE42421001E002E6505 /* CountryViewController.swift in Sources */,
 				8033E8CA24254FF900D0F2A0 /* UIImageViewExtension.swift in Sources */,
 				FA6E33CF241FF50C00BFAFED /* FirstVC.swift in Sources */,
 				FA25201823FC3D4C004D8F32 /* CategoryVC.swift in Sources */,

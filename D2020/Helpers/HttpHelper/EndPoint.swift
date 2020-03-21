@@ -14,20 +14,5 @@ public enum EndPoint: String {
     case login
     case register
     case logout
-    case packages
-    case locations
-    case categories
-    case ads
-    case like
-    case favorite
-    case follow
-    case comment
-    case comments
-    case report = "ads/report"
-    case favorites
-    case advertisers
-    case settings
-    case notifications
-    case banks
-    case search = "ads/search"
+    case MainCountry
 }
