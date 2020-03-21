@@ -8,11 +8,9 @@
 
 import UIKit
 
-class CategoryCell: UICollectionViewCell {
+class HomeShopCell: UICollectionViewCell {
     
     @IBOutlet weak var categoryImage: UIImageView!
-    @IBOutlet weak var categoryLbl: UILabel!
-    @IBOutlet weak var categoryDesc: UILabel!
     @IBOutlet weak var coloredView: UIView!
     @IBOutlet weak var imageIcon: UIImageView!
     
@@ -22,8 +20,8 @@ class CategoryCell: UICollectionViewCell {
     @IBOutlet weak var coloredView2: UIView!
     @IBOutlet weak var imageIcon2: UIImageView!
     
-    @IBOutlet weak var categoryLbl2: UILabel!
-    @IBOutlet weak var categoryDesc2: UILabel!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var descLbl: UILabel!
     
     
     

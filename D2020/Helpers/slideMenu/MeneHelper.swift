@@ -39,7 +39,7 @@ class MenuHelper {
             SideMenuManager.default.menuLeftNavigationController = storyboard.instantiateViewController(withIdentifier: navID)
                 as? UISideMenuNavigationController
         }
-        SideMenuManager.default.menuAddPanGestureToPresent(toView: delegate?.navigationController!.navigationBar ?? UIView())
+        SideMenuManager.default.menuAddPanGestureToPresent(toView: delegate?.navigationController?.navigationBar ?? UIView())
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: delegate?.view ?? UIView())
         SideMenuManager.default.menuWidth = menuWidth
         SideMenuManager.default.menuPresentMode = .viewSlideInOut

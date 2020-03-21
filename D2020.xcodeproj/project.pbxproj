@@ -617,6 +617,14 @@
 			path = UIViewHelper;
 			sourceTree = "<group>";
 		};
+		807B1FE024264C9000F74A81 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FA60429123FC033700BC1C62 /* HomeVC.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		ADC3993193890F3C2FC2181A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,13 +750,13 @@
 		FA6294622406B64500308F25 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				807B1FE024264C9000F74A81 /* Main */,
 				8033E79724254DAA00D0F2A0 /* Core */,
 				FA5F546F23F5933B00E7F40B /* ViewController.swift */,
 				FA6E33D0241FF5F000BFAFED /* CurrentLocationVC.swift */,
 				FA5D914423F953DB0004CBEB /* newCustomer.swift */,
 				FA66C90E2403565D00CD6B95 /* NewAdsMan.swift */,
 				FA5D914E23F984C90004CBEB /* RegisterLocationVC.swift */,
-				FA60429123FC033700BC1C62 /* HomeVC.swift */,
 				FA60428F23FC026B00BC1C62 /* PromoContentVC.swift */,
 				FA25201723FC3D4C004D8F32 /* CategoryVC.swift */,
 				FA64D31723FEB6D000D18958 /* EachCategoryVC.swift */,

@@ -23,19 +23,17 @@ struct TableViewCategory {
     
 }
 
-class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class HomeVC: BaseController {
     @IBOutlet weak var pageView: UIView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var collectionView2: UICollectionView!
-    
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var tableViewB: UITableView!
     
-    @IBOutlet weak var sizeMenuConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var homeLbl: UILabel!
+    @IBOutlet weak var categoryLbl: UILabel!
     
   
     
@@ -67,15 +65,14 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     
     override func viewDidLoad() {
+        super.hiddenNav = true
         super.viewDidLoad()
         
         //SlideMenu
 //        profileImageView.layer.cornerRadius = 35
 //        viewConstraint.constant = -450
         
-        
-        sizeMenuConstraint.constant = 325
-        
+                
         Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(HomeVC.loadNextController), userInfo: nil, repeats: true)
         setPageViewController()
        
@@ -83,7 +80,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         collectionView2.dataSource = self
         
         collectionView.delegate = self
-               collectionView.dataSource = self
+        collectionView.dataSource = self
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -94,70 +91,15 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
         
     }
-    @IBAction func organizeBtnPressedB(_ sender: Any) {
-        
-       if isSideMenuHidden {
-            
-            sizeMenuConstraint.constant = 0
-            
-            UIView.animate(withDuration: 0.3, animations: {
-                
-                self.view.layoutIfNeeded()
-            })
-            
-            
-            
-            
-        }else{
-            UIView.animate(withDuration: 0.3, animations: {
-                self.view.layoutIfNeeded()
-            })
-            sizeMenuConstraint.constant = 325
-            
-        }
-        isSideMenuHidden = !isSideMenuHidden
-        
-        
-        
-        
-        
-        
-        
-    }
-    @IBAction func organizeBtnPressed(_ sender: Any) {
     
-   
-        
-        if isSideMenuHidden {
-            
-            sizeMenuConstraint.constant = 0
-            
-            UIView.animate(withDuration: 0.3, animations: {
-                
-                self.view.layoutIfNeeded()
-            })
-            
-            
-            
-            
-        }else{
-            UIView.animate(withDuration: 0.3, animations: {
-                self.view.layoutIfNeeded()
-            })
-            sizeMenuConstraint.constant = 325
-            
-        }
-        isSideMenuHidden = !isSideMenuHidden
-        
-        
-        
-        
-        
+    @IBAction func search(_ sender: Any) {
+    }
+    @IBAction func chat(_ sender: Any) {
     }
     
     
       private func setPageViewController(){
-          let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "promoPageVC") as? UIPageViewController
+        let pageVC = UIStoryboard.init(name: "Popup", bundle: nil).instantiateViewController(withIdentifier: "promoPageVCC") as? UIPageViewController
           pageVC?.dataSource
            = self
           
@@ -173,7 +115,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
       
       
 fileprivate func getViewController(atIndex index: Int) -> PromoContentVC {
-          let promoContentVC = self.storyboard?.instantiateViewController(withIdentifier: "promoContentVC") as! PromoContentVC
+          let promoContentVC = UIStoryboard.init(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "promoContentVC") as! PromoContentVC
     
         promoContentVC.imageName = arrayPageImage[index]
         promoContentVC.pageIndex = index
@@ -200,79 +142,11 @@ fileprivate func getViewController(atIndex index: Int) -> PromoContentVC {
     }
     
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 140
-        }
-    
-    
-    
-      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
-        if tableView == self.tableView {
-            return tableViewItems.count
-                }
-      else  {
-            return tableViewItemsB.count
-
-        }
-    }
-
-       
-       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if tableView == self.tableView {
-
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier:Identifiers.AgentCell , for: indexPath) as! AgentsCell
-        
-//        cell.imageAgent.image = UIImage(named: tableViewItems[indexPath.row].tableViewImg!)
-//
-//        cell.agentLbl.text = tableViewItems[indexPath.row].name
-//
-//        cell.agentDesc.text = tableViewItems[indexPath.row].tableViewDescription
-//        cell.bkImageAgent.image = UIImage(named: tableViewItems[indexPath.row].bkImage!)
-//
-//               return cell
-//           }
-//
-//
-//}
-        
-
-        cell.imageAgent.image = UIImage(named: tableViewItems[indexPath.row].tableViewImg!)
-                  cell.agentLbl.text = tableViewItems[indexPath.row].name
-                 cell.agentDesc.text = tableViewItems[indexPath.row].tableViewDescription
-                        cell.bkImageAgent.image = UIImage(named: tableViewItems[indexPath.row].bkImage!)
-                         
-                                        return cell
-                                    
-        }
-        else{
-        let cell2 = tableView.dequeueReusableCell(withIdentifier: Identifiers.AgentCell, for: indexPath) as! AgentsCell
-        cell2.imageAgentB.image = UIImage(named: tableViewItemsB[indexPath.row].tableViewImg!)
-        cell2.agentLblB.text = items2[indexPath.item].name
-        cell2.agentDescB.text = tableViewItemsB[indexPath.row].tableViewDescription
-        cell2.bkImageB.image = UIImage(named: tableViewItemsB[indexPath.row].bkImage!)
-
-              
-              
-              return cell2
-                 }
-       
-}
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView == self.tableView {
-            let storyboard = UIStoryboard(name: "Drivers", bundle: nil)
-            let navC = storyboard.instantiateViewController(withIdentifier: "navC") as! UINavigationController
-//            let driversMapVC = (navC.viewControllers[0] as? DriversMapVC)!
-            self.present(navC, animated: false, completion: nil)
-        }
-    }
+   
 }
 //extension uipageviewcontrollerdatasource
 
-extension HomeVC :UIPageViewControllerDataSource {
+extension HomeVC : UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let pageContentVC = viewController as! PromoContentVC
         var index = pageContentVC.pageIndex
@@ -298,7 +172,65 @@ extension HomeVC :UIPageViewControllerDataSource {
         return getViewController(atIndex: index)
     }
 }
-extension HomeVC : UICollectionViewDelegateFlowLayout, UICollectionViewDelegate,UICollectionViewDataSource {
+
+extension HomeVC: UITableViewDelegate,UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
+        
+        
+        
+          func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+             
+              if tableView == self.tableView {
+                  return tableViewItems.count
+                      }
+            else  {
+                  return tableViewItemsB.count
+
+              }
+          }
+
+           
+           func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            
+            if tableView == self.tableView {
+
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier:Identifiers.AgentCell , for: indexPath) as! AgentsCell
+            cell.imageAgent.image = UIImage(named: tableViewItems[indexPath.row].tableViewImg!)
+            cell.agentLbl.text = tableViewItems[indexPath.row].name
+            cell.agentDesc.text = tableViewItems[indexPath.row].tableViewDescription
+            cell.bkImageAgent.image = UIImage(named: tableViewItems[indexPath.row].bkImage!)
+                             
+            return cell
+                                        
+            }
+            else{
+            let cell2 = tableView.dequeueReusableCell(withIdentifier: Identifiers.AgentCell, for: indexPath) as! AgentsCell
+            cell2.imageAgentB.image = UIImage(named: tableViewItemsB[indexPath.row].tableViewImg!)
+            cell2.agentLblB.text = items2[indexPath.item].name
+            cell2.agentDescB.text = tableViewItemsB[indexPath.row].tableViewDescription
+            cell2.bkImageB.image = UIImage(named: tableViewItemsB[indexPath.row].bkImage!)
+
+                  
+                  
+                  return cell2
+                     }
+           
+    }
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            if tableView == self.tableView {
+                let storyboard = UIStoryboard(name: "Drivers", bundle: nil)
+                let navC = storyboard.instantiateViewController(withIdentifier: "navC") as! UINavigationController
+    //            let driversMapVC = (navC.viewControllers[0] as? DriversMapVC)!
+                self.present(navC, animated: false, completion: nil)
+            }
+        }
+}
+extension HomeVC : UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionView {
@@ -308,51 +240,37 @@ extension HomeVC : UICollectionViewDelegateFlowLayout, UICollectionViewDelegate,
 
        }
        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.CategoryCell, for: indexPath) as? CategoryCell
-        
-        
-//        cell?.categoryImage.image = UIImage(named: items[indexPath.item].imageName!)
-        
-//        cell?.categoryLbl.text = items[indexPath.item].name
-//        cell?.categoryDesc.text = items[indexPath.item].description
-//        cell?.imageIcon.image = UIImage(named: items[indexPath.item].imageIcon!)
-        
-        
-
         if collectionView == self.collectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.CategoryCell, for: indexPath) as! CategoryCell
-            
+            let cell = collectionView.cell(type: HomeShopCell.self, indexPath, register: false)
             cell.categoryImage.image = UIImage(named: items[indexPath.item].imageName!)
-            cell.categoryLbl.text = items[indexPath.item].name
-            cell.categoryDesc.text = items[indexPath.item].description
-                   cell.imageIcon.image = UIImage(named: items[indexPath.item].imageIcon!)
-
-
+            cell.titleLbl.text = items[indexPath.item].name
+            cell.descLbl.text = items[indexPath.item].description
+            cell.imageIcon.image = UIImage(named: items[indexPath.item].imageIcon!)
             return cell
         }
-        let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.CategoryCell, for: indexPath) as! CategoryCell
+        let cell2 = collectionView.cell(type: HomeShopCell.self, indexPath, register: false)
         cell2.categoryImage2.image = UIImage(named: items2[indexPath.item].imageName!)
-        cell2.categoryLbl2.text = items2[indexPath.item].name
-        cell2.categoryDesc2.text = items2[indexPath.item].description
-               cell2.imageIcon2.image = UIImage(named: items2[indexPath.item].imageIcon!)
+        cell2.titleLbl.text = items2[indexPath.item].name
+        cell2.descLbl.text = items2[indexPath.item].description
+        cell2.imageIcon2.image = UIImage(named: items2[indexPath.item].imageIcon!)
 
         
         
         return cell2
-           }
+    }
           
-       //(10) d lly btt7km f 7gm l cell lyy htt3rdly 7sb 7gm l telephone lly h3rd 3leh
-           func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+      //(10) d lly btt7km f 7gm l cell lyy htt3rdly 7sb 7gm l telephone lly h3rd 3leh
+                func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-           //bt3rd l width bta3 l mobile
-               let width = view.frame.width
-               //(11) moheeeeemaaaaa ->na2s 30 34an 3ndi 10 3lymen w 10 3l 4mal w 10 l min soacing fhib2o 30 lly homa m4 mst5dmnhom,y3ni hn5li l width bta3 l collectionView m2som 3la 5lyten bs y3ni hn3rd 5lyten hna bs f msa7a l collectionView kolha
-               let cellWidth = (width - 200)
-            let cellHeight =   cellWidth * 1
+                //bt3rd l width bta3 l mobile
+                    let width = view.frame.width
+                    //(11) moheeeeemaaaaa ->na2s 30 34an 3ndi 10 3lymen w 10 3l 4mal w 10 l min soacing fhib2o 30 lly homa m4 mst5dmnhom,y3ni hn5li l width bta3 l collectionView m2som 3la 5lyten bs y3ni hn3rd 5lyten hna bs f msa7a l collectionView kolha
+                    let cellWidth = (width - 200)
+                 let cellHeight =   cellWidth * 1
 
-            return CGSize(width: cellWidth, height: cellHeight)
+                 return CGSize(width: cellWidth, height: cellHeight)
 
-       }
+            }
     
     
        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -377,9 +295,8 @@ extension HomeVC : UICollectionViewDelegateFlowLayout, UICollectionViewDelegate,
 //            }
 //        }
 }
-       
     
     
     
-    
+
 
