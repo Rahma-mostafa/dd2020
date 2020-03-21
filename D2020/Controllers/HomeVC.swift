@@ -260,6 +260,15 @@ fileprivate func getViewController(atIndex index: Int) -> PromoContentVC {
                  }
        
 }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == self.tableView {
+            let storyboard = UIStoryboard(name: "Drivers", bundle: nil)
+            let navC = storyboard.instantiateViewController(withIdentifier: "navC") as! UINavigationController
+//            let driversMapVC = (navC.viewControllers[0] as? DriversMapVC)!
+            self.present(navC, animated: false, completion: nil)
+        }
+    }
 }
 //extension uipageviewcontrollerdatasource
 
@@ -347,12 +356,18 @@ extension HomeVC : UICollectionViewDelegateFlowLayout, UICollectionViewDelegate,
     
     
        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedCategory = items[indexPath.item].name
-        selectedCategory = items[indexPath.item].description
-//        selectedCategory = UIImage(named: items[indexPath.item].imageName!)
         
+<<<<<<< HEAD
               //  performSegue(withIdentifier: Segues.ToProducts, sender: self)
 
+=======
+            selectedCategory = items[indexPath.item].name
+                    selectedCategory = items[indexPath.item].description
+            //        selectedCategory = UIImage(named: items[indexPath.item].imageName!)
+                    
+                            performSegue(withIdentifier: Segues.ToProducts, sender: self)
+        
+>>>>>>> origin/Drivers-Ahmad-1
         }
 //        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //            if segue.identifier == Segues.ToProducts {
