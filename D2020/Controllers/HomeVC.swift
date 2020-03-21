@@ -357,17 +357,17 @@ extension HomeVC : UICollectionViewDelegateFlowLayout, UICollectionViewDelegate,
     
        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-<<<<<<< HEAD
+//<<<<<<< HEAD
               //  performSegue(withIdentifier: Segues.ToProducts, sender: self)
 
-=======
+    //=======
             selectedCategory = items[indexPath.item].name
                     selectedCategory = items[indexPath.item].description
-            //        selectedCategory = UIImage(named: items[indexPath.item].imageName!)
+            //       selectedCategory = UIImage(named: items[indexPath.item].imageName!)
                     
-                            performSegue(withIdentifier: Segues.ToProducts, sender: self)
+                            //performSegue(withIdentifier: Segues.ToProducts, sender: self)
         
->>>>>>> origin/Drivers-Ahmad-1
+//>>>>>>> origin/Drivers-Ahmad-1
         }
 //        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //            if segue.identifier == Segues.ToProducts {
