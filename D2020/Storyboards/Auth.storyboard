@@ -217,6 +217,9 @@
                                                         <state key="normal" title="تطبيق">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="apply:" destination="0ys-ah-1LB" eventType="touchUpInside" id="Ye5-ot-E3j"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -290,7 +293,7 @@
         <!--FirstVC-->
         <scene sceneID="8D9-EL-APX">
             <objects>
-                <viewController storyboardIdentifier="sbRed" id="K5w-a1-3kw" customClass="FirstVC" customModule="D2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstVC" id="K5w-a1-3kw" customClass="FirstVC" customModule="D2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jPT-pu-ntx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -452,7 +455,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="93I-L3-uC6" firstAttribute="leading" secondItem="h8P-yP-bRP" secondAttribute="leading" constant="24" id="010-hV-fPV"/>
                             <constraint firstItem="dtQ-mi-v0v" firstAttribute="leading" secondItem="h8P-yP-bRP" secondAttribute="leading" constant="20" id="2Kq-b3-A4Z"/>
@@ -746,7 +749,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="او عن طريق" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcN-hs-Lbj">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="27"/>
                                                 <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="17"/>
-                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -3305,7 +3308,7 @@
         <image name="d2020logo" width="394" height="128"/>
         <image name="delegate" width="64" height="64"/>
         <image name="forward-arrow-black" width="25" height="25"/>
-        <image name="left" width="16" height="16"/>
+        <image name="left" width="29" height="24"/>
         <image name="logo" width="141" height="66"/>
         <image name="map" width="19.5" height="24"/>
         <image name="more" width="24" height="20"/>

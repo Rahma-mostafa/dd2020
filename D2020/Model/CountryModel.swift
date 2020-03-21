@@ -7,11 +7,11 @@
 //
 
 import UIKit
-struct Country: Decodable {
+struct Country: Codable {
     var status: Bool?
     var data: [CountryData]?
    
-    struct CountryData: Decodable {
+    struct CountryData: Codable {
         var id: Int?
         var code: Int?
         var file: String?

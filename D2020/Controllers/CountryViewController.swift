@@ -15,9 +15,19 @@ class CountryViewController: BaseController {
     
     
     var countries: [Country.CountryData] = []
-    
     var selectedCountry: Int?
-    
+    var selectedLang: String?
+    static var deviceCountry: Country.CountryData? {
+        set {
+            guard let value = newValue else { return }
+            let data = try? JSONEncoder().encode(value)
+            UserDefaults.standard.set(data, forKey: "COUNTRY_DATA")
+        } get {
+            let data = UserDefaults.standard.data(forKey: "COUNTRY_DATA")
+            let model = try? JSONDecoder().decode(Country.CountryData.self, from: data ?? Data())
+            return model
+        }
+    }
     
     override func viewDidLoad() {
         super.hiddenNav = true
@@ -43,14 +53,21 @@ class CountryViewController: BaseController {
     @IBAction func onLanguageButtonTapped(_ sender: Any) {
         languageButtton1.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
         languageButtton2.backgroundColor = .white
+        selectedLang = "ar"
 
     }
     
     @IBAction func onLanguageButtonTapped2(_ sender: Any) {
         languageButtton2.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
         languageButtton1.backgroundColor = .white
+        selectedLang = "en"
     }
-
+    @IBAction func apply(_ sender: Any) {
+        Localizer.set(language: selectedLang ?? "ar")
+        CountryViewController.deviceCountry = countries[selectedCountry ?? 0]
+        let vc = controller(FirstVC.self, storyboard: .auth)
+        push(vc)
+    }
 }
 
 extension CountryViewController: UITableViewDelegate, UITableViewDataSource {
