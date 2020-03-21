@@ -26,6 +26,7 @@
 		CD472DF3242259660017E43C /* DriversVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DF2242259660017E43C /* DriversVC.swift */; };
 		CD472DF5242259870017E43C /* DriversCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DF4242259870017E43C /* DriversCell.swift */; };
 		CD472DFF24226D9F0017E43C /* MapAnnotationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DFE24226D9F0017E43C /* MapAnnotationsView.swift */; };
+		CD913A602425EB6E005EB22A /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD913A5F2425EB6E005EB22A /* MapVC.swift */; };
 		CDBE4D392424C60D0034511B /* SendOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBE4D382424C60D0034511B /* SendOrderVC.swift */; };
 		CDBE4D3B2424E4960034511B /* ExtIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBE4D3A2424E4960034511B /* ExtIndicator.swift */; };
 		CDC916C72424A71A00639528 /* Drivers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDC916C62424A71A00639528 /* Drivers.storyboard */; };
@@ -132,6 +133,7 @@
 		CD472DF2242259660017E43C /* DriversVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversVC.swift; sourceTree = "<group>"; };
 		CD472DF4242259870017E43C /* DriversCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversCell.swift; sourceTree = "<group>"; };
 		CD472DFE24226D9F0017E43C /* MapAnnotationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationsView.swift; sourceTree = "<group>"; };
+		CD913A5F2425EB6E005EB22A /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		CDBE4D382424C60D0034511B /* SendOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOrderVC.swift; sourceTree = "<group>"; };
 		CDBE4D3A2424E4960034511B /* ExtIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtIndicator.swift; sourceTree = "<group>"; };
 		CDC916C62424A71A00639528 /* Drivers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drivers.storyboard; sourceTree = "<group>"; };
@@ -249,6 +251,38 @@
 				7CD42E7013F938C7FA37C420 /* Pods_D2020.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD7504752425405E001312D0 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				CD7504782425407C001312D0 /* Model */,
+				CD75047724254074001312D0 /* View */,
+				CD7504762425406B001312D0 /* Controller */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		CD7504762425406B001312D0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD913A5F2425EB6E005EB22A /* MapVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD75047724254074001312D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD7504782425407C001312D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CDC916C22424A68C00639528 /* Drivers */ = {
@@ -375,6 +409,7 @@
 		FA5F546A23F5933B00E7F40B /* D2020 */ = {
 			isa = PBXGroup;
 			children = (
+				CD7504752425405E001312D0 /* Map */,
 				CDC916C22424A68C00639528 /* Drivers */,
 				FA25202223FC4729004D8F32 /* Utils */,
 				FA25202123FC3E4E004D8F32 /* Xibs */,
@@ -618,6 +653,7 @@
 				521CC4B3241F7379007803FD /* optionTableViewCell.swift in Sources */,
 				FA64D31823FEB6D000D18958 /* EachCategoryVC.swift in Sources */,
 				CDBE4D3B2424E4960034511B /* ExtIndicator.swift in Sources */,
+				CD913A602425EB6E005EB22A /* MapVC.swift in Sources */,
 				5202ECEC241EE6AD007E10F6 /* optionViewController.swift in Sources */,
 				FA2BAEDA2420D884002E6505 /* AddProductShopVC.swift in Sources */,
 				FA6D98E4241121F400D71D3C /* ShopsAddedCell.swift in Sources */,
