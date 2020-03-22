@@ -1490,7 +1490,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1e-ue-E3c">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1e-ue-E3c">
                                 <rect key="frame" x="80" y="114" width="334" height="699"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="89e383d6895717eb3d5e76fb6f9835f5" translatesAutoresizingMaskIntoConstraints="NO" id="hWd-EV-bdN">
