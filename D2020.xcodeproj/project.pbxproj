@@ -96,6 +96,8 @@
 		CD472DF3242259660017E43C /* DriversVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DF2242259660017E43C /* DriversVC.swift */; };
 		CD472DF5242259870017E43C /* DriversCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DF4242259870017E43C /* DriversCell.swift */; };
 		CD472DFF24226D9F0017E43C /* MapAnnotationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD472DFE24226D9F0017E43C /* MapAnnotationsView.swift */; };
+		CD4A95B924273DB4000A6AE8 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A95B824273DB4000A6AE8 /* MapVC.swift */; };
+		CD4A95E124274B32000A6AE8 /* SubTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A95E024274B31000A6AE8 /* SubTypeCell.swift */; };
 		FA1FEF24240ED1FE002AABE7 /* PremiumProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FEF23240ED1FE002AABE7 /* PremiumProductsVC.swift */; };
 		FA1FEF26240ED23F002AABE7 /* PremiumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FEF25240ED23F002AABE7 /* PremiumVC.swift */; };
 		FA25201823FC3D4C004D8F32 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA25201723FC3D4C004D8F32 /* CategoryVC.swift */; };
@@ -266,6 +268,8 @@
 		CD472DF2242259660017E43C /* DriversVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversVC.swift; sourceTree = "<group>"; };
 		CD472DF4242259870017E43C /* DriversCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversCell.swift; sourceTree = "<group>"; };
 		CD472DFE24226D9F0017E43C /* MapAnnotationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationsView.swift; sourceTree = "<group>"; };
+		CD4A95B824273DB4000A6AE8 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		CD4A95E024274B31000A6AE8 /* SubTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubTypeCell.swift; sourceTree = "<group>"; };
 		E7C056DC252C8D810D8813CA /* Pods-D2020.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-D2020.release.xcconfig"; path = "Target Support Files/Pods-D2020/Pods-D2020.release.xcconfig"; sourceTree = "<group>"; };
 		FA1FEF23240ED1FE002AABE7 /* PremiumProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumProductsVC.swift; sourceTree = "<group>"; };
 		FA1FEF25240ED23F002AABE7 /* PremiumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumVC.swift; sourceTree = "<group>"; };
@@ -642,6 +646,22 @@
 			path = Drivers;
 			sourceTree = "<group>";
 		};
+		CD4A95B724273D90000A6AE8 /* TabBarMap */ = {
+			isa = PBXGroup;
+			children = (
+				CD4A95B824273DB4000A6AE8 /* MapVC.swift */,
+			);
+			path = TabBarMap;
+			sourceTree = "<group>";
+		};
+		CD4A95DB24274888000A6AE8 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				CD4A95E024274B31000A6AE8 /* SubTypeCell.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
 		FA25201923FC3DE1004D8F32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -658,6 +678,7 @@
 		FA25201C23FC3E0A004D8F32 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CD4A95DB24274888000A6AE8 /* MapView */,
 				FA64D31A23FEB91A00D18958 /* SubCategoryCell.xib */,
 				8033E79024254D8F00D0F2A0 /* Core */,
 				FAAC60F523F839DD007EB8E7 /* RoundedViews.swift */,
@@ -750,6 +771,7 @@
 		FA6294622406B64500308F25 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CD4A95B724273D90000A6AE8 /* TabBarMap */,
 				807B1FE024264C9000F74A81 /* Main */,
 				8033E79724254DAA00D0F2A0 /* Core */,
 				FA5F546F23F5933B00E7F40B /* ViewController.swift */,
@@ -1017,6 +1039,7 @@
 				8033E8CF24254FF900D0F2A0 /* LocationHelper.swift in Sources */,
 				FA25201B23FC3DF4004D8F32 /* Category.swift in Sources */,
 				FA66FE75240FB0A700AFC774 /* PremiumWorkTimeCell.swift in Sources */,
+				CD4A95B924273DB4000A6AE8 /* MapVC.swift in Sources */,
 				FA53ED86240682BB00A037E9 /* WalkthroughPageViewController.swift in Sources */,
 				FA1FEF24240ED1FE002AABE7 /* PremiumProductsVC.swift in Sources */,
 				8033E7D524254E3100D0F2A0 /* SwifterSwift.swift in Sources */,
@@ -1046,6 +1069,7 @@
 				8033E78024254D0100D0F2A0 /* TokenModel.swift in Sources */,
 				8033E79524254D9000D0F2A0 /* ExtensionUICollectionViewCell.swift in Sources */,
 				8033E79424254D9000D0F2A0 /* CellProtocol.swift in Sources */,
+				CD4A95E124274B32000A6AE8 /* SubTypeCell.swift in Sources */,
 				8033E8FE24254FF900D0F2A0 /* RadioView.swift in Sources */,
 				FA62946E2406B86400308F25 /* ATCWalkthroughModel.swift in Sources */,
 				FA62946B2406B73100308F25 /* ATCWalkthroughViewController.swift in Sources */,
