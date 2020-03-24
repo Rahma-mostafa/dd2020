@@ -11,7 +11,7 @@ class BaseApi: Paginator, Alertable {
     }
     func refresh() {
         setupObject()
-        paginate()
+        //paginate()
     }
     func setupObject() {
         headers["version"] = Constants.version

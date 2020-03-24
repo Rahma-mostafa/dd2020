@@ -8,7 +8,7 @@
 
 import UIKit
 
-class changeCityTableViewCell: UITableViewCell {
+class ChangeCityTableViewCell: UITableViewCell {
 
     @IBOutlet weak var closeButton: UIButton!
     

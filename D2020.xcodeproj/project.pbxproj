@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		34565C36D13772A3A4FE7FF1 /* Pods_D2020.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CD42E7013F938C7FA37C420 /* Pods_D2020.framework */; };
-		5202ECEC241EE6AD007E10F6 /* optionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202ECEB241EE6AD007E10F6 /* optionViewController.swift */; };
-		521CC4B3241F7379007803FD /* optionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CC4B2241F7379007803FD /* optionTableViewCell.swift */; };
-		521CC4B5241F7459007803FD /* option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CC4B4241F7459007803FD /* option.swift */; };
-		521CC4B7241F898F007803FD /* changeCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CC4B6241F898F007803FD /* changeCityViewController.swift */; };
-		521CC4B9241F8AF8007803FD /* changeCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CC4B8241F8AF8007803FD /* changeCityTableViewCell.swift */; };
+		5202ECEC241EE6AD007E10F6 /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202ECEB241EE6AD007E10F6 /* OptionViewController.swift */; };
+		521B80D424282B9500CB1709 /* SubCategoryAndShops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B80D324282B9500CB1709 /* SubCategoryAndShops.swift */; };
+		521B80D62428462F00CB1709 /* ShopsByCatID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B80D52428462F00CB1709 /* ShopsByCatID.swift */; };
+		521C0C8824262EFB00EC674B /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C0C8724262EFB00EC674B /* CategoryModel.swift */; };
+		521C0C8C2426C33C00EC674B /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C0C8B2426C33C00EC674B /* City.swift */; };
+		521C0C8E2426C96B00EC674B /* city.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C0C8D2426C96B00EC674B /* city.swift */; };
+		521CC4B3241F7379007803FD /* OptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CC4B2241F7379007803FD /* OptionTableViewCell.swift */; };
+		521CC4B5241F7459007803FD /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CC4B4241F7459007803FD /* Option.swift */; };
+		521CC4B7241F898F007803FD /* ChangeCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CC4B6241F898F007803FD /* ChangeCityViewController.swift */; };
+		521CC4B9241F8AF8007803FD /* ChangeCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CC4B8241F8AF8007803FD /* ChangeCityTableViewCell.swift */; };
 		52E64929241E22DD00B2B0AE /* shopTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E64928241E22DD00B2B0AE /* shopTypeViewController.swift */; };
 		52E6492B241E292300B2B0AE /* shopTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6492A241E292300B2B0AE /* shopTypeTableViewCell.swift */; };
 		52E6492D241E34FA00B2B0AE /* shopType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6492C241E34FA00B2B0AE /* shopType.swift */; };
 		52E6492F241E749300B2B0AE /* cityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6492E241E749300B2B0AE /* cityViewController.swift */; };
 		52E64931241E792100B2B0AE /* cityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E64930241E792100B2B0AE /* cityTableViewCell.swift */; };
-		52E64933241E7CA700B2B0AE /* city.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E64932241E7CA700B2B0AE /* city.swift */; };
 		52E8672B241D2C2C00D7CBBC /* catagoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8672A241D2C2C00D7CBBC /* catagoryTableViewController.swift */; };
 		52E8672D241D2C7200D7CBBC /* catagoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8672C241D2C7100D7CBBC /* catagoryTableViewCell.swift */; };
 		52E8672F241D2CBF00D7CBBC /* products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8672E241D2CBF00D7CBBC /* products.swift */; };
@@ -175,17 +179,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5202ECEB241EE6AD007E10F6 /* optionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = optionViewController.swift; sourceTree = "<group>"; };
-		521CC4B2241F7379007803FD /* optionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = optionTableViewCell.swift; sourceTree = "<group>"; };
-		521CC4B4241F7459007803FD /* option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = option.swift; sourceTree = "<group>"; };
-		521CC4B6241F898F007803FD /* changeCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeCityViewController.swift; sourceTree = "<group>"; };
-		521CC4B8241F8AF8007803FD /* changeCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeCityTableViewCell.swift; sourceTree = "<group>"; };
+		5202ECEB241EE6AD007E10F6 /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
+		521B80D324282B9500CB1709 /* SubCategoryAndShops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryAndShops.swift; sourceTree = "<group>"; };
+		521B80D52428462F00CB1709 /* ShopsByCatID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsByCatID.swift; sourceTree = "<group>"; };
+		521C0C8724262EFB00EC674B /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		521C0C8B2426C33C00EC674B /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		521C0C8D2426C96B00EC674B /* city.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = city.swift; sourceTree = "<group>"; };
+		521CC4B2241F7379007803FD /* OptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTableViewCell.swift; sourceTree = "<group>"; };
+		521CC4B4241F7459007803FD /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		521CC4B6241F898F007803FD /* ChangeCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCityViewController.swift; sourceTree = "<group>"; };
+		521CC4B8241F8AF8007803FD /* ChangeCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCityTableViewCell.swift; sourceTree = "<group>"; };
 		52E64928241E22DD00B2B0AE /* shopTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shopTypeViewController.swift; sourceTree = "<group>"; };
 		52E6492A241E292300B2B0AE /* shopTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shopTypeTableViewCell.swift; sourceTree = "<group>"; };
 		52E6492C241E34FA00B2B0AE /* shopType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shopType.swift; sourceTree = "<group>"; };
 		52E6492E241E749300B2B0AE /* cityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cityViewController.swift; sourceTree = "<group>"; };
 		52E64930241E792100B2B0AE /* cityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cityTableViewCell.swift; sourceTree = "<group>"; };
-		52E64932241E7CA700B2B0AE /* city.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = city.swift; sourceTree = "<group>"; };
 		52E8672A241D2C2C00D7CBBC /* catagoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = catagoryTableViewController.swift; sourceTree = "<group>"; };
 		52E8672C241D2C7100D7CBBC /* catagoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = catagoryTableViewCell.swift; sourceTree = "<group>"; };
 		52E8672E241D2CBF00D7CBBC /* products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = products.swift; sourceTree = "<group>"; };
@@ -367,6 +375,25 @@
 				E7C056DC252C8D810D8813CA /* Pods-D2020.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5236E4F3242A171E00B232DD /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				FA25201723FC3D4C004D8F32 /* CategoryVC.swift */,
+				FA64D31723FEB6D000D18958 /* EachCategoryVC.swift */,
+				FA5C6DDA24015A1700E11A98 /* SelectedCategoryVC.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		5236E4F4242A174E00B232DD /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				521CC4B6241F898F007803FD /* ChangeCityViewController.swift */,
+				5202ECEB241EE6AD007E10F6 /* OptionViewController.swift */,
+			);
+			path = PopUp;
 			sourceTree = "<group>";
 		};
 		8033E77724254D0100D0F2A0 /* Core */ = {
@@ -643,6 +670,11 @@
 				FA2BAEDF2420D9CB002E6505 /* slideShow.swift */,
 				FA2BAEE7242100F6002E6505 /* CountryModel.swift */,
 				FA62946D2406B86400308F25 /* ATCWalkthroughModel.swift */,
+				521C0C8724262EFB00EC674B /* CategoryModel.swift */,
+				521C0C8B2426C33C00EC674B /* City.swift */,
+				521B80D324282B9500CB1709 /* SubCategoryAndShops.swift */,
+				521B80D52428462F00CB1709 /* ShopsByCatID.swift */,
+				521CC4B4241F7459007803FD /* Option.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -674,8 +706,11 @@
 				FA2BAEE524210086002E6505 /* CountryTableViewCell.swift */,
 				FA6294732406D03700308F25 /* PageControlTests.swift */,
 				FA6294752406D0A000308F25 /* PageControlUITests.swift */,
-				CD472DF4242259870017E43C /* DriversCell.swift */,
 				CD472DFE24226D9F0017E43C /* MapAnnotationsView.swift */,
+				521CC4B8241F8AF8007803FD /* ChangeCityTableViewCell.swift */,
+				CD472DF4242259870017E43C /* DriversCell.swift */,
+				521CC4B2241F7379007803FD /* OptionTableViewCell.swift */,
+				FA5680E923FB519C0099F94C /* Font */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -718,7 +753,6 @@
 				8033E80424254FF900D0F2A0 /* Helpers */,
 				FA25201C23FC3E0A004D8F32 /* View */,
 				FA25201923FC3DE1004D8F32 /* Model */,
-				FA5680E923FB519C0099F94C /* Font */,
 				FA6294622406B64500308F25 /* Controllers */,
 				FA5F547423F5934000E7F40B /* Assets.xcassets */,
 				52E8672C241D2C7100D7CBBC /* catagoryTableViewCell.swift */,
@@ -729,12 +763,7 @@
 				52E6492C241E34FA00B2B0AE /* shopType.swift */,
 				52E6492E241E749300B2B0AE /* cityViewController.swift */,
 				52E64930241E792100B2B0AE /* cityTableViewCell.swift */,
-				52E64932241E7CA700B2B0AE /* city.swift */,
-				5202ECEB241EE6AD007E10F6 /* optionViewController.swift */,
-				521CC4B2241F7379007803FD /* optionTableViewCell.swift */,
-				521CC4B4241F7459007803FD /* option.swift */,
-				521CC4B6241F898F007803FD /* changeCityViewController.swift */,
-				521CC4B8241F8AF8007803FD /* changeCityTableViewCell.swift */,
+				521C0C8D2426C96B00EC674B /* city.swift */,
 			);
 			path = D2020;
 			sourceTree = "<group>";
@@ -742,6 +771,8 @@
 		FA6294622406B64500308F25 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5236E4F4242A174E00B232DD /* PopUp */,
+				5236E4F3242A171E00B232DD /* Category */,
 				8033E79724254DAA00D0F2A0 /* Core */,
 				FA5F546F23F5933B00E7F40B /* ViewController.swift */,
 				FA6E33D0241FF5F000BFAFED /* CurrentLocationVC.swift */,
@@ -750,9 +781,6 @@
 				FA5D914E23F984C90004CBEB /* RegisterLocationVC.swift */,
 				FA60429123FC033700BC1C62 /* HomeVC.swift */,
 				FA60428F23FC026B00BC1C62 /* PromoContentVC.swift */,
-				FA25201723FC3D4C004D8F32 /* CategoryVC.swift */,
-				FA64D31723FEB6D000D18958 /* EachCategoryVC.swift */,
-				FA5C6DDA24015A1700E11A98 /* SelectedCategoryVC.swift */,
 				FACD6513240177A400B65A08 /* ProfileVC.swift */,
 				FACD6511240176F500B65A08 /* ProfileContentVC.swift */,
 				FA53ED8324067BF800A037E9 /* WalkThroughContentVC.swift */,
@@ -946,13 +974,14 @@
 				52E8672F241D2CBF00D7CBBC /* products.swift in Sources */,
 				8033E8D424254FF900D0F2A0 /* SideMenuManager.swift in Sources */,
 				8033E7E924254E3100D0F2A0 /* UIBarButtonItemExtensions.swift in Sources */,
-				521CC4B9241F8AF8007803FD /* changeCityTableViewCell.swift in Sources */,
+				521CC4B9241F8AF8007803FD /* ChangeCityTableViewCell.swift in Sources */,
 				52E64931241E792100B2B0AE /* cityTableViewCell.swift in Sources */,
 				FA6D98E62411242500D71D3C /* AddShopVC.swift in Sources */,
 				FA6E33D1241FF5F000BFAFED /* CurrentLocationVC.swift in Sources */,
 				CD472DFF24226D9F0017E43C /* MapAnnotationsView.swift in Sources */,
 				8033E90624254FF900D0F2A0 /* UITabHelper.swift in Sources */,
 				8033E79624254D9000D0F2A0 /* ExtensionUITableViewCell.swift in Sources */,
+				521C0C8824262EFB00EC674B /* CategoryModel.swift in Sources */,
 				8033E8FD24254FF900D0F2A0 /* RadioButton.swift in Sources */,
 				8033E8E824254FF900D0F2A0 /* SwipeRefresh.swift in Sources */,
 				FA64D31F23FEB97300D18958 /* AfterSelectingCell.swift in Sources */,
@@ -960,9 +989,8 @@
 				52E8672B241D2C2C00D7CBBC /* catagoryTableViewController.swift in Sources */,
 				FA2BAEDE2420D9A0002E6505 /* slideShowCollectionViewCell.swift in Sources */,
 				8033E8A124254FF900D0F2A0 /* AlertableHelper.swift in Sources */,
-				52E64933241E7CA700B2B0AE /* city.swift in Sources */,
 				CD472DF02422509D0017E43C /* DriversMapVC.swift in Sources */,
-				521CC4B7241F898F007803FD /* changeCityViewController.swift in Sources */,
+				521CC4B7241F898F007803FD /* ChangeCityViewController.swift in Sources */,
 				FA66C90F2403565E00CD6B95 /* NewAdsMan.swift in Sources */,
 				FA2BAEE624210086002E6505 /* CountryTableViewCell.swift in Sources */,
 				FA53ED88240687DE00A037E9 /* WalkthroughVC.swift in Sources */,
@@ -981,10 +1009,10 @@
 				FA66FE7B240FEF0D00AFC774 /* PremiumServicesCell.swift in Sources */,
 				FA6294672406B6EA00308F25 /* ATCClassicWalkthroughViewController.swift in Sources */,
 				8033E77D24254D0100D0F2A0 /* BaseModel.swift in Sources */,
-				521CC4B3241F7379007803FD /* optionTableViewCell.swift in Sources */,
+				521CC4B3241F7379007803FD /* OptionTableViewCell.swift in Sources */,
 				FA64D31823FEB6D000D18958 /* EachCategoryVC.swift in Sources */,
 				8033E8BB24254FF900D0F2A0 /* ApiHelpers.swift in Sources */,
-				5202ECEC241EE6AD007E10F6 /* optionViewController.swift in Sources */,
+				5202ECEC241EE6AD007E10F6 /* OptionViewController.swift in Sources */,
 				FA2BAEDA2420D884002E6505 /* AddProductShopVC.swift in Sources */,
 				8033E8D324254FF900D0F2A0 /* PickerViewHelper.swift in Sources */,
 				FA6D98E4241121F400D71D3C /* ShopsAddedCell.swift in Sources */,
@@ -1059,6 +1087,7 @@
 				FA5F546C23F5933B00E7F40B /* AppDelegate.swift in Sources */,
 				FA2BAEEE24214CAB002E6505 /* editProfileViewController.swift in Sources */,
 				FA60429223FC033700BC1C62 /* HomeVC.swift in Sources */,
+				521C0C8E2426C96B00EC674B /* city.swift in Sources */,
 				8033E7F724254E3100D0F2A0 /* UISearchBarExtensions.swift in Sources */,
 				FA66FE73240FAF9D00AFC774 /* PremiumWorkTimeVC.swift in Sources */,
 				8033E76B24254CA200D0F2A0 /* Constants.swift in Sources */,
@@ -1069,7 +1098,7 @@
 				FA6294742406D03700308F25 /* PageControlTests.swift in Sources */,
 				FA66FE79240FC02000AFC774 /* PremiumContactsCell.swift in Sources */,
 				FA707D232418F878001BC8CE /* PromoContentVCC.swift in Sources */,
-				521CC4B5241F7459007803FD /* option.swift in Sources */,
+				521CC4B5241F7459007803FD /* Option.swift in Sources */,
 				8033E8FB24254FF900D0F2A0 /* Initial.swift in Sources */,
 				FA5C34B223FD40740016DBFE /* CategoryCell.swift in Sources */,
 				FA66FE8124101CB200AFC774 /* SavedShopsVC.swift in Sources */,
@@ -1080,13 +1109,16 @@
 				52E6492F241E749300B2B0AE /* cityViewController.swift in Sources */,
 				8033E8A224254FF900D0F2A0 /* PublicHelper.swift in Sources */,
 				8033E79E24254DAA00D0F2A0 /* BaseViewControllerProtocol.swift in Sources */,
+				521B80D62428462F00CB1709 /* ShopsByCatID.swift in Sources */,
 				FA6294762406D0A000308F25 /* PageControlUITests.swift in Sources */,
+				521B80D424282B9500CB1709 /* SubCategoryAndShops.swift in Sources */,
 				8033E8C124254FF900D0F2A0 /* EndPoint.swift in Sources */,
 				8033E7ED24254E3100D0F2A0 /* UIConstraintLayoutExtension.swift in Sources */,
 				FA6294642406B66D00308F25 /* OnBoardingVC.swift in Sources */,
 				8033E90324254FF900D0F2A0 /* SearchBarHelper.swift in Sources */,
 				8033E8BF24254FF900D0F2A0 /* BaseApi.swift in Sources */,
 				FA66FE7F24100E3400AFC774 /* ShopsSaved.swift in Sources */,
+				521C0C8C2426C33C00EC674B /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

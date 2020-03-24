@@ -24,9 +24,11 @@ class AfterSelectingCell: UITableViewCell {
     @IBOutlet weak var titleSelected: UILabel!
     
     @IBOutlet weak var kmSelected: UILabel!
+
     
-    @IBOutlet var starBtn: [UIButton]!
+    @IBOutlet weak var ratingView: CosmosView!
     
+    @IBOutlet weak var saveButton: UIButton!
     
     
     
@@ -34,7 +36,10 @@ class AfterSelectingCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         roundedVew.layer.cornerRadius = 11
-       
+        ratingView.settings.updateOnTouch = false
+        ratingView.settings.starSize = 13
+        ratingView.settings.filledImage = UIImage(named: "star (3)")
+        ratingView.settings.emptyImage = UIImage(named: "emtyStar")
     }
 
     
@@ -44,21 +49,7 @@ class AfterSelectingCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func starPressed(_ sender: UIButton) {
-        print("Rated \(sender.tag)stars.")
-        
-        for button in starBtn{
-            if button.tag <= sender.tag {
-               //selected
-                button.setBackgroundImage(UIImage.init(named: "star (3)"), for: .normal)
-            }else{
-                //not selected
-                 button.setBackgroundImage(UIImage.init(named: "star (notSelected)"), for: .normal)
-                
-            }
-        }
-    }
-    
+  
     override var frame: CGRect {
         get {
             return super.frame

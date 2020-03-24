@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,13 +34,19 @@
         <!--Option View Controller-->
         <scene sceneID="M8Z-KX-NGz">
             <objects>
-                <viewController storyboardIdentifier="optionViewController" id="rfZ-1g-vXD" customClass="optionViewController" customModule="D2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OptionViewController" id="rfZ-1g-vXD" customClass="OptionViewController" customModule="D2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xuc-4n-hCF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKX-2K-SSN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="646"/>
+                                <connections>
+                                    <action selector="onDismissButtonClick:" destination="rfZ-1g-vXD" eventType="touchUpInside" id="Fmr-5x-pMl"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKs-kW-Ejd" customClass="RoundedShadowView" customModule="D2020" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="596" width="414" height="300"/>
+                                <rect key="frame" x="0.0" y="646" width="414" height="250"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vqc-ET-QAP">
                                         <rect key="frame" x="189" y="6" width="36" height="5"/>
@@ -60,10 +66,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IQj-6n-QIV">
-                                        <rect key="frame" x="16" y="47" width="382" height="253"/>
+                                        <rect key="frame" x="16" y="47" width="382" height="203"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="optionTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="optionCell" rowHeight="52" id="Iuo-BU-toV" customClass="optionTableViewCell" customModule="D2020" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="OptionTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="optionCell" rowHeight="52" id="Iuo-BU-toV" customClass="OptionTableViewCell" customModule="D2020" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="382" height="52"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Iuo-BU-toV" id="1DA-J2-uuv">
@@ -118,15 +124,19 @@
                                     <constraint firstItem="Vqc-ET-QAP" firstAttribute="centerX" secondItem="LKs-kW-Ejd" secondAttribute="centerX" id="bVW-Em-gOC"/>
                                     <constraint firstItem="Vqc-ET-QAP" firstAttribute="top" secondItem="LKs-kW-Ejd" secondAttribute="top" constant="6" id="ren-78-svr"/>
                                     <constraint firstAttribute="bottom" secondItem="IQj-6n-QIV" secondAttribute="bottom" id="vQ0-vT-Fva"/>
-                                    <constraint firstAttribute="height" constant="300" id="zHQ-Mv-u8w"/>
+                                    <constraint firstAttribute="height" constant="250" id="zHQ-Mv-u8w"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.4038835764" green="0.40394583340000001" blue="0.40386995669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="MKX-2K-SSN" firstAttribute="leading" secondItem="ygE-9Z-azc" secondAttribute="leading" id="CW5-E1-V37"/>
+                            <constraint firstItem="MKX-2K-SSN" firstAttribute="trailing" secondItem="ygE-9Z-azc" secondAttribute="trailing" id="DLD-IK-mbl"/>
+                            <constraint firstItem="LKs-kW-Ejd" firstAttribute="top" secondItem="MKX-2K-SSN" secondAttribute="bottom" id="LPp-7m-swd"/>
                             <constraint firstItem="LKs-kW-Ejd" firstAttribute="leading" secondItem="xuc-4n-hCF" secondAttribute="leading" id="Shv-7S-ixP"/>
                             <constraint firstAttribute="trailing" secondItem="LKs-kW-Ejd" secondAttribute="trailing" id="fMT-BC-KTH"/>
                             <constraint firstAttribute="bottom" secondItem="LKs-kW-Ejd" secondAttribute="bottom" id="ojL-7U-LG9"/>
+                            <constraint firstItem="MKX-2K-SSN" firstAttribute="top" secondItem="xuc-4n-hCF" secondAttribute="top" id="t7W-Q2-DIi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ygE-9Z-azc"/>
                     </view>
@@ -136,19 +146,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOk-KX-U8a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13968" y="-915"/>
+            <point key="canvasLocation" x="13966.666666666668" y="-915.40178571428567"/>
         </scene>
         <!--Change City View Controller-->
         <scene sceneID="M6L-NG-FcY">
             <objects>
-                <viewController storyboardIdentifier="changeCityViewController" id="0qv-Kc-K49" customClass="changeCityViewController" customModule="D2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeCityViewController" id="0qv-Kc-K49" customClass="ChangeCityViewController" customModule="D2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9mi-SO-x5A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3FQ-qq-v2E">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <connections>
+                                    <action selector="onDismissButtonClick:" destination="0qv-Kc-K49" eventType="touchUpInside" id="1XP-lM-koC"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d19-8V-WZb" customClass="RoundedShadowView" customModule="D2020" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="477" width="414" height="419"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPp-86-cjz">
+                                        <rect key="frame" x="184" y="194" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmf-bz-XkZ">
                                         <rect key="frame" x="189" y="6" width="36" height="5"/>
                                         <color key="backgroundColor" red="0.47054475550000002" green="0.47061604260000001" blue="0.47052919859999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -170,7 +191,7 @@
                                         <rect key="frame" x="16" y="47" width="382" height="372"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="changeCityTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityCell" id="Omc-9a-WqE" customClass="changeCityTableViewCell" customModule="D2020" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="changeCityTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityCell" id="Omc-9a-WqE" customClass="ChangeCityTableViewCell" customModule="D2020" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="382" height="45.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Omc-9a-WqE" id="tLk-12-lhC">
@@ -233,7 +254,11 @@
                         <constraints>
                             <constraint firstItem="d19-8V-WZb" firstAttribute="leading" secondItem="9mi-SO-x5A" secondAttribute="leading" id="NI8-OT-jNR"/>
                             <constraint firstAttribute="trailing" secondItem="d19-8V-WZb" secondAttribute="trailing" id="QbC-sR-IQn"/>
+                            <constraint firstItem="3FQ-qq-v2E" firstAttribute="leading" secondItem="F8T-fL-07q" secondAttribute="leading" id="Qja-eM-be4"/>
+                            <constraint firstAttribute="bottom" secondItem="3FQ-qq-v2E" secondAttribute="bottom" id="asL-8m-NIg"/>
+                            <constraint firstItem="3FQ-qq-v2E" firstAttribute="trailing" secondItem="F8T-fL-07q" secondAttribute="trailing" id="ibr-0n-dCD"/>
                             <constraint firstAttribute="bottom" secondItem="d19-8V-WZb" secondAttribute="bottom" id="mvK-n2-dSN"/>
+                            <constraint firstItem="3FQ-qq-v2E" firstAttribute="top" secondItem="9mi-SO-x5A" secondAttribute="top" id="zcM-3p-3F0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F8T-fL-07q"/>
                     </view>
@@ -243,7 +268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0Q-GA-auw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14899" y="-889"/>
+            <point key="canvasLocation" x="14898.550724637682" y="-889.28571428571422"/>
         </scene>
     </scenes>
 </document>

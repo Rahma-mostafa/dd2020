@@ -10,7 +10,7 @@ import UIKit
 
 class cityViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var cityTableView: UITableView!
-    var city:[City] = [City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##")]
+    var cityarr:[city] = [city(name: "## حدد المدينة ##"),city(name: "## حدد المدينة ##"),city(name: "## حدد المدينة ##"),city(name: "## حدد المدينة ##"),city(name: "## حدد المدينة ##"),city(name: "## حدد المدينة ##"),city(name: "## حدد المدينة ##"),city(name: "## حدد المدينة ##"),city(name: "## حدد المدينة ##"),city(name: "## حدد المدينة ##")]
     
     var shouldHideTable : ((String)->())!
     var Color: UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -24,12 +24,13 @@ class cityViewController: UIViewController,UITableViewDataSource,UITableViewDele
     }
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return city.count
+//        return City2.count
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell =  cityTableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as? cityTableViewCell{
-            cell.cityLabel.text = city[indexPath.item].name
+            cell.cityLabel.text = cityarr[indexPath.item].name
             cell.closeButton.tag = indexPath.row
             cell.onCloseButtonTapped = { [unowned self] in
                 self.hideCityTable(rowIndex: indexPath.row)
@@ -45,7 +46,7 @@ class cityViewController: UIViewController,UITableViewDataSource,UITableViewDele
         return UITableViewCell()
     }
     func hideCityTable(rowIndex: Int){
-        shouldHideTable(self.city[rowIndex].name)
+        shouldHideTable(self.cityarr[rowIndex].name)
     }
 
 }
