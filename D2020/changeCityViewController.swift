@@ -13,7 +13,7 @@ class changeCityViewController: UIViewController,UITableViewDelegate,UITableView
     
     @IBOutlet weak var cityTableView: UITableView!
     
-      var city:[City] = [City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##"),City(name: "## حدد المدينة ##")]
+      var city:[city_id] = [city_id(name: "## حدد المدينة ##"),city_id(name: "## حدد المدينة ##"),city_id(name: "## حدد المدينة ##"),city_id(name: "## حدد المدينة ##"),city_id(name: "## حدد المدينة ##"),city_id(name: "## حدد المدينة ##"),city_id(name: "## حدد المدينة ##"),city_id(name: "## حدد المدينة ##"),city_id(name: "## حدد المدينة ##"),city_id(name: "## حدد المدينة ##")]
         
      var shouldHideTable : ((String)->())!
      var Color: UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)

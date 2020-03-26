@@ -15,4 +15,6 @@ public enum EndPoint: String {
     case register
     case logout
     case MainCountry
+    case getSections
+    case SubCountry
 }

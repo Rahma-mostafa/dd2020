@@ -21,6 +21,7 @@ pod 'IQKeyboardManagerSwift'
 pod 'BSImagePicker', '~> 2.0'
 pod 'GooglePlaces', '= 3.0.3'
 pod 'GoogleMaps', '= 3.0.3'
+pod 'SwiftyJSON'
 
 
 end

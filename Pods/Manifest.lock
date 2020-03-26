@@ -17,6 +17,7 @@ PODS:
     - GoogleMaps/Base (= 3.0.3)
   - IQKeyboardManagerSwift (6.3.0)
   - lottie-ios (3.1.6)
+  - SwiftyJSON (5.0.0)
   - TinyConstraints (4.0.1)
 
 DEPENDENCIES:
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - GooglePlaces (= 3.0.3)
   - IQKeyboardManagerSwift
   - lottie-ios
+  - SwiftyJSON
   - TinyConstraints
 
 SPEC REPOS:
@@ -42,6 +44,7 @@ SPEC REPOS:
     - GooglePlaces
     - IQKeyboardManagerSwift
     - lottie-ios
+    - SwiftyJSON
     - TinyConstraints
 
 SPEC CHECKSUMS:
@@ -55,8 +58,9 @@ SPEC CHECKSUMS:
   GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
   lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: a9c2891cdd7be7024416f08e1b5c7549121b9705
+PODFILE CHECKSUM: a05aac77fec73914780a22b4966bbe748c7a507f
 
 COCOAPODS: 1.8.4

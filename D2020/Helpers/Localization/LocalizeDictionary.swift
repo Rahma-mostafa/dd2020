@@ -10,4 +10,5 @@ import Foundation
 
 struct Localizations {
     static let sure = "sure.lan"
+    
 }

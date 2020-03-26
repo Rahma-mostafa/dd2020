@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -138,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="13968" y="-915"/>
         </scene>
-        <!--Change City View Controller-->
+        <!--Change Country View Controller-->
         <scene sceneID="M6L-NG-FcY">
             <objects>
-                <viewController storyboardIdentifier="changeCityViewController" id="0qv-Kc-K49" customClass="changeCityViewController" customModule="D2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeCountryViewController" id="0qv-Kc-K49" customClass="ChangeCountryViewController" customModule="D2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9mi-SO-x5A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -228,22 +227,32 @@
                                     <constraint firstItem="o6P-dm-0HZ" firstAttribute="top" secondItem="gmf-bz-XkZ" secondAttribute="bottom" constant="8" id="x89-bI-lWa"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v3-iS-d7e">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="469"/>
+                                <connections>
+                                    <action selector="onDismissButtonClick:" destination="0qv-Kc-K49" eventType="touchUpInside" id="N1c-6h-VzY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.38819861410000001" green="0.3882587254" blue="0.38818544150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="7v3-iS-d7e" firstAttribute="trailing" secondItem="F8T-fL-07q" secondAttribute="trailing" id="33K-vc-TLI"/>
                             <constraint firstItem="d19-8V-WZb" firstAttribute="leading" secondItem="9mi-SO-x5A" secondAttribute="leading" id="NI8-OT-jNR"/>
                             <constraint firstAttribute="trailing" secondItem="d19-8V-WZb" secondAttribute="trailing" id="QbC-sR-IQn"/>
+                            <constraint firstItem="7v3-iS-d7e" firstAttribute="top" secondItem="9mi-SO-x5A" secondAttribute="top" id="UeU-aR-fBi"/>
+                            <constraint firstItem="d19-8V-WZb" firstAttribute="top" secondItem="7v3-iS-d7e" secondAttribute="bottom" constant="8" symbolic="YES" id="g69-Ho-wQe"/>
                             <constraint firstAttribute="bottom" secondItem="d19-8V-WZb" secondAttribute="bottom" id="mvK-n2-dSN"/>
+                            <constraint firstItem="7v3-iS-d7e" firstAttribute="leading" secondItem="F8T-fL-07q" secondAttribute="leading" id="wj6-BX-LDb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F8T-fL-07q"/>
                     </view>
                     <connections>
-                        <outlet property="cityTableView" destination="ElV-2B-BSE" id="j7z-2m-FKW"/>
+                        <outlet property="cityTableView" destination="ElV-2B-BSE" id="o9q-Np-Rxw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0Q-GA-auw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14899" y="-889"/>
+            <point key="canvasLocation" x="14898.550724637682" y="-889.28571428571422"/>
         </scene>
     </scenes>
 </document>

@@ -41,6 +41,7 @@ class CountryViewController: BaseController {
     }
     func fetchCountries() {
         startLoading()
+        //ApiManager.instance.paramaters[] =
         ApiManager.instance.connection(.MainCountry, type: .get) { [weak self] (response) in
             self?.stopLoading()
             let data = try? JSONDecoder().decode(Country.self, from: response ?? Data())
@@ -65,8 +66,9 @@ class CountryViewController: BaseController {
     @IBAction func apply(_ sender: Any) {
         Localizer.set(language: selectedLang ?? "ar")
         CountryViewController.deviceCountry = countries[selectedCountry ?? 0]
-        let vc = controller(FirstVC.self, storyboard: .auth)
+        let vc = controller(LoginVC.self, storyboard: .auth)
         push(vc)
+        
     }
 }
 
