@@ -1,17 +1,21 @@
 //
-//  Category.swift
-//  D2020
+//  Country.swift
+//  d2020
 //
-//  Created by Macbook on 2/18/20.
-//  Copyright © 2020 Abdallah Eslah. All rights reserved.
+//  Created by MacBook Pro on 3/3/20.
+//  Copyright © 2020 rahma. All rights reserved.
 //
 
-//import Foundation
-//// (13)-> d mwasfat l product lly hia l table view cells lly htt3rd f l firestore
-//struct Category {
-//var name : String
-//var id : String
-//var imgUrl : String
-//var description : String 
-//
-//}
+import UIKit
+struct Category: Codable {
+    var status: Bool?
+    var date: [CategoryModel]?
+    
+    struct CategoryModel: Codable {
+        var id: Int?
+        var name: String?
+        var seen: Int?
+        var desc: String?
+        var image: String?
+    }
+}

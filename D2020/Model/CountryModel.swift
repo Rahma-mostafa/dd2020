@@ -13,7 +13,7 @@ struct Country: Codable {
    
     struct CountryData: Codable {
         var id: Int?
-        var code: Int?
+        var code: String?
         var file: String?
         var name: String?
     }

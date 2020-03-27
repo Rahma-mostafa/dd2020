@@ -24,6 +24,8 @@ class BaseApi: Paginator, Alertable {
                 headers["Authorization"] = ""
             }
         }
+        headers["Authorization"] = "Bearer "+"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOThjNjNiZDg0NjE4MmFiMTU0YWFjNzkwMjM5MDIzMTEwMjE2NThiNTNhMTczYzA2OTM0NDZiZmYwZDhkNTZlYWY4MDhkYjZkY2E0YzNhYTgiLCJpYXQiOjE1ODQ4MTIzNTIsIm5iZiI6MTU4NDgxMjM1MiwiZXhwIjoxNjE2MzQ4MzUyLCJzdWIiOiI5MCIsInNjb3BlcyI6W119.J0nLUuHxVw4-GhmpALIi_vut2pA6WM5WiiC3AjO6rA5Lj1i3xVqo_x11TcnhXol40rUz7wkfmCu0eZIdZtGwYYrZzKXlJd7_SuLdmmDefSuQVxPTrgPZ_4viafTki4PwcTm5WI7dYcrWTOxH5gOTwZTCXl4QPOVXdiBwH3DuP2sdZgZGD3JRvid3ecqMjZNNnazpPMcYqKBf1soq0Yelxkky5XWq1cKTTZBqeuYd5mKnB-99eXuH7Ztjmo6wXaLDY95m-Smh3CaYxxeMe-GVrCDStuCzgnHYS4Q7zKq_aSCPxT52s6pY6Rwe_gWUJiyz59rrnIDPlqOSdPxTRgz9eZOpbkv_NipAWsP0ewrZB-p_5zqtmD_kfsawUgdC5y7ojhysn6sQp39SvIlfNrdrMt74ugvSOZu6EfiZ5HomMc2-cZkz8mj1WlhI-skps_j1wyWWdac01rlg2s3vQi4DfWLvbCeS8IRxe2fyx84_Ofkppp4hCH-CBQyspwnP5jGydYer841VkEQGA20-sEOdYp420MLbG5LLIU_NUYUVmnwFbquy0PaLuvtNp6-vQQ8p9jAu8yQZSr2PUWkUaUoKmK99kcd7b3XdxX5h87hyCVt1zf5E__xZihTTyauUbT3_k90LHMQqnmytSWb1MXa4JH76TbTekAtN5kONuIkou3o"
+
         paramaters["lang"] = Localizer.current
         paramaters["device_type"] = Constants.deviceType
         if let devicetoken = UserDefaults.standard.string(forKey: "deviceToken") {

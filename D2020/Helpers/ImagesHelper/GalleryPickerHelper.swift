@@ -33,6 +33,7 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
         }
     }
     internal var onPickImage: ((UIImage) -> Void)?,
+    onPickImageURL: ((URL?) -> Void)?,
     onCancel: (() -> Void)?,
     placeholderImage = UIImage(),
     alertTitle, alertMessage: String?,
@@ -120,6 +121,7 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
             }
             NSLog("user picking image you can find it in `onPickImage` block")
             onPickImage?(pickedImage)
+            onPickImageURL?(getImageURL(info: info))
             delegate?.didPickItem(image: pickedImage)
             delegate?.didPickItem(url: getImageURL(info: info))
         }

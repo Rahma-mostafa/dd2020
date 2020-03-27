@@ -11,7 +11,14 @@ import GoogleMaps
 import GooglePlaces
 
 struct Constants {
-    static let locale = Localizer.getLocale()
+    static let locale = Localizer.current
+    static var localeFormatted: String {
+        if locale == "ar" {
+            return "العربية"
+        } else {
+            return "english"
+        }
+    }
     static var loginNavInd: String = "LoginNav"
     static var login: String = "LoginNav"
     static var loginNav: UINavigationController? {
@@ -85,19 +92,67 @@ struct Identifiers {
 }
 
 extension UIColor {
-    public var appGreen: UIColor {
-        return UIColor(named: "greenColor") ?? UIColor()
+    public static var appGreen: UIColor {
+        return UIColor(named: "GreenColor") ?? UIColor()
     }
-    public var appBlue: UIColor {
+    public static var appBlue: UIColor {
         return UIColor(named: "blueColor") ?? UIColor()
     }
-    public var appRed: UIColor {
-        return UIColor(named: "redColor") ?? UIColor()
+    public static var appRed: UIColor {
+        return UIColor(named: "RedColor") ?? UIColor()
     }
-    public var appOrange: UIColor {
-        return UIColor(named: "orangeColor") ?? UIColor()
+    public static var appOrange: UIColor {
+        return UIColor(named: "OrangeColor") ?? UIColor()
     }
-    public var textColor: UIColor {
+    public static var textColor: UIColor {
         return UIColor(named: "textColor") ?? UIColor()
+    }
+    public static var backgroundGray: UIColor {
+        return UIColor(red: 207, green: 207, blue: 207, alpha: 1)
+    }
+    public static var websiteColor: UIColor {
+        return UIColor(named: "WebsiteColor") ?? UIColor()
+    }
+}
+extension UIColor {
+    public convenience init?(hex: String) {
+        let r, g, b, a: CGFloat
+        
+        if hex.hasPrefix("#") {
+            let start = hex.index(hex.startIndex, offsetBy: 1)
+            let hexColor = String(hex[start...])
+            
+            if hexColor.count == 8 {
+                let scanner = Scanner(string: hexColor)
+                var hexNumber: UInt64 = 0
+                
+                if scanner.scanHexInt64(&hexNumber) {
+                    r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
+                    g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
+                    b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
+                    a = CGFloat(hexNumber & 0x000000ff) / 255
+                    
+                    self.init(red: r, green: g, blue: b, alpha: a)
+                    return
+                }
+            }
+        }
+        
+        return nil
+    }
+}
+extension NSMutableAttributedString{
+    // If no text is send, then the style will be applied to full text
+    func setColorForText(_ textToFind: String?, with color: UIColor) {
+        
+        let range:NSRange?
+        if let text = textToFind{
+            range = self.mutableString.range(of: text, options: .caseInsensitive)
+        }else{
+            range = NSMakeRange(0, self.length)
+        }
+        if range!.location != NSNotFound {
+            addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range!)
+        }
     }
 }

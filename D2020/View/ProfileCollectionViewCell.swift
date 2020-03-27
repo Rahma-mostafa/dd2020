@@ -8,10 +8,18 @@
 
 import UIKit
 
-class ProfileCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var profileCollectionImg: UIImageView!
-    @IBOutlet weak var profileTitleCell: UILabel!
+class StoreProductCollectionCell: UICollectionViewCell, CellProtocol {
     
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var productTitle: UILabel!
+    @IBOutlet weak var productPrice: UILabel!
+
+    func setup() {
+        guard let model = model as? StoreDetail.Facilite else { return }
+        image.setImage(url: model.image)
+        productTitle.text = model.name
+        productPrice.text = "\(model.price ?? 0) \(Localizations.sar.localized)"
+    }
 }
 
 

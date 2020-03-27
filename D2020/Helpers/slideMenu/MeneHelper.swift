@@ -69,6 +69,16 @@ class MenuHelper {
         } else {
             sideMenu.leftSide = true
         }
+        if #available(iOS 13.0, *) {
+            self.delegate?.isModalInPresentation = true
+        } else {
+            // Fallback on earlier versions
+        }
+        //self.delegate?.modalPresentationStyle = .overFullScreen
+        self.delegate?.navigationController?.modalPresentationStyle = .fullScreen
+        self.delegate?.modalPresentationStyle = .fullScreen
+        sideMenu.modalPresentationStyle = .fullScreen
+
         self.delegate?.present(sideMenu, animated: true, completion: nil)
     }
 

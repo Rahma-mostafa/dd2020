@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArbFONTS-Sukar Bold.ttf">
+            <string>Sukar-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="StoreWorkdayCell" customModule="D2020" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="124" height="128"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="124" height="128"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZD-Dx-VrK">
+                        <rect key="frame" x="2" y="2" width="120" height="124"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZXD-aJ-Omj">
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="99"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3o-Fh-l3s">
+                                <rect key="frame" x="0.0" y="15" width="120" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check (2)" translatesAutoresizingMaskIntoConstraints="NO" id="kSj-Pu-QCN">
+                                <rect key="frame" x="52" y="105" width="16" height="11"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="VU4-XA-iCK"/>
+                                    <constraint firstAttribute="height" constant="11" id="pu9-hT-xVr"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="OrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="V3o-Fh-l3s" firstAttribute="top" secondItem="nZD-Dx-VrK" secondAttribute="top" constant="15" id="A7S-5R-vbZ"/>
+                            <constraint firstItem="ZXD-aJ-Omj" firstAttribute="top" secondItem="nZD-Dx-VrK" secondAttribute="top" id="JnU-fk-HQq"/>
+                            <constraint firstAttribute="bottom" secondItem="kSj-Pu-QCN" secondAttribute="bottom" constant="8" id="K0Z-Of-qqa"/>
+                            <constraint firstItem="V3o-Fh-l3s" firstAttribute="leading" secondItem="nZD-Dx-VrK" secondAttribute="leading" id="K2j-KF-703"/>
+                            <constraint firstItem="kSj-Pu-QCN" firstAttribute="centerX" secondItem="nZD-Dx-VrK" secondAttribute="centerX" id="Syw-ko-sv8"/>
+                            <constraint firstItem="ZXD-aJ-Omj" firstAttribute="leading" secondItem="nZD-Dx-VrK" secondAttribute="leading" id="XGO-X8-Eal"/>
+                            <constraint firstAttribute="trailing" secondItem="ZXD-aJ-Omj" secondAttribute="trailing" id="kAD-Xj-5AM"/>
+                            <constraint firstAttribute="bottom" secondItem="ZXD-aJ-Omj" secondAttribute="bottom" constant="25" id="meU-1b-vya"/>
+                            <constraint firstAttribute="trailing" secondItem="V3o-Fh-l3s" secondAttribute="trailing" id="qca-VI-Efr"/>
+                            <constraint firstItem="V3o-Fh-l3s" firstAttribute="centerX" secondItem="nZD-Dx-VrK" secondAttribute="centerX" id="wgR-eW-0Xu"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="0.69999999999999996"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="7"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="nZD-Dx-VrK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="1t0-0g-p2t"/>
+                <constraint firstItem="nZD-Dx-VrK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="C0p-2c-DuB"/>
+                <constraint firstAttribute="bottom" secondItem="nZD-Dx-VrK" secondAttribute="bottom" constant="2" id="v9a-om-fTI"/>
+                <constraint firstAttribute="trailing" secondItem="nZD-Dx-VrK" secondAttribute="trailing" constant="2" id="wVG-R5-MOj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="124" height="128"/>
+            <connections>
+                <outlet property="dayLbl" destination="V3o-Fh-l3s" id="LvB-WT-hMR"/>
+                <outlet property="image" destination="kSj-Pu-QCN" id="9pu-Ol-vBs"/>
+                <outlet property="viewColored" destination="nZD-Dx-VrK" id="LLw-OF-5d5"/>
+            </connections>
+            <point key="canvasLocation" x="191.30434782608697" y="108.48214285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="check (2)" width="24" height="18.5"/>
+        <namedColor name="OrangeColor">
+            <color red="0.99607843137254903" green="0.62352941176470589" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

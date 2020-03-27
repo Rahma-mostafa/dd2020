@@ -30,14 +30,24 @@ class CountryViewController: BaseController {
     }
     
     override func viewDidLoad() {
+        if CountryViewController.deviceCountry?.id != nil {
+            guard let vc = UIStoryboard(name: Storyboards.main.rawValue, bundle: nil).instantiateInitialViewController() else { return }
+            push(vc)
+        }
         super.hiddenNav = true
         super.viewDidLoad()
+        
         setup()
         fetchCountries()
     }
     func setup() {
         countyTableView.dataSource = self
         countyTableView.delegate = self
+        
+        languageButtton1.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
+        languageButtton2.backgroundColor = .white
+        selectedLang = "ar"
+        
     }
     func fetchCountries() {
         startLoading()
@@ -64,8 +74,10 @@ class CountryViewController: BaseController {
     }
     @IBAction func apply(_ sender: Any) {
         Localizer.set(language: selectedLang ?? "ar")
+        initLang()
         CountryViewController.deviceCountry = countries[selectedCountry ?? 0]
-        let vc = controller(FirstVC.self, storyboard: .auth)
+        guard let vc = UIStoryboard(name: Storyboards.main.rawValue, bundle: nil).instantiateInitialViewController() else { return }
+        //let vc = controller(FirstVC.self, storyboard: .auth)
         push(vc)
     }
 }
@@ -78,6 +90,9 @@ extension CountryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.cell(type: CountryTableViewCell.self, indexPath, register: false)
         cell.model = countries[indexPath.row]
+        if indexPath.row == 0 && selectedCountry == nil {
+            selectedCountry = 0
+        }
         if selectedCountry == indexPath.row {
             cell.backgroundImageView.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
         } else {

@@ -24,7 +24,7 @@ class PromoContentVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let currentImage = imageName {
-            promoImageView.image = UIImage(named: currentImage)
+            promoImageView.setImage(url: currentImage)
         }
 
     }

@@ -8,117 +8,122 @@
 
 import UIKit
 
-enum MenuEnum: String {
-    case home
-    case payment
-    case history
-    case notifications
-    case settings
-    case help
-    case logout
-}
 
-class MenuModel {
-    var name: String!
-    var index: MenuEnum?
-    var key: String!
-    var imageOn: UIImage?
-    var imageOff: UIImage?
-
-    init(_ name: String, _ key: String!, _ imageOn: UIImage? = nil, _ imageOff: UIImage? = nil, _ index: MenuEnum? = nil) {
-        self.name = name
-        self.key = key
-        self.index = index
-        self.imageOn = imageOn
-        self.imageOff = imageOff
-    }
-
-}
 class MenuVC: BaseController {
 
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var menuCollection: UITableView!
-
+    @IBOutlet weak var uesrType: UILabel!
+    @IBOutlet weak var langBtn: UIButton!
+    @IBOutlet weak var countryBtn: UIButton!
+    @IBOutlet weak var storesBtn: UIButton!
+    @IBOutlet weak var storeImage: UIImageView!
+    @IBOutlet weak var rentBtn: UIButton!
+    @IBOutlet weak var rentImage: UIImageView!
+    @IBOutlet weak var delegateBtn: UIButton!
+    @IBOutlet weak var delegateImage: UIImageView!
+    @IBOutlet weak var familyBtn: UIButton!
+    @IBOutlet weak var familyImage: UIImageView!
+    
+    @IBOutlet weak var profileBtn: UIButton!
+    @IBOutlet weak var aboutBtn: UIButton!
+    @IBOutlet weak var supportBtn: UIButton!
+    @IBOutlet weak var shareBtn: UIButton!
+    @IBOutlet weak var logoutBtn: UIButton!
+    @IBOutlet weak var viewContainSection: UIView!
+    @IBOutlet weak var containSectionHeight: NSLayoutConstraint!
+    
     static var currentPage: String = "HomeNav"
-    static var currentIndex: MenuEnum? = .home
-    var menu: [MenuModel] = []
+    //static var currentIndex: MenuEnum? = .home
+
     static func resetMenu() {
         MenuVC.currentPage = "HomeNav"
     }
+    var sections: [Section.Data] = []
+    
     override func viewDidLoad() {
+        super.hiddenNav = true
         super.viewDidLoad()
-        setupMenu()
         if menuCollection != nil {
-            menuCollection.delegate = self
-            menuCollection.dataSource = self
+            //menuCollection.delegate = self
+            //menuCollection.dataSource = self
         }
         //userName.text = "\(UserRoot.instance.result?.first_name ?? "") \(UserRoot.instance.result?.last_name ?? "" )"
         //userImage.setImage(url: UserRoot.instance.result?.image)
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.\
+        setLocalize()
+        setupMenu()
+        fetchSection()
     }
-
+    func setLocalize() {
+        profileBtn.setTitle(Localizations.profile.localized, for: .normal)
+        storesBtn.setTitle(Localizations.stores.localized, for: .normal)
+        rentBtn.setTitle(Localizations.rent.localized, for: .normal)
+        delegateBtn.setTitle(Localizations.delegates.localized, for: .normal)
+        familyBtn.setTitle(Localizations.family.localized, for: .normal)
+        aboutBtn.setTitle(Localizations.aboutApp.localized, for: .normal)
+        supportBtn.setTitle(Localizations.support.localized, for: .normal)
+        shareBtn.setTitle(Localizations.share.localized, for: .normal)
+        logoutBtn.setTitle(Localizations.logout.localized, for: .normal)
+        langBtn.setTitle("\(Localizations.lang.localized): \(Constants.localeFormatted)", for: .normal)
+        countryBtn.setTitle("\(Localizations.country.localized): \(CountryViewController.deviceCountry?.name ?? "")", for: .normal)
+    }
+    func fetchSection() {
+        let method = api(.getSections, [CountryViewController.deviceCountry?.id ?? 0])
+        startLoading()
+        ApiManager.instance.headers["Country_id"] = String(CountryViewController.deviceCountry?.id ?? 0)
+        ApiManager.instance.connection(method, type: .get) { [weak self] (response) in
+            self?.stopLoading()
+            let data = try? JSONDecoder().decode(Section.self, from: response ?? Data())
+            self?.sections.removeAll()
+            self?.sections.append(contentsOf: data?.data ?? [])
+            self?.setupMenu()
+        }
+    }
     func setupMenu() {
-
-//        menu.append(MenuModel(translate("home"),"HomeNav",#imageLiteral(resourceName: "home"),#imageLiteral(resourceName: "home"),.home))
-//        menu.append(MenuModel(translate("payment"),"PaymentNav",#imageLiteral(resourceName: "payments"),#imageLiteral(resourceName: "payments"),.payment))
-//        menu.append(MenuModel(translate("history"),"HistoryNav",#imageLiteral(resourceName: "history"),#imageLiteral(resourceName: "history"),.history))
-//        menu.append(MenuModel(translate("notifications"),"NotificationsNav",#imageLiteral(resourceName: "notification"),#imageLiteral(resourceName: "notification"),.notifications))
-//        menu.append(MenuModel(translate("settings"),"SettingsNav",#imageLiteral(resourceName: "settings"),#imageLiteral(resourceName: "settings"),.settings))
-//        menu.append(MenuModel(translate("help"),"HelpNav",#imageLiteral(resourceName: "help"),#imageLiteral(resourceName: "help"),.help))
-//        menu.append(MenuModel(translate("logout"),"LogoutNav",#imageLiteral(resourceName: "logout"),#imageLiteral(resourceName: "logout"),.logout))
-
-    }
-    func clickOnMenu(menuItem: MenuModel) {
-        if menuItem.index == .logout {
-//            if UserRoot.isLogin() {
-//                UserRoot.removeCacheingDefault()
-//                useMenu = true
-//                MenuVC.currentIndex = .home
-//                let vc = pushViewController(indetifier: Constants.login)
-//                push(vc)
-//            }
-//        }else if menuItem.index == .home {
-//            if BaseController.currentTrip?.id != nil {
-//                useMenu = true
-//                MenuVC.currentPage = menuItem.key
-//                MenuVC.currentIndex = menuItem.index
-//                let vc = pushViewController(indetifier: "PickupMapNav")
-//                push(vc)
-//            }else{
-//                useMenu = true
-//                MenuVC.currentPage = menuItem.key
-//                MenuVC.currentIndex = menuItem.index
-//                let vc = pushViewController(indetifier: menuItem.key)
-//                push(vc)
-//            }
-
-        } else {
-            MenuVC.currentPage = menuItem.key
-            MenuVC.currentIndex = menuItem.index
-            let vcr = initViewController(menuItem.key)
-            push(vcr)
+        storesBtn.isHidden = true
+        familyBtn.isHidden = true
+        delegateBtn.isHidden = true
+        rentBtn.isHidden = true
+        containSectionHeight.constant = 60
+        sections.forEach { (item) in
+            if item.style == 1 {
+                rentBtn.isHidden = false
+                rentImage.isHidden = false
+                containSectionHeight.constant += 60
+            } else if item.style == 2 {
+                storesBtn.isHidden = false
+                storeImage.isHidden = false
+                containSectionHeight.constant += 60
+            } else if item.style == 3 {
+                delegateBtn.isHidden = false
+                delegateImage.isHidden = false
+                containSectionHeight.constant += 60
+            } else if item.style == 4 {
+                familyBtn.isHidden = false
+                familyImage.isHidden = false
+                containSectionHeight.constant += 60
+            }
         }
     }
-
+    @IBAction func shareApp(_ sender: Any) {
+    }
+    @IBAction func support(_ sender: Any) {
+    }
+    @IBAction func aboutApp(_ sender: Any) {
+    }
+    @IBAction func family(_ sender: Any) {
+    }
+    @IBAction func delegates(_ sender: Any) {
+    }
+    @IBAction func rent(_ sender: Any) {
+    }
+    @IBAction func stores(_ sender: Any) {
+    }
+    @IBAction func profile(_ sender: Any) {
+    }
+    @IBAction func logout(_ sender: Any) {
+    }
 }
 
-extension MenuVC: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menu.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.cell(type: MenuCell.self, indexPath, register: false)
-        if MenuVC.currentIndex == menu[indexPath.item].index {
-            //cell.contentView.backgroundColor = UIColor.
-        }
-        cell.menu = menu[indexPath.item]
-        cell.setup()
-        return cell
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         self.clickOnMenu(menuItem: menu[indexPath.item])
-    }
-
-}
