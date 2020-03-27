@@ -11,7 +11,7 @@ class BaseApi: Paginator, Alertable {
     }
     func refresh() {
         setupObject()
-        //paginate()
+        paginate()
     }
     func setupObject() {
         headers["version"] = Constants.version
@@ -24,6 +24,8 @@ class BaseApi: Paginator, Alertable {
                 headers["Authorization"] = ""
             }
         }
+        headers["Authorization"] = "Bearer "+"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYzZmNGYxNzgxOTM5YTQxYmEwOGJlOTU2ODRiZjg4YzhkMDFjYzIzNzhlYTlhM2I4NmRkMTczOWI1Yzk0MWY2Nzk2MGI0OTY2OGMyZjcxNjkiLCJpYXQiOjE1ODUwODE2OTgsIm5iZiI6MTU4NTA4MTY5OCwiZXhwIjoxNjE2NjE3Njk4LCJzdWIiOiIxMzQiLCJzY29wZXMiOltdfQ.Xn3K7KBKkphoKEmiNub_GREbhChI8kepjqrPdllrPbpJAMI1viDhMRDSOCnTwUUuGPTQZcczOzo3Ta3TIPQEEI5O0AEkvrQR7ZFDfCMF3GFkgOnro9eRzksSsZeKFr3JnRy6d8s50DtxlXpgKUG2dcr3Zglc8r71WSGGsrJIkTqtjPHytDQzQlm4vt0ggLxF7GAMN1WcVqx6Egh7v1TGyCaXDUvK9id84iWw_Mxju9hEgUMqOtAxWIX3wCE7CUp7QKX7y9quMH46Koj-yV0A1gSisEgsrUEFE21bLZgkeZzKOaElAZnSCwfzzsmM-6m6QwX6d6cpeRjztv7Qzt7l8ZZdvpxV0nZaO9_jvW74BmqK-WYpZoFWOIigDNwaTBRQ-uG9Z0Voi0gxBaoYgsgKNQ7_nRmfJ_LBAA3PpJ3Dw5AxjwhIu4EFC79yiHMuMtzC-6GwuIdFAx-aV2oovu6rPJeV-X8Hy-GM5nJVz9tzeqqklxui2BxlVwxuepNXSB6L0zIsJoELiWApaA_gHVJUr46_Yyr9lbcaNipE4OvgGVBxCr6WGorItwI-N8rYrRE0LfO8VmBEIUe_juBf6s8FkVKpWY7GeQIPEKfrNgt_pp5p0SvJUFnD4qEH4Om5obP2bzYtfGjxSE0szoC8qtIWYVhqQF14KPAprxyP2ER8b5s"
+
         paramaters["lang"] = Localizer.current
         paramaters["device_type"] = Constants.deviceType
         if let devicetoken = UserDefaults.standard.string(forKey: "deviceToken") {

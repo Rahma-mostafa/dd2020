@@ -1,12 +1,12 @@
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-//   let shopsByCatID = try? newJSONDecoder().decode(ShopsByCatID.self, from: jsonData)
+//   let myStores = try? newJSONDecoder().decode(MyStores.self, from: jsonData)
 
 import Foundation
 
-// MARK: - ShopsByCatID
-struct ShopsByCatID: Codable {
+// MARK: - MyStores
+struct MyStores: Codable {
     let status: Bool?
     let data: [Datum]?
     let message: String?
@@ -20,34 +20,42 @@ struct ShopsByCatID: Codable {
         let lang: Double?
         let phone: JSONNull?
         let type: Int?
-        var isFavorite: Bool?
+        let isFavorite, isComment: Bool?
+        let myComment: Comment?
         let rate: Int?
-        let catName, distance: String?
+        let catName: String?
+        let distance: Distance?
         let snap, instagram, website, whatsapp: String?
-        let facebook: String?
-        let userComment: [UserComment]?
-        let products: [Facilite]?
-        let days, brand: [JSONAny]?
-        let facilites: [Facilite]?
+        let twitter, facebook: String?
+        let userComment: [Comment]?
+        let products: [Product]?
+        let days: [Day]?
+        let brand, facilites: [JSONAny]?
         let images: [Image]?
 
         enum CodingKeys: String, CodingKey {
             case id, name, desc, image, lat, video, lang, phone, type
             case isFavorite = "is_favorite"
+            case isComment = "is_comment"
+            case myComment = "my_comment"
             case rate
             case catName = "cat_name"
-            case distance, snap, instagram, website, whatsapp, facebook
+            case distance, snap, instagram, website, whatsapp, twitter, facebook
             case userComment = "user_comment"
             case products, days, brand, facilites, images
         }
     }
 
-    // MARK: - Facilite
-    struct Facilite: Codable {
+    // MARK: - Day
+    struct Day: Codable {
         let id: Int?
-        let name: String?
-        let image: String?
-        let price: Int?
+        let name, from, key, to: String?
+        let note: String?
+        let type: Int?
+    }
+
+    enum Distance: String, Codable {
+        case the0KM = "0 km"
     }
 
     // MARK: - Image
@@ -56,14 +64,14 @@ struct ShopsByCatID: Codable {
         let image: String?
     }
 
-    // MARK: - UserComment
-    struct UserComment: Codable {
+    // MARK: - Comment
+    struct Comment: Codable {
         let id: Int?
-        let name: Name?
+        let name: String?
         let image: String?
         let rate: String?
-        let comment: Comment?
-        let createdAt: CreatedAt?
+        let comment: CommentEnum?
+        let createdAt: String?
 
         enum CodingKeys: String, CodingKey {
             case id, name, image, rate, comment
@@ -71,22 +79,19 @@ struct ShopsByCatID: Codable {
         }
     }
 
-    enum Comment: String, Codable {
+    enum CommentEnum: String, Codable {
+        case asd = "asd"
+        case hall = "hall"
         case myComment = "my comment"
-        case thisIsNew = "this is new"
-        case حلوكتير = "حلو كتير"
+        case املوالداتا = "املو الداتا"
     }
 
-    enum CreatedAt: String, Codable {
-        case the20200225T102630000000Z = "2020-02-25T10:26:30.000000Z"
-        case the20200305T132513000000Z = "2020-03-05T13:25:13.000000Z"
-        case the20200321T173912000000Z = "2020-03-21T17:39:12.000000Z"
-    }
-
-    enum Name: String, Codable {
-        case ahmedMuawad = "Ahmed Muawad"
-        case ahmedaaaaaaaaaaa = "Ahmedaaaaaaaaaaa"
-        case osama = "osama"
+    // MARK: - Product
+    struct Product: Codable {
+        let id: Int?
+        let name: String?
+        let image: String?
+        let price: Int?
     }
 
     // MARK: - Encode/decode helpers

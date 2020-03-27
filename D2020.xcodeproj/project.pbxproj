@@ -18,6 +18,11 @@
 		521CC4B5241F7459007803FD /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CC4B4241F7459007803FD /* Option.swift */; };
 		521CC4B7241F898F007803FD /* ChangeCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CC4B6241F898F007803FD /* ChangeCityViewController.swift */; };
 		521CC4B9241F8AF8007803FD /* ChangeCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CC4B8241F8AF8007803FD /* ChangeCityTableViewCell.swift */; };
+		522A22CD242C15F9008E63F0 /* PaymentMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522A22CC242C15F9008E63F0 /* PaymentMethodVC.swift */; };
+		5232B237242A7FD600AACF3D /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B236242A7FD500AACF3D /* BaseApi.swift */; };
+		5232B239242AA8D400AACF3D /* MyStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B238242AA8D400AACF3D /* MyStores.swift */; };
+		5236E4F6242A1A5100B232DD /* Upgrade.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5236E4F5242A1A5100B232DD /* Upgrade.storyboard */; };
+		5251F87B242D1EF80011AE19 /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251F87A242D1EF80011AE19 /* PaymentMethod.swift */; };
 		52E64929241E22DD00B2B0AE /* shopTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E64928241E22DD00B2B0AE /* shopTypeViewController.swift */; };
 		52E6492B241E292300B2B0AE /* shopTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6492A241E292300B2B0AE /* shopTypeTableViewCell.swift */; };
 		52E6492D241E34FA00B2B0AE /* shopType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6492C241E34FA00B2B0AE /* shopType.swift */; };
@@ -26,6 +31,8 @@
 		52E8672B241D2C2C00D7CBBC /* catagoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8672A241D2C2C00D7CBBC /* catagoryTableViewController.swift */; };
 		52E8672D241D2C7200D7CBBC /* catagoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8672C241D2C7100D7CBBC /* catagoryTableViewCell.swift */; };
 		52E8672F241D2CBF00D7CBBC /* products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8672E241D2CBF00D7CBBC /* products.swift */; };
+		52FB83B9242AD93D0063CA78 /* PackageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FB83B8242AD93D0063CA78 /* PackageVC.swift */; };
+		52FB83BB242ADEEF0063CA78 /* Packages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FB83BA242ADEEF0063CA78 /* Packages.swift */; };
 		8033E76B24254CA200D0F2A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033E76524254CA200D0F2A0 /* Constants.swift */; };
 		8033E76C24254CA200D0F2A0 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 8033E76624254CA200D0F2A0 /* loading.json */; };
 		8033E77524254CE700D0F2A0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8033E77324254CE700D0F2A0 /* Localizable.strings */; };
@@ -57,7 +64,6 @@
 		8033E8BC24254FF900D0F2A0 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033E82724254FF900D0F2A0 /* ApiManager.swift */; };
 		8033E8BD24254FF900D0F2A0 /* ApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033E82824254FF900D0F2A0 /* ApiProtocol.swift */; };
 		8033E8BE24254FF900D0F2A0 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033E82924254FF900D0F2A0 /* Authorization.swift */; };
-		8033E8BF24254FF900D0F2A0 /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033E82A24254FF900D0F2A0 /* BaseApi.swift */; };
 		8033E8C124254FF900D0F2A0 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033E82C24254FF900D0F2A0 /* EndPoint.swift */; };
 		8033E8C224254FF900D0F2A0 /* Paginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033E82D24254FF900D0F2A0 /* Paginator.swift */; };
 		8033E8C324254FF900D0F2A0 /* GalleryPickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033E82F24254FF900D0F2A0 /* GalleryPickerHelper.swift */; };
@@ -189,6 +195,11 @@
 		521CC4B4241F7459007803FD /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		521CC4B6241F898F007803FD /* ChangeCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCityViewController.swift; sourceTree = "<group>"; };
 		521CC4B8241F8AF8007803FD /* ChangeCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCityTableViewCell.swift; sourceTree = "<group>"; };
+		522A22CC242C15F9008E63F0 /* PaymentMethodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodVC.swift; sourceTree = "<group>"; };
+		5232B236242A7FD500AACF3D /* BaseApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
+		5232B238242AA8D400AACF3D /* MyStores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStores.swift; sourceTree = "<group>"; };
+		5236E4F5242A1A5100B232DD /* Upgrade.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Upgrade.storyboard; sourceTree = "<group>"; };
+		5251F87A242D1EF80011AE19 /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
 		52E64928241E22DD00B2B0AE /* shopTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shopTypeViewController.swift; sourceTree = "<group>"; };
 		52E6492A241E292300B2B0AE /* shopTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shopTypeTableViewCell.swift; sourceTree = "<group>"; };
 		52E6492C241E34FA00B2B0AE /* shopType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shopType.swift; sourceTree = "<group>"; };
@@ -197,6 +208,8 @@
 		52E8672A241D2C2C00D7CBBC /* catagoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = catagoryTableViewController.swift; sourceTree = "<group>"; };
 		52E8672C241D2C7100D7CBBC /* catagoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = catagoryTableViewCell.swift; sourceTree = "<group>"; };
 		52E8672E241D2CBF00D7CBBC /* products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = products.swift; sourceTree = "<group>"; };
+		52FB83B8242AD93D0063CA78 /* PackageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageVC.swift; sourceTree = "<group>"; };
+		52FB83BA242ADEEF0063CA78 /* Packages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Packages.swift; sourceTree = "<group>"; };
 		7CD42E7013F938C7FA37C420 /* Pods_D2020.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_D2020.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8033E76524254CA200D0F2A0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8033E76624254CA200D0F2A0 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
@@ -230,7 +243,6 @@
 		8033E82724254FF900D0F2A0 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		8033E82824254FF900D0F2A0 /* ApiProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiProtocol.swift; sourceTree = "<group>"; };
 		8033E82924254FF900D0F2A0 /* Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
-		8033E82A24254FF900D0F2A0 /* BaseApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
 		8033E82C24254FF900D0F2A0 /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		8033E82D24254FF900D0F2A0 /* Paginator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paginator.swift; sourceTree = "<group>"; };
 		8033E82F24254FF900D0F2A0 /* GalleryPickerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryPickerHelper.swift; sourceTree = "<group>"; };
@@ -383,6 +395,9 @@
 				FA25201723FC3D4C004D8F32 /* CategoryVC.swift */,
 				FA64D31723FEB6D000D18958 /* EachCategoryVC.swift */,
 				FA5C6DDA24015A1700E11A98 /* SelectedCategoryVC.swift */,
+				FA6D98E52411242500D71D3C /* AddShopVC.swift */,
+				52FB83B8242AD93D0063CA78 /* PackageVC.swift */,
+				522A22CC242C15F9008E63F0 /* PaymentMethodVC.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -419,6 +434,7 @@
 				8033E92424257C5600D0F2A0 /* StoreDetail.storyboard */,
 				8033E92624257D5B00D0F2A0 /* CreateStore.storyboard */,
 				8033E92824257E5F00D0F2A0 /* Popup.storyboard */,
+				5236E4F5242A1A5100B232DD /* Upgrade.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -509,8 +525,8 @@
 				8033E82624254FF900D0F2A0 /* ApiHelpers.swift */,
 				8033E82724254FF900D0F2A0 /* ApiManager.swift */,
 				8033E82824254FF900D0F2A0 /* ApiProtocol.swift */,
+				5232B236242A7FD500AACF3D /* BaseApi.swift */,
 				8033E82924254FF900D0F2A0 /* Authorization.swift */,
-				8033E82A24254FF900D0F2A0 /* BaseApi.swift */,
 				8033E82C24254FF900D0F2A0 /* EndPoint.swift */,
 				8033E82D24254FF900D0F2A0 /* Paginator.swift */,
 			);
@@ -675,6 +691,9 @@
 				521B80D324282B9500CB1709 /* SubCategoryAndShops.swift */,
 				521B80D52428462F00CB1709 /* ShopsByCatID.swift */,
 				521CC4B4241F7459007803FD /* Option.swift */,
+				5232B238242AA8D400AACF3D /* MyStores.swift */,
+				52FB83BA242ADEEF0063CA78 /* Packages.swift */,
+				5251F87A242D1EF80011AE19 /* PaymentMethod.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -797,7 +816,6 @@
 				FA66FE76240FBFEA00AFC774 /* PremiumContacts.swift */,
 				FA68E21B240EFEA50015C96E /* PremiumContentVC.swift */,
 				FA707D222418F878001BC8CE /* PromoContentVCC.swift */,
-				FA6D98E52411242500D71D3C /* AddShopVC.swift */,
 				FA842A342416A0F40042DB49 /* AddShopDetailVC.swift */,
 				FA85AEC52418043A008EAD50 /* ShopOwnerProfileVC.swift */,
 				FA6294652406B6EA00308F25 /* ATCClassicWalkthroughViewController.swift */,
@@ -883,6 +901,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA62946C2406B73100308F25 /* ATCWalkthroughViewController.xib in Resources */,
+				5236E4F6242A1A5100B232DD /* Upgrade.storyboard in Resources */,
 				8033E91F24256BC800D0F2A0 /* Auth.storyboard in Resources */,
 				8033E92924257E5F00D0F2A0 /* Popup.storyboard in Resources */,
 				8033E92324257BD500D0F2A0 /* Category.storyboard in Resources */,
@@ -993,6 +1012,8 @@
 				521CC4B7241F898F007803FD /* ChangeCityViewController.swift in Sources */,
 				FA66C90F2403565E00CD6B95 /* NewAdsMan.swift in Sources */,
 				FA2BAEE624210086002E6505 /* CountryTableViewCell.swift in Sources */,
+				5232B237242A7FD600AACF3D /* BaseApi.swift in Sources */,
+				52FB83B9242AD93D0063CA78 /* PackageVC.swift in Sources */,
 				FA53ED88240687DE00A037E9 /* WalkthroughVC.swift in Sources */,
 				FA5E6E4F240BDC1F00041736 /* ForRentCell.swift in Sources */,
 				8033E8BC24254FF900D0F2A0 /* ApiManager.swift in Sources */,
@@ -1014,6 +1035,7 @@
 				8033E8BB24254FF900D0F2A0 /* ApiHelpers.swift in Sources */,
 				5202ECEC241EE6AD007E10F6 /* OptionViewController.swift in Sources */,
 				FA2BAEDA2420D884002E6505 /* AddProductShopVC.swift in Sources */,
+				5232B239242AA8D400AACF3D /* MyStores.swift in Sources */,
 				8033E8D324254FF900D0F2A0 /* PickerViewHelper.swift in Sources */,
 				FA6D98E4241121F400D71D3C /* ShopsAddedCell.swift in Sources */,
 				52E6492D241E34FA00B2B0AE /* shopType.swift in Sources */,
@@ -1037,8 +1059,10 @@
 				8033E8CF24254FF900D0F2A0 /* LocationHelper.swift in Sources */,
 				FA25201B23FC3DF4004D8F32 /* Category.swift in Sources */,
 				FA66FE75240FB0A700AFC774 /* PremiumWorkTimeCell.swift in Sources */,
+				522A22CD242C15F9008E63F0 /* PaymentMethodVC.swift in Sources */,
 				FA53ED86240682BB00A037E9 /* WalkthroughPageViewController.swift in Sources */,
 				FA1FEF24240ED1FE002AABE7 /* PremiumProductsVC.swift in Sources */,
+				52FB83BB242ADEEF0063CA78 /* Packages.swift in Sources */,
 				8033E7D524254E3100D0F2A0 /* SwifterSwift.swift in Sources */,
 				FA5D914F23F984C90004CBEB /* RegisterLocationVC.swift in Sources */,
 				8033E8BD24254FF900D0F2A0 /* ApiProtocol.swift in Sources */,
@@ -1066,6 +1090,7 @@
 				8033E78024254D0100D0F2A0 /* TokenModel.swift in Sources */,
 				8033E79524254D9000D0F2A0 /* ExtensionUICollectionViewCell.swift in Sources */,
 				8033E79424254D9000D0F2A0 /* CellProtocol.swift in Sources */,
+				5251F87B242D1EF80011AE19 /* PaymentMethod.swift in Sources */,
 				8033E8FE24254FF900D0F2A0 /* RadioView.swift in Sources */,
 				FA62946E2406B86400308F25 /* ATCWalkthroughModel.swift in Sources */,
 				FA62946B2406B73100308F25 /* ATCWalkthroughViewController.swift in Sources */,
@@ -1116,7 +1141,6 @@
 				8033E7ED24254E3100D0F2A0 /* UIConstraintLayoutExtension.swift in Sources */,
 				FA6294642406B66D00308F25 /* OnBoardingVC.swift in Sources */,
 				8033E90324254FF900D0F2A0 /* SearchBarHelper.swift in Sources */,
-				8033E8BF24254FF900D0F2A0 /* BaseApi.swift in Sources */,
 				FA66FE7F24100E3400AFC774 /* ShopsSaved.swift in Sources */,
 				521C0C8C2426C33C00EC674B /* City.swift in Sources */,
 			);
@@ -1275,7 +1299,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = D2020/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1295,7 +1319,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = D2020/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RKz-Oy-2Kx">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -237,7 +236,6 @@
                                                     <constraint firstAttribute="width" constant="24" id="cBR-M6-YmG"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="magnifyingglass" catalog="system"/>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -572,7 +570,6 @@
                                                     <constraint firstAttribute="width" constant="24" id="pt1-Za-17p"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="magnifyingglass" catalog="system"/>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -981,8 +978,8 @@
         <image name="iconfinder_Filter_4781833" width="22" height="22"/>
         <image name="left" width="29" height="24"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
-        <image name="online-store (1)" width="44" height="37.5"/>
-        <image name="save" width="42" height="42"/>
+        <image name="online-store (1)" width="40.5" height="34"/>
+        <image name="save" width="24" height="24"/>
         <image name="speech-bubble" width="24" height="24"/>
     </resources>
 </document>

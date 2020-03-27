@@ -122,12 +122,13 @@ extension CategoryVC : UITableViewDelegate,UITableViewDataSource {
         
         
         if tableView == self.tableView {
-           // performSegue(withIdentifier: Segues.ToMyShops, sender: self)
-        
+              let storyboard = UIStoryboard(name: "Upgrade", bundle: nil)
+                               let scene = storyboard.instantiateViewController(withIdentifier: "AddShopVC")
+                               navigationController?.pushViewController(scene, animated: true)
         }else {
            let storyboard = UIStoryboard(name: "Category", bundle: nil)
-                  let scene = storyboard.instantiateViewController(withIdentifier: "EachCategoryVC")
-                  navigationController?.pushViewController(scene, animated: true)
+           let scene = storyboard.instantiateViewController(withIdentifier: "EachCategoryVC")
+           navigationController?.pushViewController(scene, animated: true)
 
         }
  

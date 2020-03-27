@@ -19,6 +19,9 @@ public enum EndPoint: String {
     case SubCountry
     case getSubCategoryAndShop
     case shop = "shop/getShops"
+    case stores = "shop/my_stores"
+    case packages = "shop/get_packages"
+    case add_shop_to_package = "shop/add_shop_to_package"
     
     
 }

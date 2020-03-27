@@ -65,10 +65,11 @@ extension SelectedCategoryVC : UITableViewDelegate,UITableViewDataSource{
            }
        
        
-         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
               return didSelectedItems.count
-          }
-          func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            let cell = tableView.dequeueReusableCell(withIdentifier:Identifiers.SelectedCategory , for: indexPath) as! SelectedCategoryCell
            
            cell.didSelectedImg.setImage(url: didSelectedItems[indexPath.row].image!)
@@ -77,34 +78,35 @@ extension SelectedCategoryVC : UITableViewDelegate,UITableViewDataSource{
            
             cell.didSelectedKm.text = didSelectedItems[indexPath.row].distance
             cell.starView.rating = Double(didSelectedItems[indexPath.row].rate!)
-             cell.saveButton.tag = indexPath.row
-                          self.setupFavorite(change: false, sender: cell.saveButton)
-                          cell.saveButton.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
-                          return cell
-                  }
-                   @objc func buttonClicked(sender:UIButton){
-                              let method = api(.getSubCategoryAndShop, [self.shopArray[sender.tag].id!])
-                              ApiManager.instance.connection(method, type: .post) { [weak self] (response) in
-                               self?.setupFavorite(change: true ,sender: sender)
-                              }
-                   }
-                   func setupFavorite(change: Bool ,sender: UIButton ) {
-                       if case change = true {
-                           if case self.shopArray[sender.tag].isFavorite = true  {
-                               self.shopArray[sender.tag].isFavorite = false
-                           } else {
-                               self.shopArray[sender.tag].isFavorite = true
-                           }
-                   }
-                   if case self.shopArray[sender.tag].isFavorite = true  {
-                       sender.setImage(UIImage(named: "save_act"), for: .normal)
-                   } else {
-                       sender.setImage(UIImage(named: "save"), for: .normal)
-                   }
-               }
-       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           //performSegue(withIdentifier: Segues.ToProfileVC, sender: self)
+            cell.saveButton.tag = indexPath.row
+                self.setupFavorite(change: false, sender: cell.saveButton)
+                cell.saveButton.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
+                return cell
+    }
+    
+    @objc func buttonClicked(sender:UIButton){
+        let method = api(.shop, [self.didSelectedItems[sender.tag].id!])
+            ApiManager.instance.connection(method, type: .post) { [weak self] (response) in
+                self?.setupFavorite(change: true ,sender: sender)
+             }
+    }
+   func setupFavorite(change: Bool ,sender: UIButton ) {
+        if case change = true {
+            if case self.didSelectedItems[sender.tag].isFavorite = true  {
+                self.didSelectedItems[sender.tag].isFavorite = false
+        } else {
+            self.didSelectedItems[sender.tag].isFavorite = true
+            }
        }
+     if case self.didSelectedItems[sender.tag].isFavorite = true  {
+            sender.setImage(UIImage(named: "save_act"), for: .normal)
+     } else {
+           sender.setImage(UIImage(named: "save"), for: .normal)
+            }
+      }
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           //performSegue(withIdentifier: Segues.ToProfileVC, sender: self)
+    }
     
     private func showTable(){
         let vc = controller(OptionViewController.self, storyboard: .pop)
