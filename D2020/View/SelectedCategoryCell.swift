@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cosmos
 
 class SelectedCategoryCell: UITableViewCell {
 
@@ -16,12 +17,21 @@ class SelectedCategoryCell: UITableViewCell {
     
     @IBOutlet weak var didSelectedKm: UILabel!
     
+    @IBOutlet weak var starView: CosmosView!
     
-    @IBOutlet var didSelectedStarBtn: [UIButton]!
+
+    @IBOutlet weak var saveButton: UIButton!
+    
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        starView.settings.updateOnTouch = false
+        starView.settings.starSize = 13
+        starView.settings.filledImage = UIImage(named: "star (3)")
+        starView.settings.emptyImage = UIImage(named: "emtyStar")
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -46,23 +56,6 @@ class SelectedCategoryCell: UITableViewCell {
     @IBAction func didSelectTag(_ sender: Any) {
     }
     
-    @IBAction func didSelectedStarBtnPressed(_ sender: Any) {
-        
-        print("Rated \((sender as AnyObject).tag)stars.")
-            
-            for button in didSelectedStarBtn{
-                if button.tag <= (sender as AnyObject).tag {
-                   //selected
-                    button.setBackgroundImage(UIImage.init(named: "star (3)"), for: .normal)
-                }else{
-                    //not selected
-                     button.setBackgroundImage(UIImage.init(named: "star (notSelected)"), for: .normal)
-                    
-                }
-            }
-        
-        
-        
-    }
+
     
 }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Cosmos
+import TinyConstraints
 
 class ShopsAddedCell: UITableViewCell {
 
@@ -15,13 +17,24 @@ class ShopsAddedCell: UITableViewCell {
     @IBOutlet weak var imageIcon: UIImageView!
     @IBOutlet weak var shopsTag: RoundedButton!
     @IBOutlet weak var trash: RoundedButton!
+    
+ 
+    @IBOutlet weak var ratingView: CosmosView!
+    
+    
     //Outlets Add A Shop
     
     @IBOutlet weak var imageIconB: RoundedImageView!
     @IBOutlet weak var addAShop: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+//        ratingView.settings.updateOnTouch = false
+//        ratingView.settings.starSize = 13
+//        ratingView.settings.filledImage = UIImage(named: "star (3)")
+//        ratingView.settings.emptyImage = UIImage(named: "emtyStar")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

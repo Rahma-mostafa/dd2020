@@ -17,7 +17,10 @@ class SubCategoryCell: UICollectionViewCell {
     @IBOutlet weak var roundedView: RoundedShadowView!
     override func awakeFromNib() {
         super.awakeFromNib()
-//            roundedView.layer.cornerRadius = 11
+        roundedView.layer.cornerRadius = 8
+        subCategoryImg.layer.cornerRadius = 7
+        
+        
         
     }
 //    

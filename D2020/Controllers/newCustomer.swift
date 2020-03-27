@@ -84,7 +84,7 @@ class newCustomer: UIViewController
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ChangeCityTableSegue"{
-                 let changeCityViewController = segue.destination as! changeCityViewController
+                 let changeCityViewController = segue.destination as! ChangeCityViewController
                  changeCityViewController.shouldHideTable = { [unowned self]
                      (Name) in
                      self.hideCityTable()

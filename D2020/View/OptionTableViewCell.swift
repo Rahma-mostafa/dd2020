@@ -8,7 +8,7 @@
 
 import UIKit
 
-class optionTableViewCell: UITableViewCell {
+class OptionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var optionLabel: UILabel!

@@ -31,7 +31,7 @@ class AddShopDetailVC: BaseController {
     var logoURL: URL?
     
     var cities: [CityModel.CityData] = []
-    var categories: [Category.CategoryModel] = []
+    var categories: [Category.DateElement] = []
     var subCategories: [SubCategoryModel.Data] = []
     var selectedCity: Int?
     var selectedCategory: Int?

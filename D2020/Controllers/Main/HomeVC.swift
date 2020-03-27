@@ -51,10 +51,7 @@ class HomeVC: BaseController {
     
     var tableViewItemsB : [TableViewCategory] = [TableViewCategory(name: "الاسرة النتجة", tableViewImg: "Group 500", tableViewDescription: "اكثر من ٣٠٠ منتج من الاسر المنتجة", bkImage: "perry-grone-lbLgFFlADrY-unsplash")]
     
-    var items:[Item] = [Item( name:"المحلات", imageName: "mostafa-meraji-X0yKdR_F9rM-unsplash",description: "اكثر من ٥٠٠ محل", imageIcon: "shop")]
-    
-    var items2 :[Item] = [Item(name: "للايجار", imageName: "dmitry-demidko-eBWzFKahEaU-unsplash", description: "اكثر من ٣٠٠ محل للايجار", imageIcon: "Group 499")]
-    
+
     var sections: [Section.Data] = []
     var sliders: [Slider.Data] = []
     
@@ -288,7 +285,7 @@ extension HomeVC : UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
                     cell.categoryImage.setImage(url: item.image)
                     cell.titleLbl.text = item.name
                     cell.descLbl.text = ""
-                    cell.imageIcon.image = UIImage(named: items[indexPath.item].imageIcon!)
+                    cell.imageIcon.image = UIImage(named: "shop")
                 }
             }
             
@@ -300,7 +297,7 @@ extension HomeVC : UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
                 cell2.categoryImage2.setImage(url: item.image)
                 cell2.titleLbl.text = item.name
                 cell2.descLbl.text = ""
-                cell2.imageIcon2.image = UIImage(named: items2[indexPath.item].imageIcon!)
+                cell2.imageIcon2.image = UIImage(named: "Group 499")
             }
         }
         
@@ -325,28 +322,9 @@ extension HomeVC : UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         if collectionView == self.collectionView {
             let vc = controller(AddShopDetailVC.self, storyboard: .createStore)
             push(vc)
         }
-        //<<<<<<< HEAD
-        //  performSegue(withIdentifier: Segues.ToProducts, sender: self)
-        
-        //=======
-        selectedCategory = items[indexPath.item].name
-        selectedCategory = items[indexPath.item].description
-        //       selectedCategory = UIImage(named: items[indexPath.item].imageName!)
-        
-        //performSegue(withIdentifier: Segues.ToProducts, sender: self)
-        
-        //>>>>>>> origin/Drivers-Ahmad-1
     }
-    //        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //            if segue.identifier == Segues.ToProducts {
-    //                if let destination = segue.destination as? CategoryVC {
-    //                    destination.category = selectedCategory
-    //                }
-    //            }
-    //        }
 }

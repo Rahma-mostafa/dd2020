@@ -42,7 +42,7 @@ extension PickerPopVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell =  cityTableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as? changeCityTableViewCell {
+        if let cell =  cityTableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as? ChangeCityTableViewCell {
             cell.cityLabel.text = titleClosure?(indexPath.row)
             cell.closeButton.tag = indexPath.row
             cell.onCloseButtonTapped = { [weak self] in

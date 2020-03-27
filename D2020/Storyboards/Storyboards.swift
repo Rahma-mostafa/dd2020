@@ -15,4 +15,5 @@ public enum Storyboards: String {
     case store = "StoreDetail"
     case createStore = "CreateStore"
     case pop = "Popup"
+    case Upgrade = "Upgrade"
 }

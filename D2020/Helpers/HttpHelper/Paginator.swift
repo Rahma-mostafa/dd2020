@@ -46,6 +46,7 @@ extension Paginator {
 //        if ApiManager.instance.paramaters["custom_page"] != nil {
 //            ApiManager.instance.paramaters["page"] = ApiManager.instance.paramaters["custom_page"]
 //        }
+
     }
     func incresePaginate() {
         paginator += 1
