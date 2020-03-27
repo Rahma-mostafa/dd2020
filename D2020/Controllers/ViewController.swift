@@ -8,8 +8,10 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
-class LoginVC: UIViewController {
+
+class LoginVC: BaseController {
     //showing password
     var isSecure = true
 
@@ -27,7 +29,7 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        loginPressedOutlet.isEnabled = false
+//        loginPressedOutlet.isEnabled = false
 //        imgCall.layer.cornerRadius = 33
 
     }
@@ -45,9 +47,17 @@ class LoginVC: UIViewController {
     
     
     
+    @IBAction func RegisterClicked(_ sender: Any) {
+        let vc = controller(RegisterAsVC.self, storyboard: .auth)
+            
+//        vc.registerAS = 
+            
+            push(vc)
+        
+    }
     
     @IBAction func login_click(_ sender: Any) {
-        loginPressedOutlet.isEnabled = false
+//        loginPressedOutlet.isEnabled = false
         
         // if no text entered
                if usernameTxt.text!.isEmpty || passwordTxt.text!.isEmpty {
@@ -55,6 +65,11 @@ class LoginVC: UIViewController {
                    // red placeholders
                 usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
                 passwordTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+                
+                
+                makeAlert("Please Fill Out All Fields") {
+                    
+                }
                    
                // text is entered
                } else {
@@ -62,8 +77,32 @@ class LoginVC: UIViewController {
                    // remove keyboard
                    self.view.endEditing(true)
         
+                guard let phone = usernameTxt.text, !usernameTxt.text!.isEmpty else
+                
+                    
+                
+                {return}
+                guard let password = passwordTxt.text, !passwordTxt.text!.isEmpty else {return}
+                
+              
         
-        
+                API.login(phone: phone, password: password) { (error:Error?, success: Bool) in
+                    if success {
+                        
+                        //go to homeView
+                  
+                    
+                    
+                    }else{
+                        
+                        //make a popview error
+                        
+                        
+                        
+                        
+                    }
+                    
+                }
         
         
 

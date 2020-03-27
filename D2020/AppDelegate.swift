@@ -16,11 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         //initAppDelegate()
         setAppLang("ar")
         initLang()
         //UIViewController.preventPageSheetPresentation
         initAppDelegate()
+        
+        if let api_token =  UserDefaultsHelper.getapiApiToken()  {
+            print("data: \(api_token)")
+            //skip Auth Screens & and go to the Home screen
+            let home = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                window?.rootViewController = home
+   
+        }
         return true
     }
 

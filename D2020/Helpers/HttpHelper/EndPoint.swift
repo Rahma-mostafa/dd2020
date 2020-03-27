@@ -27,5 +27,4 @@ public enum EndPoint: String {
     case stores = "shop/my_stores"
     case packages = "shop/get_packages"
     case add_shop_to_package = "shop/add_shop_to_package"
-    
 }

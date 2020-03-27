@@ -88,6 +88,7 @@ struct Identifiers {
     static let ShopsAddedCell = "ShopsAddedCell"
     static let ShopOwnerProducts = "ShopOwnerProducts"
     static let MenuTableViewA = "MenuTableViewA"
+    static let CodeCell = "CodeCell"
     
 }
 
