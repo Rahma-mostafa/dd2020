@@ -1069,7 +1069,7 @@
         <scene sceneID="l1j-nB-VwZ">
             <objects>
                 <viewController storyboardIdentifier="newCustomer" id="r22-z5-9G1" customClass="newCustomer" customModule="D2020" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="w1W-Mw-HSj">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="w1W-Mw-HSj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1381,7 +1381,7 @@
                                     <constraint firstItem="XLk-BD-gqL" firstAttribute="leading" secondItem="VwQ-mO-dBB" secondAttribute="leading" constant="22" id="vkT-L0-Wyi"/>
                                 </constraints>
                             </view>
-                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXE-Rl-28B">
+                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DXE-Rl-28B">
                                 <rect key="frame" x="0.0" y="808" width="414" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="nef-ZK-vyO"/>

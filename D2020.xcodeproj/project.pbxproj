@@ -33,6 +33,9 @@
 		773433D8242D2CB0007B99D6 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773433D7242D2CB0007B99D6 /* CityModel.swift */; };
 		773433DA242D332F007B99D6 /* SubCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773433D9242D332F007B99D6 /* SubCategory.swift */; };
 		773433DE242D493B007B99D6 /* AddProductStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773433DD242D493B007B99D6 /* AddProductStoreCell.swift */; };
+		7748E106242D991F0041C490 /* RegisterAsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E105242D991E0041C490 /* RegisterAsVC.swift */; };
+		7748E108242D99600041C490 /* RegisterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E107242D99600041C490 /* RegisterTableViewCell.swift */; };
+		7748E10A242D99930041C490 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E109242D99930041C490 /* Users.swift */; };
 		779F39CA242D29AC0096198F /* PickerPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779F39C9242D29AC0096198F /* PickerPopVC.swift */; };
 		77BCA3B6242D16C600EF3980 /* AddStoreProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCA3B5242D16C600EF3980 /* AddStoreProductVC.swift */; };
 		77BCA3B8242D187000EF3980 /* AddProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCA3B7242D187000EF3980 /* AddProductDetailVC.swift */; };
@@ -218,6 +221,9 @@
 		773433D7242D2CB0007B99D6 /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		773433D9242D332F007B99D6 /* SubCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategory.swift; sourceTree = "<group>"; };
 		773433DD242D493B007B99D6 /* AddProductStoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductStoreCell.swift; sourceTree = "<group>"; };
+		7748E105242D991E0041C490 /* RegisterAsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterAsVC.swift; path = D2020/Controllers/RegisterAsVC.swift; sourceTree = SOURCE_ROOT; };
+		7748E107242D99600041C490 /* RegisterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterTableViewCell.swift; sourceTree = "<group>"; };
+		7748E109242D99930041C490 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		779F39C9242D29AC0096198F /* PickerPopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerPopVC.swift; sourceTree = "<group>"; };
 		77BCA3B5242D16C600EF3980 /* AddStoreProductVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStoreProductVC.swift; sourceTree = "<group>"; };
 		77BCA3B7242D187000EF3980 /* AddProductDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductDetailVC.swift; sourceTree = "<group>"; };
@@ -412,6 +418,14 @@
 				77BCA3B7242D187000EF3980 /* AddProductDetailVC.swift */,
 			);
 			path = CreateStore;
+			sourceTree = "<group>";
+		};
+		7748E104242D99110041C490 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7748E105242D991E0041C490 /* RegisterAsVC.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		779F39C8242D29710096198F /* Popup */ = {
@@ -713,6 +727,7 @@
 		FA25201923FC3DE1004D8F32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7748E109242D99930041C490 /* Users.swift */,
 				8033E77724254D0100D0F2A0 /* Core */,
 				773433D9242D332F007B99D6 /* SubCategory.swift */,
 				52E8672E241D2CBF00D7CBBC /* AddProductModel.swift */,
@@ -738,6 +753,7 @@
 		FA25201C23FC3E0A004D8F32 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7748E107242D99600041C490 /* RegisterTableViewCell.swift */,
 				FA64D31A23FEB91A00D18958 /* SubCategoryCell.xib */,
 				8033E79024254D8F00D0F2A0 /* Core */,
 				FAAC60F523F839DD007EB8E7 /* RoundedViews.swift */,
@@ -831,6 +847,7 @@
 		FA6294622406B64500308F25 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7748E104242D99110041C490 /* Auth */,
 				7721DD85242D8B46005C3C38 /* Category */,
 				779F39C8242D29710096198F /* Popup */,
 				7721D504242D0B4200609946 /* CreateStore */,
@@ -1045,6 +1062,7 @@
 				8033E8FD24254FF900D0F2A0 /* RadioButton.swift in Sources */,
 				8033E8E824254FF900D0F2A0 /* SwipeRefresh.swift in Sources */,
 				FA64D31F23FEB97300D18958 /* AfterSelectingCell.swift in Sources */,
+				7748E106242D991F0041C490 /* RegisterAsVC.swift in Sources */,
 				8033E80224254E3100D0F2A0 /* UIViewExtensions.swift in Sources */,
 				FA2BAEDE2420D9A0002E6505 /* slideShowCollectionViewCell.swift in Sources */,
 				8033E8A124254FF900D0F2A0 /* AlertableHelper.swift in Sources */,
@@ -1170,6 +1188,7 @@
 				808AC2FD2429EAC50015B24C /* StorePremuimController.swift in Sources */,
 				8033E8FB24254FF900D0F2A0 /* Initial.swift in Sources */,
 				FA5C34B223FD40740016DBFE /* CategoryCell.swift in Sources */,
+				7748E108242D99600041C490 /* RegisterTableViewCell.swift in Sources */,
 				FA66FE8124101CB200AFC774 /* SavedShopsVC.swift in Sources */,
 				FA66FE7D2410027B00AFC774 /* SavedVC.swift in Sources */,
 				8033E8D724254FF900D0F2A0 /* UITableViewVibrantCell.swift in Sources */,
@@ -1180,6 +1199,7 @@
 				8033E8A224254FF900D0F2A0 /* PublicHelper.swift in Sources */,
 				8033E79E24254DAA00D0F2A0 /* BaseViewControllerProtocol.swift in Sources */,
 				FA6294762406D0A000308F25 /* PageControlUITests.swift in Sources */,
+				7748E10A242D99930041C490 /* Users.swift in Sources */,
 				8033E8C124254FF900D0F2A0 /* EndPoint.swift in Sources */,
 				8033E7ED24254E3100D0F2A0 /* UIConstraintLayoutExtension.swift in Sources */,
 				FA6294642406B66D00308F25 /* OnBoardingVC.swift in Sources */,

@@ -22,14 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initLang()
         //UIViewController.preventPageSheetPresentation
         initAppDelegate()
-        
-        if let api_token =  UserDefaultsHelper.getapiApiToken()  {
-            print("data: \(api_token)")
-            //skip Auth Screens & and go to the Home screen
-            let home = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-                window?.rootViewController = home
-   
-        }
         return true
     }
 
