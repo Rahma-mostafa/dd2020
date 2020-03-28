@@ -25,6 +25,7 @@ class MenuVC: BaseController {
     @IBOutlet weak var delegateImage: UIImageView!
     @IBOutlet weak var familyBtn: UIButton!
     @IBOutlet weak var familyImage: UIImageView!
+    @IBOutlet weak var countryImage: UIImageView!
     
     @IBOutlet weak var profileBtn: UIButton!
     @IBOutlet weak var aboutBtn: UIButton!
@@ -49,14 +50,16 @@ class MenuVC: BaseController {
             //menuCollection.delegate = self
             //menuCollection.dataSource = self
         }
-        //userName.text = "\(UserRoot.instance.result?.first_name ?? "") \(UserRoot.instance.result?.last_name ?? "" )"
-        //userImage.setImage(url: UserRoot.instance.result?.image)
+        userName.text = "\(UserRoot.fetch()?.user?.name ?? "")"
+        uesrType.text = ""
+        userImage.setImage(url: UserRoot.fetch()?.user?.image)
         // Do any additional setup after loading the view.\
         setLocalize()
         setupMenu()
         fetchSection()
     }
     func setLocalize() {
+        countryImage.setImage(url: CountryViewController.deviceCountry?.file)
         profileBtn.setTitle(Localizations.profile.localized, for: .normal)
         storesBtn.setTitle(Localizations.stores.localized, for: .normal)
         rentBtn.setTitle(Localizations.rent.localized, for: .normal)
@@ -108,22 +111,51 @@ class MenuVC: BaseController {
         }
     }
     @IBAction func shareApp(_ sender: Any) {
+        D2020.shareApp(items: [])
     }
     @IBAction func support(_ sender: Any) {
+        
     }
     @IBAction func aboutApp(_ sender: Any) {
+        
     }
     @IBAction func family(_ sender: Any) {
+        
     }
     @IBAction func delegates(_ sender: Any) {
+        
     }
     @IBAction func rent(_ sender: Any) {
+        
     }
     @IBAction func stores(_ sender: Any) {
+        sections.forEach { (item) in
+            if item.style == 2 {
+                let vc = controller(CategoryVC.self, storyboard: .category)
+                vc.section = item.id
+                vc.sectionName = item.name
+                push(vc)
+            }
+        }
+        
     }
     @IBAction func profile(_ sender: Any) {
+        if let _ = UserRoot.token() {
+            let vc = controller(EditProfileViewController.self, storyboard: .auth)
+            push(vc)
+        } else {
+            UserRoot.loginAlert() {
+                let vc = self.controller(LoginVC.self, storyboard: .auth)
+                self.push(vc)
+            }
+        }
+     
     }
     @IBAction func logout(_ sender: Any) {
+        UserRoot.save(response: Data())
+        UserRoot.setData(data: nil)
+        let vc = controller(LoginVC.self, storyboard: .auth)
+        push(vc)
     }
 }
 

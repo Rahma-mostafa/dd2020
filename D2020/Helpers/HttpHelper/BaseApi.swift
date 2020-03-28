@@ -1,12 +1,13 @@
 import Alamofire
 
-class BaseApi: Paginator, Alertable {
+class BaseApi: Downloader, Paginator, Alertable {
     let url = Constants.url
     var paramaters: [String: Any] = [:]
     var headers: [String: String] = [:]
     var isHttpRequestRun: Bool = false
 
-    init() {
+    override init() {
+        super.init()
         setupObject()
     }
     func refresh() {
@@ -17,17 +18,14 @@ class BaseApi: Paginator, Alertable {
         headers["version"] = Constants.version
         headers["Device"] = Constants.deviceId
         headers["lang"] = Localizer.current
-        if UserDefaults.standard.bool(forKey: "LOGIN") {
-            if let token = UserDefaults.standard.string(forKey: "access_token") {
-                headers["Authorization"] = "Bearer "+token
-            } else {
-                headers["Authorization"] = ""
-            }
+        
+        if let token = UserRoot.token() {
+            headers["Authorization"] = "Bearer "+token
+        } else {
+            headers["Authorization"] = ""
         }
-        headers["Authorization"] = "Bearer "+"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOThjNjNiZDg0NjE4MmFiMTU0YWFjNzkwMjM5MDIzMTEwMjE2NThiNTNhMTczYzA2OTM0NDZiZmYwZDhkNTZlYWY4MDhkYjZkY2E0YzNhYTgiLCJpYXQiOjE1ODQ4MTIzNTIsIm5iZiI6MTU4NDgxMjM1MiwiZXhwIjoxNjE2MzQ4MzUyLCJzdWIiOiI5MCIsInNjb3BlcyI6W119.J0nLUuHxVw4-GhmpALIi_vut2pA6WM5WiiC3AjO6rA5Lj1i3xVqo_x11TcnhXol40rUz7wkfmCu0eZIdZtGwYYrZzKXlJd7_SuLdmmDefSuQVxPTrgPZ_4viafTki4PwcTm5WI7dYcrWTOxH5gOTwZTCXl4QPOVXdiBwH3DuP2sdZgZGD3JRvid3ecqMjZNNnazpPMcYqKBf1soq0Yelxkky5XWq1cKTTZBqeuYd5mKnB-99eXuH7Ztjmo6wXaLDY95m-Smh3CaYxxeMe-GVrCDStuCzgnHYS4Q7zKq_aSCPxT52s6pY6Rwe_gWUJiyz59rrnIDPlqOSdPxTRgz9eZOpbkv_NipAWsP0ewrZB-p_5zqtmD_kfsawUgdC5y7ojhysn6sQp39SvIlfNrdrMt74ugvSOZu6EfiZ5HomMc2-cZkz8mj1WlhI-skps_j1wyWWdac01rlg2s3vQi4DfWLvbCeS8IRxe2fyx84_Ofkppp4hCH-CBQyspwnP5jGydYer841VkEQGA20-sEOdYp420MLbG5LLIU_NUYUVmnwFbquy0PaLuvtNp6-vQQ8p9jAu8yQZSr2PUWkUaUoKmK99kcd7b3XdxX5h87hyCVt1zf5E__xZihTTyauUbT3_k90LHMQqnmytSWb1MXa4JH76TbTekAtN5kONuIkou3o"
-     
+ 
 
-        paramaters["lang"] = Localizer.current
         paramaters["device_type"] = Constants.deviceType
         if let devicetoken = UserDefaults.standard.string(forKey: "deviceToken") {
             paramaters["device_token"] = devicetoken
@@ -39,6 +37,7 @@ class BaseApi: Paginator, Alertable {
     }
     func resetObject() {
         self.paramaters = [:]
+        self.headers = [:]
         setupObject()
     }
     func initURL(method: String, type: HTTPMethod) -> String {
@@ -117,19 +116,26 @@ class BaseApi: Paginator, Alertable {
                 let string = value as? String
                 multipartFormData.append(string?.data(using: String.Encoding.utf8) ?? Data(), withName: key)
             } //Optional for extra parameters
-        },to: url) { (result) in
+        },to: url, headers: headers) { (result) in
             switch result {
             case .success(let upload, _, _):
+                self.presenting()
                 upload.uploadProgress(closure: { (progress) in
-                    
+                    print("Upload Progress: \(progress.fractionCompleted)")
+                    self.progressView.setProgress(Float(progress.fractionCompleted), animated: true)
+                    var progress = self.progressView.progress
+                    progress = progress*100
+                    self.label.text = "\(Int(progress))"+"%"
                 })
                 
                 upload.responseJSON { response in
+                    self.restore()
                     self.isHttpRequestRun = false
                     print(response.result.value ?? "")
                     switch response.result {
                     //case .success(let value)
                     case .success:
+                        
                         switch response.response?.statusCode {
                         case 200?:
                             completionHandler(response.data)
@@ -172,7 +178,7 @@ class BaseApi: Paginator, Alertable {
             }
         }
     }
-    func uploadMultiFiles(_ method: String , type: HTTPMethod, files: [[String: URL]], completionHandler: @escaping (Data?) -> ()) {
+    func uploadMultiFiles(_ method: String , type: HTTPMethod, files: [URL], key: String, completionHandler: @escaping (Data?) -> ()) {
         
         self.isHttpRequestRun = true
     
@@ -183,28 +189,27 @@ class BaseApi: Paginator, Alertable {
         Alamofire.upload(multipartFormData: { multipartFormData in
             var counter = 0
             files.forEach({ (item) in
-                item.forEach { (file) in
-                    multipartFormData.append(file.value, withName: "\(file.key)[\(counter)]")
-                }
+                multipartFormData.append(item, withName: "\(key)[\(counter)]")
                 counter += 1
             })
             for (key, value) in paramters {
                 let string = value as? String
                 multipartFormData.append(string?.data(using: String.Encoding.utf8) ?? Data(), withName: key)
             } //Optional for extra parameters
-        },to: url) { (result) in
+        },to: url, headers: headers) { (result) in
             switch result {
             case .success(let upload, _, _):
+                self.presenting()
                 upload.uploadProgress(closure: { (progress) in
                     print("Upload Progress: \(progress.fractionCompleted)")
-//                    self.progressView.setProgress(progress.fractionCompleted.float, animated: true)
-//                    var progress = self.progressView.progress
-//                    progress = progress*100
-//                    self.label.text = progress.int.string+"%"
+                    self.progressView.setProgress(Float(progress.fractionCompleted), animated: true)
+                    var progress = self.progressView.progress
+                    progress = progress*100
+                    self.label.text = "\(Int(progress))"+"%"
                 })
                 
                 upload.responseJSON { response in
-                  
+                    self.restore()
                     self.isHttpRequestRun = false
                     print(response.result.value ?? "")
                     switch response.result {

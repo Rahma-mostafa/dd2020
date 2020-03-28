@@ -10,50 +10,60 @@ import UIKit
 import Cosmos
 import TinyConstraints
 
-class ShopsAddedCell: UITableViewCell {
-
+class ShopsAddedCell: UITableViewCell, CellProtocol {
+    
+    @IBOutlet weak var premImage: UIImageView!
     @IBOutlet weak var shopsTitleAdd: UILabel!
-    @IBOutlet weak var ImageFrameColor: RoundedShadowView!
     @IBOutlet weak var imageIcon: UIImageView!
+    @IBOutlet weak var plusBtn: UIButton!
     @IBOutlet weak var shopsTag: RoundedButton!
-    @IBOutlet weak var trash: RoundedButton!
-    
- 
+    @IBOutlet weak var trash: UIButton!
     @IBOutlet weak var ratingView: CosmosView!
-    
-    
-    //Outlets Add A Shop
-    
-    @IBOutlet weak var imageIconB: RoundedImageView!
-    @IBOutlet weak var addAShop: UILabel!
-    
+    @IBOutlet weak var addNewShopLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-//        ratingView.settings.updateOnTouch = false
-//        ratingView.settings.starSize = 13
-//        ratingView.settings.filledImage = UIImage(named: "star (3)")
-//        ratingView.settings.emptyImage = UIImage(named: "emtyStar")
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    func setupDefault() {
+        premImage.isHidden = true
+        shopsTitleAdd.isHidden = true
+        shopsTag.isHidden = true
+        trash.isHidden = true
+        ratingView.isHidden = true
+        addNewShopLbl.text = "add.new.store.lan".localized
+    }
+    func setup() {
+        guard let model = model as? MyStores.Datum else { return }
+        addNewShopLbl.isHidden = true
+        plusBtn.isHidden = true
+        imageIcon.setImage(url: model.image)
+        shopsTitleAdd.text = model.name
+        shopsTag.setTitle(model.catName, for: .normal)
+        ratingView.rating = Double(model.rate ?? 0)
+        if model.type == 1 {
+            premImage.isHidden = false
+        } else {
+            premImage.isHidden = true
+        }
+    }
     override var frame: CGRect {
-               get {
-                   return super.frame
-               }
-               set (newFrame) {
-                   var frame =  newFrame
-                   frame.origin.y += 4
-                   frame.size.height -= 2 * 4
-                   super.frame = frame
-               }
+        get {
+            return super.frame
+        }
+        set (newFrame) {
+            var frame =  newFrame
+            frame.origin.y += 4
+            frame.size.height -= 2 * 4
+            super.frame = frame
+        }
         
     }
-
+    
 }
+

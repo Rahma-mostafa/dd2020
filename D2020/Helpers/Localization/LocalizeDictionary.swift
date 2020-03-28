@@ -74,5 +74,6 @@ struct Localizations {
     selectCity = "select.city.lan",
     selectType = "select.type.lan",
     confirm = "confirm.lan",
-    add = "add.lan"    
+    add = "add.lan"    ,
+    newUser = "mew.user.lan"
 }

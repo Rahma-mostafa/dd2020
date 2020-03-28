@@ -21,7 +21,7 @@ struct SubCategoryAndShops: Codable {
         let id: Int?
         let name: String?
         let seen: Int?
-        let desc: JSONNull?
+        let desc: String?
         let image: String?
     }
 
@@ -30,30 +30,24 @@ struct SubCategoryAndShops: Codable {
         let id: Int?
         let name, desc: String?
         let image: String?
-        let lat: Double?
         let video: String?
-        let lang: Double?
-        let phone: JSONNull?
+        let phone: String?
         let type: Int?
         var isFavorite: Bool?
-        let rate: Int?
+        let rate: Double?
         let catName, distance: String?
         let snap, instagram, website, whatsapp: String?
         let facebook: String?
-        let userComment: [UserComment]?
-        let products: [Facilite]?
-        let days, brand: [JSONAny]?
-        let facilites: [Facilite]?
-        let images: [Image]?
+        //let days, brand: [String]?
+        //let facilites: [Facilite]?
+        //let images: [Image]?
 
         enum CodingKeys: String, CodingKey {
-            case id, name, desc, image, lat, video, lang, phone, type
+            case id, name, desc, image, video, phone, type
             case isFavorite = "is_favorite"
             case rate
             case catName = "cat_name"
             case distance, snap, instagram, website, whatsapp, facebook
-            case userComment = "user_comment"
-            case products, days, brand, facilites, images
         }
     }
 

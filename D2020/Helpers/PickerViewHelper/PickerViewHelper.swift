@@ -21,6 +21,7 @@ extension PickerViewDelegate {
     }
 }
 
+typealias PickerCellHandler = (Int) -> UITableViewCell?
 typealias PickerTitleHandler = (Int) -> String?
 typealias PickerDidSelectPath = (Int) -> Void
 typealias PickerDidSelectItem = (Any) -> Void

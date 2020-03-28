@@ -12,14 +12,19 @@ class ChangeCityTableViewCell: UITableViewCell {
 
     @IBOutlet weak var closeButton: UIButton!
     
+    @IBOutlet weak var cityImage: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
-    var onCloseButtonTapped: (()->())!
+    @IBOutlet weak var lblLeading: NSLayoutConstraint!
+    var onCloseButtonTapped: (()->()) = {}
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-     closeButton.layer.cornerRadius = 6
+        if closeButton != nil {
+            closeButton.layer.cornerRadius = 6
+        }
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,7 +34,6 @@ class ChangeCityTableViewCell: UITableViewCell {
     }
     @IBAction func onCloseButtonTapped(_ sender: Any) {
         onCloseButtonTapped()
-
     }
     
 }
