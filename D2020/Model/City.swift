@@ -13,7 +13,8 @@ struct City: Codable {
     let message: String?
     // MARK: - Datum
     struct Datum: Codable {
-        let id, code: Int?
+        let id: Int?
+        let code: String?
         let file: String?
         let name: String?
     }

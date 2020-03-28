@@ -13,11 +13,13 @@ struct Section: Codable {
     
     // MARK: - Datum
     struct Data: Codable {
-        let id: Int?
-        let name: String?
-        let style: Int?
-        let registerLike, color: String?
-        let image: String?
+        var id: Int?
+        var name: String?
+        var desc: String?
+        var style: Int?
+        var registerLike, color: String?
+        var image: String?
+        var cover: String?
     }
 
 }

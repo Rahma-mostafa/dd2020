@@ -51,10 +51,12 @@ class StoreDetailController: BaseController {
     @IBOutlet weak var addContactBtn: UIButton!
     //@IBOutlet weak var scrollViewTop: NSLayoutConstraint!
     @IBOutlet weak var containerViewTop: NSLayoutConstraint!
+    @IBOutlet weak var yourRateHeight: NSLayoutConstraint!
+    @IBOutlet weak var yourRatView: UIView!
 
     
     var store: StoreDetail.StoreData?
-    var storeID: Int? = 12
+    var storeID: Int?
     var scrollHeightValue: CGFloat = 870
     var isExpandable: Bool?
     override func viewDidLoad() {
@@ -90,7 +92,7 @@ class StoreDetailController: BaseController {
         }
     }
     func setupUI() {
-        
+        let user =  UserRoot.fetch()
         storeNavImage.setImage(url: store?.image)
         storeNavLbl.text = store?.name
         storeImage.setImage(url: store?.image)
@@ -98,8 +100,8 @@ class StoreDetailController: BaseController {
         categoryBtn.setTitle(store?.cat_name, for: .normal)
         distanceLbl.text = store?.distance
         descLbl.text = store?.desc
-        userImage.setImage(url: store?.image)
-        usernameLbl.text = store?.name
+        userImage.setImage(url: user?.user?.image)
+        usernameLbl.text = user?.user?.name
         storeRate.rating = Double(store?.rate ?? 0)
         countRateLbl.text = "\(store?.user_comment?.count ?? 0) \(Localizations.personRate.localized)"
         collectionSlider.reloadData()
@@ -139,6 +141,14 @@ class StoreDetailController: BaseController {
         commentsHeight.constant = 0
         commentsHeight.constant += commentCount * 152
         commentTbl.reloadData()
+        
+        /** check user loging */
+        if UserRoot.token() == nil {
+            yourRateLbl.isHidden = true
+            yourRatView.isHidden = true
+            yourRateHeight.constant = 0
+            scrollHeight.constant -= 151
+        }
         
         if self.scrollView.contentOffset.y > 90 {
             self.viewSlider.fadeOut(duration: 0.5, completion: nil)

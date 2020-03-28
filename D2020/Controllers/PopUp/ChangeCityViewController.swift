@@ -14,10 +14,10 @@ class ChangeCityViewController: BaseController {
    
     
     @IBOutlet weak var cityTableView: UITableView!
-     var shouldHideTable : ((String)->())!
+     var shouldHideTable : ((String, Int)->())!
      var Color: UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     var cityArray:[City.Datum] = []
-    var Country:Int? = 26
+    var Country:Int? = CountryViewController.deviceCountry?.id ?? 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +47,7 @@ class ChangeCityViewController: BaseController {
              }
      }
     func hideCityTable(rowIndex: Int){
-           shouldHideTable(self.cityArray[rowIndex].name! )
+        shouldHideTable(self.cityArray[rowIndex].name ?? "" , self.cityArray[rowIndex].id ?? 0 )
            self.dismiss(animated: true)
     }
 }

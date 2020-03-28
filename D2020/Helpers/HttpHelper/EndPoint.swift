@@ -10,9 +10,11 @@ import Foundation
 
 public enum EndPoint: String {
     case token
-    case update = "user/update"
+    case update = "user/editData"
+    case editPassword = "user/editPassword"
+    case userInfo = "user/userData"
     case login
-    case register
+    case register = "Register"
     case logout
     case MainCountry
     case getSections
@@ -27,4 +29,7 @@ public enum EndPoint: String {
     case stores = "shop/my_stores"
     case packages = "shop/get_packages"
     case add_shop_to_package = "shop/add_shop_to_package"
+    case updateLat = "user/updateLat"
+    case addShop = "shop/add_shop"
+    case addProduct = "shop/add_product_toStore"
 }

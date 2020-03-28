@@ -21,6 +21,8 @@ class AddProductDetailVC: BaseController {
     var picker: GalleryPickerHelper?
     var image: UIImage?
     var imageURL: URL?
+    var storeID: Int?
+    
     weak var delegate: AddProductDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,16 +49,32 @@ class AddProductDetailVC: BaseController {
             self.picker?.pick(in: self, type: .picture)
         }
         addBtn.UIViewAction {
-            if self.validate() {
-                let model = AddProductModel()
-                model.name = self.productNameTxf.text
-                model.price = self.productPriceTxf.text
-                model.image = self.image
-                model.url = self.imageURL
-                self.delegate?.didAddProduct(product: model)
-                self.navigationController?.popViewController(animated: true)
+            self.addProduct()
+        }
+    }
+    func addProduct() {
+        if self.validate() {
+            guard let imageURL = imageURL else { return }
+            let method = api(.addProduct, [storeID ?? 0])
+            let paramters: [String: Any] = [
+                "name": productNameTxf.text ?? "",
+                "price": productPriceTxf.text ?? ""
+            ]
+            ApiManager.instance.paramaters = paramters
+            ApiManager.instance.downloaderDelegate = self
+            ApiManager.instance.uploadFile(method, type: .post, file: ["image": imageURL]) { (response) in
+                self.callbackDelegate()
             }
         }
+    }
+    func callbackDelegate() {
+        let model = AddProductModel()
+        model.name = self.productNameTxf.text
+        model.price = self.productPriceTxf.text
+        model.image = self.image
+        model.url = self.imageURL
+        self.delegate?.didAddProduct(product: model)
+        self.navigationController?.popViewController(animated: true)
     }
     func validate() -> Bool {
         if self.productNameTxf.text == nil || self.productPriceTxf.text == nil || image == nil {
@@ -68,3 +86,6 @@ class AddProductDetailVC: BaseController {
     }
 }
 
+extension AddProductDetailVC: DownloaderDelegate {
+    
+}

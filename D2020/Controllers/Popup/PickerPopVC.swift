@@ -19,6 +19,7 @@ class PickerPopVC: BaseController {
     var Color: UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     var text: String?
     var source: [Any] = []
+    var imageClosure: PickerTitleHandler?
     var titleClosure: PickerTitleHandler?
     var didSelectClosure: PickerDidSelectPath?
     var didSelectItemClosure: PickerDidSelectItem?
@@ -28,15 +29,15 @@ class PickerPopVC: BaseController {
         self.titleLbl.text = self.text
         cityTableView.delegate = self
         cityTableView.dataSource = self
-        self.view.UIViewAction {
-            self.dismiss(animated: true, completion: nil)
-        }
-        
+       
     }
 
 }
 
 extension PickerPopVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 55
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return source.count
     }
@@ -44,19 +45,23 @@ extension PickerPopVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell =  cityTableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as? ChangeCityTableViewCell {
             cell.cityLabel.text = titleClosure?(indexPath.row)
-            cell.closeButton.tag = indexPath.row
-            cell.onCloseButtonTapped = { [weak self] in
-                cell.closeButton.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
-                self?.dismiss(animated: true, completion: {
-                    self?.didSelectClosure?(indexPath.row)
-                    self?.didSelectItemClosure?(self?.source[indexPath.row] ?? "")
-                })
+            if imageClosure?(indexPath.row) == nil {
+                cell.lblLeading.constant -= 40
+            } else {
+                cell.cityImage.setImage(url: imageClosure?(indexPath.row))
             }
+
             if indexPath.row % 2 == 0 {
-                cell.closeButton.backgroundColor = #colorLiteral(red: 0.9371728301, green: 0.9373074174, blue: 0.9371433854, alpha: 1)
+                cell.contentView.backgroundColor = #colorLiteral(red: 0.9371728301, green: 0.9373074174, blue: 0.9371433854, alpha: 1)
             }
             return cell
         }
         return UITableViewCell()
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.dismiss(animated: true, completion: {
+            self.didSelectClosure?(indexPath.row)
+            self.didSelectItemClosure?(self.source[indexPath.row])
+        })
     }
 }

@@ -20,6 +20,7 @@ class AddStoreProductVC: BaseController {
     var images: [UIImage] = []
     var storeImage: UIImage?
     var products: [AddProductModel] = []
+    var storeID: Int?
     override func viewDidLoad() {
         super.hiddenNav = true
         
@@ -45,10 +46,18 @@ class AddStoreProductVC: BaseController {
         addProductBtn.UIViewAction {
             let vc = self.controller(AddProductDetailVC.self, storyboard: .createStore)
             vc.delegate = self
+            vc.storeID = self.storeID
             self.push(vc)
+        }
+        confirmBtn.UIViewAction {
+            if self.products.count > 0 {
+                let vc = self.controller(AddShopVC.self, storyboard: .Upgrade)
+                self.push(vc)
+            }
         }
     }
     func reload() {
+        confirmBtn.backgroundColor = .appOrange
         if products.count > 0 && products.count < 4 {
             containerHeight.constant += 200
             self.productCollection.reloadData()

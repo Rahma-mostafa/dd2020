@@ -116,3 +116,11 @@ extension String {
         return Bundle(path: languageStringsFilePath)?.localizedString(forKey: self, value: nil, table: nil) ?? self
     }
 }
+
+extension UICollectionViewFlowLayout {
+    
+    open override var flipsHorizontallyInOppositeLayoutDirection: Bool {
+        return true
+    }
+    
+}

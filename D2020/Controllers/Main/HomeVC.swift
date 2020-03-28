@@ -125,6 +125,8 @@ class HomeVC: BaseController {
         let promoContentVC = UIStoryboard.init(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "promoContentVC") as! PromoContentVC
         
         promoContentVC.imageName = sliders[index].file
+        promoContentVC.titleImage = sliders[index].title
+        promoContentVC.descImage = sliders[index].desc
         promoContentVC.pageIndex = index
         
         return promoContentVC
@@ -222,8 +224,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
                 if item.style == 3 {
                     cell.imageAgent.setImage(url: item.image)
                     cell.agentLbl.text = item.name
-                    cell.agentDesc.text = ""
-                    cell.bkImageAgent.image = UIImage(named: tableViewItems[indexPath.row].bkImage!)
+                    cell.agentDesc.text = item.desc
+                    cell.bkImageAgent.setImage(url: item.cover)
                 }
             }
             return cell
@@ -235,8 +237,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
                 if item.style == 4 {
                     cell2.imageAgentB.setImage(url: item.image)
                     cell2.agentLblB.text = item.name
-                    cell2.agentDescB.text = ""
-                    cell2.bkImageB.image = UIImage(named: tableViewItemsB[indexPath.row].bkImage!)
+                    cell2.agentDescB.text = item.desc
+                    cell2.bkImageB.setImage(url: item.cover)
                 }
             }
             
@@ -282,10 +284,10 @@ extension HomeVC : UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
             let cell = collectionView.cell(type: HomeShopCell.self, indexPath, register: false)
             sections.forEach { (item) in
                 if item.style == 2 {
-                    cell.categoryImage.setImage(url: item.image)
+                    cell.categoryImage.setImage(url: item.cover)
                     cell.titleLbl.text = item.name
-                    cell.descLbl.text = ""
-                    cell.imageIcon.image = UIImage(named: "shop")
+                    cell.descLbl.text = item.desc
+                    cell.imageIcon.setImage(url: item.image)
                 }
             }
             
@@ -294,10 +296,10 @@ extension HomeVC : UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
         let cell2 = collectionView.cell(type: HomeShopCell.self, indexPath, register: false)
         sections.forEach { (item) in
             if item.style == 1 {
-                cell2.categoryImage2.setImage(url: item.image)
+                cell2.categoryImage2.setImage(url: item.cover)
                 cell2.titleLbl.text = item.name
-                cell2.descLbl.text = ""
-                cell2.imageIcon2.image = UIImage(named: "Group 499")
+                cell2.descLbl.text = item.desc
+                cell2.imageIcon2.setImage(url: item.image)
             }
         }
         
@@ -323,7 +325,9 @@ extension HomeVC : UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.collectionView {
-            let vc = controller(AddShopDetailVC.self, storyboard: .createStore)
+            let vc = controller(CategoryVC.self, storyboard: .category)
+            vc.section = sections[indexPath.row].id
+            vc.sectionName = sections[indexPath.row].name
             push(vc)
         }
     }

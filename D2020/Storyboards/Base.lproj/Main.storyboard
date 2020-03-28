@@ -395,7 +395,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWP-QP-AQa" customClass="RoundedButton" customModule="D2020" customModuleProvider="target">
-                                                            <rect key="frame" x="170" y="47" width="60" height="35"/>
+                                                            <rect key="frame" x="170" y="47" width="60" height="32"/>
                                                             <color key="backgroundColor" red="0.99607843139999996" green="0.62352941179999999" blue="0.0" alpha="0.60065282529999997" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="uba-g8-0VI"/>
@@ -665,35 +665,35 @@
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المحلات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMg-Sg-pQC">
-                                                                                    <rect key="frame" x="56" y="108" width="60" height="30"/>
+                                                                                    <rect key="frame" x="0.0" y="108" width="172" height="30"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="30" id="EY6-DS-tlQ"/>
-                                                                                        <constraint firstAttribute="width" constant="60" id="GM4-9G-96y"/>
                                                                                     </constraints>
                                                                                     <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="17"/>
                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اكثر من ٥٠٠ محل" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J9d-sQ-EbW">
-                                                                                    <rect key="frame" x="50.999999999999993" y="142" width="72.333333333333314" height="20"/>
+                                                                                    <rect key="frame" x="0.0" y="142" width="172" height="20"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="20" id="4Zg-Kz-ixt"/>
                                                                                     </constraints>
-                                                                                    <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="10"/>
+                                                                                    <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="12"/>
                                                                                     <color key="textColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="0.82387093320000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                             </subviews>
                                                                             <color key="backgroundColor" red="0.59774007480000002" green="0.33395653959999999" blue="0.0782134196" alpha="0.59321489729999999" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <constraints>
+                                                                                <constraint firstItem="J9d-sQ-EbW" firstAttribute="trailing" secondItem="tMg-Sg-pQC" secondAttribute="trailing" id="0iN-b0-Yc7"/>
                                                                                 <constraint firstItem="J9d-sQ-EbW" firstAttribute="top" secondItem="tMg-Sg-pQC" secondAttribute="bottom" constant="4" id="1kz-BQ-ngL"/>
                                                                                 <constraint firstItem="CIe-4j-re3" firstAttribute="leading" secondItem="XKc-6p-BsE" secondAttribute="leading" constant="51" id="Cg0-c2-cDm"/>
-                                                                                <constraint firstItem="tMg-Sg-pQC" firstAttribute="leading" secondItem="XKc-6p-BsE" secondAttribute="leading" constant="56" id="OS5-Zh-4bb"/>
+                                                                                <constraint firstItem="J9d-sQ-EbW" firstAttribute="leading" secondItem="tMg-Sg-pQC" secondAttribute="leading" id="EWr-9y-ckX"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="tMg-Sg-pQC" secondAttribute="trailing" id="GXh-eB-XLD"/>
                                                                                 <constraint firstItem="CIe-4j-re3" firstAttribute="top" secondItem="XKc-6p-BsE" secondAttribute="top" constant="40" id="OcR-s1-OB6"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="CIe-4j-re3" secondAttribute="trailing" constant="50" id="ZcM-In-n2o"/>
                                                                                 <constraint firstItem="tMg-Sg-pQC" firstAttribute="top" secondItem="CIe-4j-re3" secondAttribute="bottom" constant="8" id="aQV-bY-njp"/>
-                                                                                <constraint firstAttribute="trailing" secondItem="tMg-Sg-pQC" secondAttribute="trailing" constant="56" id="dSa-qT-0ez"/>
-                                                                                <constraint firstItem="J9d-sQ-EbW" firstAttribute="leading" secondItem="CIe-4j-re3" secondAttribute="leading" id="soe-xT-eyZ"/>
+                                                                                <constraint firstItem="tMg-Sg-pQC" firstAttribute="leading" secondItem="XKc-6p-BsE" secondAttribute="leading" id="vTJ-fX-1wk"/>
                                                                             </constraints>
                                                                         </view>
                                                                     </subviews>
@@ -780,37 +780,36 @@
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="للايجار" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFw-ar-AeL">
-                                                                                    <rect key="frame" x="63" y="112" width="45" height="30"/>
+                                                                                    <rect key="frame" x="0.0" y="112" width="170" height="30"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="30" id="2FF-fG-c7m"/>
-                                                                                        <constraint firstAttribute="width" constant="45" id="LwD-SF-WqR"/>
                                                                                     </constraints>
                                                                                     <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="17"/>
                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اكثر من  ٣٠٠ مؤسسة للايجار" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WoY-gX-wWk">
-                                                                                    <rect key="frame" x="54" y="146" width="58" height="24"/>
+                                                                                    <rect key="frame" x="0.0" y="146" width="170" height="24"/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="width" constant="58" id="5ts-gc-kRE"/>
                                                                                         <constraint firstAttribute="height" constant="24" id="kjc-aR-SHW"/>
                                                                                     </constraints>
-                                                                                    <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="9"/>
+                                                                                    <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="11"/>
                                                                                     <color key="textColor" white="1" alpha="0.88011023119999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                             </subviews>
                                                                             <color key="backgroundColor" red="0.0" green="0.58585723460000005" blue="0.0" alpha="0.4706496147" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="trailing" secondItem="WoY-gX-wWk" secondAttribute="trailing" constant="58" id="5IX-zP-wWG"/>
                                                                                 <constraint firstItem="cFw-ar-AeL" firstAttribute="top" secondItem="xae-Ma-eZd" secondAttribute="bottom" constant="12" id="B2N-82-NVr"/>
                                                                                 <constraint firstItem="cFw-ar-AeL" firstAttribute="top" secondItem="xae-Ma-eZd" secondAttribute="bottom" constant="12" id="EPO-Pq-tzd"/>
                                                                                 <constraint firstItem="xae-Ma-eZd" firstAttribute="leading" secondItem="ESC-nD-ngL" secondAttribute="leading" constant="59" id="Oaj-jj-o31"/>
-                                                                                <constraint firstItem="WoY-gX-wWk" firstAttribute="leading" secondItem="ESC-nD-ngL" secondAttribute="leading" constant="54" id="UvZ-1z-dWj"/>
+                                                                                <constraint firstItem="WoY-gX-wWk" firstAttribute="trailing" secondItem="cFw-ar-AeL" secondAttribute="trailing" id="R2s-h5-F4I"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="xae-Ma-eZd" secondAttribute="trailing" constant="58" id="V01-ZB-6et"/>
                                                                                 <constraint firstItem="WoY-gX-wWk" firstAttribute="top" secondItem="cFw-ar-AeL" secondAttribute="bottom" constant="4" id="ZM4-Eo-KiN"/>
+                                                                                <constraint firstItem="cFw-ar-AeL" firstAttribute="leading" secondItem="ESC-nD-ngL" secondAttribute="leading" id="aOQ-Ec-TeD"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="cFw-ar-AeL" secondAttribute="trailing" id="gte-yB-S2L"/>
                                                                                 <constraint firstItem="xae-Ma-eZd" firstAttribute="top" secondItem="ESC-nD-ngL" secondAttribute="top" constant="40" id="lVa-2o-BaV"/>
-                                                                                <constraint firstItem="cFw-ar-AeL" firstAttribute="centerX" secondItem="xae-Ma-eZd" secondAttribute="centerX" id="xvQ-5g-1Sh"/>
+                                                                                <constraint firstItem="WoY-gX-wWk" firstAttribute="leading" secondItem="cFw-ar-AeL" secondAttribute="leading" id="wu1-qV-SmX"/>
                                                                             </constraints>
                                                                         </view>
                                                                     </subviews>
@@ -879,16 +878,15 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="382" height="86"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 501" translatesAutoresizingMaskIntoConstraints="NO" id="RC1-iM-YUa">
-                                                                            <rect key="frame" x="307" y="24" width="40" height="39"/>
+                                                                            <rect key="frame" x="25" y="24" width="40" height="39"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="40" id="H2J-Py-wb2"/>
                                                                                 <constraint firstAttribute="height" constant="45" id="vhM-F4-geM"/>
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المناديب" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icx-89-Veg">
-                                                                            <rect key="frame" x="217" y="24" width="60" height="30"/>
+                                                                            <rect key="frame" x="95" y="24" width="58.666666666666657" height="30"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="60" id="O5H-KP-R4T"/>
                                                                                 <constraint firstAttribute="height" constant="30" id="qDA-Nb-QMG"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="16"/>
@@ -896,7 +894,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اكثر من ٦٠ مندوب" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drI-OL-mGF">
-                                                                            <rect key="frame" x="197" y="54.000000000000007" width="80" height="20.333333333333336"/>
+                                                                            <rect key="frame" x="95" y="54.000000000000007" width="80" height="20.333333333333336"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="80" id="8h0-WF-Pgk"/>
                                                                                 <constraint firstAttribute="height" constant="20.329999999999998" id="WzY-sD-jqz"/>
@@ -910,11 +908,11 @@
                                                                     <constraints>
                                                                         <constraint firstItem="icx-89-Veg" firstAttribute="top" secondItem="nLB-Om-jX1" secondAttribute="top" constant="24" id="0Cb-Df-6Xh"/>
                                                                         <constraint firstAttribute="bottom" secondItem="RC1-iM-YUa" secondAttribute="bottom" constant="23" id="0cT-4Y-rmR"/>
-                                                                        <constraint firstItem="RC1-iM-YUa" firstAttribute="leading" secondItem="drI-OL-mGF" secondAttribute="trailing" constant="30" id="FZe-Ok-Gj0"/>
+                                                                        <constraint firstItem="RC1-iM-YUa" firstAttribute="leading" secondItem="nLB-Om-jX1" secondAttribute="leading" constant="25" id="EjY-mv-XyW"/>
                                                                         <constraint firstItem="drI-OL-mGF" firstAttribute="top" secondItem="icx-89-Veg" secondAttribute="bottom" id="IhM-Ok-Yfz"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="RC1-iM-YUa" secondAttribute="trailing" constant="35" id="NkG-vr-NHg"/>
                                                                         <constraint firstItem="RC1-iM-YUa" firstAttribute="top" secondItem="nLB-Om-jX1" secondAttribute="top" constant="24" id="Xyf-0q-whw"/>
-                                                                        <constraint firstItem="RC1-iM-YUa" firstAttribute="leading" secondItem="icx-89-Veg" secondAttribute="trailing" constant="30" id="bVq-OV-T3v"/>
+                                                                        <constraint firstItem="icx-89-Veg" firstAttribute="leading" secondItem="RC1-iM-YUa" secondAttribute="trailing" constant="30" id="cBY-jp-yBn"/>
+                                                                        <constraint firstItem="drI-OL-mGF" firstAttribute="leading" secondItem="icx-89-Veg" secondAttribute="leading" id="r90-xI-4XR"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
@@ -974,24 +972,23 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="382" height="86"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 500" translatesAutoresizingMaskIntoConstraints="NO" id="fTZ-fc-L1N">
-                                                                            <rect key="frame" x="317" y="8" width="40" height="70"/>
+                                                                            <rect key="frame" x="25" y="8" width="40" height="70"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="40" id="fkF-y8-EoT"/>
                                                                                 <constraint firstAttribute="height" constant="30" id="gcj-bi-v6V"/>
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الاسرة المنتجة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yr1-Td-bfl">
-                                                                            <rect key="frame" x="187" y="25" width="100" height="30"/>
+                                                                            <rect key="frame" x="95" y="25" width="96.666666666666686" height="30"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="30" id="96h-uP-vd3"/>
-                                                                                <constraint firstAttribute="width" constant="100" id="fsG-sj-fUf"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="16"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اكثر من ٣٠٠ منتج من الاسر المنتجة " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ex-9j-zml">
-                                                                            <rect key="frame" x="138" y="57" width="149" height="21"/>
+                                                                            <rect key="frame" x="95" y="57" width="149" height="21"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="21" id="TAe-aM-rw7"/>
                                                                                 <constraint firstAttribute="width" constant="149" id="qpj-HD-3GQ"/>
@@ -1004,10 +1001,10 @@
                                                                     <color key="backgroundColor" red="0.5" green="0.1635696468" blue="0.1307551062" alpha="0.52383882709999996" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="bottom" secondItem="fTZ-fc-L1N" secondAttribute="bottom" constant="8" id="6fz-Sl-sLX"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="fTZ-fc-L1N" secondAttribute="trailing" constant="25" id="7k4-FL-ixP"/>
+                                                                        <constraint firstItem="1Ex-9j-zml" firstAttribute="leading" secondItem="fTZ-fc-L1N" secondAttribute="trailing" constant="30" id="IcR-hd-lh3"/>
+                                                                        <constraint firstItem="yr1-Td-bfl" firstAttribute="leading" secondItem="fTZ-fc-L1N" secondAttribute="trailing" constant="30" id="Sls-Ny-oRT"/>
                                                                         <constraint firstItem="1Ex-9j-zml" firstAttribute="top" secondItem="yr1-Td-bfl" secondAttribute="bottom" constant="2" id="ZEn-m7-9Sf"/>
-                                                                        <constraint firstItem="fTZ-fc-L1N" firstAttribute="leading" secondItem="yr1-Td-bfl" secondAttribute="trailing" constant="30" id="bDV-Tb-9wd"/>
-                                                                        <constraint firstItem="fTZ-fc-L1N" firstAttribute="leading" secondItem="1Ex-9j-zml" secondAttribute="trailing" constant="30" id="m6i-KP-rdZ"/>
+                                                                        <constraint firstItem="fTZ-fc-L1N" firstAttribute="leading" secondItem="doQ-Ws-Y60" secondAttribute="leading" constant="25" id="bo3-nd-ejH"/>
                                                                         <constraint firstItem="yr1-Td-bfl" firstAttribute="top" secondItem="doQ-Ws-Y60" secondAttribute="top" constant="25" id="t1F-29-yUI"/>
                                                                         <constraint firstItem="fTZ-fc-L1N" firstAttribute="top" secondItem="doQ-Ws-Y60" secondAttribute="top" constant="8" id="wrs-YO-pPd"/>
                                                                     </constraints>
@@ -1474,7 +1471,7 @@
         <image name="lucian-alexe-afDu-GuxjjM-unsplash" width="328" height="96"/>
         <image name="magnifying-glass" width="18" height="18"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
-        <image name="map" width="20.333333969116211" height="24.333333969116211"/>
+        <image name="map" width="19.333333969116211" height="24"/>
         <image name="map-1" width="20.333333969116211" height="24.333333969116211"/>
         <image name="map-2" width="20.333333969116211" height="24.333333969116211"/>
         <image name="map-3" width="20.333333969116211" height="24.333333969116211"/>

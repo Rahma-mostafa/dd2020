@@ -36,10 +36,6 @@ class AfterSelectingCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         roundedVew.layer.cornerRadius = 11
-        ratingView.settings.updateOnTouch = false
-        ratingView.settings.starSize = 13
-        ratingView.settings.filledImage = UIImage(named: "star (3)")
-        ratingView.settings.emptyImage = UIImage(named: "emtyStar")
     }
 
     

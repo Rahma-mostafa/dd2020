@@ -134,7 +134,7 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
             let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
             let localPath = documentDirectory?.appending(imgName)
             guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return nil }
-            let data = image.pngData()! as NSData
+            guard let data = image.compressed()?.pngData() as NSData? else { return nil }
             data.write(toFile: localPath!, atomically: true)
             //let imageData = NSData(contentsOfFile: localPath!)!
             photoURL = URL.init(fileURLWithPath: localPath!)//NSURL(fileURLWithPath: localPath!)

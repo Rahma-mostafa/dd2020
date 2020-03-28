@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import PlacesPicker
+import GooglePlaces
 
 class AddShopDetailVC: BaseController {
     @IBOutlet weak var sliderCollection: UICollectionView!
@@ -36,6 +38,8 @@ class AddShopDetailVC: BaseController {
     var selectedCity: Int?
     var selectedCategory: Int?
     var selectedSubCategory: Int?
+    var lat: Double?
+    var lng: Double?
     override func viewDidLoad() {
         super.hiddenNav = true
         super.viewDidLoad()
@@ -46,6 +50,7 @@ class AddShopDetailVC: BaseController {
         addImageLbl.text = Localizations.addImages.localized
         nextBtn.setTitle(Localizations.next.localized, for: .normal)
         picker = GalleryPickerHelper()
+        PlacePicker.configure(googleMapsAPIKey: Constants.googleAPI, placesAPIKey:  Constants.googleAPI)
 
         sliderCollection.delegate = self
         sliderCollection.dataSource = self
@@ -57,6 +62,7 @@ class AddShopDetailVC: BaseController {
         sliderCollection.UIViewAction(selector: pickImage)
         plusBtn.UIViewAction(selector: pickLogo)
         storeLogoImage.UIViewAction(selector: pickLogo)
+    
     }
     func pickImage() {
         self.picker?.onPickImage = { image in
@@ -120,6 +126,9 @@ class AddShopDetailVC: BaseController {
         picker.titleClosure = { row in
             self.categories[row].name ?? ""
         }
+        picker.imageClosure = { row in
+            self.categories[row].image ?? ""
+        }
         picker.didSelectClosure = { row in
             self.selectedCategory = row
             self.categoryTxf.text = self.categories[row].name
@@ -159,13 +168,33 @@ class AddShopDetailVC: BaseController {
         fetchCategories()
     }
     @IBAction func locationPick(_ sender: Any) {
+        let controller = PlacePicker.placePickerController()
+        controller.delegate = self
+        let navigationController = UINavigationController(rootViewController: controller)
+        self.show(navigationController, sender: nil)
     }
     
     @IBAction func next(_ sender: Any) {
-        let vc = controller(AddStoreProductVC.self, storyboard: .createStore)
-        vc.images = images
-        vc.storeImage = logo
-        push(vc)
+        let paramters: [String: Any] = [
+            "name": storeNameTxf.text ?? "",
+            "desc": storeDescTxf.text ?? "",
+            "categoriesid": "\(subCategories[selectedSubCategory ?? 0].id ?? 0)",
+            "city_id": "\(cities[selectedCity ?? 0].id ?? 0)",
+            "phone": mobileTxf.text ?? "",
+            "lat": lat ?? 0,
+            "lang": lng ?? 0,
+            "logo": logoURL
+        ]
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.downloaderDelegate = self
+        ApiManager.instance.uploadMultiFiles(EndPoint.addShop.rawValue, type: .post, files: imagesURL, key: "images") { (response) in
+            let data = try? JSONDecoder().decode(StoreDetail.self, from: response ?? Data())
+            let vc = self.controller(AddStoreProductVC.self, storyboard: .createStore)
+            vc.storeID = data?.data?.id
+            vc.images = self.images
+            vc.storeImage = self.logo
+            self.push(vc)
+        }
     }
 
 }
@@ -185,6 +214,21 @@ extension AddShopDetailVC: UICollectionViewDelegateFlowLayout, UICollectionViewD
         let cell = collectionView.cell(type: StoreSliderImageCell.self, indexPath, register: false)
         cell.image.image = images[indexPath.row]
         return cell
+    }
+    
+    
+}
+extension AddShopDetailVC: PlacesPickerDelegate, DownloaderDelegate {
+    func placePickerControllerDidCancel(controller: PlacePickerController) {
+         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func placePickerController(controller: PlacePickerController, didSelectPlace place: GMSPlace) {
+        self.dismiss(animated: true) {
+            self.locationTxf.text = place.formattedAddress
+            self.lat = place.coordinate.latitude
+            self.lng = place.coordinate.longitude
+        }
     }
     
     
