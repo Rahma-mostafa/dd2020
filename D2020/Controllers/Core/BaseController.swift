@@ -58,6 +58,7 @@ class BaseController: UIViewController, PresentingViewProtocol, POPUPView, Alert
             self.navigationController?.setNavigationBarHidden(false, animated: false)
         }
         self.navigationController?.navigationBar.removeSubviews()
+        initLang()
     }
 
     override func viewWillDisappear(_ animated: Bool) {

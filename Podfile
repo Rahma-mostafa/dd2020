@@ -19,8 +19,7 @@ pod 'Cosmos'
 pod 'lottie-ios'
 pod 'IQKeyboardManagerSwift'
 pod 'BSImagePicker', '~> 2.0'
-pod 'GooglePlaces', '= 3.0.3'
-pod 'GoogleMaps', '= 3.0.3'
-
-
+#pod 'GooglePlaces', '= 3.1.3'
+pod 'GoogleMaps', '= 3.1.0'
+pod 'PlacesPicker'
 end

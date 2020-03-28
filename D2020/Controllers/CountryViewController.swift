@@ -15,19 +15,39 @@ class CountryViewController: BaseController {
     
     
     var countries: [Country.CountryData] = []
-    
     var selectedCountry: Int?
-    
+    var selectedLang: String?
+    static var deviceCountry: Country.CountryData? {
+        set {
+            guard let value = newValue else { return }
+            let data = try? JSONEncoder().encode(value)
+            UserDefaults.standard.set(data, forKey: "COUNTRY_DATA")
+        } get {
+            let data = UserDefaults.standard.data(forKey: "COUNTRY_DATA")
+            let model = try? JSONDecoder().decode(Country.CountryData.self, from: data ?? Data())
+            return model
+        }
+    }
     
     override func viewDidLoad() {
+        if CountryViewController.deviceCountry?.id != nil {
+            guard let vc = UIStoryboard(name: Storyboards.main.rawValue, bundle: nil).instantiateInitialViewController() else { return }
+            push(vc)
+        }
         super.hiddenNav = true
         super.viewDidLoad()
+        
         setup()
         fetchCountries()
     }
     func setup() {
         countyTableView.dataSource = self
         countyTableView.delegate = self
+        
+        languageButtton1.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
+        languageButtton2.backgroundColor = .white
+        selectedLang = "ar"
+        
     }
     func fetchCountries() {
         startLoading()
@@ -43,14 +63,23 @@ class CountryViewController: BaseController {
     @IBAction func onLanguageButtonTapped(_ sender: Any) {
         languageButtton1.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
         languageButtton2.backgroundColor = .white
+        selectedLang = "ar"
 
     }
     
     @IBAction func onLanguageButtonTapped2(_ sender: Any) {
         languageButtton2.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
         languageButtton1.backgroundColor = .white
+        selectedLang = "en"
     }
-
+    @IBAction func apply(_ sender: Any) {
+        Localizer.set(language: selectedLang ?? "ar")
+        initLang()
+        CountryViewController.deviceCountry = countries[selectedCountry ?? 0]
+        guard let vc = UIStoryboard(name: Storyboards.main.rawValue, bundle: nil).instantiateInitialViewController() else { return }
+        //let vc = controller(FirstVC.self, storyboard: .auth)
+        push(vc)
+    }
 }
 
 extension CountryViewController: UITableViewDelegate, UITableViewDataSource {
@@ -61,6 +90,9 @@ extension CountryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.cell(type: CountryTableViewCell.self, indexPath, register: false)
         cell.model = countries[indexPath.row]
+        if indexPath.row == 0 && selectedCountry == nil {
+            selectedCountry = 0
+        }
         if selectedCountry == indexPath.row {
             cell.backgroundImageView.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
         } else {

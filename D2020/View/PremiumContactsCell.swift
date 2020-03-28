@@ -14,7 +14,7 @@ class PremiumContactsCell: UITableViewCell {
     
     @IBOutlet weak var contactName: UILabel!
     
-    @IBOutlet weak var coloredView: RoundedShadowView!
+    @IBOutlet weak var coloredView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,18 +29,4 @@ class PremiumContactsCell: UITableViewCell {
         
     }
     
-    override var frame: CGRect {
-               get {
-                   return super.frame
-               }
-               set (newFrame) {
-                   var frame =  newFrame
-                   frame.origin.y += 4
-                   frame.size.height -= 2 * 4
-                   super.frame = frame
-               }
-        
-    }
-    
-
 }

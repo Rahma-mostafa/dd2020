@@ -15,13 +15,18 @@ public enum EndPoint: String {
     case register
     case logout
     case MainCountry
-    case getCategory
+    case getSections
     case SubCountry
+    case getSlider
+    case getSingleShop = "shop/getSingleShop"
+    case rate = "shop/rate"
+    case favorite = "shop/fav"
+    case getCategory
     case getSubCategoryAndShop
     case shop = "shop/getShops"
     case stores = "shop/my_stores"
     case packages = "shop/get_packages"
     case add_shop_to_package = "shop/add_shop_to_package"
-    
-    
+    case adsPackages = "Ads/get_packages"
+    case myAda = "Ads/my_ad"
 }

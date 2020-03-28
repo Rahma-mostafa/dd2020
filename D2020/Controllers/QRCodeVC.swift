@@ -13,17 +13,20 @@ class QRCodeVC: UIViewController {
     
     @IBOutlet weak var qrCodeGenerated: UIImageView!
     
+    var qr: String? = "D2020"
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         //QRCode
         
-        let image = generateQRCode(from: "D2020")
+        let image = generateQRCode(from: qr ?? "")
         
         qrCodeGenerated.image = image
         
-        
+        self.view.UIViewAction {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     func generateQRCode(from string: String) -> UIImage? {
