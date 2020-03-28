@@ -39,6 +39,7 @@ class EditProfileViewController: BaseController {
     let datePicker = UIDatePicker()
     var gender: Int = 1
     var enableEdit: Bool = false
+    var enablePasswordEdit: Bool = false
     override func viewDidLoad() {
         super.hiddenNav = true
         super.viewDidLoad()
@@ -85,8 +86,6 @@ class EditProfileViewController: BaseController {
         emailTxf.isUserInteractionEnabled = false
         mobileTxf.isUserInteractionEnabled = false
         bithdateTxf.isUserInteractionEnabled = false
-        passwordTxf.isUserInteractionEnabled = false
-        newPasswordTxf.isUserInteractionEnabled = false
         userImage.isUserInteractionEnabled = false
 
     }
@@ -102,9 +101,26 @@ class EditProfileViewController: BaseController {
         emailTxf.isUserInteractionEnabled = true
         mobileTxf.isUserInteractionEnabled = true
         bithdateTxf.isUserInteractionEnabled = true
-        passwordTxf.isUserInteractionEnabled = true
-        newPasswordTxf.isUserInteractionEnabled = true
         userImage.isUserInteractionEnabled = true
+    }
+    func setupPasswordChangeBtn() {
+        if enablePasswordEdit {
+            self.changePasswordBtn.setTitle("save.lan".localized, for: .normal)
+            self.changePasswordBtn.setTitleColor(.appOrange, for: .normal)
+            self.changePasswordBtn.backgroundColor = .white
+            self.newPasswordView.isHidden = false
+            passwordTxf.isUserInteractionEnabled = true
+            newPasswordTxf.isUserInteractionEnabled = true
+        } else {
+            self.changePasswordBtn.setTitle("change.lan".localized, for: .normal)
+            self.changePasswordBtn.setTitleColor(.white, for: .normal)
+            self.changePasswordBtn.backgroundColor = .appOrange
+            self.newPasswordView.isHidden = true
+            passwordTxf.isUserInteractionEnabled = false
+            newPasswordTxf.isUserInteractionEnabled = false
+            passwordTxf.text = nil
+            newPasswordTxf.text = nil
+        }
     }
     func handlers() {
         editBtn.UIViewAction {
@@ -134,6 +150,15 @@ class EditProfileViewController: BaseController {
             self.femaleBtn.borderColor = .black
             self.maleBtn.borderWidth = 0
             self.gender = 2
+        }
+        changePasswordBtn.UIViewAction {
+            if self.enablePasswordEdit {
+                self.enablePasswordEdit = false
+                self.updatePassword()
+            } else {
+                self.enablePasswordEdit = true
+                self.setupPasswordChangeBtn()
+            }
         }
     }
     func showDatePicker() {
@@ -192,6 +217,19 @@ class EditProfileViewController: BaseController {
 }
 
 extension EditProfileViewController: DownloaderDelegate {
+    func updatePassword() {
+        startLoading()
+        let paramters: [String: Any] = [
+            "oldPassword": passwordTxf.text ?? "",
+            "newPassword": newPasswordTxf.text ?? ""
+        ]
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.connection(.editPassword, type: .post) { (response) in
+            self.stopLoading()
+            let _ = try? JSONDecoder().decode(BaseModel.self, from: response ?? Data())
+            self.setupPasswordChangeBtn()
+        }
+    }
     func updateProfile() {
         guard let imageURL = imageURL else { return }
         let paramters: [String: Any] = [

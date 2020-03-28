@@ -1938,7 +1938,7 @@
                                                             <constraint firstAttribute="height" constant="24" id="Rnu-i4-ddd"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="**********" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rfa-qw-1BC">
+                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rfa-qw-1BC">
                                                         <rect key="frame" x="58" y="14" width="226" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="ABq-hb-vld"/>
@@ -1946,7 +1946,7 @@
                                                         <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="password.lan"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="old.password.lan"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cP-BX-qL7" customClass="RoundedButton" customModule="D2020" customModuleProvider="target">
@@ -2152,7 +2152,7 @@
                                                             <constraint firstAttribute="width" constant="24" id="bcP-RW-YWK"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="**********" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oYF-Ps-CJQ">
+                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oYF-Ps-CJQ">
                                                         <rect key="frame" x="58" y="14" width="315" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="z0h-A9-N7B"/>
@@ -2160,7 +2160,7 @@
                                                         <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="password.lan"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="new.password.lan"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                 </subviews>
@@ -2620,7 +2620,7 @@
         <image name="arrow_down.png" width="6.4000000953674316" height="6.4000000953674316"/>
         <image name="choose" width="30" height="6"/>
         <image name="logo" width="141" height="66"/>
-        <image name="map" width="20.5" height="24.5"/>
+        <image name="map" width="19.5" height="24"/>
         <image name="more-en" width="24" height="20"/>
         <image name="password" width="24" height="24"/>
         <image name="phone" width="24" height="24"/>
