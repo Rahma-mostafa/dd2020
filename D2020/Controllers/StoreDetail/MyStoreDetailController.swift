@@ -50,7 +50,7 @@ class MyStoreDetailController: BaseController {
     @IBOutlet weak var yourRateHeight: NSLayoutConstraint!
     @IBOutlet weak var yourRatView: UIView!
     @IBOutlet weak var editBtn: UIButton!
-    @IBOutlet weak var upgradeView: UIView!
+    @IBOutlet weak var upgradeView: GradientView!
     @IBOutlet weak var upgradeLbl: UILabel!
 
     
@@ -160,7 +160,7 @@ class MyStoreDetailController: BaseController {
             //self.infoView.isHidden = true
             self.infoHeight.constant = 0
             self.storeImageView.isHidden = true
-            self.scrollHeight.constant -= 219
+            self.scrollHeight.constant -= 290
             
             self.containerViewTop.constant = 170
             
@@ -176,9 +176,9 @@ class MyStoreDetailController: BaseController {
             //self.viewSlider.isHidden = false
             self.viewSliderHieght.constant = 256
             //self.infoView.isHidden = false
-            self.infoHeight.constant = 219
+            self.infoHeight.constant = 290
             self.storeImageView.isHidden = false
-            self.scrollHeight.constant += 219
+            self.scrollHeight.constant += 290
             
             self.containerViewTop.constant = 8
             
@@ -208,6 +208,10 @@ class MyStoreDetailController: BaseController {
             ApiManager.instance.connection(method, type: .post) { [weak self] (response) in
                 self?.setupFavorite(change: true)
             }
+        }
+        upgradeView.UIViewAction {
+            let vc = self.controller(PackageVC.self, storyboard: .Upgrade)
+            self.push(vc)
         }
     }
     @IBAction func search(_ sender: Any) {

@@ -40,6 +40,8 @@ class AddShopDetailVC: BaseController {
     var selectedSubCategory: Int?
     var lat: Double?
     var lng: Double?
+    var sotre: StoreDetail.StoreData?
+    var editMode: Bool = false
     override func viewDidLoad() {
         super.hiddenNav = true
         super.viewDidLoad()
@@ -56,6 +58,9 @@ class AddShopDetailVC: BaseController {
         sliderCollection.dataSource = self
         
         fetchCities()
+    }
+    func setupEdit() {
+        
     }
     func handlers() {
         noPhotoImage.UIViewAction(selector: pickImage)
