@@ -36,6 +36,9 @@ class ShopsAddedCell: UITableViewCell, CellProtocol {
         shopsTag.isHidden = true
         trash.isHidden = true
         ratingView.isHidden = true
+        addNewShopLbl.isHidden = false
+        plusBtn.isHidden = false
+        imageIcon.image = UIImage(named: "grediantBackground")
         addNewShopLbl.text = "add.new.store.lan".localized
     }
     func setup() {

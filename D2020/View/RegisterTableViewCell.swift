@@ -10,6 +10,8 @@ import UIKit
 
 class RegisterTableViewCell: UITableViewCell {
     @IBOutlet weak var imgRegister: UIImageView!
+    @IBOutlet weak var checkImage: UIImageView!
+    @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var titleRegister: UILabel!
     override func awakeFromNib() {

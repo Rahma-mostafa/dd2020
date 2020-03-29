@@ -10,12 +10,12 @@ struct Category: Codable {
     let date: [DateElement]?
     let massege: String?
     let status, userPermission: Bool?
-    let type: Int?
+    //let type: Int?
 
     enum CodingKeys: String, CodingKey {
         case date, massege, status
         case userPermission = "UserPermission"
-        case type
+        //case type
     }
     // MARK: - DateElement
     struct DateElement: Codable {

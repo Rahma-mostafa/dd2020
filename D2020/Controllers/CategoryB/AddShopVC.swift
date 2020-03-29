@@ -83,11 +83,14 @@ extension AddShopVC: UITableViewDelegate, UITableViewDataSource {
 
         if indexPath.row == self.shopAdded.count-1 {
             cell.setupDefault()
-            cell.plusBtn.UIViewAction {
-                self.addStore()
+            cell.plusBtn.UIViewAction { [weak self] in
+                self?.addStore()
             }
         } else {
             cell.model = shopAdded[indexPath.row]
+            cell.trash.UIViewAction { [weak self] in
+                self?.removeStore(path: indexPath.row)
+            }
         }
         return cell
     }
@@ -99,8 +102,28 @@ extension AddShopVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == self.shopAdded.count-1 {
             self.addStore()
+        } else {
+            if self.shopAdded[indexPath.row].type == 1 {
+                
+            } else {
+                let vc = controller(MyStoreDetailController.self, storyboard: .store)
+                vc.storeID = self.shopAdded[indexPath.row].id
+                push(vc)
+            }
         }
     }
     
 }
 
+extension AddShopVC {
+    func removeStore(path: Int) {
+        guard let storeID = self.shopAdded[path].id else { return }
+        self.shopAdded.remove(at: path)
+        self.shopAdded.removeLast()
+        self.handleView()
+        let method = api(.deleteStore, [storeID])
+//        ApiManager.instance.connection(method, type: .post) { [weak self] (response) in
+//            
+//        }
+    }
+}

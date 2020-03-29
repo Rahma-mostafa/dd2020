@@ -160,6 +160,11 @@ class EditProfileViewController: BaseController {
                 self.setupPasswordChangeBtn()
             }
         }
+        upgradeBtn.UIViewAction {
+            let vc = self.controller(UpgradeAccountVC.self, storyboard: .auth)
+            vc.delegate = self
+            self.push(vc)
+        }
     }
     func showDatePicker() {
         //Formate Date
@@ -168,9 +173,9 @@ class EditProfileViewController: BaseController {
         //ToolBar
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let doneButton = UIBarButtonItem(title: "done.lan".localized, style: .plain, target: self, action: #selector(donedatePicker));
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
+        let cancelButton = UIBarButtonItem(title: "cancel.lan".localized, style: .plain, target: self, action: #selector(cancelDatePicker))
         
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
         
@@ -248,5 +253,11 @@ extension EditProfileViewController: DownloaderDelegate {
             UserRoot.setData(data: data?.data)
             self.setupUnEdit()
         }
+    }
+}
+
+extension EditProfileViewController: UpgradeAccountDelegate {
+    func didUpgrade() {
+        self.upgradeBtn.isHidden = true
     }
 }

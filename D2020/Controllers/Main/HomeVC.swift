@@ -9,20 +9,6 @@
 import UIKit
 
 
-
-struct menuA {
-    var imageMenu:String?
-    var TitleMenu:String?
-}
-
-struct TableViewCategory {
-    var name:String?
-    var tableViewImg: String?
-    var tableViewDescription: String?
-    var bkImage:String?
-    
-}
-
 class HomeVC: BaseController {
     @IBOutlet weak var pageView: UIView!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -30,30 +16,17 @@ class HomeVC: BaseController {
     @IBOutlet weak var collectionView2: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewB: UITableView!
-    
-    
     @IBOutlet weak var homeLbl: UILabel!
     @IBOutlet weak var categoryLbl: UILabel!
     
     
-    //Variables slideShow
     
     var pageViewController:UIPageViewController?
-    //let arrayPageImage = ["slideShow","d2020logo","WELCOME2"]
     var currentIndex = 0
-    
-    //Variables -> collectionView
-    
-    //    var categories = [Category]()
     var selectedCategory : String?
-    
-    var tableViewItems :[TableViewCategory] = [TableViewCategory(name: "المناديب", tableViewImg: "Group 501", tableViewDescription: "اكثر من ٦٠ مندوب",bkImage: "lucian-alexe-afDu-GuxjjM-unsplash")]
-    
-    var tableViewItemsB : [TableViewCategory] = [TableViewCategory(name: "الاسرة النتجة", tableViewImg: "Group 500", tableViewDescription: "اكثر من ٣٠٠ منتج من الاسر المنتجة", bkImage: "perry-grone-lbLgFFlADrY-unsplash")]
-    
-
     var sections: [Section.Data] = []
     var sliders: [Slider.Data] = []
+    static var sections: [Section.Data] = []
     
     override func viewDidLoad() {
         super.hiddenNav = true
@@ -82,6 +55,8 @@ class HomeVC: BaseController {
             let data = try? JSONDecoder().decode(Section.self, from: response ?? Data())
             self?.sections.removeAll()
             self?.sections.append(contentsOf: data?.data ?? [])
+            HomeVC.sections.removeAll()
+            HomeVC.sections.append(contentsOf: data?.data ?? [])
             self?.collectionView.reloadData()
             self?.collectionView2.reloadData()
             self?.tableView.reloadData()

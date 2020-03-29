@@ -175,6 +175,7 @@ class AddShopDetailVC: BaseController {
     }
     
     @IBAction func next(_ sender: Any) {
+        guard let logoURL = logoURL else { return }
         let paramters: [String: Any] = [
             "name": storeNameTxf.text ?? "",
             "desc": storeDescTxf.text ?? "",
@@ -182,12 +183,11 @@ class AddShopDetailVC: BaseController {
             "city_id": "\(cities[selectedCity ?? 0].id ?? 0)",
             "phone": mobileTxf.text ?? "",
             "lat": lat ?? 0,
-            "lang": lng ?? 0,
-            "logo": logoURL
+            "lang": lng ?? 0
         ]
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.downloaderDelegate = self
-        ApiManager.instance.uploadMultiFiles(EndPoint.addShop.rawValue, type: .post, files: imagesURL, key: "images") { (response) in
+        ApiManager.instance.uploadMultiFiles(EndPoint.addShop.rawValue, type: .post, files: imagesURL, key: "images", file: ["logo": logoURL]) { (response) in
             let data = try? JSONDecoder().decode(StoreDetail.self, from: response ?? Data())
             let vc = self.controller(AddStoreProductVC.self, storyboard: .createStore)
             vc.storeID = data?.data?.id

@@ -97,7 +97,7 @@ class LoginVC: BaseController {
             ApiManager.instance.paramaters = paramters
             ApiManager.instance.connection(.login, type: .post) { (response) in
                 self.stopLoading()
-                let _ = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+                let user = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
                 UserRoot.save(response: response)
                 guard let vc = UIStoryboard.init(name: Storyboards.main.rawValue, bundle: nil).instantiateInitialViewController() else { return }
                 self.push(vc)

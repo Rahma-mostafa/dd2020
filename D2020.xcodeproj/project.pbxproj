@@ -50,6 +50,7 @@
 		775B0473242E389400A892CC /* RouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775B0462242E389300A892CC /* RouteModel.swift */; };
 		775B0474242E389400A892CC /* GoogleMapZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775B0463242E389300A892CC /* GoogleMapZoom.swift */; };
 		775B0476242E398000A892CC /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775B0475242E398000A892CC /* ArrayExtensions.swift */; };
+		7785CA1B243034BC006DEBFA /* MyStoreDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7785CA1A243034BC006DEBFA /* MyStoreDetailController.swift */; };
 		779F39CA242D29AC0096198F /* PickerPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779F39C9242D29AC0096198F /* PickerPopVC.swift */; };
 		77A3B4BB242EC45C00842730 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3B4BA242EC45C00842730 /* Downloader.swift */; };
 		77A3B4BD242EC73B00842730 /* KYCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3B4BC242EC73B00842730 /* KYCircularProgress.swift */; };
@@ -62,6 +63,7 @@
 		77BA9FC4242DB2150083C17F /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BA9FBE242DB2150083C17F /* CategoryVC.swift */; };
 		77BCA3B6242D16C600EF3980 /* AddStoreProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCA3B5242D16C600EF3980 /* AddStoreProductVC.swift */; };
 		77BCA3B8242D187000EF3980 /* AddProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCA3B7242D187000EF3980 /* AddProductDetailVC.swift */; };
+		77E00EB6242FCF74005B2A21 /* UpgradeAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E00EB5242FCF74005B2A21 /* UpgradeAccountVC.swift */; };
 		800570C12426FE9500F45742 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800570C02426FE9500F45742 /* Section.swift */; };
 		800570C32426FF3500F45742 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800570C22426FF3500F45742 /* Slider.swift */; };
 		8033E76B24254CA200D0F2A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033E76524254CA200D0F2A0 /* Constants.swift */; };
@@ -165,7 +167,7 @@
 		FA5E6E4F240BDC1F00041736 /* ForRentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E6E4E240BDC1F00041736 /* ForRentCell.swift */; };
 		FA5E6E51240C119800041736 /* AgentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E6E50240C119800041736 /* AgentsCell.swift */; };
 		FA5F546C23F5933B00E7F40B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F546B23F5933B00E7F40B /* AppDelegate.swift */; };
-		FA5F547023F5933B00E7F40B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F546F23F5933B00E7F40B /* ViewController.swift */; };
+		FA5F547023F5933B00E7F40B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F546F23F5933B00E7F40B /* LoginVC.swift */; };
 		FA5F547323F5933B00E7F40B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5F547123F5933B00E7F40B /* Main.storyboard */; };
 		FA5F547523F5934000E7F40B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5F547423F5934000E7F40B /* Assets.xcassets */; };
 		FA5F547823F5934000E7F40B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5F547623F5934000E7F40B /* LaunchScreen.storyboard */; };
@@ -252,6 +254,7 @@
 		775B0462242E389300A892CC /* RouteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteModel.swift; sourceTree = "<group>"; };
 		775B0463242E389300A892CC /* GoogleMapZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapZoom.swift; sourceTree = "<group>"; };
 		775B0475242E398000A892CC /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		7785CA1A243034BC006DEBFA /* MyStoreDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStoreDetailController.swift; sourceTree = "<group>"; };
 		779F39C9242D29AC0096198F /* PickerPopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerPopVC.swift; sourceTree = "<group>"; };
 		77A3B4BA242EC45C00842730 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		77A3B4BC242EC73B00842730 /* KYCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCircularProgress.swift; sourceTree = "<group>"; };
@@ -264,6 +267,7 @@
 		77BA9FBE242DB2150083C17F /* CategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		77BCA3B5242D16C600EF3980 /* AddStoreProductVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStoreProductVC.swift; sourceTree = "<group>"; };
 		77BCA3B7242D187000EF3980 /* AddProductDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductDetailVC.swift; sourceTree = "<group>"; };
+		77E00EB5242FCF74005B2A21 /* UpgradeAccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpgradeAccountVC.swift; path = D2020/Controllers/UpgradeAccountVC.swift; sourceTree = SOURCE_ROOT; };
 		7CD42E7013F938C7FA37C420 /* Pods_D2020.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_D2020.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		800570C02426FE9500F45742 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		800570C22426FF3500F45742 /* Slider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
@@ -372,7 +376,7 @@
 		FA5E6E50240C119800041736 /* AgentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsCell.swift; sourceTree = "<group>"; };
 		FA5F546823F5933B00E7F40B /* D2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D2020.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5F546B23F5933B00E7F40B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FA5F546F23F5933B00E7F40B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA5F546F23F5933B00E7F40B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		FA5F547223F5933B00E7F40B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA5F547423F5934000E7F40B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA5F547723F5934000E7F40B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -454,10 +458,11 @@
 				FA2BAEE32421001E002E6505 /* CountryViewController.swift */,
 				FA6E33C9241FF50C00BFAFED /* FirstVC.swift */,
 				7748E105242D991E0041C490 /* RegisterAsVC.swift */,
+				77E00EB5242FCF74005B2A21 /* UpgradeAccountVC.swift */,
 				FA5D914423F953DB0004CBEB /* NewCustomer.swift */,
 				FA6E33D0241FF5F000BFAFED /* CurrentLocationVC.swift */,
 				FA2BAEED24214CAB002E6505 /* EditProfileViewController.swift */,
-				FA5F546F23F5933B00E7F40B /* ViewController.swift */,
+				FA5F546F23F5933B00E7F40B /* LoginVC.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -771,6 +776,7 @@
 			isa = PBXGroup;
 			children = (
 				FACD6513240177A400B65A08 /* StoreDetailController.swift */,
+				7785CA1A243034BC006DEBFA /* MyStoreDetailController.swift */,
 				808AC2FC2429EAC50015B24C /* StorePremuimController.swift */,
 				FA66FE76240FBFEA00AFC774 /* PremiumContacts.swift */,
 				80DCF0E9242A8659008FAB6D /* StorePremuiemInfo.swift */,
@@ -1201,6 +1207,7 @@
 				FA2BAEE8242100F6002E6505 /* CountryModel.swift in Sources */,
 				77A3B4BB242EC45C00842730 /* Downloader.swift in Sources */,
 				FAAC60F623F839DD007EB8E7 /* RoundedViews.swift in Sources */,
+				7785CA1B243034BC006DEBFA /* MyStoreDetailController.swift in Sources */,
 				773433DA242D332F007B99D6 /* SubCategory.swift in Sources */,
 				FA2BAEE42421001E002E6505 /* CountryViewController.swift in Sources */,
 				8033E8CA24254FF900D0F2A0 /* UIImageViewExtension.swift in Sources */,
@@ -1236,7 +1243,7 @@
 				FA5C6DDD24015A8300E11A98 /* SelectedCategoryCell.swift in Sources */,
 				8033E8CD24254FF900D0F2A0 /* LocalizeDictionary.swift in Sources */,
 				8033E8CB24254FF900D0F2A0 /* ChangeLangHelper.swift in Sources */,
-				FA5F547023F5933B00E7F40B /* ViewController.swift in Sources */,
+				FA5F547023F5933B00E7F40B /* LoginVC.swift in Sources */,
 				800570C12426FE9500F45742 /* Section.swift in Sources */,
 				FA68A230240D34F2004C8316 /* QRCodeVC.swift in Sources */,
 				FACD65162401888D00B65A08 /* ProfileCollectionViewCell.swift in Sources */,
@@ -1250,6 +1257,7 @@
 				FA5F546C23F5933B00E7F40B /* AppDelegate.swift in Sources */,
 				FA2BAEEE24214CAB002E6505 /* EditProfileViewController.swift in Sources */,
 				FA60429223FC033700BC1C62 /* HomeVC.swift in Sources */,
+				77E00EB6242FCF74005B2A21 /* UpgradeAccountVC.swift in Sources */,
 				8033E7F724254E3100D0F2A0 /* UISearchBarExtensions.swift in Sources */,
 				8033E76B24254CA200D0F2A0 /* Constants.swift in Sources */,
 				8033E8CE24254FF900D0F2A0 /* UILocalizationExtensions.swift in Sources */,

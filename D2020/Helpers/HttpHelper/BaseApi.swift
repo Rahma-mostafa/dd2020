@@ -178,7 +178,7 @@ class BaseApi: Downloader, Paginator, Alertable {
             }
         }
     }
-    func uploadMultiFiles(_ method: String , type: HTTPMethod, files: [URL], key: String, completionHandler: @escaping (Data?) -> ()) {
+    func uploadMultiFiles(_ method: String , type: HTTPMethod, files: [URL], key: String, file: [String: URL]? = nil, completionHandler: @escaping (Data?) -> ()) {
         
         self.isHttpRequestRun = true
     

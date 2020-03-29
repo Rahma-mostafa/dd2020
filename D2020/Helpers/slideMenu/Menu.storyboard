@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,8 +41,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lt8-Vd-NA8">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udZ-0M-bXr">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                        <color key="backgroundColor" name="OrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="Btd-ZO-Olr"/>
+                                        </constraints>
+                                    </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 425" translatesAutoresizingMaskIntoConstraints="NO" id="Yd2-fQ-oUK">
-                                        <rect key="frame" x="16" y="25" width="70" height="70"/>
+                                        <rect key="frame" x="16" y="15" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="MQ1-RM-XVq"/>
                                             <constraint firstAttribute="height" constant="70" id="vZq-2L-Ox5"/>
@@ -53,17 +61,16 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ماهر بن  نايف" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFO-CD-BSM">
-                                        <rect key="frame" x="102" y="34" width="112" height="32"/>
+                                        <rect key="frame" x="102" y="19" width="304" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="7Zw-tN-FFy"/>
-                                            <constraint firstAttribute="width" constant="112" id="AXF-ZJ-2Hp"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عميل" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTN-m5-LnH">
-                                        <rect key="frame" x="102" y="74" width="42" height="32"/>
+                                        <rect key="frame" x="102" y="59" width="42" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="42" id="MOU-yz-ywW"/>
                                             <constraint firstAttribute="height" constant="32" id="S8P-1x-8gY"/>
@@ -72,8 +79,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eki-vD-PXl" customClass="RoundedShadowView" customModule="D2020" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="125" width="414" height="683"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eki-vD-PXl">
+                                        <rect key="frame" x="0.0" y="110" width="414" height="718"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhO-Ou-zhb">
                                                 <rect key="frame" x="0.0" y="310" width="414" height="2"/>
@@ -146,7 +153,7 @@
                                                             <action selector="rent:" destination="jdD-03-JZw" eventType="touchUpInside" id="W79-hv-eOE"/>
                                                         </connections>
                                                     </button>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="BsU-Vz-yZj">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 272" translatesAutoresizingMaskIntoConstraints="NO" id="BsU-Vz-yZj">
                                                         <rect key="frame" x="16" y="150" width="30" height="30"/>
                                                         <color key="tintColor" red="0.99607843139999996" green="0.62352941179999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -190,7 +197,7 @@
                                                             <action selector="family:" destination="jdD-03-JZw" eventType="touchUpInside" id="HwG-mt-D2c"/>
                                                         </connections>
                                                     </button>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="0h8-CQ-tQt">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 248" translatesAutoresizingMaskIntoConstraints="NO" id="0h8-CQ-tQt">
                                                         <rect key="frame" x="16" y="270" width="30" height="30"/>
                                                         <color key="tintColor" red="0.99607843139999996" green="0.62352941179999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -302,7 +309,7 @@
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="30" id="lfm-al-xnp"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="gct-w0-7Ge">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 498" translatesAutoresizingMaskIntoConstraints="NO" id="gct-w0-7Ge">
                                                 <rect key="frame" x="16" y="358" width="30" height="30"/>
                                                 <color key="tintColor" red="0.99607843139999996" green="0.62352941179999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -332,7 +339,7 @@
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="30" id="vCl-kS-OkJ"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="0bW-5N-USb">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 489" translatesAutoresizingMaskIntoConstraints="NO" id="0bW-5N-USb">
                                                 <rect key="frame" x="16" y="434" width="30" height="30"/>
                                                 <color key="tintColor" red="0.99607843139999996" green="0.62352941179999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -350,7 +357,7 @@
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="30" id="pyP-r9-0A4"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="UlG-an-S2x">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2000px-Flag_of_Egypt.svg" translatesAutoresizingMaskIntoConstraints="NO" id="UlG-an-S2x">
                                                 <rect key="frame" x="16" y="472" width="30" height="30"/>
                                                 <color key="tintColor" red="0.99607843139999996" green="0.62352941179999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -383,13 +390,16 @@
                                                     <action selector="logout:" destination="jdD-03-JZw" eventType="touchUpInside" id="lPa-ZQ-b13"/>
                                                 </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="RtR-oZ-STw">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logout-en" translatesAutoresizingMaskIntoConstraints="NO" id="RtR-oZ-STw">
                                                 <rect key="frame" x="16" y="527" width="30" height="30"/>
                                                 <color key="tintColor" red="0.99607843139999996" green="0.62352941179999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="v1X-Lu-kRg"/>
                                                     <constraint firstAttribute="height" constant="30" id="zn9-RM-SVE"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="logout.image"/>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -434,20 +444,29 @@
                                             <constraint firstItem="TD3-tW-fmI" firstAttribute="leading" secondItem="Eki-vD-PXl" secondAttribute="leading" id="wkG-8l-Lcl"/>
                                             <constraint firstItem="jta-wr-6KE" firstAttribute="leading" secondItem="Eki-vD-PXl" secondAttribute="leading" id="yCx-Ij-BZ1"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.62352941179999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Eki-vD-PXl" secondAttribute="bottom" id="ABG-gg-1mW"/>
+                                    <constraint firstItem="Eki-vD-PXl" firstAttribute="top" secondItem="udZ-0M-bXr" secondAttribute="bottom" constant="-10" id="1L3-xD-W4Z"/>
+                                    <constraint firstItem="udZ-0M-bXr" firstAttribute="leading" secondItem="Lt8-Vd-NA8" secondAttribute="leading" id="1Yi-7r-Ht8"/>
+                                    <constraint firstAttribute="bottom" secondItem="Eki-vD-PXl" secondAttribute="bottom" constant="-20" id="ABG-gg-1mW"/>
                                     <constraint firstItem="Yd2-fQ-oUK" firstAttribute="leading" secondItem="Lt8-Vd-NA8" secondAttribute="leading" constant="16" id="AeX-kM-iFl"/>
-                                    <constraint firstItem="Eki-vD-PXl" firstAttribute="top" secondItem="UTN-m5-LnH" secondAttribute="bottom" constant="19" id="C3c-EX-c87"/>
                                     <constraint firstItem="UTN-m5-LnH" firstAttribute="leading" secondItem="Yd2-fQ-oUK" secondAttribute="trailing" constant="16" id="DCL-UX-3yE"/>
+                                    <constraint firstAttribute="trailing" secondItem="HFO-CD-BSM" secondAttribute="trailing" constant="8" id="EhI-iN-hd6"/>
                                     <constraint firstAttribute="trailing" secondItem="Eki-vD-PXl" secondAttribute="trailing" id="Fze-j2-LkD"/>
-                                    <constraint firstItem="Yd2-fQ-oUK" firstAttribute="top" secondItem="Lt8-Vd-NA8" secondAttribute="top" constant="25" id="SK6-MP-4ov"/>
+                                    <constraint firstItem="Yd2-fQ-oUK" firstAttribute="top" secondItem="Lt8-Vd-NA8" secondAttribute="top" constant="15" id="SK6-MP-4ov"/>
                                     <constraint firstItem="UTN-m5-LnH" firstAttribute="top" secondItem="HFO-CD-BSM" secondAttribute="bottom" constant="8" id="hJ1-DR-nvs"/>
-                                    <constraint firstItem="HFO-CD-BSM" firstAttribute="centerY" secondItem="Yd2-fQ-oUK" secondAttribute="centerY" constant="-10" id="mRF-EA-Ukg"/>
+                                    <constraint firstItem="udZ-0M-bXr" firstAttribute="top" secondItem="Lt8-Vd-NA8" secondAttribute="top" id="i8C-af-8i8"/>
+                                    <constraint firstItem="HFO-CD-BSM" firstAttribute="centerY" secondItem="Yd2-fQ-oUK" secondAttribute="centerY" constant="-15" id="mRF-EA-Ukg"/>
                                     <constraint firstItem="Eki-vD-PXl" firstAttribute="leading" secondItem="Lt8-Vd-NA8" secondAttribute="leading" id="p45-et-ip8"/>
                                     <constraint firstItem="HFO-CD-BSM" firstAttribute="leading" secondItem="Yd2-fQ-oUK" secondAttribute="trailing" constant="16" id="wR9-eZ-Vvw"/>
+                                    <constraint firstAttribute="trailing" secondItem="udZ-0M-bXr" secondAttribute="trailing" id="y9a-5g-aIA"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -472,6 +491,7 @@
                         <outlet property="familyImage" destination="0h8-CQ-tQt" id="xVs-HN-K2k"/>
                         <outlet property="langBtn" destination="dT7-t5-XzD" id="SRW-Bi-RWH"/>
                         <outlet property="logoutBtn" destination="PTa-2m-sbP" id="sXX-Oo-KWv"/>
+                        <outlet property="logoutImage" destination="RtR-oZ-STw" id="Jxq-7e-qcI"/>
                         <outlet property="profileBtn" destination="bTS-Bf-1DQ" id="0z8-fb-Sd6"/>
                         <outlet property="rentBtn" destination="sAL-4N-v65" id="iwz-oO-HgD"/>
                         <outlet property="rentImage" destination="BsU-Vz-yZj" id="KLb-kV-l5d"/>
@@ -491,12 +511,20 @@
         </scene>
     </scenes>
     <resources>
+        <image name="2000px-Flag_of_Egypt.svg" width="24" height="24"/>
+        <image name="Group 248" width="24" height="24"/>
+        <image name="Group 272" width="24" height="24"/>
         <image name="Group 425" width="23.5" height="32"/>
+        <image name="Group 489" width="24" height="24"/>
+        <image name="Group 498" width="24" height="24"/>
         <image name="building" width="19" height="23"/>
-        <image name="calendar" width="44" height="42.5"/>
         <image name="friends" width="20" height="17"/>
         <image name="iconfinder_user_3325167" width="18" height="20"/>
+        <image name="logout-en" width="24" height="24"/>
         <image name="share-2" width="20" height="20"/>
         <image name="shop-1" width="24" height="24"/>
+        <namedColor name="OrangeColor">
+            <color red="0.99607843137254903" green="0.62352941176470589" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
