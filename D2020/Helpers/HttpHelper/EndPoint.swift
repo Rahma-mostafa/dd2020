@@ -1,3 +1,4 @@
+
 //
 //  EndPoint.swift
 //  SupportI
@@ -33,4 +34,6 @@ public enum EndPoint: String {
     case updateLat = "user/updateLat"
     case addShop = "shop/add_shop"
     case addProduct = "shop/add_product_toStore"
+    case adsPackages = "Ads/get_packages"
+    case myAda = "Ads/my_ad"
 }

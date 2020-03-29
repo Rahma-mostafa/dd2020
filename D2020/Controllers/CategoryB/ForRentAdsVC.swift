@@ -44,6 +44,13 @@ class ForRentAdsVC: BaseController {
 //        fetchMyAds()
 
     }
+    func setupLocalization(){
+        titleLabel.text = "mark.product.lan".localized
+        adsPeriodLabel.text = "ads.period.lan".localized
+        chooseLabel.text = "select.period.lan".localized
+        confirmLabel.text = "payments.sub.lan".localized
+        
+    }
     func setup() {
         rentAdsTableView.delegate = self
         rentAdsTableView.dataSource = self
