@@ -258,6 +258,6 @@ extension EditProfileViewController: DownloaderDelegate {
 
 extension EditProfileViewController: UpgradeAccountDelegate {
     func didUpgrade() {
-        self.upgradeBtn.isHidden = true
+        //self.upgradeBtn.isHidden = true
     }
 }

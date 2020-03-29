@@ -471,6 +471,7 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <connections>
+                                                    <outlet property="categoryBtn" destination="dGd-U1-yCc" id="msU-5g-hhp"/>
                                                     <outlet property="imageSelected" destination="fsN-Wu-iQ8" id="bPb-eO-suO"/>
                                                     <outlet property="kmSelected" destination="gvo-wY-pBC" id="qxp-9n-YIS"/>
                                                     <outlet property="premiumLogo" destination="7SO-eK-mHd" id="7XF-3V-2QF"/>
@@ -748,6 +749,7 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <connections>
+                                                    <outlet property="categoryBtn" destination="PsJ-gV-RFj" id="U5s-6C-4Q9"/>
                                                     <outlet property="imageSelected" destination="aM3-e8-9qT" id="3FT-qQ-z0S"/>
                                                     <outlet property="kmSelected" destination="Mbs-ck-yXO" id="rTv-qj-cwJ"/>
                                                     <outlet property="premiumLogo" destination="W2D-lD-vDL" id="9xa-i5-zn0"/>

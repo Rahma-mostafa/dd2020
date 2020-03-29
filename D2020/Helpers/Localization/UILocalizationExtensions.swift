@@ -98,6 +98,18 @@ extension UIBarButtonItem {
     }
 }
 
+extension UITabBarItem {
+    
+    /// SwifterSwift:  width of view; also inspectable from Storyboard.
+    @IBInspectable public var localization: String {
+        get {
+            return self.localization
+        }
+        set {
+            self.title = newValue.localized
+        }
+    }
+}
 
 extension UITextField {
     public func controlAlignment(){

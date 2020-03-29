@@ -33,4 +33,6 @@ public enum EndPoint: String {
     case updateLat = "user/updateLat"
     case addShop = "shop/add_shop"
     case addProduct = "shop/add_product_toStore"
+    case upgradeSections = "user/get_upgrade_to"
+    case upgradeAccount = "user/upgrade_to"
 }

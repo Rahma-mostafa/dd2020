@@ -10,57 +10,47 @@ import UIKit
 import Cosmos
 import TinyConstraints
 
-class AfterSelectingCell: UITableViewCell {
+class AfterSelectingCell: UITableViewCell, CellProtocol {
     
-    
+    enum Style {
+        case orange
+        case green
+        case red
+    }
 
     @IBOutlet weak var premiumLogo: UIImageView!
-    
     @IBOutlet weak var roundedVew: UIView!
-    
     @IBOutlet weak var imageSelected: UIImageView!
-    
-   
     @IBOutlet weak var titleSelected: UILabel!
-    
     @IBOutlet weak var kmSelected: UILabel!
-
-    
     @IBOutlet weak var ratingView: CosmosView!
-    
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var categoryBtn: UIButton!
     
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        roundedVew.layer.cornerRadius = 11
-    }
-
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
+    var style: Style = .orange
   
-    override var frame: CGRect {
+    var setStyle: Style {
         get {
-            return super.frame
+            return style
+        } set {
+            switch newValue {
+            case .orange:
+                categoryBtn.backgroundColor = .orangeFade
+                categoryBtn.setTitleColor(.appOrange, for: .normal)
+                ratingView.settings.filledImage = UIImage(named: "star (3)")
+            case .green:
+                categoryBtn.backgroundColor = .clear
+                categoryBtn.setTitleColor(.appGreen, for: .normal)
+                ratingView.settings.filledImage = UIImage(named: "star (4)")
+            case .red:
+                categoryBtn.backgroundColor = .clear
+                categoryBtn.setTitleColor(.appRed, for: .normal)
+                ratingView.settings.filledImage = UIImage(named: "star (5)")
+            }
         }
-        set (newFrame) {
-            var frame =  newFrame
-            frame.origin.y += 4
-            frame.size.height -= 2 * 4
-            super.frame = frame
-        }
+        
     }
-    
-    
-    
-    
-
-    
+    func setup() {
+        
+    }
 }

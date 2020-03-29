@@ -114,6 +114,9 @@ extension UIColor {
     public static var websiteColor: UIColor {
         return UIColor(named: "WebsiteColor") ?? UIColor()
     }
+    public static var orangeFade: UIColor {
+        return UIColor(named: "OrangeFade") ?? UIColor()
+    }
 }
 extension UIColor {
     public convenience init?(hex: String) {

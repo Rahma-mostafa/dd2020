@@ -34,10 +34,8 @@ class UpgradeAccountVC: BaseController {
         fetchSection()
     }
     func fetchSection() {
-        let method = api(.getSections, [CountryViewController.deviceCountry?.id ?? 0])
         startLoading()
-        ApiManager.instance.headers["Country_id"] = String(CountryViewController.deviceCountry?.id ?? 0)
-        ApiManager.instance.connection(method, type: .get) { [weak self] (response) in
+        ApiManager.instance.connection(.upgradeSections, type: .get) { [weak self] (response) in
             self?.stopLoading()
             let data = try? JSONDecoder().decode(Section.self, from: response ?? Data())
             self?.sections.append(contentsOf: data?.data ?? [])
@@ -46,8 +44,17 @@ class UpgradeAccountVC: BaseController {
     }
     func handlers() {
         confirmBtn.UIViewAction {
-            self.delegate?.didUpgrade()
-            self.navigationController?.popViewController(animated: true)
+            self.upgradeAccount()
+        }
+    }
+    func upgradeAccount() {
+        guard let selectedSection = selectedSection else { return }
+        startLoading()
+        ApiManager.instance.paramaters["section_id"] = sections[selectedSection].id
+        ApiManager.instance.connection(.upgradeAccount, type: .post) { [weak self] (response) in
+            self?.stopLoading()
+            self?.delegate?.didUpgrade()
+            self?.navigationController?.popViewController(animated: true)
         }
     }
 }
