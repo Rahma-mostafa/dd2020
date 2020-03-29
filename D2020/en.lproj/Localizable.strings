@@ -38,6 +38,10 @@
 "empty.password.field.lan" = "Please enter your password";
 "password.doesnot.match.lan" = "Password doesn’t match";
 "password.too.short.lan" = "Password is short must be 8 characters at less.";
+"username" = "E-mail or phone number";
+"password" = "Password";
+"fullname.lan" = "Full name";
+
 //
 "male.lan" = "male";
 "female.lan" = "female";
@@ -159,3 +163,57 @@
 "arrow-back-icon.image" = "arrow-back-icon-en";
 "more-en.image" = "more-en";
 "Path 3344.image" = "Path 3344-en";
+"menu.image" = "menu-en";
+"logout.image" = "logout-en";
+"d2020.lan" = "you are welcome in";
+"d2020Desc.lan" = "dalil D 2020 altijarii";
+"orRegister.lan" = "or Register";
+"google.lan" = "google";
+"skip.lan" = "skip";
+"Phone Number" = "Phone number";
+"phone.lan" = "Phone number";
+"birthdate.lan" = "Date of birth";
+"old.password.lan" = "Current password ";
+"upgrade.account.lan" = "Upgrade account to(trader or advertiser)";
+"select.category.lan" = "Select Section ";
+"select_city" = "Select city";
+"category.lan" = "categoies";
+"all.lan" = "All";
+"my.stores.lan" = "My Stores";
+"stores.lan" = "Stores";
+"my.stores.desc.lan" = "The last added stores";
+"not.found.stores.lan" = "There are no added stores";
+"add.images.stores.lan" = "Add Store Images";
+"store.name.lan" = "Store name";
+"store.category.lan" = "Store Category";
+"store.type.lan"= "Store Type";
+"city.lan" = "Store Location";
+"add.product.lan" = "Add new product";
+"add.product.lan" = "Add Product";
+"upload.product.lan" = "Upload product";
+"product.name.lan" = "Product name";
+"product.price.lan" = "Product price";
+"payment.lan" = "Payment Methods";
+"selectMethod.lan" = "Select payment Method"
+"bank.lan" = "By bank transfer";
+"cash.lan" = "By a delegate from the company";
+"subscription" = "subscription";
+"UPgrade.lan" = "Upgrade to";
+"premium.lan" = "Premium store";
+"product.price.lan" = "products With prices";
+"services.lan" = "services";
+"such.lan" = "Such as: Wi-Fi, parking, etc.";
+"such2.lan" = "Such as: Pepsi, Chipsy ... etc.";
+"prand.lan" = "available brands in store";
+"work.time.lan" = "Open time"
+"social.lan" = "Add social media";
+"video.lan" = "Add video to store";
+"payments.sub.lan" = "Payment methods And Subscription";
+
+
+
+
+
+
+
+

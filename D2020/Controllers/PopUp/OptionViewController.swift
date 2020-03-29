@@ -11,6 +11,9 @@ import UIKit
 class OptionViewController: BaseController {
    
     @IBOutlet weak var optionTableView: UITableView!
+    
+    
+    
     var options:[Option] = [Option(name:"الاقرب"),Option(name:"اماكن مميزه"),Option(name: "الاعلي تقيما")]
     
     

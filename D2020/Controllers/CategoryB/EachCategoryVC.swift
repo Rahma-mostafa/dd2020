@@ -55,6 +55,13 @@ class EachCategoryVC: BaseController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        //localozation
+        categoryLabel.text = "category.lan".localized
+        allSubCategoryLabel.text = "all.lan".localized
+        cityTextField.attributedPlaceholder = NSAttributedString(string: "select_city".localized)
+
+        
+        
     }
     func fetchSubCategories() {
         startLoading()

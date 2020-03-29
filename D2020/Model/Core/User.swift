@@ -33,6 +33,7 @@ class UserRoot: Decodable {
         if remember {
             UserDefaults.standard.set(true, forKey: storeRememberUser)
         }
+        
     }
     public static func fetch() -> UserRoot? {
         let data = UserDefaults.standard.data(forKey: storeUserDefaults)
@@ -40,7 +41,10 @@ class UserRoot: Decodable {
         
         guard let userObject = UserDefaults.standard.data(forKey: storeUserObject) else { return user }
         guard let object = try? JSONDecoder().decode(User.self, from: userObject) else { return user}
-        user.user = object
+        if object.id != nil {
+             user.user = object
+        }
+       
         return user
     }
     public static func token() -> String? {

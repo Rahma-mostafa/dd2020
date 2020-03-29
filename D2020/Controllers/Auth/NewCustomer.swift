@@ -115,8 +115,8 @@ class NewCustomer: BaseController{
         if fullName.text!.isEmpty || password.text!.isEmpty || confirmPassword.text!.isEmpty || email.text!.isEmpty || cityTextField.text!.isEmpty  {
             
             // red placeholders
-            phoneNumber.attributedPlaceholder = NSAttributedString(string: "Phone Number", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
-            password.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            phoneNumber.attributedPlaceholder = NSAttributedString(string: "Phone Number".localized, attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            password.attributedPlaceholder = NSAttributedString(string: "password".localized, attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
             
             // text is entered
         } else {

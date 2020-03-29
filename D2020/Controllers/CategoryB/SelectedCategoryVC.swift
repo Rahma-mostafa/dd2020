@@ -34,7 +34,11 @@ class SelectedCategoryVC: BaseController {
     func setup() {
         tableView.delegate = self
         tableView.dataSource = self
+        allShopsLabel.text = "all.lan".localized
+        cityTextField.attributedPlaceholder = NSAttributedString(string: "select_city".localized)
+
     }
+    
     func fetchShopsByCatID() {
         startLoading()
         let method = api(.shop , [category ?? 0] )

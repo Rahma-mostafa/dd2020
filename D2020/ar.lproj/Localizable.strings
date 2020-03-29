@@ -18,6 +18,10 @@
 "you_must_accept_the_request_to_login.lan" = "يجب عليك الموافقة علي الطلب لكي يتم تسجيل الدخول";
 "the_login_is_required.lan" = "تسجيل الدخول مطلوب";
 "not_found.lan" = "غير موجودة";
+"username" = "رقم الهاتف أو الإيميل ";
+"password" = "كلمة السر";
+"fullname.lan" = "الاسم كامل";
+
 
 /** validation **/
 
@@ -206,3 +210,62 @@
 "select.city.lan" = "اختار المدينة";
 "Path 3344.image" = "Path 3344";
 "change.lan" = "تغيير";
+"menu.image" = "menu-ar";
+"logout.image" = "logout-ar";
+"d2020.lan" = "أهلا بك في";
+"d2020Desc.lan" = "التجاري D2020 دليل ";
+"orRegister.lan" = "أو عن طريق";
+"google.lan" = "جوجل";
+"skip.lan" = "الدخول بدون تسجيل";
+"Phone Number" = "رقم الهاتف";
+"phone.lan" = "رقم الهاتف";
+"birthdate.lan" = "تاريخ الميلاد";
+"old password.lan" = "كلمة السر الحالية ";
+"upgrade.account.lan" = "ترقيت الحساب لـ ( تاجر أو معلن ) ";
+"select.category.lan" = "حددالقسم";
+"select_city" = "حدد المدينة";
+"category.lan" = "الفئات";
+"all.lan" = "الكل";
+"product.lan" = "المنتجات";
+"my.stores.lan" = "محلاتي";
+"stores.lan" = "المحلات";
+"my.stores.desc.lan" = "اخر المحلات التي تمت إضافتها";
+"not.found.stores.lan" = "لا يوجد محلات مضافة";
+"add.images.stores.lan" = "إضافة صورة للمحل";
+"store.name.lan" = "اسم المحل";
+"store.category.lan" = "فئة المحل";
+"store.type.lan"= "نوع المحل";
+"city.lan" = "موقع المحل ";
+"add.product.lan" = "إضافة منتج جديد";
+"add.product.lan" = "إضافة منتج";
+"upload.product.lan" = "رفع صورة المنتج";
+"product.name.lan" = "اسم المنتج";
+"product.price.lan" = "السعر";
+"payment.lan" = "طرق الدفع ";
+"selectMethod.lan" = "اختر طريقة الدفع";
+"bank.lan" = "عن طريق حوالة بنكية";
+"cash.lan" = "عن طريق مندوب من الشركة";
+"subscription" = "الاشتراك";
+"UPgrade.lan" = "الترقية لـ ";
+"premium.lan" = "محل مميز";
+"product.price.lan" = "عرض المنتجات مع اسعارها ";
+"services.lan" = "عرض الخدمات";
+"such.lan" = "مثل: الواي فاي ,الباركينج ... إلخ";
+"such2.lan" = "مثل: بيبسي , شيبسي ... إلخ";
+"prand.lan" = "البراندات المتاحة بالمحل";
+"work.time.lan" = "عرض مواعيد العمل";
+"social.lan" = "إضافة وسائل التواصل الإجتماعي";
+"video.lan" = "إضافة فيديو للمحل";
+"payments.sub.lan" = "الاشتراك وطرق الدفع";
+
+
+
+
+
+
+
+
+
+
+
+

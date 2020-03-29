@@ -26,6 +26,7 @@ class CategoryVC: BaseController {
     @IBOutlet weak var tableViewB: UITableView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var changeCityHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var categoriesTblTop: NSLayoutConstraint!
     @IBOutlet weak var cityTextField: UITextField!
     
     var categoriesB : [Item] = [Item(name: "المحلات الخاصة بي", imageName: "online-store (1)", description: .none, coloredView: .none)]
@@ -45,55 +46,42 @@ class CategoryVC: BaseController {
     func setup() {
         tableViewB.dataSource = self
         tableViewB.delegate = self
-        tableView.delegate = self
-        tableView.dataSource = self
+        cityTextField.attributedPlaceholder = NSAttributedString(string: "select_city".localized)
+
+        
     }
     
     func fetchCategories() {
         startLoading()
         let method = api(.getCategory, [section ?? 0] )
         ApiManager.instance.headers["section_id"] = "\(section ?? 0)"
+        if city_id != nil {
+            ApiManager.instance.paramaters["city_id"] = "\(city_id ?? 0)"
+        }
         ApiManager.instance.connection(method, type: .get) { [weak self] (response) in
             self?.stopLoading()
             print("run")
             let data = try? JSONDecoder().decode(Category.self, from: response ?? Data())
-            if case data?.userPermission = true {
+            if case data?.userPermission = false {
                 self?.categoriesB.removeAll()
+                self?.categoriesTblTop.constant = 15
+            } else {
+                self?.tableView.delegate = self
+                self?.tableView.dataSource = self
+                self?.tableView.reloadData()
             }
             self?.categoryArray.append(contentsOf: data?.date ?? [])
             self?.tableViewB.reloadData()
             print("CategriesBySectionId")
         }
     }
-    func fetchCategoriesByCityID() {
-        startLoading()
-        
-        ApiManager.instance.headers["section_id"] = "\(section ?? 0 )"
-        if city_id != nil {
-            ApiManager.instance.paramaters["city_id"] = "\(city_id ?? 0)"
-        }
-        let method = api(.getCategory , [section ?? 0] )
-        ApiManager.instance.connection(method, type: .get) { [weak self] (response) in
-            self?.stopLoading()
-            print("run")
-            let data = try? JSONDecoder().decode(Category.self, from: response ?? Data())
-            if case data?.userPermission = true {
-                self?.categoriesB.removeAll()
-            }
-            self?.categoryArray.removeAll()
-            self?.categoryArray.append(contentsOf: data?.date ?? [])
-            self?.tableViewB.reloadData()
-            print("CategoriesByCityId")
-        }
-    }
     @IBAction func onCityButtonTapped(_ sender: Any) {
         showCityTable()
     }
-    
 }
 
 
-extension CategoryVC : UITableViewDelegate,UITableViewDataSource {
+extension CategoryVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
@@ -127,13 +115,8 @@ extension CategoryVC : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
-        let productVC = AddShopVC()
-        
-        
         if tableView == self.tableView {
-            let storyboard = UIStoryboard(name: "Upgrade", bundle: nil)
-            let scene = storyboard.instantiateViewController(withIdentifier: "AddShopVC")
+            let scene = controller(AddShopVC.self, storyboard: .createStore)
             navigationController?.pushViewController(scene, animated: true)
         }else {
             let scene = controller(EachCategoryVC.self, storyboard: .category)
@@ -152,7 +135,7 @@ extension CategoryVC : UITableViewDelegate,UITableViewDataSource {
             self.hideCityTable()
             self.cityTextField.text = Name
             self.city_id = id
-            self.fetchCategoriesByCityID()
+            self.fetchCategories()
         }
         self.pushPop(vcr: vc)
     }
@@ -162,13 +145,5 @@ extension CategoryVC : UITableViewDelegate,UITableViewDataSource {
             self.view.layoutIfNeeded()
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }
 

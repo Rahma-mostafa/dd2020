@@ -25,8 +25,16 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow to use camera for update your image</string>
 	<key>NSContactsUsageDescription</key>
 	<string>Please let me use your contact privacy to add this store in your contacts</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Allow to use your location to complete your profile</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow to use your location to complete your profile</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow to use photo library for update your image</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>ArbFONTS-Sukar Bold.ttf</string>
@@ -34,7 +42,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Auth</string>
+	<string>CreateStore</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -43,6 +51,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -51,13 +60,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Allow to use your location to complete your profile</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Allow to use your location to complete your profile</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Allow to use camera for update your image</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Allow to use photo library for update your image</string>
 </dict>
 </plist>

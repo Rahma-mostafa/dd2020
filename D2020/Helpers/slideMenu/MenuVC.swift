@@ -32,6 +32,7 @@ class MenuVC: BaseController {
     @IBOutlet weak var supportBtn: UIButton!
     @IBOutlet weak var shareBtn: UIButton!
     @IBOutlet weak var logoutBtn: UIButton!
+    @IBOutlet weak var logoutImage: UIImageView!
     @IBOutlet weak var viewContainSection: UIView!
     @IBOutlet weak var containSectionHeight: NSLayoutConstraint!
     
@@ -50,13 +51,25 @@ class MenuVC: BaseController {
             //menuCollection.delegate = self
             //menuCollection.dataSource = self
         }
+        
         userName.text = "\(UserRoot.fetch()?.user?.name ?? "")"
         uesrType.text = ""
         userImage.setImage(url: UserRoot.fetch()?.user?.image)
+        if UserRoot.token() == nil {
+            logoutBtn.isHidden = true
+            logoutImage.isHidden = true
+        }
         // Do any additional setup after loading the view.\
         setLocalize()
         setupMenu()
-        fetchSection()
+        
+        if HomeVC.sections.count == 0 {
+            fetchSection()
+        } else {
+            self.sections.removeAll()
+            self.sections.append(contentsOf: HomeVC.sections)
+            self.setupMenu()
+        }
     }
     func setLocalize() {
         countryImage.setImage(url: CountryViewController.deviceCountry?.file)

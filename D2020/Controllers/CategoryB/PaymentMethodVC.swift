@@ -33,6 +33,16 @@ class  PaymentMethodVC: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hiddenNav = true
+        SetupLocalization()
+
+    }
+    func SetupLocalization(){
+        titleLabel.text = "payment.lan".localized
+        chooseMethodLabel.text = "selectMethod.lan".localized
+        bankLabel.text = "bank.lan".localized
+        cashLabel.text = "cash.lan".localized
+        confirmButton.setTitle("subscription".localized, for: .normal)
+    
 
     }
     func fetchPaymentMethod() {

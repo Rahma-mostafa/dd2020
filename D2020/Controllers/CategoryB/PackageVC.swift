@@ -29,6 +29,7 @@ PackageVC: BaseController {
     @IBOutlet weak var backView2: UIView!
     @IBOutlet weak var package2Button: UIButton!
     @IBOutlet weak var label14: UILabel!
+    @IBOutlet weak var label15: UILabel!
     
     
     var store:Int? = 12
@@ -48,7 +49,20 @@ PackageVC: BaseController {
         
         fetchPackages()
     }
-    
+    func setupLocalization (){
+        label1.text = "UPgrade.lan".localized
+        label2.text = "premium.lan".localized
+        label3.text = "product.price.lan".localized
+        label4.text = "services.lan".localized
+        label5.text = "such.lan".localized
+        label6.text = "prand.lan".localized
+        label7.text = "such2.lan".localized
+        label8.text = "work.time.lan".localized
+        label9.text = "social.lan".localized
+        label10.text = "video.lan".localized
+        label15.text = "payments.sub.lan".localized
+    }
+
     func fetchPackages() {
            let method = api(.packages, [store ?? 0] )
            ApiManager.instance.headers["store_id"] = "\(store ?? 0)"
