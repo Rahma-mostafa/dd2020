@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رمز ال QRCode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnu-NL-MgY">
-                                <rect key="frame" x="95" y="544" width="225" height="27"/>
+                                <rect key="frame" x="95" y="544" width="225" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1930,7 +1930,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StoreProductCollectionCell" id="6of-9o-ari" customClass="StoreProductCollectionCell" customModule="D2020" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="37.5" width="112" height="84"/>
+                                                <rect key="frame" x="16" y="38" width="112" height="84"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="oHD-VB-oHe">
                                                     <rect key="frame" x="0.0" y="0.0" width="112" height="84"/>
@@ -2021,7 +2021,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StoreSliderImageCell" id="Jjh-4p-OWd" customClass="StoreSliderImageCell" customModule="D2020" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="-0.5" width="112" height="50"/>
+                                                <rect key="frame" x="16" y="0.0" width="112" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="97X-ay-krx">
                                                     <rect key="frame" x="0.0" y="0.0" width="112" height="50"/>
@@ -2081,7 +2081,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StoreSliderImageCell" id="c5h-sG-YNI" customClass="StoreSliderImageCell" customModule="D2020" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="-0.5" width="112" height="50"/>
+                                                <rect key="frame" x="16" y="0.0" width="112" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2qC-aU-d3Q">
                                                     <rect key="frame" x="0.0" y="0.0" width="112" height="50"/>
@@ -2284,13 +2284,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEQ-rH-6Fe">
-                                <rect key="frame" x="36" y="60" width="35" height="21.5"/>
+                                <rect key="frame" x="36" y="60" width="39.5" height="19"/>
                                 <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="myc-hw-shu">
-                                <rect key="frame" x="0.0" y="97.5" width="414" height="402.5"/>
+                                <rect key="frame" x="0.0" y="95" width="414" height="405"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PremiumContacts" rowHeight="60" id="1xh-Jb-0Nq" customClass="PremiumContactsCell" customModule="D2020" customModuleProvider="target">
@@ -2311,13 +2311,13 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="حساب التويتر" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLL-OL-eTV">
-                                                            <rect key="frame" x="61" y="12.5" width="94.5" height="23"/>
+                                                            <rect key="frame" x="61" y="14" width="81.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-back-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Mlb-3A-QkX">
-                                                            <rect key="frame" x="342" y="11.5" width="24" height="25"/>
+                                                            <rect key="frame" x="342" y="-1" width="24" height="50"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -4163,7 +4163,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StoreProductCollectionCell" id="hnb-cJ-FkS" customClass="StoreProductCollectionCell" customModule="D2020" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="37.5" width="112" height="84"/>
+                                                <rect key="frame" x="16" y="38" width="112" height="84"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JNU-lj-dwa">
                                                     <rect key="frame" x="0.0" y="0.0" width="112" height="84"/>
@@ -4254,7 +4254,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StoreSliderImageCell" id="Ol1-Yf-ztu" customClass="StoreSliderImageCell" customModule="D2020" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="-0.5" width="112" height="50"/>
+                                                <rect key="frame" x="16" y="0.0" width="112" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iyo-co-7kq">
                                                     <rect key="frame" x="0.0" y="0.0" width="112" height="50"/>
@@ -4314,7 +4314,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StoreSliderImageCell" id="4po-x1-BY5" customClass="StoreSliderImageCell" customModule="D2020" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="-0.5" width="112" height="50"/>
+                                                <rect key="frame" x="16" y="0.0" width="112" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qfC-Vr-wku">
                                                     <rect key="frame" x="0.0" y="0.0" width="112" height="50"/>
@@ -4517,13 +4517,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8r-4x-ATe">
-                                <rect key="frame" x="36" y="60" width="35" height="21.5"/>
+                                <rect key="frame" x="36" y="60" width="39.5" height="19"/>
                                 <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sGI-bc-OZ5">
-                                <rect key="frame" x="0.0" y="97.5" width="414" height="402.5"/>
+                                <rect key="frame" x="0.0" y="95" width="414" height="405"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PremiumContacts" rowHeight="60" id="hxp-e1-zbE" customClass="PremiumContactsCell" customModule="D2020" customModuleProvider="target">
@@ -4544,13 +4544,13 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="حساب التويتر" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5X-UR-BG3">
-                                                            <rect key="frame" x="61" y="12.5" width="94.5" height="23"/>
+                                                            <rect key="frame" x="61" y="14" width="81.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-back-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Y0Q-SQ-LPL">
-                                                            <rect key="frame" x="342" y="11.5" width="24" height="25"/>
+                                                            <rect key="frame" x="342" y="-1" width="24" height="50"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>

@@ -128,6 +128,9 @@ class MyStoreDetailController: BaseController {
         yourRateLbl.text = Localizations.yourRate.localized
         allRateLbl.text = Localizations.allRate.localized
         commentTxf.placeholder = Localizations.yourRate.localized
+        editBtn.setTitle("edit.lan".localized, for: .normal)
+        upgradeLbl.text = "upgrade.account.lan".localized
+        
     }
     func setupHeights(scrollPoint: CGPoint? = nil) {
         let commentCount = CGFloat((store?.user_comment?.count ?? 0))

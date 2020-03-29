@@ -122,8 +122,8 @@ extension AddShopVC {
         self.shopAdded.removeLast()
         self.handleView()
         let method = api(.deleteStore, [storeID])
-//        ApiManager.instance.connection(method, type: .post) { [weak self] (response) in
-//            
-//        }
+        ApiManager.instance.connection(method, type: .post) { [weak self] (response) in
+            
+        }
     }
 }
