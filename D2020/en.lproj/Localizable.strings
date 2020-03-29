@@ -186,7 +186,7 @@
 "add.images.stores.lan" = "Add Store Images";
 "store.name.lan" = "Store name";
 "store.category.lan" = "Store Category";
-"store.type.lan"= "Store Type";
+"store.type.lan" = "Store Type";
 "city.lan" = "Store Location";
 "add.product.lan" = "Add new product";
 "add.product.lan" = "Add Product";
@@ -194,7 +194,7 @@
 "product.name.lan" = "Product name";
 "product.price.lan" = "Product price";
 "payment.lan" = "Payment Methods";
-"selectMethod.lan" = "Select payment Method"
+"selectMethod.lan" = "Select payment Method" ;
 "bank.lan" = "By bank transfer";
 "cash.lan" = "By a delegate from the company";
 "subscription" = "subscription";
@@ -205,7 +205,7 @@
 "such.lan" = "Such as: Wi-Fi, parking, etc.";
 "such2.lan" = "Such as: Pepsi, Chipsy ... etc.";
 "prand.lan" = "available brands in store";
-"work.time.lan" = "Open time"
+"work.time.lan" = "Open time";
 "social.lan" = "Add social media";
 "video.lan" = "Add video to store";
 "payments.sub.lan" = "Payment methods And Subscription";

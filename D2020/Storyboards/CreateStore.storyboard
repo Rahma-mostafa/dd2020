@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bXw-8h-svI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -771,7 +771,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzi-vK-M8o">
-                                        <rect key="frame" x="16" y="53.5" width="382" height="199"/>
+                                        <rect key="frame" x="16" y="51" width="382" height="199"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t4H-xK-WZj">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="199"/>
@@ -826,7 +826,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9AE-sG-lcR">
-                                        <rect key="frame" x="16" y="272.5" width="382" height="61"/>
+                                        <rect key="frame" x="16" y="270" width="382" height="61"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اسم المنتج" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="97n-T5-EjQ" customClass="FloatLabelTextField" customModule="D2020" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="0.0" width="366" height="59"/>
@@ -866,7 +866,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zA-J9-cp4">
-                                        <rect key="frame" x="16" y="349.5" width="382" height="61"/>
+                                        <rect key="frame" x="16" y="347" width="382" height="61"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اسم المنتج" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vAD-Y0-xkj" customClass="FloatLabelTextField" customModule="D2020" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="0.0" width="366" height="59"/>
@@ -906,7 +906,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رفع صورة المنتج " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1u-Fu-xkE">
-                                        <rect key="frame" x="16" y="16" width="382" height="21.5"/>
+                                        <rect key="frame" x="16" y="16" width="382" height="19"/>
                                         <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1366,7 +1366,7 @@
         <image name="ellipse-3" width="75" height="75"/>
         <image name="grediantBackground" width="94" height="94"/>
         <image name="iconfinder_add_134224" width="40" height="40"/>
-        <image name="iconfinder_ic_my_location_48px_352557 (1)" width="24" height="24"/>
+        <image name="iconfinder_ic_my_location_48px_352557 (1)" width="20" height="20"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="online-store-1" width="85" height="71.5"/>
         <image name="pencil" catalog="system" width="64" height="56"/>

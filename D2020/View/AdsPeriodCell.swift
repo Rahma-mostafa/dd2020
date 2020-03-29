@@ -13,13 +13,18 @@ class AdsPeriodCell: UICollectionViewCell {
     @IBOutlet weak var whiteView: UIView!
     @IBOutlet weak var periodLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var selectButton: UIButton!
+    var onButtonTapped: (()->()) = {}
+
     
      override func awakeFromNib() {
         roundedView.layer.cornerRadius = 8
         whiteView.layer.cornerRadius = 8
-
         
     }
     
+    @IBAction func onSelectButtonCilick(_ sender: Any) {
+        onButtonTapped()
+    }
     
 }

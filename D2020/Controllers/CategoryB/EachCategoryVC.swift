@@ -167,6 +167,7 @@ extension EachCategoryVC : UICollectionViewDelegateFlowLayout, UICollectionViewD
         cell.titleSelected.text = shopArray[indexPath.row].name
         cell.kmSelected.text = shopArray[indexPath.row].distance
         cell.ratingView.rating = Double(shopArray[indexPath.row].rate!)
+        
         cell.saveButton.tag = indexPath.row
         self.setupFavorite(change: false, sender: cell.saveButton)
         cell.saveButton.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)

@@ -101,11 +101,17 @@ extension ForRentAdsVC: UITableViewDelegate,UITableViewDataSource,UICollectionVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = rentAdsTableView.dequeueReusableCell(withIdentifier: "RentAdsCell", for: indexPath) as? ForRentAdsCell{
 //            cell.didSelectedImg.setImage(url: adsArray[indexPath.row].image)
-            cell.didSelectedImg.image = UIImage (named: "dean-rose-Y0qKkSuVzWE-unsplash")
-            cell.didSelectedTitle.text = adsArray[indexPath.item].label!
 //            cell.didSelectedKm.text = myAdsArray[indexPath.item]
-            cell.priceLabel.text = "\(adsArray[indexPath.item].label2!)"
 //            cell.starView.rating = Double(adsArray[indexPath.item].rate!)
+
+            cell.didSelectedTitle.text = adsArray[indexPath.item].label!
+            cell.priceLabel.text = "\(adsArray[indexPath.item].label2!)"
+            
+
+
+            cell.didSelectedImg.image = UIImage (named: "maksim-zhashkevych-qXfLGt9nh2Y-unsplash")
+            cell.starView.rating = 5
+//            cell.premiumImageView.image = UIImage(named:"star (notSelected)")
             
             return cell
         }
@@ -114,12 +120,21 @@ extension ForRentAdsVC: UITableViewDelegate,UITableViewDataSource,UICollectionVi
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return packagesArray.count
+//        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = adsPeriodCollectionView.dequeueReusableCell(withReuseIdentifier: "PeriodCell", for: indexPath)as? AdsPeriodCell {
             cell.periodLabel.text = packagesArray[indexPath.item].periodType
             cell.priceLabel.text = "\(String(describing: packagesArray[indexPath.item].price))" + "\(String(describing: packagesArray[indexPath.item].currency))"
+            cell.selectButton.tag = indexPath.row
+            cell.onButtonTapped = { [unowned self] in
+                cell.roundedView.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
+                cell.whiteView.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
+                cell.periodLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                cell.priceLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            }
+            
             return cell
         }
         return UICollectionViewCell()
@@ -130,6 +145,7 @@ extension ForRentAdsVC: UITableViewDelegate,UITableViewDataSource,UICollectionVi
        }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         packageID += 1
+//        print ("\(packageID)")
      }
     @IBAction func onConfirmButtonClick(_ sender: Any) {
            confirmButton.backgroundColor = #colorLiteral(red: 0.9746131301, green: 0.6148713231, blue: 0.004504605196, alpha: 1)
