@@ -23,13 +23,28 @@ class SelectedCategoryVC: BaseController {
     var category:Int?
     var categoryName:String?
     var didSelectedItems:[ShopsByCatID.Datum] = []
-    
+    var style: Style = .orange
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.title = categoryName
+        setupStyle()
         setup()
         fetchShopsByCatID()
         
+    }
+    func setupStyle() {
+        switch style {
+        case .orange:
+            self.navigationController?.navigationBar.barTintColor = .appOrange
+            self.view.backgroundColor = .appOrange
+            
+        case .green:
+            self.navigationController?.navigationBar.barTintColor = .appGreen
+            self.view.backgroundColor = .appGreen
+        case .red:
+            self.navigationController?.navigationBar.barTintColor = .appRed
+            self.view.backgroundColor = .appRed
+        }
     }
     func setup() {
         tableView.delegate = self
@@ -72,7 +87,14 @@ extension SelectedCategoryVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(type: AfterSelectingCell.self, indexPath, register: false)
-        
+        switch style {
+        case .orange:
+            cell.setStyle = .orange
+        case .green:
+            cell.setStyle = .green
+        case .red:
+            cell.setStyle = .red
+        }
         cell.imageSelected.setImage(url: didSelectedItems[indexPath.row].image)
         cell.titleSelected.text = didSelectedItems[indexPath.row].name
         cell.kmSelected.text = didSelectedItems[indexPath.row].distance

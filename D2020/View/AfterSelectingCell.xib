@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArbFONTS-Sukar Bold.ttf">
+            <string>Sukar-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AfterSelectingCell" rowHeight="141" id="KGk-i7-Jjw" customClass="AfterSelectingCell" customModule="D2020" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="141"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="355" height="141"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eV-eb-orh">
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="99"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GVk-Nl-axo">
+                                <rect key="frame" x="0.0" y="0.0" width="94" height="99"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="99" id="NYa-O2-qqo"/>
+                                    <constraint firstAttribute="width" constant="94" id="oDR-up-oOr"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="M7v-yY-gCU">
+                                <rect key="frame" x="109" y="8" width="108.5" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="كافيه الغروب" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PLg-ba-KxC">
+                                        <rect key="frame" x="0.0" y="0.0" width="78" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="ee5-hp-5Rw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.seal.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2Hd-XR-Mxs">
+                                        <rect key="frame" x="86" y="-0.5" width="22.5" height="21.5"/>
+                                        <color key="tintColor" red="0.99607843139999996" green="0.62352941179999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22.5" id="N28-NL-YcE"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2Hd-XR-Mxs" secondAttribute="trailing" id="7NR-1N-uTd"/>
+                                    <constraint firstItem="2Hd-XR-Mxs" firstAttribute="top" secondItem="M7v-yY-gCU" secondAttribute="top" id="Nyc-aZ-KOa"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qn9-R2-A6k" customClass="RoundedButton" customModule="D2020" customModuleProvider="target">
+                                <rect key="frame" x="104" y="36" width="70" height="20"/>
+                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="f3O-ge-0hQ"/>
+                                    <constraint firstAttribute="height" constant="20" id="g8d-PO-bQb"/>
+                                </constraints>
+                                <state key="normal" title="كافيه">
+                                    <color key="titleColor" red="0.99607843139999996" green="0.62352941179999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iWh-xL-P9e" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="109" y="64" width="70" height="13"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Ifp-D9-lGw"/>
+                                    <constraint firstAttribute="height" constant="13" id="Lz5-Lw-22t"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="star (3)"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="star (notSelected)"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.5K.M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uC9-8J-39j">
+                                <rect key="frame" x="306" y="59" width="34" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="obm-Aj-IGg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="10"/>
+                                <color key="textColor" red="0.47838729619999998" green="0.47845959659999998" blue="0.47837144139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Akk-DR-hbA">
+                                <rect key="frame" x="298" y="-3" width="42" height="42"/>
+                                <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <state key="normal" image="save"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GVk-Nl-axo" firstAttribute="top" secondItem="1eV-eb-orh" secondAttribute="top" id="43O-iI-xXq"/>
+                            <constraint firstItem="M7v-yY-gCU" firstAttribute="leading" secondItem="GVk-Nl-axo" secondAttribute="trailing" constant="15" id="8q5-40-dM7"/>
+                            <constraint firstItem="uC9-8J-39j" firstAttribute="centerY" secondItem="iWh-xL-P9e" secondAttribute="centerY" id="EQ2-sr-Eu7"/>
+                            <constraint firstItem="iWh-xL-P9e" firstAttribute="top" secondItem="qn9-R2-A6k" secondAttribute="bottom" constant="8" id="Hh4-jR-qPh"/>
+                            <constraint firstAttribute="height" constant="99" id="KlG-iu-azA"/>
+                            <constraint firstItem="qn9-R2-A6k" firstAttribute="top" secondItem="M7v-yY-gCU" secondAttribute="bottom" constant="8" id="NFc-rw-FeU"/>
+                            <constraint firstItem="GVk-Nl-axo" firstAttribute="leading" secondItem="1eV-eb-orh" secondAttribute="leading" id="O8A-M2-DdM"/>
+                            <constraint firstItem="iWh-xL-P9e" firstAttribute="leading" secondItem="PLg-ba-KxC" secondAttribute="leading" id="PTL-bF-bXV"/>
+                            <constraint firstAttribute="trailing" secondItem="uC9-8J-39j" secondAttribute="trailing" constant="15" id="PmL-Ms-zZd"/>
+                            <constraint firstItem="Akk-DR-hbA" firstAttribute="centerY" secondItem="PLg-ba-KxC" secondAttribute="centerY" id="SG3-V2-KUI"/>
+                            <constraint firstAttribute="trailing" secondItem="Akk-DR-hbA" secondAttribute="trailing" constant="15" id="WmL-zM-utz"/>
+                            <constraint firstItem="qn9-R2-A6k" firstAttribute="leading" secondItem="M7v-yY-gCU" secondAttribute="leading" constant="-5" id="gXu-XI-OWx"/>
+                            <constraint firstItem="M7v-yY-gCU" firstAttribute="top" secondItem="1eV-eb-orh" secondAttribute="top" constant="8" id="nEA-6V-o8F"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="11"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="1eV-eb-orh" secondAttribute="bottom" constant="10" id="FUE-ee-DdZ"/>
+                    <constraint firstItem="1eV-eb-orh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="UtM-H7-IDq"/>
+                    <constraint firstItem="1eV-eb-orh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bLT-Qc-YlP"/>
+                    <constraint firstAttribute="trailing" secondItem="1eV-eb-orh" secondAttribute="trailing" id="fcQ-41-meJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="categoryBtn" destination="qn9-R2-A6k" id="uIX-0p-3bO"/>
+                <outlet property="imageSelected" destination="GVk-Nl-axo" id="1U9-D4-poO"/>
+                <outlet property="kmSelected" destination="uC9-8J-39j" id="G3Z-aB-X2B"/>
+                <outlet property="premiumLogo" destination="2Hd-XR-Mxs" id="Llc-9X-9w6"/>
+                <outlet property="ratingView" destination="iWh-xL-P9e" id="gI1-TK-i35"/>
+                <outlet property="roundedVew" destination="1eV-eb-orh" id="v4f-XB-8na"/>
+                <outlet property="saveButton" destination="Akk-DR-hbA" id="aNY-SE-EhT"/>
+                <outlet property="titleSelected" destination="PLg-ba-KxC" id="Ay3-bj-W1w"/>
+            </connections>
+            <point key="canvasLocation" x="157.24637681159422" y="138.28125"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="checkmark.seal.fill" catalog="system" width="64" height="60"/>
+        <image name="save" width="42" height="42"/>
+        <image name="star (3)" width="13" height="12"/>
+        <image name="star (notSelected)" width="13" height="12"/>
+    </resources>
+</document>

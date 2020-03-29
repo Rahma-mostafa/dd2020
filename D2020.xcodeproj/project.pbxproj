@@ -51,6 +51,9 @@
 		775B0473242E389400A892CC /* RouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775B0462242E389300A892CC /* RouteModel.swift */; };
 		775B0474242E389400A892CC /* GoogleMapZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775B0463242E389300A892CC /* GoogleMapZoom.swift */; };
 		775B0476242E398000A892CC /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775B0475242E398000A892CC /* ArrayExtensions.swift */; };
+		77704A042430917400FE6D65 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77704A032430917400FE6D65 /* SearchController.swift */; };
+		77704A06243093E600FE6D65 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77704A05243093E600FE6D65 /* SearchCell.swift */; };
+		77704A0A24309E3000FE6D65 /* AfterSelectingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77704A0824309E3000FE6D65 /* AfterSelectingCell.xib */; };
 		7785CA1B243034BC006DEBFA /* MyStoreDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7785CA1A243034BC006DEBFA /* MyStoreDetailController.swift */; };
 		7789242E24305DDF0024D2A1 /* MyStorePremuimController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7789242D24305DDF0024D2A1 /* MyStorePremuimController.swift */; };
 		7789243024305E2C0024D2A1 /* MyPremiumContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7789242F24305E2C0024D2A1 /* MyPremiumContacts.swift */; };
@@ -260,6 +263,9 @@
 		775B0462242E389300A892CC /* RouteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteModel.swift; sourceTree = "<group>"; };
 		775B0463242E389300A892CC /* GoogleMapZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapZoom.swift; sourceTree = "<group>"; };
 		775B0475242E398000A892CC /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		77704A032430917400FE6D65 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		77704A05243093E600FE6D65 /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		77704A0824309E3000FE6D65 /* AfterSelectingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AfterSelectingCell.xib; sourceTree = "<group>"; };
 		7785CA1A243034BC006DEBFA /* MyStoreDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStoreDetailController.swift; sourceTree = "<group>"; };
 		7789242D24305DDF0024D2A1 /* MyStorePremuimController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStorePremuimController.swift; sourceTree = "<group>"; };
 		7789242F24305E2C0024D2A1 /* MyPremiumContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPremiumContacts.swift; sourceTree = "<group>"; };
@@ -805,6 +811,7 @@
 			children = (
 				FA60429123FC033700BC1C62 /* HomeVC.swift */,
 				FA569E56240E6538004507C3 /* NotificationsVC.swift */,
+				77704A032430917400FE6D65 /* SearchController.swift */,
 				FA66FE7C2410027B00AFC774 /* SavedVC.swift */,
 			);
 			path = Main;
@@ -887,10 +894,12 @@
 				FA6294732406D03700308F25 /* PageControlTests.swift */,
 				FA6294752406D0A000308F25 /* PageControlUITests.swift */,
 				CD472DF4242259870017E43C /* DriversCell.swift */,
+				77704A05243093E600FE6D65 /* SearchCell.swift */,
 				CD472DFE24226D9F0017E43C /* MapAnnotationsView.swift */,
 				773433DD242D493B007B99D6 /* AddProductStoreCell.swift */,
 				809B14F7242AA67C00359D3A /* StoreWorkdayCell.swift */,
 				809B14FC242AABA600359D3A /* StoreWorkdayCell.xib */,
+				77704A0824309E3000FE6D65 /* AfterSelectingCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1048,6 +1057,7 @@
 				8033E92924257E5F00D0F2A0 /* Popup.storyboard in Resources */,
 				8033E92324257BD500D0F2A0 /* Category.storyboard in Resources */,
 				7721DD82242D8B2A005C3C38 /* Upgrade.storyboard in Resources */,
+				77704A0A24309E3000FE6D65 /* AfterSelectingCell.xib in Resources */,
 				8033E8D924254FF900D0F2A0 /* Menu.storyboard in Resources */,
 				8033E8FC24254FF900D0F2A0 /* Radio.xib in Resources */,
 				8033E8D224254FF900D0F2A0 /* PickerViewHelper.storyboard in Resources */,
@@ -1181,6 +1191,7 @@
 				775B046F242E389400A892CC /* MapRouteHelper.swift in Sources */,
 				FA6294672406B6EA00308F25 /* ATCClassicWalkthroughViewController.swift in Sources */,
 				8033E77D24254D0100D0F2A0 /* BaseModel.swift in Sources */,
+				77704A042430917400FE6D65 /* SearchController.swift in Sources */,
 				8033E8BB24254FF900D0F2A0 /* ApiHelpers.swift in Sources */,
 				775B0467242E389400A892CC /* ARCarMovement.swift in Sources */,
 				8033E8D324254FF900D0F2A0 /* PickerViewHelper.swift in Sources */,
@@ -1231,6 +1242,7 @@
 				8033E8CA24254FF900D0F2A0 /* UIImageViewExtension.swift in Sources */,
 				FA6E33CF241FF50C00BFAFED /* FirstVC.swift in Sources */,
 				8033E8CC24254FF900D0F2A0 /* Localization.swift in Sources */,
+				77704A06243093E600FE6D65 /* SearchCell.swift in Sources */,
 				FA85AEC424180320008EAD50 /* ShopOwnerProducts.swift in Sources */,
 				FA842A352416A0F40042DB49 /* AddShopDetailVC.swift in Sources */,
 				8033E79D24254DAA00D0F2A0 /* BaseController.swift in Sources */,

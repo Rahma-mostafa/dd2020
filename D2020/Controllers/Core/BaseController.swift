@@ -33,7 +33,10 @@ class BaseController: UIViewController, PresentingViewProtocol, POPUPView, Alert
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-
+    @IBAction func search(_ sender: Any) {
+        let vc = controller(SearchController.self)
+        push(vc)
+    }
     //var baseViewModel:SettingViewModel?
     //public static var config:Config?
     public static var configLoaded = false

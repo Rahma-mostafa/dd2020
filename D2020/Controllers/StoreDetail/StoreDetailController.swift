@@ -237,8 +237,7 @@ class StoreDetailController: BaseController {
             }
         }
     }
-    @IBAction func search(_ sender: Any) {
-    }
+   
     @IBAction func chat(_ sender: Any) {
     }
     @IBAction func qrCode(_ sender: Any) {

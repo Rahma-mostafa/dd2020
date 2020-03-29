@@ -220,8 +220,7 @@ class MyStoreDetailController: BaseController {
             self.present(vc, animated: true, completion: nil)
         }
     }
-    @IBAction func search(_ sender: Any) {
-    }
+   
     @IBAction func chat(_ sender: Any) {
     }
     @IBAction func qrCode(_ sender: Any) {

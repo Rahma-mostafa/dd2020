@@ -52,6 +52,12 @@ struct Constants {
     }
 }
 
+enum Style {
+    case orange
+    case green
+    case red
+}
+
 public enum Fonts: String {
     case reg = ""
     //case reg = "DINNextLTW23-Regular"

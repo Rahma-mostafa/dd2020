@@ -23,14 +23,6 @@ struct ItemSubCategory {
 
 class EachCategoryVC: BaseController {
     
-    
-    
-    var category : Item!
-    var selectedCategory : String?
-    var section:Int?
-    var subCategoryArray:[SubCategoryAndShops.Category] = []
-    var shopArray:[SubCategoryAndShops.Shop] = []
-    
     @IBOutlet weak var titleLabel: UIBarButtonItem!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var allSubCategoryLabel: UILabel!
@@ -40,14 +32,35 @@ class EachCategoryVC: BaseController {
     @IBOutlet weak var changeCityHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var cityTextField: UITextField!
     
+    var category : Item!
+    var selectedCategory : String?
+    var section:Int?
+    var subCategoryArray:[SubCategoryAndShops.Category] = []
+    var shopArray:[SubCategoryAndShops.Shop] = []
+    var style: Style = .orange
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.title = selectedCategory
+        setupStyle()
         setup()
-        //fetchSubCategories()
         fetchShops()
         collectionView.register(UINib(nibName: Identifiers.SubCategoryCell, bundle: nil), forCellWithReuseIdentifier: Identifiers.SubCategoryCell)
         
+    }
+    func setupStyle() {
+        switch style {
+        case .orange:
+            self.navigationController?.navigationBar.barTintColor = .appOrange
+            self.view.backgroundColor = .appOrange
+
+        case .green:
+            self.navigationController?.navigationBar.barTintColor = .appGreen
+            self.view.backgroundColor = .appGreen
+        case .red:
+            self.navigationController?.navigationBar.barTintColor = .appRed
+            self.view.backgroundColor = .appRed
+        }
     }
     func setup(){
         tableView.delegate = self
@@ -112,7 +125,6 @@ extension EachCategoryVC : UICollectionViewDelegateFlowLayout, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.SubCategoryCell, for: indexPath) as? SubCategoryCell
         
-        
         cell?.subCategoryImg.setImage(url: subCategoryArray[indexPath.item].image)
         
         cell?.subCategoryTitle.text = subCategoryArray[indexPath.item].name
@@ -134,6 +146,7 @@ extension EachCategoryVC : UICollectionViewDelegateFlowLayout, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Category", bundle: nil)
         let scene = storyboard.instantiateViewController(withIdentifier: "SelectedCategoryVC") as! SelectedCategoryVC
+        scene.style = style
         scene.category = subCategoryArray[indexPath.row].id
         scene.categoryName = subCategoryArray[indexPath.row].name
         navigationController?.pushViewController(scene, animated: true)
@@ -152,11 +165,15 @@ extension EachCategoryVC : UICollectionViewDelegateFlowLayout, UICollectionViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:Identifiers.AfterSelectingCell , for: indexPath) as! AfterSelectingCell
-        
+        switch style {
+        case .orange:
+            cell.setStyle = .orange
+        case .green:
+            cell.setStyle = .green
+        case .red:
+            cell.setStyle = .red
+        }
         cell.imageSelected.setImage(url: shopArray[indexPath.row].image!)
-        
-        //               cell.premiumLogo.image = UIImage(named: itemsSelected[indexPath.row].logoPremium!)
-        
         cell.titleSelected.text = shopArray[indexPath.row].name
         cell.kmSelected.text = shopArray[indexPath.row].distance
         cell.ratingView.rating = Double(shopArray[indexPath.row].rate!)
