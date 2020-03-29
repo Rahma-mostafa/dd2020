@@ -71,7 +71,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اضافة صور المحل" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eS-kO-Ya3">
-                                                <rect key="frame" x="160.5" y="181.5" width="93.5" height="17.5"/>
+                                                <rect key="frame" x="152" y="180" width="110" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -218,14 +218,14 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jl2-b0-Zze">
-                                                <rect key="frame" x="323" y="494" width="60" height="56"/>
+                                                <rect key="frame" x="353" y="494" width="30" height="56"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconfinder_ic_my_location_48px_352557 (1)" translatesAutoresizingMaskIntoConstraints="NO" id="RGy-Xp-D5H">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="56"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="56"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bye-TF-Y6v">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="56"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="56"/>
                                                         <connections>
                                                             <action selector="locationPick:" destination="Ckl-Dx-ty0" eventType="touchUpInside" id="55Z-r9-9zu"/>
                                                         </connections>
@@ -244,13 +244,13 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vz5-ai-zno">
-                                                <rect key="frame" x="323" y="425" width="60" height="49"/>
+                                                <rect key="frame" x="353" y="425" width="30" height="49"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choose" translatesAutoresizingMaskIntoConstraints="NO" id="O8k-Xa-lWB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="49"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="49"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J31-Dk-ij5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="49"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="49"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="49" id="nkE-Ui-NVe"/>
                                                         </constraints>
@@ -272,14 +272,14 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whe-FQ-Wtr">
-                                                <rect key="frame" x="323" y="287" width="60" height="56"/>
+                                                <rect key="frame" x="353" y="287" width="30" height="56"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choose" translatesAutoresizingMaskIntoConstraints="NO" id="sUH-e4-GtA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="56"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="56"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OS-wT-BAg">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="56"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="56"/>
                                                         <connections>
                                                             <action selector="categoryPick:" destination="Ckl-Dx-ty0" eventType="touchUpInside" id="2tU-A0-owe"/>
                                                         </connections>
@@ -298,13 +298,13 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Bu-Vd-r2Q">
-                                                <rect key="frame" x="323" y="356" width="60" height="56"/>
+                                                <rect key="frame" x="353" y="356" width="30" height="56"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choose" translatesAutoresizingMaskIntoConstraints="NO" id="kjR-IJ-J86">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="56"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="56"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3MU-nH-FIK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="56"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="56"/>
                                                         <connections>
                                                             <action selector="typePick:" destination="Ckl-Dx-ty0" eventType="touchUpInside" id="L7D-NQ-Hit"/>
                                                         </connections>
@@ -771,7 +771,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzi-vK-M8o">
-                                        <rect key="frame" x="16" y="53.5" width="382" height="199"/>
+                                        <rect key="frame" x="16" y="51" width="382" height="199"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t4H-xK-WZj">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="199"/>
@@ -826,7 +826,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9AE-sG-lcR">
-                                        <rect key="frame" x="16" y="272.5" width="382" height="61"/>
+                                        <rect key="frame" x="16" y="270" width="382" height="61"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اسم المنتج" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="97n-T5-EjQ" customClass="FloatLabelTextField" customModule="D2020" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="0.0" width="366" height="59"/>
@@ -866,7 +866,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zA-J9-cp4">
-                                        <rect key="frame" x="16" y="349.5" width="382" height="61"/>
+                                        <rect key="frame" x="16" y="347" width="382" height="61"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اسم المنتج" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vAD-Y0-xkj" customClass="FloatLabelTextField" customModule="D2020" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="0.0" width="366" height="59"/>
@@ -906,7 +906,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رفع صورة المنتج " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1u-Fu-xkE">
-                                        <rect key="frame" x="16" y="16" width="382" height="21.5"/>
+                                        <rect key="frame" x="16" y="16" width="382" height="19"/>
                                         <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1040,10 +1040,10 @@
             </objects>
             <point key="canvasLocation" x="13018.840579710146" y="665.625"/>
         </scene>
-        <!--Add ShopVC-->
+        <!--My ShopsVC-->
         <scene sceneID="3Hj-7q-8Gp">
             <objects>
-                <viewController storyboardIdentifier="AddShopVC" id="TCG-6G-Qjn" customClass="AddShopVC" customModule="D2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyShopsVC" id="TCG-6G-Qjn" customClass="MyShopsVC" customModule="D2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UvD-nE-iWa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1052,7 +1052,7 @@
                                 <rect key="frame" x="0.0" y="-10" width="414" height="818"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المحلات" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Er-1M-Chz">
-                                        <rect key="frame" x="20" y="35" width="40.5" height="30"/>
+                                        <rect key="frame" x="20" y="35" width="53" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="WEv-3v-ghZ"/>
                                         </constraints>
@@ -1061,7 +1061,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المحلات  التي تمت اضافتها" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWd-9d-zRd">
-                                        <rect key="frame" x="20" y="85" width="113" height="25"/>
+                                        <rect key="frame" x="20" y="85" width="133" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="P0Q-y8-Qjb"/>
                                         </constraints>
@@ -1077,7 +1077,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لا يوجد محلات مضافة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrP-0z-vl0">
-                                                <rect key="frame" x="8" y="18" width="398" height="14"/>
+                                                <rect key="frame" x="8" y="17" width="398" height="16.5"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="12"/>
                                                 <color key="textColor" red="0.47838729619999998" green="0.47845959659999998" blue="0.47837144139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1101,16 +1101,16 @@
                                         <rect key="frame" x="0.0" y="674" width="414" height="110"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="online-store-1" translatesAutoresizingMaskIntoConstraints="NO" id="P7X-UW-D3d">
-                                                <rect key="frame" x="122" y="-33" width="170" height="143"/>
+                                                <rect key="frame" x="164.5" y="38.5" width="85" height="71.5"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ellipse-3" translatesAutoresizingMaskIntoConstraints="NO" id="fJc-U9-h6g">
-                                                <rect key="frame" x="162" y="-76.5" width="150" height="150"/>
+                                                <rect key="frame" x="194.5" y="-3" width="75" height="75"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="subtraction-21" translatesAutoresizingMaskIntoConstraints="NO" id="wmC-LP-XSt">
-                                                <rect key="frame" x="9" y="-33" width="78" height="20"/>
+                                                <rect key="frame" x="90.5" y="38.5" width="39" height="10"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="subtraction-20" translatesAutoresizingMaskIntoConstraints="NO" id="y9k-av-hSn">
-                                                <rect key="frame" x="296" y="-56.5" width="78" height="20"/>
+                                                <rect key="frame" x="335" y="17" width="39" height="10"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1152,10 +1152,10 @@
                                                                     <state key="normal" image="iconfinder_add_134224"/>
                                                                 </button>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="u49-RQ-BVA">
-                                                                    <rect key="frame" x="109" y="8" width="90.5" height="20"/>
+                                                                    <rect key="frame" x="109" y="8" width="108.5" height="20"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="كافيه الغروب" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JVz-Vy-kvo">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="78" height="20"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="20" id="hTh-Yk-Paz"/>
                                                                             </constraints>
@@ -1164,7 +1164,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.seal.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="X0v-aW-BFb">
-                                                                            <rect key="frame" x="68" y="-0.5" width="22.5" height="21.5"/>
+                                                                            <rect key="frame" x="86" y="-0.5" width="22.5" height="21.5"/>
                                                                             <color key="tintColor" red="0.99607843139999996" green="0.62352941179999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="22.5" id="D42-k9-1X3"/>
@@ -1366,7 +1366,7 @@
         <image name="ellipse-3" width="75" height="75"/>
         <image name="grediantBackground" width="94" height="94"/>
         <image name="iconfinder_add_134224" width="20" height="20"/>
-        <image name="iconfinder_ic_my_location_48px_352557 (1)" width="20" height="20"/>
+        <image name="iconfinder_ic_my_location_48px_352557 (1)" width="24" height="24"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="online-store-1" width="85" height="71.5"/>
         <image name="pencil" catalog="system" width="64" height="56"/>

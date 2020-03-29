@@ -69,7 +69,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مطاعم وكافيهات" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="au2-Xy-LFQ">
-                                                                    <rect key="frame" x="80" y="4" width="83" height="25"/>
+                                                                    <rect key="frame" x="80" y="4" width="111" height="25"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="25" id="wOX-fk-GDt"/>
                                                                     </constraints>
@@ -78,7 +78,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اكثر من ٩٠ مطعم وكافيه" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6vY-jd-2Ep">
-                                                                    <rect key="frame" x="80" y="31" width="143.5" height="31"/>
+                                                                    <rect key="frame" x="80" y="31" width="182.5" height="31"/>
                                                                     <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="17"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                                     <nil key="highlightedColor"/>

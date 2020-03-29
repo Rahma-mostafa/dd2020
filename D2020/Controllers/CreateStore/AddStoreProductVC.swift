@@ -51,7 +51,7 @@ class AddStoreProductVC: BaseController {
         }
         confirmBtn.UIViewAction {
             if self.products.count > 0 {
-                let vc = self.controller(AddShopVC.self, storyboard: .createStore)
+                let vc = self.controller(MyShopsVC.self, storyboard: .createStore)
                 self.push(vc)
             }
         }

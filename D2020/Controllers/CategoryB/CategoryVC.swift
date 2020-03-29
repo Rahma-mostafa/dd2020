@@ -114,7 +114,7 @@ extension CategoryVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if tableView == self.tableView {
-            let scene = controller(AddShopVC.self, storyboard: .createStore)
+            let scene = controller(MyShopsVC.self, storyboard: .createStore)
             navigationController?.pushViewController(scene, animated: true)
         }else {
             let scene = controller(EachCategoryVC.self, storyboard: .category)

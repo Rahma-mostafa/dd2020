@@ -11,7 +11,7 @@ import Alamofire
 
 
 
-class AddShopVC: BaseController  {
+class MyShopsVC: BaseController  {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viewNoShop: UIView!
@@ -72,7 +72,7 @@ class AddShopVC: BaseController  {
         })
     }
 }
-extension AddShopVC: UITableViewDelegate, UITableViewDataSource {
+extension MyShopsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shopAdded.count
@@ -115,7 +115,7 @@ extension AddShopVC: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension AddShopVC {
+extension MyShopsVC {
     func removeStore(path: Int) {
         guard let storeID = self.shopAdded[path].id else { return }
         self.shopAdded.remove(at: path)

@@ -11,19 +11,20 @@ import UIKit
 
 
 
-class SavedVC: UIViewController {
+class SavedVC: BaseController {
     
     
 
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var family: UIView!
     @IBOutlet weak var rent: UIView!
     @IBOutlet weak var shops: UIView!
+    
+    
     override func viewDidLoad() {
+        super.hiddenNav = true
         super.viewDidLoad()
-        
-       
-
-        
+        titleLbl.text = "wishlist.lan".localized
     }
     @IBAction func showComments(_ sender: Any) {
         
