@@ -20,14 +20,21 @@ public enum EndPoint: String {
     case getSections
     case SubCountry
     case getSlider
+    case getSingleAd = "Ads/getSingleAds"
     case getSingleShop = "shop/getSingleShop"
     case rate = "shop/rate"
+    case adsRate = "Ads/rate"
     case favorite = "shop/fav"
-    case getCategory
+    case adsFavorite = "Ads/fav"
+    case getCategory = "getCategory"
     case getSubCategoryAndShop
+    case getSubCategoryAndAds
     case shop = "shop/getShops"
+    case getAds = "Ads/getAds"
     case stores = "shop/my_stores"
+    case myAds = "Ads/my_ad"
     case deleteStore = "shop/delete_my_store"
+    case deleteAd = "Ads/delete_my_ad"
     case packages = "shop/get_packages"
     case add_shop_to_package = "shop/add_shop_to_package"
     case updateLat = "user/updateLat"

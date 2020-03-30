@@ -44,7 +44,11 @@ class EachCategoryVC: BaseController {
         titleLabel.title = selectedCategory
         setupStyle()
         setup()
-        fetchShops()
+        if style == .orange {
+            fetchShops()
+        } else {
+            fetchAds()
+        }
         collectionView.register(UINib(nibName: Identifiers.SubCategoryCell, bundle: nil), forCellWithReuseIdentifier: Identifiers.SubCategoryCell)
         
     }
@@ -69,19 +73,6 @@ class EachCategoryVC: BaseController {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-    func fetchSubCategories() {
-        startLoading()
-        let method = api(.getSubCategoryAndShop , [section ?? 0] )
-        ApiManager.instance.headers["section_id"] = "\(section ?? 0)"
-        ApiManager.instance.connection(method, type: .get) { [weak self] (response) in
-            self?.stopLoading()
-            print("run")
-            let data = try? JSONDecoder().decode(SubCategoryAndShops.self, from: response ?? Data())
-            self?.subCategoryArray.append(contentsOf: data?.categories ?? [])
-            self?.collectionView.reloadData()
-            print("subCategory")
-        }
-    }
     func fetchShops() {
         startLoading()
         let method = api(.getSubCategoryAndShop , [section ?? 0] )
@@ -103,7 +94,26 @@ class EachCategoryVC: BaseController {
         }
     }
     
-    
+    func fetchAds() {
+        startLoading()
+        let method = api(.getSubCategoryAndAds , [section ?? 0] )
+        ApiManager.instance.headers["section_id"] = "\(section ?? 0)"
+        ApiManager.instance.connection(method, type: .get) { [weak self] (response) in
+            self?.stopLoading()
+            print("run")
+            do {
+                let data = try JSONDecoder().decode(SubCategoryAndShops.self, from: response ?? Data())
+                self?.subCategoryArray.append(contentsOf: data.categories ?? [])
+                self?.shopArray.append(contentsOf: data.ads ?? [])
+                self?.tableView.reloadData()
+                self?.collectionView.reloadData()
+                print("subCategory")
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+        }
+    }
     
     @IBAction func onOptionButtonTapped(_ sender: Any) {
         showTable()
@@ -188,7 +198,12 @@ extension EachCategoryVC : UICollectionViewDelegateFlowLayout, UICollectionViewD
         return cell
     }
     @objc func buttonClicked(sender:UIButton){
-        let method = api(.favorite, [self.shopArray[sender.tag].id!])
+        var method = ""
+        if style == .orange {
+            method = api(.favorite, [self.shopArray[sender.tag].id!])
+        } else {
+            method = api(.adsFavorite, [self.shopArray[sender.tag].id!])
+        }
         ApiManager.instance.connection(method, type: .post) { [weak self] (response) in
             self?.setupFavorite(change: true ,sender: sender)
         }
@@ -211,16 +226,23 @@ extension EachCategoryVC : UICollectionViewDelegateFlowLayout, UICollectionViewD
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if shopArray[indexPath.row].type == 1 {
-            let vc = controller(StorePremuimController.self, storyboard: .store)
-            vc.storeID = shopArray[indexPath.row].id
-            push(vc)
+        if style == .orange {
+            if shopArray[indexPath.row].type == 1 {
+                let vc = controller(StorePremuimController.self, storyboard: .store)
+                vc.storeID = shopArray[indexPath.row].id
+                push(vc)
+            } else {
+                let vc = controller(StoreDetailController.self, storyboard: .store)
+                vc.storeID = shopArray[indexPath.row].id
+                push(vc)
+            }
         } else {
-            let vc = controller(StoreDetailController.self, storyboard: .store)
-            vc.storeID = shopArray[indexPath.row].id
+            let vc = controller(AdsDetailController.self, storyboard: .ads)
+            vc.style = style
+            vc.adsID = shopArray[indexPath.row].id
             push(vc)
         }
+        
         
     }
     private func showTable(){

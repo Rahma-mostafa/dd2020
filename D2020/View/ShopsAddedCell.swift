@@ -21,25 +21,44 @@ class ShopsAddedCell: UITableViewCell, CellProtocol {
     @IBOutlet weak var ratingView: CosmosView!
     @IBOutlet weak var addNewShopLbl: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    var style: Style = .orange
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    var setStyle: Style {
+        get {
+            return style
+        } set {
+            switch newValue {
+            case .orange:
+                shopsTag.backgroundColor = .clear
+                ratingView.settings.filledImage = UIImage(named: "star (3)")
+                imageIcon.image = UIImage(named: "grediantBackground")
+                addNewShopLbl.text = "add.new.store.lan".localized
+            case .green:
+                shopsTag.backgroundColor = .appGreen
+                ratingView.settings.filledImage = UIImage(named: "star (4)")
+                imageIcon.image = UIImage(named: "greenGradLarge")
+                addNewShopLbl.text = "add.new.ads.lan".localized
+            case .red:
+                shopsTag.backgroundColor = .appRed
+                ratingView.settings.filledImage = UIImage(named: "star (5)")
+                imageIcon.image = UIImage(named: "redGradLarge")
+                addNewShopLbl.text = "add.new.product.lan".localized
+            }
+        }
         
-        // Configure the view for the selected state
     }
+  
     func setupDefault() {
-        premImage.isHidden = true
+        if premImage != nil {
+            premImage.isHidden = true
+        }
         shopsTitleAdd.isHidden = true
         shopsTag.isHidden = true
         trash.isHidden = true
         ratingView.isHidden = true
         addNewShopLbl.isHidden = false
         plusBtn.isHidden = false
-        imageIcon.image = UIImage(named: "grediantBackground")
-        addNewShopLbl.text = "add.new.store.lan".localized
+        
     }
     func setup() {
         guard let model = model as? MyStores.Datum else { return }
@@ -49,21 +68,13 @@ class ShopsAddedCell: UITableViewCell, CellProtocol {
         shopsTitleAdd.text = model.name
         shopsTag.setTitle(model.catName, for: .normal)
         ratingView.rating = Double(model.rate ?? 0)
-        if model.type == 1 {
-            premImage.isHidden = false
-        } else {
-            premImage.isHidden = true
-        }
-    }
-    override var frame: CGRect {
-        get {
-            return super.frame
-        }
-        set (newFrame) {
-            var frame =  newFrame
-            frame.origin.y += 4
-            frame.size.height -= 2 * 4
-            super.frame = frame
+        
+        if premImage != nil {
+            if model.type == 1 {
+                premImage.isHidden = false
+            } else {
+                premImage.isHidden = true
+            }
         }
         
     }

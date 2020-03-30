@@ -11,12 +11,12 @@ import UIKit
 class OptionViewController: BaseController {
    
     @IBOutlet weak var optionTableView: UITableView!
-    var options:[Option] = [Option(name:"الاقرب"),Option(name:"اماكن مميزه"),Option(name: "الاعلي تقيما")]
+    var options:[Option] = [Option(name: "nearest.lan".localized),Option(name: "special.places.lan".localized),Option(name: "top.rated.lan".localized)]
     
     
     var shouldHideTable : ((String)->())!
     var Color: UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -46,7 +46,7 @@ extension OptionViewController:UITableViewDataSource,UITableViewDelegate{
             cell.closeButton.tag = indexPath.row
             cell.onCloseButtonTapped = { [unowned self] in
                 self.hideTable(rowIndex: indexPath.row)
-                cell.closeButton.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
+                //cell.closeButton.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
             
                 }
                 if indexPath.row % 2 == 0 {

@@ -24,6 +24,7 @@ struct StoreDetail: Codable {
         let type, rate: Int?
         var is_favorite: Bool?
         let distance: String?
+        let price: Double?
         let snap, instagram, website, whatsapp: String?
         let facebook: String?
         let products: [Facilite]?

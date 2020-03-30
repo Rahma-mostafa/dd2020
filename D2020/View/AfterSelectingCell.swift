@@ -11,12 +11,6 @@ import Cosmos
 import TinyConstraints
 
 class AfterSelectingCell: UITableViewCell, CellProtocol {
-    
-    enum Style {
-        case orange
-        case green
-        case red
-    }
 
     @IBOutlet weak var premiumLogo: UIImageView!
     @IBOutlet weak var roundedVew: UIView!

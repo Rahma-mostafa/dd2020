@@ -75,5 +75,6 @@ struct Localizations {
     selectType = "select.type.lan",
     confirm = "confirm.lan",
     add = "add.lan"    ,
-    newUser = "mew.user.lan"
+    newUser = "mew.user.lan",
+    specfications = "specifications.lan"
 }

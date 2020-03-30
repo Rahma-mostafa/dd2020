@@ -274,7 +274,10 @@ class StorePremuimController: BaseController {
             call(text: self.store?.phone)
         }
         locationBtn.UIViewAction {
-            NavigateMap().openMapForPlace(delegate: self)
+            var navigate = NavigateMap()
+            navigate.lat = self.store?.lat ?? 0
+            navigate.lng = self.store?.lang ?? 0
+            navigate.openMapForPlace(delegate: self)
         }
         messageBtn.UIViewAction {
             

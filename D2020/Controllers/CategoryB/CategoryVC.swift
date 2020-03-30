@@ -32,14 +32,15 @@ class CategoryVC: BaseController {
     @IBOutlet weak var circle: UIImageView!
     @IBOutlet weak var imageStyle: UIImageView!
     
-    var categoriesB : [Item] = [Item(name: "my.stores.lan".localized, imageName: "online-store (1)", description: .none, coloredView: .none)]
     var category : Category!
     var categoryArray:[Category.DateElement] = []
     var section: Int?
     var sectionName: String?
     var city_id: Int?
-    var style: Style = .green
+    var style: Style = .orange
     var styleGrediantImage: String = "orangeGrad"
+    var myStoresTitle: String = "my.stores.lan"
+    var permessionEnable: Bool = true
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.title = sectionName
@@ -63,6 +64,7 @@ class CategoryVC: BaseController {
             self.cloud2.image = UIImage(named: "cloudOrange1")
             self.circle.image = UIImage(named: "circleOrange")
             self.imageStyle.image = UIImage(named: "online-store (1)")
+            
         case .green:
             self.navigationController?.navigationBar.barTintColor = .appGreen
             self.view.backgroundColor = .appGreen
@@ -71,6 +73,7 @@ class CategoryVC: BaseController {
             self.cloud2.image = UIImage(named: "cloudGreen1")
             self.circle.image = UIImage(named: "circleGreen")
             self.imageStyle.image = UIImage(named: "calendarGreen")
+            myStoresTitle = "my.ads.lan".localized
             break
         case .red:
             self.navigationController?.navigationBar.barTintColor = .appRed
@@ -80,6 +83,8 @@ class CategoryVC: BaseController {
             self.cloud2.image = UIImage(named: "cloudRed1")
             self.circle.image = UIImage(named: "circleRed")
             self.imageStyle.image = UIImage(named: "teamRed")
+            myStoresTitle = "my.products.lan".localized
+
         }
     
     }
@@ -95,7 +100,7 @@ class CategoryVC: BaseController {
             print("run")
             let data = try? JSONDecoder().decode(Category.self, from: response ?? Data())
             if case data?.userPermission = false {
-                self?.categoriesB.removeAll()
+                self?.permessionEnable = false
                 self?.categoriesTblTop.constant = 15
             } else {
                 self?.tableView.delegate = self
@@ -121,8 +126,12 @@ extension CategoryVC : UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == self.tableView{
-            return categoriesB.count
+        if tableView == self.tableView {
+            if permessionEnable {
+                return 1
+            } else {
+                return 0
+            }
         }
         return categoryArray.count
         //        return 1
@@ -131,7 +140,7 @@ extension CategoryVC : UITableViewDelegate, UITableViewDataSource {
         
         if tableView == self.tableView{
             let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.ProductCell,for:indexPath) as! ProductCell
-            cell.categoryTitleB.text = categoriesB[indexPath.row].name
+            cell.categoryTitleB.text = myStoresTitle
             cell.categoryImgB.image = self.imageStyle.image
             cell.imageGradient.image = UIImage(named: styleGrediantImage)
             return cell
@@ -149,8 +158,14 @@ extension CategoryVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if tableView == self.tableView {
-            let scene = controller(MyShopsVC.self, storyboard: .createStore)
-            navigationController?.pushViewController(scene, animated: true)
+            if style == .orange {
+                let scene = controller(MyShopsVC.self, storyboard: .createStore)
+                navigationController?.pushViewController(scene, animated: true)
+            } else {
+                let scene = controller(MyAdsController.self, storyboard: .createAd)
+                scene.style = style
+                navigationController?.pushViewController(scene, animated: true)
+            }
         }else {
             let scene = controller(EachCategoryVC.self, storyboard: .category)
             scene.style = style

@@ -16,5 +16,6 @@ struct Country: Codable {
         var code: String?
         var file: String?
         var name: String?
+        var currency: String?
     }
 }

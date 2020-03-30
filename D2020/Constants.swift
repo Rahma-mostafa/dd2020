@@ -57,7 +57,14 @@ enum Style {
     case green
     case red
 }
-
+enum ShopType: Int {
+    case premuiem = 1
+    case normal = 0
+}
+enum AdsType: Int {
+    case product = 1
+    case ad = 2
+}
 public enum Fonts: String {
     case reg = ""
     //case reg = "DINNextLTW23-Regular"
