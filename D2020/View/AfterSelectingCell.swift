@@ -29,8 +29,9 @@ class AfterSelectingCell: UITableViewCell {
     @IBOutlet weak var ratingView: CosmosView!
     
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var tagButton: RoundedButton!
     
-    
+  
     
     override func awakeFromNib() {
         super.awakeFromNib()

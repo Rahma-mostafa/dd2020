@@ -161,9 +161,6 @@ extension EachCategoryVC : UICollectionViewDelegateFlowLayout, UICollectionViewD
         let cell = tableView.dequeueReusableCell(withIdentifier:Identifiers.AfterSelectingCell , for: indexPath) as! AfterSelectingCell
         
         cell.imageSelected.setImage(url: shopArray[indexPath.row].image!)
-        
-        //               cell.premiumLogo.image = UIImage(named: itemsSelected[indexPath.row].logoPremium!)
-        
         cell.titleSelected.text = shopArray[indexPath.row].name
         cell.kmSelected.text = shopArray[indexPath.row].distance
         cell.ratingView.rating = Double(shopArray[indexPath.row].rate!)
@@ -176,6 +173,7 @@ extension EachCategoryVC : UICollectionViewDelegateFlowLayout, UICollectionViewD
         } else {
             cell.premiumLogo.isHidden = true
         }
+        
         return cell
     }
     @objc func buttonClicked(sender:UIButton){
@@ -198,9 +196,6 @@ extension EachCategoryVC : UICollectionViewDelegateFlowLayout, UICollectionViewD
             sender.setImage(UIImage(named: "save"), for: .normal)
         }
     }
-    
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if shopArray[indexPath.row].type == 1 {
