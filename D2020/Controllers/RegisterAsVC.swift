@@ -30,7 +30,14 @@ class RegisterAsVC: BaseController,UITableViewDelegate,UITableViewDataSource {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
+        self.title = "new.account.lan".localized
+        registerAsLbl.text = "register.as.lan".localized
+        haveAccountLbl.text = "have.account.before.lan".localized
+        loginBtn.setTitle("login.lan".localized, for: .normal)
+        loginBtn.UIViewAction {
+            let vc = self.controller(LoginVC.self, storyboard: .auth)
+            self.push(vc)
+        }
 //        var model = Section.Data()
 //        model.id = 0
 //        model.name = Localizations.newUser.localized

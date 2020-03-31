@@ -10,12 +10,14 @@ import Foundation
 struct SubCategoryAndShops: Codable {
     let categories: [Category]?
     let shops: [Shop]?
+    let data: [Shop]?
     let massege: String?
     let status: Bool?
     let ads: [Shop]?
     enum CodingKeys: String, CodingKey {
         case categories = "Categories"
         case ads = "Ads"
+        case data
         case shops, massege, status
     }
     // MARK: - Category

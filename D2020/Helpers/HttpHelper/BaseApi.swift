@@ -42,11 +42,15 @@ class BaseApi: Downloader, Paginator, Alertable {
     }
     func initURL(method: String, type: HTTPMethod) -> String {
         var url = ""
+        var methodFullUrl = method
         if type == .get {
-            let methodFull = initGet(method: method)
-            url = self.url+methodFull
+            methodFullUrl = initGet(method: method)
         } else {
-            url = self.url+method
+        }
+        if method.contains("http") {
+            url = methodFullUrl
+        } else {
+            url = self.url+methodFullUrl
         }
         return url
     }
@@ -82,7 +86,12 @@ class BaseApi: Downloader, Paginator, Alertable {
                         })
                     case 404?:
                         UIApplication.topViewController()?.stopLoading()
-                        self.makeAlert("not_found.lan".localized, closure: {})
+                        let data = try? JSONDecoder().decode(BaseModel.self, from: response.data ?? Data())
+                        if data?.message != nil {
+                            self.makeAlert(data?.message ?? "", closure: {})
+                        } else {
+                            self.makeAlert("not_found.lan".localized, closure: {})
+                        }
                     case 422?:
                         UIApplication.topViewController()?.stopLoading()
                         self.setErrorMessage(data: response.data)
@@ -99,7 +108,7 @@ class BaseApi: Downloader, Paginator, Alertable {
                 }
         }
     }
-    func uploadFile(_ method: String , type: HTTPMethod, file: [String: URL], completionHandler: @escaping (Data?) -> ()) {
+    func uploadFile(_ method: String , type: HTTPMethod, file: [String: URL?], completionHandler: @escaping (Data?) -> ()) {
         
         self.isHttpRequestRun = true
     
@@ -109,7 +118,9 @@ class BaseApi: Downloader, Paginator, Alertable {
 
         Alamofire.upload(multipartFormData: { multipartFormData in
             file.forEach { (fileDic) in
-                multipartFormData.append(fileDic.value, withName: fileDic.key)
+                if let url = fileDic.value {
+                    multipartFormData.append(url, withName: fileDic.key)
+                }
             }
 
             for (key, value) in paramters {
@@ -154,7 +165,12 @@ class BaseApi: Downloader, Paginator, Alertable {
                             })
                         case 404?:
                             UIApplication.topViewController()?.stopLoading()
-                            self.makeAlert("not_found.lan".localized, closure: {})
+                            let data = try? JSONDecoder().decode(BaseModel.self, from: response.data ?? Data())
+                            if data?.message != nil {
+                                self.makeAlert(data?.message ?? "", closure: {})
+                            } else {
+                                self.makeAlert("not_found.lan".localized, closure: {})
+                            }
                         case 422?:
                             UIApplication.topViewController()?.stopLoading()
                             self.setErrorMessage(data: response.data)
@@ -178,7 +194,7 @@ class BaseApi: Downloader, Paginator, Alertable {
             }
         }
     }
-    func uploadMultiFiles(_ method: String , type: HTTPMethod, files: [URL], key: String, file: [String: URL]? = nil, completionHandler: @escaping (Data?) -> ()) {
+    func uploadMultiFiles(_ method: String , type: HTTPMethod, files: [URL], key: String, file: [String: URL?]? = nil, completionHandler: @escaping (Data?) -> ()) {
         
         self.isHttpRequestRun = true
     
@@ -192,6 +208,13 @@ class BaseApi: Downloader, Paginator, Alertable {
                 multipartFormData.append(item, withName: "\(key)[\(counter)]")
                 counter += 1
             })
+            if file != nil {
+                file?.forEach({ (fileData) in
+                    if let url = fileData.value {
+                        multipartFormData.append(url, withName: "\(fileData.key)")
+                    }
+                })
+            }
             for (key, value) in paramters {
                 let string = value as? String
                 multipartFormData.append(string?.data(using: String.Encoding.utf8) ?? Data(), withName: key)
@@ -234,7 +257,12 @@ class BaseApi: Downloader, Paginator, Alertable {
                                 })
                             case 404?:
                                 UIApplication.topViewController()?.stopLoading()
-                                self.makeAlert("not_found.lan".localized, closure: {})
+                                let data = try? JSONDecoder().decode(BaseModel.self, from: response.data ?? Data())
+                                if data?.message != nil {
+                                    self.makeAlert(data?.message ?? "", closure: {})
+                                } else {
+                                    self.makeAlert("not_found.lan".localized, closure: {})
+                                }
                             case 422?:
                                 UIApplication.topViewController()?.stopLoading()
                                 self.setErrorMessage(data: response.data)

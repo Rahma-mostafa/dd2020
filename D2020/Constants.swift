@@ -38,8 +38,8 @@ struct Constants {
     static let deviceToken = "deviceToken"
     static let deviceId = UIDevice.current.identifierForVendor!.uuidString
     static let googleAPI = "AIzaSyDs-0JVujpHbySEmvnFWsnD-nNLsVNKE4Y"
-    static let googleRoutesAPI = "AIzaSyBAb_tULoOvteP6YBIvOPmb_gGO_VMDHus"
-    static let googleNotRestrictionKey = "AIzaSyC8cKbjffAIddNW1qcCI7jupyHkAPgZp_s"
+    static let googleRoutesAPI = "AIzaSyBUmz_Riose169lAsGLx3ckI4rsCYFnpyU"
+    static let googleNotRestrictionKey = "AIzaSyBUmz_Riose169lAsGLx3ckI4rsCYFnpyU"
     static var useAuth: Bool = false
     static var placeHolderImage: UIImage = UIImage(named: "placeHolder") ?? UIImage()
     static let mainColorRGB = UIColor(red: 140/255, green: 198/255, blue: 62/255, alpha: 1)

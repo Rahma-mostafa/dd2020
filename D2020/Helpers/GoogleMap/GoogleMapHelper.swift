@@ -11,7 +11,7 @@ import CoreLocation
 import GoogleMaps
 import GooglePlaces
 
-class GoogleMapHelper: NSObject, MapRouteHelper, MapAddressHelper {
+class GoogleMapHelper: NSObject, MapRouteHelper, MapAddressHelper, MapPlaceHelper {
     /* mapview */
     private var _mapView: GMSMapView!
     private let marker = GMSMarker()

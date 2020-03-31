@@ -11,6 +11,7 @@ import UIKit
 class AddProductModel {
     var url: URL?
     var image: UIImage?
+    var file: String?
     var name: String?
     var price:String?
 }

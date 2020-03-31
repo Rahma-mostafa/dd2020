@@ -39,7 +39,7 @@ class CategoryVC: BaseController {
     var city_id: Int?
     var style: Style = .orange
     var styleGrediantImage: String = "orangeGrad"
-    var myStoresTitle: String = "my.stores.lan"
+    var myStoresTitle: String = "my.stores.lan".localized
     var permessionEnable: Bool = true
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -160,10 +160,12 @@ extension CategoryVC : UITableViewDelegate, UITableViewDataSource {
         if tableView == self.tableView {
             if style == .orange {
                 let scene = controller(MyShopsVC.self, storyboard: .createStore)
+                scene.section = section
                 navigationController?.pushViewController(scene, animated: true)
             } else {
                 let scene = controller(MyAdsController.self, storyboard: .createAd)
                 scene.style = style
+                scene.section = section
                 navigationController?.pushViewController(scene, animated: true)
             }
         }else {

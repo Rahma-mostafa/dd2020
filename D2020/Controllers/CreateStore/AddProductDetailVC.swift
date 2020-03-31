@@ -9,7 +9,8 @@
 import UIKit
 
 protocol AddProductDelegate: class {
-    func didAddProduct(product: AddProductModel?)
+    func didAddProduct(product: StoreDetail.Facilite?)
+    func didEditProduct(path: Int, product: StoreDetail.Facilite?)
 }
 class AddProductDetailVC: BaseController {
     @IBOutlet weak var uploadImageLbl: UILabel!
@@ -24,9 +25,15 @@ class AddProductDetailVC: BaseController {
     var storeID: Int?
     
     weak var delegate: AddProductDelegate?
+    var editMode: Bool = false
+    var product: StoreDetail.Facilite?
+    var pathEdited: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        if editMode {
+            setupEdit()
+        }
         handlers()
     }
     
@@ -36,6 +43,11 @@ class AddProductDetailVC: BaseController {
         addBtn.setTitle(Localizations.add.localized, for: .normal)
         productNameTxf.backgroundColor = .clear
         productPriceTxf.backgroundColor = .clear
+    }
+    func setupEdit() {
+        productImage.setImage(url: product?.image)
+        productNameTxf.text = product?.name
+        productPriceTxf.text = "\(product?.price ?? 0)"
     }
     func handlers() {
         productImage.UIViewAction {
@@ -49,7 +61,11 @@ class AddProductDetailVC: BaseController {
             self.picker?.pick(in: self, type: .picture)
         }
         addBtn.UIViewAction {
-            self.addProduct()
+            if self.editMode {
+                self.editProduct()
+            } else {
+                self.addProduct()
+            }
         }
     }
     func addProduct() {
@@ -63,26 +79,64 @@ class AddProductDetailVC: BaseController {
             ApiManager.instance.paramaters = paramters
             ApiManager.instance.downloaderDelegate = self
             ApiManager.instance.uploadFile(method, type: .post, file: ["image": imageURL]) { (response) in
-                self.callbackDelegate()
+                let data = try? JSONDecoder().decode(ProductModel.self, from: response ?? Data())
+                self.callbackDelegate(product: data?.data)
             }
         }
     }
-    func callbackDelegate() {
-        let model = AddProductModel()
-        model.name = self.productNameTxf.text
-        model.price = self.productPriceTxf.text
-        model.image = self.image
-        model.url = self.imageURL
-        self.delegate?.didAddProduct(product: model)
+    func editProduct() {
+        if self.validateEdit() {
+            let method = api(.editProduct, [product?.id ?? 0])
+            let paramters: [String: Any] = [
+                "name": productNameTxf.text ?? "",
+                "price": productPriceTxf.text ?? ""
+            ]
+            ApiManager.instance.paramaters = paramters
+            ApiManager.instance.downloaderDelegate = self
+            ApiManager.instance.uploadFile(method, type: .post, file: ["image": imageURL]) { (response) in
+                let data = try? JSONDecoder().decode(ProductModel.self, from: response ?? Data())
+                self.callbackDelegate(product: data?.data)
+            }
+        }
+    }
+    func callbackDelegate(product: ProductModel.ProductData?) {
+        var model = StoreDetail.Facilite()
+        model.id = product?.id
+        model.name = product?.name
+        model.image = product?.image
+        model.price = Int(product?.price ?? "0")
+        if editMode {
+            self.delegate?.didEditProduct(path: pathEdited ?? 0, product: model)
+        } else {
+            self.delegate?.didAddProduct(product: model)
+        }
         self.navigationController?.popViewController(animated: true)
     }
     func validate() -> Bool {
-        if self.productNameTxf.text == nil || self.productPriceTxf.text == nil || image == nil {
-            makeAlert("this_field_is_required.lan".localized, closure: {})
+        if case productNameTxf.text?.isEmpty = true {
+            productNameTxf.attributedPlaceholder = NSAttributedString(string: productNameTxf.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
             return false
-        } else {
-            return true
         }
+        if case productPriceTxf.text?.isEmpty = true {
+            productPriceTxf.attributedPlaceholder = NSAttributedString(string: productPriceTxf.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            return false
+        }
+        if image == nil {
+            makeAlert("image.is.required.lan".localized, closure: {})
+            return false
+        }
+        return true
+    }
+    func validateEdit() -> Bool {
+        if case productNameTxf.text?.isEmpty = true {
+            productNameTxf.attributedPlaceholder = NSAttributedString(string: productNameTxf.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            return false
+        }
+        if case productPriceTxf.text?.isEmpty = true {
+            productPriceTxf.attributedPlaceholder = NSAttributedString(string: productPriceTxf.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            return false
+        }
+        return true
     }
 }
 

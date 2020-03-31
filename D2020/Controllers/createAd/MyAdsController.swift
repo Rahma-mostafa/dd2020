@@ -27,6 +27,7 @@ class MyAdsController: BaseController  {
     
     var contentIndex : Int?
     var ads: [MyStores.Datum] = []
+    var section: Int?
     var style: Style = .green
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +83,8 @@ class MyAdsController: BaseController  {
     }
     
     func addAds() {
-        let vc = controller(AddShopDetailVC.self, storyboard: .createStore)
+        let vc = controller(AddAdDetailController.self, storyboard: .createAd)
+        vc.section = section
         push(vc)
     }
     override func backBtn(_ sender: Any) {
@@ -124,9 +126,10 @@ extension MyAdsController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == self.ads.count-1 {
             self.addAds()
         } else {
-            let vc = pushViewController(AdsDetailController.self, storyboard: .ads)
+            let vc = pushViewController(MyAdsDetailController.self, storyboard: .ads)
             vc.style = style
             vc.adsID = self.ads[indexPath.row].id
+            vc.section = self.section
             push(vc)
         }
     }

@@ -178,7 +178,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lot-ph-SL5">
-                                                                    <rect key="frame" x="317" y="-3" width="42" height="42"/>
+                                                                    <rect key="frame" x="275" y="-24" width="84" height="84"/>
                                                                     <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                                     <state key="normal" image="save"/>
                                                                 </button>
@@ -525,6 +525,7 @@
                     <navigationItem key="navigationItem" id="lIv-27-Qxk"/>
                     <connections>
                         <outlet property="menuBtnButton" destination="jdn-0F-0mz" id="uIt-Ae-HB2"/>
+                        <outlet property="newestLbl" destination="AcV-h9-Zlz" id="LhJ-v1-BEd"/>
                         <outlet property="tableView" destination="KKw-tP-h5z" id="ZHa-O0-Ta0"/>
                         <outlet property="titleLbl" destination="2uu-Qf-3Zg" id="DA9-e8-0Ev"/>
                     </connections>
@@ -622,7 +623,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4f1-8n-FMa">
-                                        <rect key="frame" x="15" y="15" width="93.666666666666671" height="31"/>
+                                        <rect key="frame" x="14.999999999999993" y="15" width="106.33333333333331" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0F-G3-y7X">
                                                 <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
@@ -637,7 +638,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرئيسية" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpT-Nm-gmM">
-                                                <rect key="frame" x="46" y="0.0" width="47.666666666666657" height="31"/>
+                                                <rect key="frame" x="46" y="0.0" width="60.333333333333343" height="31"/>
                                                 <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -681,13 +682,13 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الاقسام" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtT-gS-czg">
-                                        <rect key="frame" x="14.999999999999996" y="264" width="44.666666666666657" height="20"/>
+                                        <rect key="frame" x="15.000000000000004" y="264" width="58.333333333333343" height="23"/>
                                         <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="l5A-0z-Jd6">
-                                        <rect key="frame" x="16" y="309" width="186.33333333333334" height="206"/>
+                                        <rect key="frame" x="16" y="312" width="186.33333333333334" height="206"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sQO-hz-4jP">
                                                 <rect key="frame" x="0.0" y="0.0" width="186.33333333333334" height="206"/>
@@ -803,7 +804,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Apr-yS-h9f">
-                                        <rect key="frame" x="210.33333333333337" y="309" width="187.66666666666663" height="204"/>
+                                        <rect key="frame" x="210.33333333333337" y="312" width="187.66666666666663" height="204"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rux-fi-LY6">
                                                 <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="204"/>
@@ -916,7 +917,7 @@
                                         </subviews>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WAK-YG-yVL">
-                                        <rect key="frame" x="16" y="523" width="382" height="143"/>
+                                        <rect key="frame" x="16" y="526" width="382" height="143"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="143" id="tuz-JZ-XAp"/>
@@ -947,7 +948,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المناديب" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icx-89-Veg">
-                                                                            <rect key="frame" x="95" y="24" width="41.666666666666657" height="30"/>
+                                                                            <rect key="frame" x="95" y="24" width="58.666666666666657" height="30"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="30" id="qDA-Nb-QMG"/>
                                                                             </constraints>
@@ -1010,7 +1011,7 @@
                                         </prototypes>
                                     </tableView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Epv-7l-FHh">
-                                        <rect key="frame" x="16" y="678" width="382" height="186"/>
+                                        <rect key="frame" x="16" y="681" width="382" height="186"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="186" id="wLB-oe-oH4"/>
@@ -1041,7 +1042,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الاسرة المنتجة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yr1-Td-bfl">
-                                                                            <rect key="frame" x="95" y="25" width="75.333333333333314" height="30"/>
+                                                                            <rect key="frame" x="95" y="25" width="96.666666666666686" height="30"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="30" id="96h-uP-vd3"/>
                                                                             </constraints>
@@ -1424,7 +1425,6 @@
         <!--MapVC-->
         <scene sceneID="ICJ-Qg-O2M">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="unG-U6-kSj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="jy5-4b-xdW" customClass="MapVC" customModule="D2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eVu-kn-85t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
@@ -1738,7 +1738,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مطاعم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgm-Fb-3FD">
-                                                    <rect key="frame" x="5" y="9.3333333333333339" width="62" height="17.666666666666664"/>
+                                                    <rect key="frame" x="5" y="7.9999999999999982" width="62" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1789,7 +1789,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الكل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wn-oJ-7cg">
-                                                    <rect key="frame" x="8" y="9.3333333333333339" width="84" height="17.666666666666664"/>
+                                                    <rect key="frame" x="8" y="7.9999999999999982" width="84" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1892,7 +1892,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="35"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مراسله" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7f-Ud-o9B">
-                                                        <rect key="frame" x="8" y="8.6666666666666874" width="51" height="17.666666666666671"/>
+                                                        <rect key="frame" x="8" y="7.3333333333333126" width="51" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -1926,7 +1926,7 @@
                                                 <rect key="frame" x="130" y="0.0" width="100" height="35"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اتصال" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cO-ZN-veb">
-                                                        <rect key="frame" x="8" y="8.6666666666666874" width="51" height="17.666666666666671"/>
+                                                        <rect key="frame" x="8" y="7.3333333333333126" width="51" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -2051,6 +2051,7 @@
                         <outlet property="typesView" destination="63L-o7-o2K" id="SbW-Aa-om5"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="unG-U6-kSj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="10726.08695652174" y="-1254.2410714285713"/>
         </scene>
@@ -2094,7 +2095,7 @@
         <image name="lucian-alexe-afDu-GuxjjM-unsplash" width="328" height="96"/>
         <image name="magnifying-glass" width="18" height="18"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
-        <image name="map" width="20.333333969116211" height="24.333333969116211"/>
+        <image name="map" width="19.333333969116211" height="24"/>
         <image name="map-1" width="20.333333969116211" height="24.333333969116211"/>
         <image name="map-2" width="20.333333969116211" height="24.333333969116211"/>
         <image name="map-3" width="20.333333969116211" height="24.333333969116211"/>

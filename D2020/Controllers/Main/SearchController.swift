@@ -26,6 +26,8 @@ class SearchController: BaseController {
         }
     }
     var foundResult: Bool = false
+    var result: [MyStores.Datum] = []
+    
     override func viewDidLoad() {
         super.hiddenNav = true
         super.viewDidLoad()
@@ -45,7 +47,11 @@ extension SearchController: UITableViewDelegate, UITableViewDataSource {
         searchBar.endEditing(true)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        searchHistory.count
+        if foundResult {
+            return result.count
+        } else {
+            return searchHistory.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,13 +60,13 @@ extension SearchController: UITableViewDelegate, UITableViewDataSource {
         } else {
             return getSearchCell(indexPath: indexPath)
         }
-       
+        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if !foundResult {
-            return 52
-        } else {
+        if foundResult {
             return 110
+        } else {
+            return 52
             
         }
     }
@@ -69,18 +75,34 @@ extension SearchController: UITableViewDelegate, UITableViewDataSource {
         var history = searchHistory
         history.reverse()
         cell.model = history[indexPath.row]
+        cell.delegate = self
         return cell
     }
     func getStoreCell(indexPath: IndexPath) -> UITableViewCell {
-        let cell = resultTbl.cell(type: AfterSelectingCell.self, indexPath)
-        cell.imageSelected.image = #imageLiteral(resourceName: "jonathan-borba-u7fi6JmYbX8-unsplash")
-        cell.titleSelected.text = "store"
-        cell.kmSelected.text = "10 km"
-        cell.ratingView.rating = 5
+        var cell = resultTbl.cell(type: AfterSelectingCell.self, indexPath)
+        if case result[indexPath.row].isShop = true {
+            cell.setStyle = .orange
+            cell.categoryBtn.setTitle(result[indexPath.row].catName, for: .normal)
+        } else {
+            if result[indexPath.row].type == 1 {
+                cell.setStyle = .red
+            } else {
+                cell.setStyle = .green
+            }
+            cell.categoryBtn.setTitle("\(result[indexPath.row].price ?? 0)", for: .normal)
+        }
+        cell.imageSelected.setImage(url: result[indexPath.row].image)
+        cell.titleSelected.text = result[indexPath.row].name
+        cell.kmSelected.text = result[indexPath.row].distance
+        cell.ratingView.rating = Double(result[indexPath.row].rate ?? 0)
         cell.premiumLogo.isHidden = true
-        cell.saveButton.setImage(UIImage(named: "save_act"), for: .normal)
+        cell.delegate = self
+        cell.shop = result[indexPath.row]
+        cell.setup()
         return cell
     }
+ 
+   
 }
 
 extension SearchController: UISearchBarDelegate {
@@ -92,21 +114,67 @@ extension SearchController: UISearchBarDelegate {
     }
 }
 
-extension SearchController {
+extension SearchController: SearchCellDelegate {
+    func didRemoveHistory(path: Int) {
+        var history = self.searchHistory
+        history.remove(at: path)
+        self.searchHistory = history
+        self.resultTbl.reloadData()
+    }
     func reloadHistory() {
         if let search = searchBar.text {
             var history = self.searchHistory
-            if history.count > 2 {
-                history.removeLast()
+            var canAppend = true
+            for item in history {
+                if search == item {
+                    canAppend = false
+                }
             }
-            history.append(search)
-            self.searchHistory = history
+            if canAppend {
+                if history.count > 2 {
+                    history.removeLast()
+                }
+                history.append(search)
+                self.searchHistory = history
+            }
             self.resultTbl.reloadData()
         }
     }
     func searchResult() {
-        foundResult = true
+        guard let text = searchBar.text else { return }
+        ApiManager.instance.paramaters["text"] = text
+        ApiManager.instance.connection(.search, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(SearchModel.self, from: response ?? Data())
+            self.result.removeAll()
+            data?.shops?.forEach({ (shop) in
+                var shopItem = shop
+                shopItem.isShop = true
+                self.result.append(shopItem)
+            })
+            self.result.append(contentsOf: data?.ads ?? [])
+            self.handleSearch()
+        }
+    }
+    func handleSearch() {
+        if result.count == 0 {
+            foundResult = false
+        } else {
+            foundResult = true
+        }
         reloadHistory()
+    }
+}
 
+extension SearchController: StoreCellDelegate {
+    func didSetFavorite(path: Int) {
+        var method = ""
+        if case result[path].isShop = true {
+            method = api(.favorite, [result[path].id ?? 0])
+        } else {
+            method = api(.adsFavorite, [result[path].id ?? 0])
+        }
+        ApiManager.instance.connection(method, type: .post) {(response) in
+            
+        }
     }
 }

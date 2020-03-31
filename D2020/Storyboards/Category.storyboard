@@ -302,9 +302,15 @@
                         <rightBarButtonItems>
                             <barButtonItem image="speech-bubble" id="2zD-HV-IR4">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="chat:" destination="orx-0w-7WE" id="NlM-BC-qjJ"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem image="magnifyingglass" catalog="system" id="g8K-CS-icR">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="search:" destination="orx-0w-7WE" id="OjB-4q-I9a"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -359,10 +365,9 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الفئات" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXp-Eb-mzD">
-                                        <rect key="frame" x="20" y="76" width="55" height="20"/>
+                                        <rect key="frame" x="20" y="76" width="46" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="6K2-va-XJr"/>
-                                            <constraint firstAttribute="width" constant="55" id="EMu-X3-OEF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -605,9 +610,15 @@
                         <rightBarButtonItems>
                             <barButtonItem image="speech-bubble" id="84e-aS-cRT">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="chat:" destination="lcf-3m-IeY" id="LCs-xf-qC4"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem image="magnifyingglass" catalog="system" id="sRh-jy-kl7">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="search:" destination="lcf-3m-IeY" id="ogv-i5-LQG"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -880,9 +891,15 @@
                         <rightBarButtonItems>
                             <barButtonItem image="speech-bubble" id="aCg-c6-X3G">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="chat:" destination="LQt-J3-TQ9" id="2Xt-rx-Ftd"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem image="magnifyingglass" catalog="system" id="CYO-Yq-yo5">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="search:" destination="LQt-J3-TQ9" id="K7g-R4-qYn"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>

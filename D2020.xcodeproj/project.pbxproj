@@ -27,6 +27,13 @@
 		7707CBE8242D8CA800FE772F /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7707CBE6242D8CA800FE772F /* OptionViewController.swift */; };
 		7707CBEA242D8CDE00FE772F /* OptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7707CBE9242D8CDE00FE772F /* OptionTableViewCell.swift */; };
 		7710A4A724303F4100388381 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7710A4A624303F4100388381 /* GradientView.swift */; };
+		7718040B2432DE9700B8AA5E /* ForRentAdsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7718040A2432DE9600B8AA5E /* ForRentAdsVC.swift */; };
+		7718040E2432DEC300B8AA5E /* ForRentAdsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7718040C2432DEC200B8AA5E /* ForRentAdsCell.swift */; };
+		7718040F2432DEC300B8AA5E /* ForRentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7718040D2432DEC300B8AA5E /* ForRentCell.swift */; };
+		771804112432DEE200B8AA5E /* AdsPackages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771804102432DEE100B8AA5E /* AdsPackages.swift */; };
+		771804132432DEEF00B8AA5E /* ForRent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 771804122432DEEF00B8AA5E /* ForRent.storyboard */; };
+		7718041524330ABA00B8AA5E /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7718041424330ABA00B8AA5E /* NotificationModel.swift */; };
+		7718041724330C8600B8AA5E /* WishlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7718041624330C8600B8AA5E /* WishlistModel.swift */; };
 		7721DD82242D8B2A005C3C38 /* Upgrade.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7721DD81242D8B2A005C3C38 /* Upgrade.storyboard */; };
 		773433D8242D2CB0007B99D6 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773433D7242D2CB0007B99D6 /* CityModel.swift */; };
 		773433DA242D332F007B99D6 /* SubCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773433D9242D332F007B99D6 /* SubCategory.swift */; };
@@ -60,9 +67,19 @@
 		779E6F6E2430B49D0039C61D /* AdsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779E6F6D2430B49D0039C61D /* AdsDetail.storyboard */; };
 		779E6F712430B5390039C61D /* AdsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779E6F702430B5390039C61D /* AdsDetailController.swift */; };
 		779F39CA242D29AC0096198F /* PickerPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779F39C9242D29AC0096198F /* PickerPopVC.swift */; };
+		779F5B7724333F900053E298 /* GooglePlacesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779F5B7624333F900053E298 /* GooglePlacesHelper.swift */; };
+		779F5B792433546D0053E298 /* AdsPeriodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779F5B782433546D0053E298 /* AdsPeriodCell.swift */; };
+		77A1646624330FE300EC1C4B /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A1646524330FE300EC1C4B /* SearchModel.swift */; };
+		77A1646824331CA300EC1C4B /* AddAdDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A1646724331CA300EC1C4B /* AddAdDetailController.swift */; };
 		77A3B4BB242EC45C00842730 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3B4BA242EC45C00842730 /* Downloader.swift */; };
 		77A3B4BD242EC73B00842730 /* KYCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3B4BC242EC73B00842730 /* KYCircularProgress.swift */; };
 		77A3B4BF242EE3F600842730 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3B4BE242EE3F600842730 /* OnboardingCell.swift */; };
+		77A4A4CC24331FB500612E4A /* MyAdsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A4A4CB24331FB500612E4A /* MyAdsDetailController.swift */; };
+		77A65AA324333D69003E5CE4 /* PlacesPickerHelper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A65A9F24333D68003E5CE4 /* PlacesPickerHelper.storyboard */; };
+		77A65AA424333D69003E5CE4 /* PlacePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A65AA024333D69003E5CE4 /* PlacePickerController.swift */; };
+		77A65AA524333D69003E5CE4 /* PlacePickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A65AA124333D69003E5CE4 /* PlacePickerModel.swift */; };
+		77A65AA624333D69003E5CE4 /* PlacePickerSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A65AA224333D69003E5CE4 /* PlacePickerSearchController.swift */; };
+		77A65AA824333EB2003E5CE4 /* TimerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A65AA724333EB1003E5CE4 /* TimerHelper.swift */; };
 		77BA9FBF242DB2150083C17F /* PaymentMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BA9FB9242DB2140083C17F /* PaymentMethodVC.swift */; };
 		77BA9FC0242DB2150083C17F /* PackageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BA9FBA242DB2140083C17F /* PackageVC.swift */; };
 		77BA9FC1242DB2150083C17F /* MyShopsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BA9FBB242DB2140083C17F /* MyShopsVC.swift */; };
@@ -241,6 +258,13 @@
 		7707CBE9242D8CDE00FE772F /* OptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionTableViewCell.swift; sourceTree = "<group>"; };
 		7707CBEB242D8E7000FE772F /* ArbFONTS-Sukar Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ArbFONTS-Sukar Bold.ttf"; sourceTree = "<group>"; };
 		7710A4A624303F4100388381 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		7718040A2432DE9600B8AA5E /* ForRentAdsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForRentAdsVC.swift; path = D2020/Controllers/ForRentAdsVC.swift; sourceTree = SOURCE_ROOT; };
+		7718040C2432DEC200B8AA5E /* ForRentAdsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForRentAdsCell.swift; sourceTree = "<group>"; };
+		7718040D2432DEC300B8AA5E /* ForRentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForRentCell.swift; sourceTree = "<group>"; };
+		771804102432DEE100B8AA5E /* AdsPackages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdsPackages.swift; sourceTree = "<group>"; };
+		771804122432DEEF00B8AA5E /* ForRent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ForRent.storyboard; sourceTree = "<group>"; };
+		7718041424330ABA00B8AA5E /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		7718041624330C8600B8AA5E /* WishlistModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistModel.swift; sourceTree = "<group>"; };
 		7721DD81242D8B2A005C3C38 /* Upgrade.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Upgrade.storyboard; sourceTree = "<group>"; };
 		773433D7242D2CB0007B99D6 /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		773433D9242D332F007B99D6 /* SubCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategory.swift; sourceTree = "<group>"; };
@@ -274,9 +298,19 @@
 		779E6F6D2430B49D0039C61D /* AdsDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AdsDetail.storyboard; sourceTree = "<group>"; };
 		779E6F702430B5390039C61D /* AdsDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdsDetailController.swift; sourceTree = "<group>"; };
 		779F39C9242D29AC0096198F /* PickerPopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerPopVC.swift; sourceTree = "<group>"; };
+		779F5B7624333F900053E298 /* GooglePlacesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesHelper.swift; sourceTree = "<group>"; };
+		779F5B782433546D0053E298 /* AdsPeriodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdsPeriodCell.swift; sourceTree = "<group>"; };
+		77A1646524330FE300EC1C4B /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		77A1646724331CA300EC1C4B /* AddAdDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAdDetailController.swift; sourceTree = "<group>"; };
 		77A3B4BA242EC45C00842730 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		77A3B4BC242EC73B00842730 /* KYCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCircularProgress.swift; sourceTree = "<group>"; };
 		77A3B4BE242EE3F600842730 /* OnboardingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
+		77A4A4CB24331FB500612E4A /* MyAdsDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAdsDetailController.swift; sourceTree = "<group>"; };
+		77A65A9F24333D68003E5CE4 /* PlacesPickerHelper.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlacesPickerHelper.storyboard; sourceTree = "<group>"; };
+		77A65AA024333D69003E5CE4 /* PlacePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacePickerController.swift; sourceTree = "<group>"; };
+		77A65AA124333D69003E5CE4 /* PlacePickerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacePickerModel.swift; sourceTree = "<group>"; };
+		77A65AA224333D69003E5CE4 /* PlacePickerSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacePickerSearchController.swift; sourceTree = "<group>"; };
+		77A65AA724333EB1003E5CE4 /* TimerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerHelper.swift; sourceTree = "<group>"; };
 		77BA9FB9242DB2140083C17F /* PaymentMethodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodVC.swift; sourceTree = "<group>"; };
 		77BA9FBA242DB2140083C17F /* PackageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageVC.swift; sourceTree = "<group>"; };
 		77BA9FBB242DB2140083C17F /* MyShopsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyShopsVC.swift; sourceTree = "<group>"; };
@@ -494,12 +528,17 @@
 				775B0458242E389300A892CC /* MarkerAttrbuite.swift */,
 				775B0459242E389300A892CC /* GoogleMapHelper.swift */,
 				775B045A242E389300A892CC /* MarkerProtocols.swift */,
+				779F5B7624333F900053E298 /* GooglePlacesHelper.swift */,
 				775B045B242E389300A892CC /* PlacePickerModel.swift */,
 				775B045C242E389300A892CC /* GoogleMapProtocolHelper.swift */,
 				775B045D242E389300A892CC /* PolylineAttrbuite.swift */,
 				775B045E242E389300A892CC /* MapRouteHelper.swift */,
 				775B045F242E389300A892CC /* AddressHelper.swift */,
 				775B0461242E389300A892CC /* PlacePickerCell.swift */,
+				77A65AA124333D69003E5CE4 /* PlacePickerModel.swift */,
+				77A65AA024333D69003E5CE4 /* PlacePickerController.swift */,
+				77A65AA224333D69003E5CE4 /* PlacePickerSearchController.swift */,
+				77A65A9F24333D68003E5CE4 /* PlacesPickerHelper.storyboard */,
 				775B0462242E389300A892CC /* RouteModel.swift */,
 				775B0463242E389300A892CC /* GoogleMapZoom.swift */,
 			);
@@ -519,6 +558,7 @@
 			isa = PBXGroup;
 			children = (
 				779E6F702430B5390039C61D /* AdsDetailController.swift */,
+				77A4A4CB24331FB500612E4A /* MyAdsDetailController.swift */,
 			);
 			path = AdsDetail;
 			sourceTree = "<group>";
@@ -550,6 +590,8 @@
 			isa = PBXGroup;
 			children = (
 				77FD8EC52431C447003D839F /* MyAdsController.swift */,
+				77A1646724331CA300EC1C4B /* AddAdDetailController.swift */,
+				7718040A2432DE9600B8AA5E /* ForRentAdsVC.swift */,
 			);
 			path = createAd;
 			sourceTree = "<group>";
@@ -580,6 +622,7 @@
 				8033E92824257E5F00D0F2A0 /* Popup.storyboard */,
 				7721DD81242D8B2A005C3C38 /* Upgrade.storyboard */,
 				77FD8EC22431C2BE003D839F /* CreateAd.storyboard */,
+				771804122432DEEF00B8AA5E /* ForRent.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -664,6 +707,7 @@
 			children = (
 				8033E80624254FF900D0F2A0 /* AlertableHelper.swift */,
 				8033E80724254FF900D0F2A0 /* PublicHelper.swift */,
+				77A65AA724333EB1003E5CE4 /* TimerHelper.swift */,
 			);
 			path = CommonHelper;
 			sourceTree = "<group>";
@@ -859,6 +903,7 @@
 		FA25201923FC3DE1004D8F32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				771804102432DEE100B8AA5E /* AdsPackages.swift */,
 				7748E109242D99930041C490 /* Users.swift */,
 				8033E77724254D0100D0F2A0 /* Core */,
 				773433D9242D332F007B99D6 /* SubCategory.swift */,
@@ -878,6 +923,9 @@
 				7707CBDD242D8C0500FE772F /* ShopsByCatID.swift */,
 				7707CBDA242D8C0500FE772F /* SubCategoryAndShops.swift */,
 				80AE6F1E242739BD00A3681F /* StoreDetail.swift */,
+				7718041424330ABA00B8AA5E /* NotificationModel.swift */,
+				7718041624330C8600B8AA5E /* WishlistModel.swift */,
+				77A1646524330FE300EC1C4B /* SearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -885,6 +933,9 @@
 		FA25201C23FC3E0A004D8F32 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				779F5B782433546D0053E298 /* AdsPeriodCell.swift */,
+				7718040C2432DEC200B8AA5E /* ForRentAdsCell.swift */,
+				7718040D2432DEC300B8AA5E /* ForRentCell.swift */,
 				7748E107242D99600041C490 /* RegisterTableViewCell.swift */,
 				FA64D31A23FEB91A00D18958 /* SubCategoryCell.xib */,
 				8033E79024254D8F00D0F2A0 /* Core */,
@@ -1083,8 +1134,10 @@
 				8033E8D924254FF900D0F2A0 /* Menu.storyboard in Resources */,
 				8033E8FC24254FF900D0F2A0 /* Radio.xib in Resources */,
 				779E6F6E2430B49D0039C61D /* AdsDetail.storyboard in Resources */,
+				771804132432DEEF00B8AA5E /* ForRent.storyboard in Resources */,
 				8033E8D224254FF900D0F2A0 /* PickerViewHelper.storyboard in Resources */,
 				FA6294682406B6EA00308F25 /* ATCClassicWalkthroughViewController.xib in Resources */,
+				77A65AA324333D69003E5CE4 /* PlacesPickerHelper.storyboard in Resources */,
 				FA5F547823F5934000E7F40B /* LaunchScreen.storyboard in Resources */,
 				8033E8C424254FF900D0F2A0 /* ImageDisplayController.storyboard in Resources */,
 				8033E92524257C5600D0F2A0 /* StoreDetail.storyboard in Resources */,
@@ -1191,8 +1244,10 @@
 				52E64933241E7CA700B2B0AE /* city.swift in Sources */,
 				CD472DF02422509D0017E43C /* DriversMapVC.swift in Sources */,
 				7707CBE1242D8C0500FE772F /* PaymentMethod.swift in Sources */,
+				7718041724330C8600B8AA5E /* WishlistModel.swift in Sources */,
 				FA66C90F2403565E00CD6B95 /* NewAdsMan.swift in Sources */,
 				FA2BAEE624210086002E6505 /* CountryTableViewCell.swift in Sources */,
+				77A1646824331CA300EC1C4B /* AddAdDetailController.swift in Sources */,
 				7707CBE4242D8C4F00FE772F /* ChangeCityTableViewCell.swift in Sources */,
 				FA53ED88240687DE00A037E9 /* WalkthroughVC.swift in Sources */,
 				FA5E6E4F240BDC1F00041736 /* ForRentCell.swift in Sources */,
@@ -1201,10 +1256,12 @@
 				8033E8D624254FF900D0F2A0 /* UISideMenuNavigationController.swift in Sources */,
 				77BCA3B8242D187000EF3980 /* AddProductDetailVC.swift in Sources */,
 				8033E8C624254FF900D0F2A0 /* ImageHelper.swift in Sources */,
+				779F5B792433546D0053E298 /* AdsPeriodCell.swift in Sources */,
 				CD472DF3242259660017E43C /* DriversVC.swift in Sources */,
 				8033E7E424254E3100D0F2A0 /* StringExtensions.swift in Sources */,
 				FA68E21A240EEDF70015C96E /* PremiumProductsCell.swift in Sources */,
 				FA68E21C240EFEA50015C96E /* PremiumContentVC.swift in Sources */,
+				771804112432DEE200B8AA5E /* AdsPackages.swift in Sources */,
 				7789242E24305DDF0024D2A1 /* MyStorePremuimController.swift in Sources */,
 				FA53ED8424067BF800A037E9 /* WalkThroughContentVC.swift in Sources */,
 				775B046B242E389400A892CC /* MarkerProtocols.swift in Sources */,
@@ -1214,6 +1271,7 @@
 				773433DE242D493B007B99D6 /* AddProductStoreCell.swift in Sources */,
 				775B046F242E389400A892CC /* MapRouteHelper.swift in Sources */,
 				FA6294672406B6EA00308F25 /* ATCClassicWalkthroughViewController.swift in Sources */,
+				77A65AA424333D69003E5CE4 /* PlacePickerController.swift in Sources */,
 				8033E77D24254D0100D0F2A0 /* BaseModel.swift in Sources */,
 				77704A042430917400FE6D65 /* SearchController.swift in Sources */,
 				8033E8BB24254FF900D0F2A0 /* ApiHelpers.swift in Sources */,
@@ -1238,6 +1296,7 @@
 				775B046E242E389400A892CC /* PolylineAttrbuite.swift in Sources */,
 				8033E8DA24254FF900D0F2A0 /* MenuCell.swift in Sources */,
 				8033E78124254D0100D0F2A0 /* User.swift in Sources */,
+				77A4A4CC24331FB500612E4A /* MyAdsDetailController.swift in Sources */,
 				8033E80324254E3100D0F2A0 /* UIWindowExtensions.swift in Sources */,
 				77A3B4BD242EC73B00842730 /* KYCircularProgress.swift in Sources */,
 				8033E8BE24254FF900D0F2A0 /* Authorization.swift in Sources */,
@@ -1249,6 +1308,7 @@
 				FA66FE75240FB0A700AFC774 /* PremiumWorkTimeCell.swift in Sources */,
 				FA53ED86240682BB00A037E9 /* WalkthroughPageViewController.swift in Sources */,
 				809B14F8242AA67C00359D3A /* StoreWorkdayCell.swift in Sources */,
+				7718040E2432DEC300B8AA5E /* ForRentAdsCell.swift in Sources */,
 				8033E7D524254E3100D0F2A0 /* SwifterSwift.swift in Sources */,
 				77BCA3B6242D16C600EF3980 /* AddStoreProductVC.swift in Sources */,
 				77A3B4BF242EE3F600842730 /* OnboardingCell.swift in Sources */,
@@ -1256,14 +1316,18 @@
 				8033E8BD24254FF900D0F2A0 /* ApiProtocol.swift in Sources */,
 				77BA9FC1242DB2150083C17F /* MyShopsVC.swift in Sources */,
 				8033E78F24254D3600D0F2A0 /* Storyboards.swift in Sources */,
+				7718040B2432DE9700B8AA5E /* ForRentAdsVC.swift in Sources */,
 				FA2BAEE8242100F6002E6505 /* CountryModel.swift in Sources */,
 				77A3B4BB242EC45C00842730 /* Downloader.swift in Sources */,
 				FAAC60F623F839DD007EB8E7 /* RoundedViews.swift in Sources */,
 				7785CA1B243034BC006DEBFA /* MyStoreDetailController.swift in Sources */,
+				77A65AA824333EB2003E5CE4 /* TimerHelper.swift in Sources */,
 				773433DA242D332F007B99D6 /* SubCategory.swift in Sources */,
 				FA2BAEE42421001E002E6505 /* CountryViewController.swift in Sources */,
 				8033E8CA24254FF900D0F2A0 /* UIImageViewExtension.swift in Sources */,
 				FA6E33CF241FF50C00BFAFED /* FirstVC.swift in Sources */,
+				77A65AA624333D69003E5CE4 /* PlacePickerSearchController.swift in Sources */,
+				7718040F2432DEC300B8AA5E /* ForRentCell.swift in Sources */,
 				8033E8CC24254FF900D0F2A0 /* Localization.swift in Sources */,
 				77704A06243093E600FE6D65 /* SearchCell.swift in Sources */,
 				FA85AEC424180320008EAD50 /* ShopOwnerProducts.swift in Sources */,
@@ -1277,6 +1341,7 @@
 				7707CBD4242D8B9600FE772F /* CategoryModel.swift in Sources */,
 				FA2BAEE22420D9D7002E6505 /* productsCollectionViewCell.swift in Sources */,
 				7707CBE8242D8CA800FE772F /* OptionViewController.swift in Sources */,
+				77A65AA524333D69003E5CE4 /* PlacePickerModel.swift in Sources */,
 				FA64D31B23FEB91A00D18958 /* SubCategoryCell.swift in Sources */,
 				8033E7A124254DAA00D0F2A0 /* PresentingViewProtocol.swift in Sources */,
 				FA5D914523F953DC0004CBEB /* NewCustomer.swift in Sources */,
@@ -1294,12 +1359,14 @@
 				8033E77F24254D0100D0F2A0 /* SelectDropDownModel.swift in Sources */,
 				77BA9FC3242DB2150083C17F /* EachCategoryVC.swift in Sources */,
 				FA5E6E51240C119800041736 /* AgentsCell.swift in Sources */,
+				77A1646624330FE300EC1C4B /* SearchModel.swift in Sources */,
 				FA5C6DDD24015A8300E11A98 /* SelectedCategoryCell.swift in Sources */,
 				8033E8CD24254FF900D0F2A0 /* LocalizeDictionary.swift in Sources */,
 				8033E8CB24254FF900D0F2A0 /* ChangeLangHelper.swift in Sources */,
 				FA5F547023F5933B00E7F40B /* LoginVC.swift in Sources */,
 				800570C12426FE9500F45742 /* Section.swift in Sources */,
 				FA68A230240D34F2004C8316 /* QRCodeVC.swift in Sources */,
+				7718041524330ABA00B8AA5E /* NotificationModel.swift in Sources */,
 				FACD65162401888D00B65A08 /* ProfileCollectionViewCell.swift in Sources */,
 				FA6294722406CFC200308F25 /* PageViewController.swift in Sources */,
 				8033E7E624254E3100D0F2A0 /* FloatingLabelTextField.swift in Sources */,
@@ -1321,6 +1388,7 @@
 				FA6294742406D03700308F25 /* PageControlTests.swift in Sources */,
 				7707CBE7242D8CA800FE772F /* ChangeCityViewController.swift in Sources */,
 				FA66FE79240FC02000AFC774 /* PremiumContactsCell.swift in Sources */,
+				779F5B7724333F900053E298 /* GooglePlacesHelper.swift in Sources */,
 				FA707D232418F878001BC8CE /* PromoContentVCC.swift in Sources */,
 				808AC2FD2429EAC50015B24C /* StorePremuimController.swift in Sources */,
 				8033E8FB24254FF900D0F2A0 /* Initial.swift in Sources */,

@@ -132,9 +132,9 @@ class AdsDetailController: BaseController {
         setupFavorite()
         
         priceLbl.text = "\(ads?.price ?? 0) \(CountryViewController.deviceCountry?.currency ?? "")"
-        areaLbl.text = ""
-        typeLbl.text = ""
-        frunitureLbl.text = ""
+        areaLbl.text = "area.lan".localized
+        typeLbl.text = "type.lan".localized
+        frunitureLbl.text = "fruniture.lan".localized
         isPremImage.isHidden = true
             
 //        if ads?.type == 1 {
@@ -142,6 +142,16 @@ class AdsDetailController: BaseController {
 //        } else {
 //            isPremImage.isHidden = true
 //        }
+        setupUserRate()
+    }
+    func setupUserRate() {
+        if case ads?.is_comment = true {
+            rateComment.settings.updateOnTouch = false
+            rateComment.rating = Double(ads?.my_comment?.rate ?? "0") ?? 0
+            commentTxf.text = ads?.my_comment?.comment
+            commentTxf.isUserInteractionEnabled = false
+            createReviewBtn.isHidden = true
+        }
     }
     func setupFavorite(change: Bool? = nil) {
         if case change = true {
@@ -188,13 +198,14 @@ class AdsDetailController: BaseController {
         
     }
     func createComment() {
-        var model = StoreDetail.Comment()
-        model.name = UserRoot.fetch()?.user?.name
-        model.image = UserRoot.fetch()?.user?.image
-        model.rate = String(rateComment.rating)
-        model.comment = commentTxf.text
-        ads?.user_comment?.insert(model, at: 0)
-        setupHeights()
+        createReviewBtn.isHidden = true
+//        var model = StoreDetail.Comment()
+//        model.name = UserRoot.fetch()?.user?.name
+//        model.image = UserRoot.fetch()?.user?.image
+//        model.rate = String(rateComment.rating)
+//        model.comment = commentTxf.text
+//        ads?.user_comment?.insert(model, at: 0)
+//        setupHeights()
     }
     func handlers() {
         storeImage.UIViewAction {
@@ -209,9 +220,7 @@ class AdsDetailController: BaseController {
             navigate.lng = self.ads?.lang ?? 0
             navigate.openMapForPlace(delegate: self)
         }
-        messageBtn.UIViewAction {
-            
-        }
+    
         addContactBtn.UIViewAction {
             let store = CNContactStore()
             let contact = CNMutableContact()
@@ -236,8 +245,7 @@ class AdsDetailController: BaseController {
         }
     }
    
-    @IBAction func chat(_ sender: Any) {
-    }
+  
     @IBAction func qrCode(_ sender: Any) {
         let vc = controller(QRCodeVC.self, storyboard: .store)
         pushPop(vcr: vc)

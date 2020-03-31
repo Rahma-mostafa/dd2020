@@ -72,7 +72,7 @@ class MenuVC: BaseController {
         }
     }
     func setLocalize() {
-        countryImage.setImage(url: CountryViewController.deviceCountry?.file)
+        countryImage.setImage(url: CountryViewController.deviceCountry?.image)
         profileBtn.setTitle(Localizations.profile.localized, for: .normal)
         storesBtn.setTitle(Localizations.stores.localized, for: .normal)
         rentBtn.setTitle(Localizations.rent.localized, for: .normal)

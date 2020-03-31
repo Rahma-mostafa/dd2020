@@ -25,6 +25,7 @@ class SavedVC: BaseController {
     @IBOutlet weak var familyBtn: UIButton!
     @IBOutlet weak var wishlistTbl: UITableView!
     
+    var wishlist: WishlistModel?
     var currentTab: Tabs = .stores
     override func viewDidLoad() {
         super.hiddenNav = true
@@ -34,7 +35,10 @@ class SavedVC: BaseController {
         localize()
         handlers()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchWishlist()
+    }
     func setup() {
         self.storesBtn.backgroundColor = .appOrange
         self.storesBtn.setTitleColor(.white, for: .normal)
@@ -46,6 +50,13 @@ class SavedVC: BaseController {
         rentBtn.setTitle(Localizations.rent.localized, for: .normal)
         familyBtn.setTitle(Localizations.family.localized, for: .normal)
         
+    }
+    func fetchWishlist() {
+        ApiManager.instance.connection(.wishlist, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(WishlistModel.self, from: response ?? Data())
+            self.wishlist = data
+            self.wishlistTbl.reloadData()
+        }
     }
     func handlers() {
         storesBtn.UIViewAction {
@@ -90,11 +101,11 @@ extension SavedVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch currentTab {
         case .stores:
-            return 10
+            return wishlist?.shops?.count ?? 0
         case .rent:
-            return 10
+            return wishlist?.forRent?.count ?? 0
         case .family:
-            return 10
+            return wishlist?.houseAds?.count ?? 0
         }
     }
     
@@ -103,18 +114,53 @@ extension SavedVC: UITableViewDelegate, UITableViewDataSource {
         switch currentTab {
         case .stores:
             cell.setStyle = .orange
+            cell.imageSelected.setImage(url: wishlist?.shops?[indexPath.row].image)
+            cell.titleSelected.text = wishlist?.shops?[indexPath.row].name
+            cell.kmSelected.text = wishlist?.shops?[indexPath.row].distance
+            cell.ratingView.rating = Double(wishlist?.shops?[indexPath.row].rate ?? 0)
+            cell.categoryBtn.setTitle(wishlist?.shops?[indexPath.row].catName, for: .normal)
         case .rent:
             cell.setStyle = .green
+            cell.imageSelected.setImage(url: wishlist?.forRent?[indexPath.row].image)
+            cell.titleSelected.text = wishlist?.forRent?[indexPath.row].name
+            cell.kmSelected.text = wishlist?.forRent?[indexPath.row].distance
+            cell.ratingView.rating = Double(wishlist?.forRent?[indexPath.row].rate ?? 0)
+            cell.categoryBtn.setTitle("\(wishlist?.forRent?[indexPath.row].price ?? 0)", for: .normal)
         case .family:
             cell.setStyle = .red
+            cell.imageSelected.setImage(url: wishlist?.houseAds?[indexPath.row].image)
+            cell.titleSelected.text = wishlist?.houseAds?[indexPath.row].name
+            cell.kmSelected.text = wishlist?.houseAds?[indexPath.row].distance
+            cell.ratingView.rating = Double(wishlist?.houseAds?[indexPath.row].rate ?? 0)
+            cell.categoryBtn.setTitle("\(wishlist?.houseAds?[indexPath.row].price ?? 0)", for: .normal)
         }
-        cell.imageSelected.image = #imageLiteral(resourceName: "jonathan-borba-u7fi6JmYbX8-unsplash")
-        cell.titleSelected.text = "store"
-        cell.kmSelected.text = "10 km"
-        cell.ratingView.rating = 5
+      
         cell.premiumLogo.isHidden = true
         cell.saveButton.setImage(UIImage(named: "save_act"), for: .normal)
+        cell.saveButton.UIViewAction { [weak self] in
+            self?.favorite(path: indexPath.row)
+        }
         return cell
     }
     
+}
+
+extension SavedVC {
+    func favorite(path: Int) {
+        var method = ""
+        if currentTab == .stores {
+            method = api(.favorite, [self.wishlist?.shops?[path].id ?? 0])
+            self.wishlist?.shops?.remove(at: path)
+        } else if currentTab == .rent {
+            method = api(.adsFavorite, [self.wishlist?.forRent?[path].id ?? 0])
+            self.wishlist?.forRent?.remove(at: path)
+        } else {
+            method = api(.adsFavorite, [self.wishlist?.houseAds?[path].id ?? 0])
+            self.wishlist?.houseAds?.remove(at: path)
+        }
+        self.wishlistTbl.reloadData()
+        ApiManager.instance.connection(method, type: .post) { (response) in
+            
+        }
+    }
 }

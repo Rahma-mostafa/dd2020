@@ -352,22 +352,22 @@
                                                 <rect key="frame" x="2" y="2" width="87" height="87"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbQ-Kk-yUW">
-                                                <rect key="frame" x="2" y="2" width="87" height="87"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="91" height="91"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="iconfinder_add_134224"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="TbQ-Kk-yUW" firstAttribute="top" secondItem="TaW-7L-5Rq" secondAttribute="top" constant="2" id="46j-NJ-irc"/>
+                                            <constraint firstItem="TbQ-Kk-yUW" firstAttribute="top" secondItem="TaW-7L-5Rq" secondAttribute="top" id="46j-NJ-irc"/>
                                             <constraint firstAttribute="width" constant="91" id="BYQ-So-qOO"/>
                                             <constraint firstAttribute="bottom" secondItem="hJa-tj-ZpB" secondAttribute="bottom" constant="2" id="ISg-pq-qaW"/>
                                             <constraint firstAttribute="height" constant="91" id="M5H-Kg-uWZ"/>
                                             <constraint firstItem="hJa-tj-ZpB" firstAttribute="leading" secondItem="TaW-7L-5Rq" secondAttribute="leading" constant="2" id="PQP-zW-wtR"/>
-                                            <constraint firstAttribute="trailing" secondItem="TbQ-Kk-yUW" secondAttribute="trailing" constant="2" id="W4e-yk-keP"/>
+                                            <constraint firstAttribute="trailing" secondItem="TbQ-Kk-yUW" secondAttribute="trailing" id="W4e-yk-keP"/>
                                             <constraint firstAttribute="trailing" secondItem="hJa-tj-ZpB" secondAttribute="trailing" constant="2" id="g9W-or-Xbn"/>
-                                            <constraint firstItem="TbQ-Kk-yUW" firstAttribute="leading" secondItem="TaW-7L-5Rq" secondAttribute="leading" constant="2" id="rsO-V2-VFC"/>
-                                            <constraint firstAttribute="bottom" secondItem="TbQ-Kk-yUW" secondAttribute="bottom" constant="2" id="uiJ-0V-y2e"/>
+                                            <constraint firstItem="TbQ-Kk-yUW" firstAttribute="leading" secondItem="TaW-7L-5Rq" secondAttribute="leading" id="rsO-V2-VFC"/>
+                                            <constraint firstAttribute="bottom" secondItem="TbQ-Kk-yUW" secondAttribute="bottom" id="uiJ-0V-y2e"/>
                                             <constraint firstItem="hJa-tj-ZpB" firstAttribute="top" secondItem="TaW-7L-5Rq" secondAttribute="top" constant="2" id="vis-Vj-487"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -884,7 +884,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
                                                         <color key="value" name="OrangeColor"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="product.price.lan"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="price.lan"/>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="titleTextColour">
                                                         <color key="value" name="textColor"/>
                                                     </userDefinedRuntimeAttribute>
@@ -1138,17 +1138,16 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wea-3S-uUg" customClass="RoundedShadowView" customModule="D2020">
-                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="106"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="94"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grediantBackground" translatesAutoresizingMaskIntoConstraints="NO" id="NyH-7B-Hde" customClass="RoundedImageView" customModule="D2020" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="106"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="94" id="ELI-ug-xkx"/>
                                                                         <constraint firstAttribute="width" constant="94" id="ytF-eW-Sz6"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXK-n8-pwE">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="106"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
                                                                     <state key="normal" image="iconfinder_add_134224"/>
                                                                 </button>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="u49-RQ-BVA">
@@ -1219,7 +1218,7 @@
                                                                     <state key="normal" image="red_trash"/>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlp-0M-Wmd">
-                                                                    <rect key="frame" x="110" y="42.5" width="264" height="21.5"/>
+                                                                    <rect key="frame" x="110" y="36.5" width="264" height="21.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1235,6 +1234,7 @@
                                                                 <constraint firstItem="cXK-n8-pwE" firstAttribute="bottom" secondItem="NyH-7B-Hde" secondAttribute="bottom" id="ODi-nb-omm"/>
                                                                 <constraint firstItem="NyH-7B-Hde" firstAttribute="top" secondItem="Wea-3S-uUg" secondAttribute="top" id="PjF-a3-IGl"/>
                                                                 <constraint firstItem="n5T-nk-pu3" firstAttribute="top" secondItem="mVL-cL-cnX" secondAttribute="bottom" constant="8" id="Tat-zA-Irh"/>
+                                                                <constraint firstAttribute="height" constant="94" id="Ue1-G9-F9R"/>
                                                                 <constraint firstAttribute="trailing" secondItem="vlp-0M-Wmd" secondAttribute="trailing" constant="8" id="Vn6-RI-R3V"/>
                                                                 <constraint firstItem="cXK-n8-pwE" firstAttribute="leading" secondItem="NyH-7B-Hde" secondAttribute="leading" id="ahl-Iq-DZv"/>
                                                                 <constraint firstItem="u49-RQ-BVA" firstAttribute="leading" secondItem="NyH-7B-Hde" secondAttribute="trailing" constant="15" id="baV-5e-qVh"/>
@@ -1248,9 +1248,9 @@
                                                             </constraints>
                                                         </view>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="Wea-3S-uUg" secondAttribute="bottom" id="77T-EH-JFa"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Wea-3S-uUg" secondAttribute="bottom" constant="12" id="68t-v2-aX0"/>
                                                         <constraint firstAttribute="trailing" secondItem="Wea-3S-uUg" secondAttribute="trailing" id="LXw-OF-au6"/>
                                                         <constraint firstItem="Wea-3S-uUg" firstAttribute="leading" secondItem="f3d-eF-uzK" secondAttribute="leading" id="hty-xP-r9e"/>
                                                         <constraint firstItem="Wea-3S-uUg" firstAttribute="top" secondItem="f3d-eF-uzK" secondAttribute="top" id="sUO-xl-txM"/>
@@ -1365,7 +1365,7 @@
         <image name="choose" width="30" height="6"/>
         <image name="ellipse-3" width="75" height="75"/>
         <image name="grediantBackground" width="94" height="94"/>
-        <image name="iconfinder_add_134224" width="40" height="40"/>
+        <image name="iconfinder_add_134224" width="20" height="20"/>
         <image name="iconfinder_ic_my_location_48px_352557 (1)" width="20" height="20"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="online-store-1" width="85" height="71.5"/>

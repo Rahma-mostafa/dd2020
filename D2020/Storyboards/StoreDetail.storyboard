@@ -275,6 +275,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizationImage" value="bubble.image"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="chat:" destination="VHs-a2-rcq" eventType="touchUpInside" id="jVG-A2-ZOL"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oro-DA-YHr" customClass="RoundedButton" customModule="D2020" customModuleProvider="target">
                                                         <rect key="frame" x="286" y="173" width="112" height="36"/>
@@ -925,6 +928,7 @@
                         <outlet property="callBtn" destination="ncv-Jk-1Go" id="e5G-cq-jY9"/>
                         <outlet property="categoryBtn" destination="lpF-6S-Sfk" id="gjL-sG-gQq"/>
                         <outlet property="collectionSlider" destination="tVn-cU-jJ2" id="FDu-Wh-itt"/>
+                        <outlet property="commentBtn" destination="y8b-B3-rzT" id="mZb-EV-ta2"/>
                         <outlet property="commentTbl" destination="R8k-Dg-JhB" id="WDY-FJ-OV2"/>
                         <outlet property="commentTxf" destination="63z-wp-HAZ" id="Yhj-pr-u0o"/>
                         <outlet property="commentsHeight" destination="rPS-ye-Reg" id="Oea-Qi-HhO"/>
@@ -1197,6 +1201,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizationImage" value="bubble.image"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="chat:" destination="2Mm-30-eG9" eventType="touchUpInside" id="5wy-yv-Wvd"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39J-ax-iVh" customClass="RoundedButton" customModule="D2020" customModuleProvider="target">
                                                         <rect key="frame" x="286" y="173" width="112" height="36"/>
@@ -1855,6 +1862,7 @@
                         <outlet property="callBtn" destination="fBM-5E-us2" id="UF4-sC-jDe"/>
                         <outlet property="categoryBtn" destination="mhs-Db-oh6" id="raq-5Q-xNW"/>
                         <outlet property="collectionSlider" destination="UgV-Th-mo2" id="aa6-f0-A8F"/>
+                        <outlet property="commentBtn" destination="GH3-wo-j4o" id="pM4-nF-XPh"/>
                         <outlet property="commentTbl" destination="I4M-q1-IDz" id="OyI-SX-vmX"/>
                         <outlet property="commentTxf" destination="snW-Y1-bhl" id="TE6-UA-UFT"/>
                         <outlet property="commentsHeight" destination="MD4-KQ-ews" id="YoW-ib-XaQ"/>

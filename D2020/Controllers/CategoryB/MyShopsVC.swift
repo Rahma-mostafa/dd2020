@@ -22,7 +22,7 @@ class MyShopsVC: BaseController  {
     
     var contentIndex : Int?
     var shopAdded: [MyStores.Datum] = []
-    
+    var section: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -62,6 +62,7 @@ class MyShopsVC: BaseController  {
     
     func addStore() {
         let vc = controller(AddShopDetailVC.self, storyboard: .createStore)
+        vc.section = section
         push(vc)
     }
     override func backBtn(_ sender: Any) {
@@ -80,7 +81,7 @@ extension MyShopsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier:Identifiers.ShopsAddedCell , for: indexPath) as! ShopsAddedCell
-
+        cell.setStyle = .orange
         if indexPath.row == self.shopAdded.count-1 {
             cell.setupDefault()
             cell.plusBtn.UIViewAction { [weak self] in
@@ -104,10 +105,14 @@ extension MyShopsVC: UITableViewDelegate, UITableViewDataSource {
             self.addStore()
         } else {
             if self.shopAdded[indexPath.row].type == 1 {
-                
+                let vc = controller(MyStorePremuimController.self, storyboard: .store)
+                vc.storeID = self.shopAdded[indexPath.row].id
+                vc.section = self.section
+                push(vc)
             } else {
                 let vc = controller(MyStoreDetailController.self, storyboard: .store)
                 vc.storeID = self.shopAdded[indexPath.row].id
+                vc.section = self.section
                 push(vc)
             }
         }

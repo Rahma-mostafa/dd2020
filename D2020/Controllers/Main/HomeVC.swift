@@ -123,8 +123,7 @@ class HomeVC: BaseController {
     }
     
   
-    @IBAction func chat(_ sender: Any) {
-    }
+   
 }
 //extension uipageviewcontrollerdatasource
 

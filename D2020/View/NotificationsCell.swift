@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotificationsCell: UITableViewCell {
+class NotificationsCell: UITableViewCell, CellProtocol {
     
     
     @IBOutlet weak var notificationsImg: RoundedImageView!
@@ -24,11 +24,12 @@ class NotificationsCell: UITableViewCell {
 
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-//        circledView.layer.cornerRadius = 30
-//
+    func setup() {
+        guard let model = model as? NotificationModel.Datum else { return }
+        notificationsImg.setImage(url: model.image)
+        notificationsTitle.text = model.title
+        notificationsDetails.text = model.content
+        notificationsDate.text = model.date
     }
 
 }

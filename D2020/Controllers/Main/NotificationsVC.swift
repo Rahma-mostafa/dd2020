@@ -11,29 +11,44 @@ import UIKit
 class NotificationsVC: BaseController {
     
     @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var newestLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    
+    var notifications: [NotificationModel.Datum] = []
     override func viewDidLoad() {
         super.hiddenNav = true
         super.viewDidLoad()
         setup()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchNotifications()
     }
     func setup() {
         tableView.delegate = self
         tableView.dataSource = self
         
         titleLbl.text = "notifications.lan".localized
+        newestLbl.text = "newest.lan".localized
+    }
+    func fetchNotifications() {
+        ApiManager.instance.connection(.notifications, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(NotificationModel.self, from: response ?? Data())
+            self.notifications.removeAll()
+            self.notifications.append(contentsOf: data?.data ?? [])
+            self.tableView.reloadData()
+        }
     }
 }
 extension NotificationsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        self.notifications.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:Identifiers.NotificationsCell , for: indexPath) as! NotificationsCell
+        var cell = tableView.dequeueReusableCell(withIdentifier:Identifiers.NotificationsCell , for: indexPath) as! NotificationsCell
+        cell.model = notifications[indexPath.row]
         return cell
     }
 }

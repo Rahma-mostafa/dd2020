@@ -27,7 +27,7 @@ class UpgradeAccountVC: BaseController {
     }
     func setup() {
         confirmBtn.setTitle("confirm.lan".localized, for: .normal)
-        self.title = "upgrade.account.lan".localized
+        self.title = "upgrade.account.only.lan".localized
         registerAsLbl.text = "select.category.lan".localized
         tableView.delegate = self
         tableView.dataSource = self

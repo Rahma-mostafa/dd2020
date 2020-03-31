@@ -25,9 +25,12 @@ class SelectedCategoryVC: BaseController {
     var didSelectedItems:[ShopsByCatID.Datum] = []
     var style: Style = .orange
     var adsType: AdsType = .ad
+    var locationHelper: LocationHelper?
+    var runFilter: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.title = categoryName
+        allShopsLabel.text = "all.lan".localized
         setupStyle()
         setup()
         
@@ -178,7 +181,12 @@ extension SelectedCategoryVC : UITableViewDelegate, UITableViewDataSource {
     private func showTable(){
         let vc = controller(OptionViewController.self, storyboard: .pop)
         vc.shouldHideTable = { [unowned self]
-            (Name) in
+            (type) in
+            if type == .nearest {
+                self.getCurrentLocation()
+            } else {
+                self.filterShops(rate: 1)
+            }
             self.hideTable()
         }
         self.pushPop(vcr: vc)
@@ -209,15 +217,45 @@ extension SelectedCategoryVC : UITableViewDelegate, UITableViewDataSource {
   
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+extension SelectedCategoryVC {
+    func getCurrentLocation() {
+        locationHelper = LocationHelper()
+        locationHelper?.useOnlyoneTime = true
+        locationHelper?.onUpdateLocation = { degree in
+            self.filterShops(lat: degree?.latitude, lng: degree?.longitude)
+        }
+        locationHelper?.currentLocation()
+    }
+    
+    func filterShops(lat: Double? = nil, lng: Double? = nil, rate: Int? = nil) {
+        if runFilter {
+            return
+        }
+        runFilter = true
+        startLoading()
+        let method = api(.filterShop , [category ?? 0] )
+        ApiManager.instance.headers["cat_id"] = "\(category ?? 0)"
+        if(lat != nil && lng != nil) {
+            ApiManager.instance.paramaters["lat"] = lat ?? 0
+            ApiManager.instance.paramaters["lang"] = lng ?? 0
+        }
+        if rate != nil {
+            ApiManager.instance.paramaters["rate"] = rate ?? 0
+        }
+        ApiManager.instance.connection(method, type: .post) { [weak self] (response) in
+            self?.runFilter = false
+            self?.stopLoading()
+            print("run")
+            do {
+                let data = try JSONDecoder().decode(ShopsByCatID.self, from: response ?? Data())
+                self?.didSelectedItems.removeAll()
+                self?.didSelectedItems.append(contentsOf: data.data ?? [])
+                self?.tableView.reloadData()
+                print("subCategory")
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+        }
+    }
+}

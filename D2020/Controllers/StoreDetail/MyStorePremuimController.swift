@@ -63,6 +63,7 @@ class MyStorePremuimController: BaseController {
     var storeID: Int?
     var scrollHeightValue: CGFloat = 1200
     var isExpandable: Bool?
+    var section: Int?
     override func viewDidLoad() {
         super.hiddenNav = true
         super.viewDidLoad()
@@ -187,6 +188,7 @@ class MyStorePremuimController: BaseController {
         yourRateLbl.text = Localizations.yourRate.localized
         allRateLbl.text = Localizations.allRate.localized
         commentTxf.placeholder = Localizations.yourRate.localized
+        editBtn.setTitle("edit.lan".localized, for: .normal)
     }
     func setupHeights(scrollPoint: CGPoint? = nil) {
         let commentCount = CGFloat((store?.user_comment?.count ?? 0))
@@ -197,12 +199,10 @@ class MyStorePremuimController: BaseController {
         commentTbl.reloadData()
         
         /** check user loging */
-        if UserRoot.token() == nil {
-            yourRateLbl.isHidden = true
-            yourRatView.isHidden = true
-            yourRateHeight.constant = 0
-            scrollHeight.constant -= 151
-        }
+        yourRateLbl.isHidden = true
+        yourRatView.isHidden = true
+        yourRateHeight.constant = 0
+        scrollHeight.constant -= 151
         
         
         if self.scrollView.contentOffset.y > 90 {
@@ -266,10 +266,15 @@ class MyStorePremuimController: BaseController {
                 self?.setupFavorite(change: true)
             }
         }
+        editBtn.UIViewAction {
+            let vc = self.controller(AddShopDetailVC.self, storyboard: .createStore)
+            vc.editMode = true
+            vc.store = self.store
+            vc.section = self.section
+            self.push(vc)
+        }
     }
    
-    @IBAction func chat(_ sender: Any) {
-    }
     @IBAction func qrCode(_ sender: Any) {
         let vc = controller(QRCodeVC.self, storyboard: .store)
         pushPop(vcr: vc)

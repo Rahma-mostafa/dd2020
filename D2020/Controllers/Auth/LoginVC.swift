@@ -75,13 +75,8 @@ class LoginVC: BaseController {
         if usernameTxt.text!.isEmpty || passwordTxt.text!.isEmpty {
             
             // red placeholders
-            usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
-            passwordTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
-            
-            
-            makeAlert("Please Fill Out All Fields") {
-                
-            }
+            usernameTxt.attributedPlaceholder = NSAttributedString(string: "mobile.or.email.lan".localized, attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            passwordTxt.attributedPlaceholder = NSAttributedString(string: "password.lan".localized, attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
             
             // text is entered
         } else {

@@ -37,6 +37,8 @@ class BaseController: UIViewController, PresentingViewProtocol, POPUPView, Alert
         let vc = controller(SearchController.self)
         push(vc)
     }
+    @IBAction func chat(_ sender: Any) {
+    }
     //var baseViewModel:SettingViewModel?
     //public static var config:Config?
     public static var configLoaded = false

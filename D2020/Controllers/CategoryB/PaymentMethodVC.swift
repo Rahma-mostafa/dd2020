@@ -33,6 +33,7 @@ class PaymentMethodVC: BaseController {
     var paymentMethod = 0
     var packageID: Int?
     var storeID:Int?
+    var adsID: Int?
     weak var delegate: PaymentStoreDelegate?
     
     override func viewDidLoad() {
@@ -45,6 +46,7 @@ class PaymentMethodVC: BaseController {
         
     }
     func localize() {
+        chooseMethodLabel.text = "choose.payment.method.lan".localized
         googlePayLbl.text = "by.google.pay.lan".localized
         bankLbl.text = "by.bank.transfer.lan".localized
         cashLbl.text = "by.delegate.company.lan".localized
@@ -52,7 +54,12 @@ class PaymentMethodVC: BaseController {
     }
     func addPackageToStore() {
         self.startLoading()
-        let method = api(.add_shop_to_package, [storeID ?? 0] )
+        var method = ""
+        if storeID != nil {
+            method = api(.add_shop_to_package, [storeID ?? 0] )
+        } else if adsID != nil {
+            method = api(.addAdsToPackage, [adsID ?? 0] )
+        }
         ApiManager.instance.paramaters["payment_method"] = "\(paymentMethod)"
         ApiManager.instance.paramaters["package_id"] = "\(packageID ?? 0)"
         ApiManager.instance.connection(method, type: .post) { [weak self] (response) in
@@ -111,7 +118,6 @@ class PaymentMethodVC: BaseController {
         }
     }
 
-    
     @IBAction func onConfirmButtonClick(_ sender: Any) {
         addPackageToStore()
     }

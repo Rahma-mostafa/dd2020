@@ -11,10 +11,13 @@ import UIKit
 class OptionViewController: BaseController {
    
     @IBOutlet weak var optionTableView: UITableView!
-    var options:[Option] = [Option(name: "nearest.lan".localized),Option(name: "special.places.lan".localized),Option(name: "top.rated.lan".localized)]
+    var options:[OptionFilter] = [
+        OptionFilter(name: "nearest.lan".localized, type: .nearest),
+        OptionFilter(name: "top.rated.lan".localized, type: .top_rate)
+    ]
     
     
-    var shouldHideTable : ((String)->())!
+    var shouldHideTable : ((OptionFilter.FilterType)->())!
     var Color: UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     
     override func viewDidLoad() {
@@ -57,7 +60,7 @@ extension OptionViewController:UITableViewDataSource,UITableViewDelegate{
         return UITableViewCell()
        }
     func hideTable(rowIndex: Int){
-        shouldHideTable(self.options[rowIndex].name)
+        shouldHideTable(self.options[rowIndex].type)
         self.dismiss(animated: true)
 
     }

@@ -9,7 +9,7 @@
 import UIKit
 import GooglePlaces
 
-class AddShopDetailVC: BaseController {
+class AddAdDetailController: BaseController {
     @IBOutlet weak var sliderCollection: UICollectionView!
     @IBOutlet weak var noPhotoImage: UIImageView!
     @IBOutlet weak var addImageLbl: UILabel!
@@ -18,6 +18,7 @@ class AddShopDetailVC: BaseController {
     @IBOutlet weak var plusBtn: UIButton!
     @IBOutlet weak var storeNameTxf: UITextField!
     @IBOutlet weak var storeDescTxf: UITextField!
+    @IBOutlet weak var priceTxf: UITextField!
     @IBOutlet weak var mobileTxf: UITextField!
     @IBOutlet weak var categoryTxf: UITextField!
     @IBOutlet weak var typeTxf: UITextField!
@@ -25,14 +26,15 @@ class AddShopDetailVC: BaseController {
     @IBOutlet weak var locationTxf: UITextField!
     @IBOutlet weak var nextBtn: RoundedButton!
 
+    var style: Style = .green
     var section: Int?
+    var type = 2
     var picker: GalleryPickerHelper?
     var mapHelper: GoogleMapHelper?
     var images: [UIImage] = []
     var logo: UIImage?
     var imagesURL: [URL] = []
     var logoURL: URL?
-    
     var cities: [CityModel.CityData] = []
     var categories: [Category.DateElement] = []
     var subCategories: [SubCategoryModel.Data] = []
@@ -41,20 +43,27 @@ class AddShopDetailVC: BaseController {
     var selectedSubCategory: Int?
     var lat: Double?
     var lng: Double?
-    var store: StoreDetail.StoreData?
+    var ad: StoreDetail.StoreData?
     var editMode: Bool = false
     var imagesViewEdited: [UIImageView] = []
     override func viewDidLoad() {
         super.hiddenNav = true
         super.viewDidLoad()
+        setupStyle()
         setup()
         if editMode {
             setupEdit()
         }
         handlers()
     }
+    func setupStyle() {
+        if style == .red {
+            self.navigationController?.navigationBar.barTintColor = .appRed
+            self.type = 1
+        }
+    }
     func setup() {
-        addImageLbl.text = Localizations.addImages.localized
+        addImageLbl.text = "add.images.for.ads.lan".localized
         nextBtn.setTitle(Localizations.next.localized, for: .normal)
         picker = GalleryPickerHelper()
         mapHelper = .init()
@@ -69,12 +78,13 @@ class AddShopDetailVC: BaseController {
         noPhotoImage.isHidden = true
         addImageLbl.isHidden = true
         plusBtn.isHidden = true
-        storeLogoImage.setImage(url: store?.image)
-        storeNameTxf.text = store?.name
-        storeDescTxf.text = store?.desc
-        mobileTxf.text = store?.phone
+        storeLogoImage.setImage(url: ad?.image)
+        storeNameTxf.text = ad?.name
+        storeDescTxf.text = ad?.desc
+        mobileTxf.text = ad?.phone
+        priceTxf.text = "\(ad?.price ?? 0)"
         
-        store?.images?.forEach({ (image) in
+        ad?.images?.forEach({ (image) in
             let imageView = UIImageView()
             imageView.setImage(url: image.image)
             self.images.append(imageView.image ?? UIImage())
@@ -193,6 +203,7 @@ class AddShopDetailVC: BaseController {
     }
     @IBAction func locationPick(_ sender: Any) {
         mapHelper?.placePicker()
+
     }
     
     @IBAction func next(_ sender: Any) {
@@ -200,9 +211,9 @@ class AddShopDetailVC: BaseController {
             return
         }
         if editMode {
-            editStore()
+            editAd()
         } else {
-            addStore()
+            addAd()
         }
     }
     func validate() -> Bool {
@@ -212,6 +223,10 @@ class AddShopDetailVC: BaseController {
         }
         if case storeDescTxf.text?.isEmpty = true {
             storeDescTxf.attributedPlaceholder = NSAttributedString(string: storeDescTxf.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            return false
+        }
+        if case priceTxf.text?.isEmpty = true {
+            priceTxf.attributedPlaceholder = NSAttributedString(string: priceTxf.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
             return false
         }
         if case mobileTxf.text?.isEmpty = true {
@@ -232,53 +247,47 @@ class AddShopDetailVC: BaseController {
         }
         return true
     }
-    func addStore() {
+    func addAd() {
+        guard let logoURL = logoURL else { return }
         let paramters: [String: Any] = [
+            "type": "\(type)",
             "name": storeNameTxf.text ?? "",
             "desc": storeDescTxf.text ?? "",
+            "price": priceTxf.text ?? "",
             "categoriesid": "\(subCategories[selectedSubCategory ?? 0].id ?? 0)",
             "city_id": "\(cities[selectedCity ?? 0].id ?? 0)",
             "phone": mobileTxf.text ?? "",
-            "lat": "\(lat ?? 0)",
-            "lang": "\(lng ?? 0)"
+            "lat": lat ?? 0,
+            "lang": lng ?? 0
         ]
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.downloaderDelegate = self
-        ApiManager.instance.uploadMultiFiles(EndPoint.addShop.rawValue, type: .post, files: imagesURL, key: "images", file: ["logo": logoURL]) { (response) in
-            let data = try? JSONDecoder().decode(StoreDetail.self, from: response ?? Data())
-            let vc = self.controller(AddStoreProductVC.self, storyboard: .createStore)
-            vc.storeID = data?.data?.id
-            vc.images = self.images
-            vc.storeImage = self.logo
-            self.push(vc)
+        ApiManager.instance.uploadMultiFiles(EndPoint.addAd.rawValue, type: .post, files: imagesURL, key: "images", file: ["icon": logoURL]) { (response) in
+            self.navigationController?.popViewController(animated: true)
         }
     }
-    func editStore() {
+    func editAd() {
         
         let paramters: [String: Any] = [
             "name": storeNameTxf.text ?? "",
             "desc": storeDescTxf.text ?? "",
+            "price": priceTxf.text ?? "",
             "categoriesid": "\(subCategories[selectedSubCategory ?? 0].id ?? 0)",
             "city_id": "\(cities[selectedCity ?? 0].id ?? 0)",
             "phone": mobileTxf.text ?? "",
-            "lat": "\(lat ?? 0)",
-            "lang": "\(lng ?? 0)"
+            "lat": lat ?? 0,
+            "lang": lng ?? 0
         ]
-        let method = api(.editShop, [store?.id ?? 0])
+        let method = api(.editAd, [ad?.id ?? 0])
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.downloaderDelegate = self
-        ApiManager.instance.uploadMultiFiles(method, type: .post, files: imagesURL, key: "images", file: ["logo": logoURL]) { (response) in
-            let data = try? JSONDecoder().decode(StoreDetail.self, from: response ?? Data())
-            let vc = self.controller(AddStoreProductVC.self, storyboard: .createStore)
-            vc.storeID = data?.data?.id
-            vc.store = data?.data
-            vc.editMode = true
-            self.push(vc)
+        ApiManager.instance.uploadMultiFiles(method, type: .post, files: imagesURL, key: "images", file: ["icon": logoURL]) { (response) in
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }
 
-extension AddShopDetailVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension AddAdDetailController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.width, height: collectionView.height)
     }
@@ -297,12 +306,12 @@ extension AddShopDetailVC: UICollectionViewDelegateFlowLayout, UICollectionViewD
     
     
 }
-extension AddShopDetailVC: DownloaderDelegate, PlacesPickerDelegate {
-
+extension AddAdDetailController: DownloaderDelegate, PlacesPickerDelegate {
     func didPickPlace(place: PlacePickerModel.PlacePickerResult) {
         self.locationTxf.text = place.name
         self.lat = place.coordinate.latitude
         self.lng = place.coordinate.longitude
     }
     
+
 }

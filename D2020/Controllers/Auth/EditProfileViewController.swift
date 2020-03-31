@@ -32,21 +32,37 @@ class EditProfileViewController: BaseController {
     @IBOutlet weak var newPasswordView: RoundedShadowView!
     @IBOutlet weak var newPasswordTxf: UITextField!
     
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var emailLbl: UILabel!
+    @IBOutlet weak var mobileLbl: UILabel!
+    @IBOutlet weak var birthdateLbl: UILabel!
+    @IBOutlet weak var genderLbl: UILabel!
+    @IBOutlet weak var cityLbl: UILabel!
+    @IBOutlet weak var passwordLbl: UILabel!
+
     var picker: GalleryPickerHelper?
     var imageURL: URL?
     var cities: [CityModel.CityData] = []
     var selectedCity: Int?
-    let datePicker = UIDatePicker()
     var gender: Int = 1
     var enableEdit: Bool = false
     var enablePasswordEdit: Bool = false
     override func viewDidLoad() {
         super.hiddenNav = true
         super.viewDidLoad()
+        localize()
         setup()
         handlers()
         fetchCities()
-        showDatePicker()
+    }
+    func localize() {
+        nameLbl.text = "fullname.lan".localized
+        emailLbl.text = "email.lan".localized
+        mobileLbl.text = "mobile.lan".localized
+        birthdateLbl.text = "age.lan".localized
+        genderLbl.text = "gender.lan".localized
+        cityLbl.text = "city.lan".localized
+        passwordLbl.text = "password.lan".localized
     }
     func setup() {
         picker = .init()
@@ -60,7 +76,7 @@ class EditProfileViewController: BaseController {
         nameTxf.text = user?.name
         mobileTxf.text = user?.phone
         emailTxf.text = user?.email
-        bithdateTxf.text = user?.birth_date
+        bithdateTxf.text = "\(user?.age ?? 0)"
         cityTxf.text = user?.City?.name
         changePasswordBtn.setTitle("change.lan".localized, for: .normal)
         
@@ -166,37 +182,7 @@ class EditProfileViewController: BaseController {
             self.push(vc)
         }
     }
-    func showDatePicker() {
-        //Formate Date
-        datePicker.datePickerMode = .date
-        
-        //ToolBar
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "done.lan".localized, style: .plain, target: self, action: #selector(donedatePicker));
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "cancel.lan".localized, style: .plain, target: self, action: #selector(cancelDatePicker))
-        
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-        
-        bithdateTxf.inputAccessoryView = toolbar
-        bithdateTxf.inputView = datePicker
-        
-    }
-    
-    @objc func donedatePicker(){
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        bithdateTxf.text = formatter.string(from: datePicker.date)
-        self.view.endEditing(true)
-    }
-    
-    @objc func cancelDatePicker(){
-        self.view.endEditing(true)
-    }
-
-
+   
     func fetchCities() {
         startLoading()
         let method = api(.SubCountry, [CountryViewController.deviceCountry?.id ?? 0])
@@ -236,14 +222,14 @@ extension EditProfileViewController: DownloaderDelegate {
         }
     }
     func updateProfile() {
-        guard let imageURL = imageURL else { return }
+//        guard let imageURL = imageURL else { return }
         let paramters: [String: Any] = [
             "phone": mobileTxf.text ?? "",
             "email": emailTxf.text ?? "",
             "name": nameTxf.text ?? "",
             "city_id": "\(cities[selectedCity ?? 0].id ?? 0)",
             "gender": gender,
-            "birth_date": bithdateTxf.text ?? ""
+            "age": bithdateTxf.text ?? ""
         ]
         
         ApiManager.instance.downloaderDelegate = self
