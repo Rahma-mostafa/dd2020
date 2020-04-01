@@ -15,7 +15,18 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.693974223022-vjp42mpmn7n5165lenqsripilo2bv00u</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -25,8 +36,16 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow to use camera for update your image</string>
 	<key>NSContactsUsageDescription</key>
 	<string>Please let me use your contact privacy to add this store in your contacts</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Allow to use your location to complete your profile</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow to use your location to complete your profile</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow to use photo library for update your image</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>ArbFONTS-Sukar Bold.ttf</string>
@@ -51,13 +70,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Allow to use your location to complete your profile</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Allow to use your location to complete your profile</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Allow to use camera for update your image</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Allow to use photo library for update your image</string>
 </dict>
 </plist>

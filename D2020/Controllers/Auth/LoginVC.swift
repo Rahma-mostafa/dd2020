@@ -40,13 +40,34 @@ class LoginVC: BaseController {
         googleBtn.setTitle("google.lan".localized, for: .normal)
         loginPressedOutlet.setTitle("login.lan".localized, for: .normal)
         skipLbl.text = "skip.lan".localized
+       
+        handlers()
+    }
+    
+    func handlers() {
         skipLbl.UIViewAction {
             guard let vc = UIStoryboard.init(name: Storyboards.main.rawValue, bundle: nil).instantiateInitialViewController() else { return }
             self.push(vc)
         }
+        googleBtn.UIViewAction {
+            let google = GoogleDriver()
+            google.closure = { model in
+                self.loginSocial(paramters: [:])
+            }
+            google.googleProvider()
+        }
     }
-    
-    
+    func loginSocial(paramters: [String: Any]) {
+        startLoading()
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.connection(.loginSocial, type: .post) { (response) in
+            self.stopLoading()
+            let user = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            UserRoot.save(response: response)
+            guard let vc = UIStoryboard.init(name: Storyboards.main.rawValue, bundle: nil).instantiateInitialViewController() else { return }
+            self.push(vc)
+        }
+    }
     //showing password
     @IBAction func showPassword(_ sender: Any) {
         
@@ -55,10 +76,6 @@ class LoginVC: BaseController {
         
         
     }
-    
-    
-    
-    
     @IBAction func RegisterClicked(_ sender: Any) {
         let vc = controller(RegisterAsVC.self, storyboard: .auth)
         

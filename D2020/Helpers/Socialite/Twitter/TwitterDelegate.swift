@@ -13,8 +13,7 @@
 //    func application(_ application: UIApplication,open url: URL,options: [UIApplicationOpenURLOptionsKey: Any]) -> Bool {
 //        //let handled = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, options: options)
 //        //return handled
-//        //        return GIDSignIn.sharedInstance().handle(url,sourceApplication:
-//                                                                  options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,annotation: [:])
+//        //        return GIDSignIn.sharedInstance().handle(url,sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,annotation: [:])
 //        return TWTRTwitter.sharedInstance().application(application, open: url, options: options)
 //        
 //    }

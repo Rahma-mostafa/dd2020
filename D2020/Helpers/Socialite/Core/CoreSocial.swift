@@ -15,9 +15,9 @@ enum Socials: Int {
     case google = 3
     case instagram = 4
 }
-class SocialModel {
-    var type: Socials?
-    init(type: Socials) {
+class SocialModel{
+    var type:Socials?
+    init(type:Socials) {
         self.type = type
     }
 }
@@ -27,12 +27,11 @@ protocol SocialIndicator {
     func stopLoading()
 }
 extension SocialIndicator {
-
-    func startLoading() {
+    
+    func startLoading(){
         UIApplication.topViewController()?.startLoading()
-
     }
-    func stopLoading() {
+    func stopLoading(){
         UIApplication.topViewController()?.stopLoading()
     }
 }

@@ -89,6 +89,18 @@
 		77BCA3B6242D16C600EF3980 /* AddStoreProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCA3B5242D16C600EF3980 /* AddStoreProductVC.swift */; };
 		77BCA3B8242D187000EF3980 /* AddProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCA3B7242D187000EF3980 /* AddProductDetailVC.swift */; };
 		77E00EB6242FCF74005B2A21 /* UpgradeAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E00EB5242FCF74005B2A21 /* UpgradeAccountVC.swift */; };
+		77EAC3F72433FECE007EFF34 /* TwitterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EAC3E82433FECE007EFF34 /* TwitterModel.swift */; };
+		77EAC3F82433FECE007EFF34 /* TwitterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EAC3E92433FECE007EFF34 /* TwitterDelegate.swift */; };
+		77EAC3F92433FECE007EFF34 /* TwitterDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EAC3EA2433FECE007EFF34 /* TwitterDriver.swift */; };
+		77EAC3FA2433FECE007EFF34 /* SocialError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EAC3EC2433FECE007EFF34 /* SocialError.swift */; };
+		77EAC3FB2433FECE007EFF34 /* CoreSocial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EAC3ED2433FECE007EFF34 /* CoreSocial.swift */; };
+		77EAC3FC2433FECE007EFF34 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EAC3EE2433FECE007EFF34 /* Setup.swift */; };
+		77EAC3FD2433FECE007EFF34 /* GoogleDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EAC3F02433FECE007EFF34 /* GoogleDriver.swift */; };
+		77EAC3FE2433FECE007EFF34 /* GoogleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EAC3F12433FECE007EFF34 /* GoogleProtocol.swift */; };
+		77EAC3FF2433FECE007EFF34 /* GoogleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EAC3F22433FECE007EFF34 /* GoogleModel.swift */; };
+		77EAC4002433FECE007EFF34 /* FacebookDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EAC3F42433FECE007EFF34 /* FacebookDelegate.swift */; };
+		77EAC4012433FECE007EFF34 /* FacebookDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EAC3F52433FECE007EFF34 /* FacebookDriver.swift */; };
+		77EAC4022433FECE007EFF34 /* FacebookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EAC3F62433FECE007EFF34 /* FacebookModel.swift */; };
 		77FD8EC32431C2BE003D839F /* CreateAd.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77FD8EC22431C2BE003D839F /* CreateAd.storyboard */; };
 		77FD8EC62431C447003D839F /* MyAdsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FD8EC52431C447003D839F /* MyAdsController.swift */; };
 		800570C12426FE9500F45742 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800570C02426FE9500F45742 /* Section.swift */; };
@@ -320,6 +332,18 @@
 		77BCA3B5242D16C600EF3980 /* AddStoreProductVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStoreProductVC.swift; sourceTree = "<group>"; };
 		77BCA3B7242D187000EF3980 /* AddProductDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductDetailVC.swift; sourceTree = "<group>"; };
 		77E00EB5242FCF74005B2A21 /* UpgradeAccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpgradeAccountVC.swift; path = D2020/Controllers/UpgradeAccountVC.swift; sourceTree = SOURCE_ROOT; };
+		77EAC3E82433FECE007EFF34 /* TwitterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterModel.swift; sourceTree = "<group>"; };
+		77EAC3E92433FECE007EFF34 /* TwitterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterDelegate.swift; sourceTree = "<group>"; };
+		77EAC3EA2433FECE007EFF34 /* TwitterDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterDriver.swift; sourceTree = "<group>"; };
+		77EAC3EC2433FECE007EFF34 /* SocialError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialError.swift; sourceTree = "<group>"; };
+		77EAC3ED2433FECE007EFF34 /* CoreSocial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreSocial.swift; sourceTree = "<group>"; };
+		77EAC3EE2433FECE007EFF34 /* Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
+		77EAC3F02433FECE007EFF34 /* GoogleDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleDriver.swift; sourceTree = "<group>"; };
+		77EAC3F12433FECE007EFF34 /* GoogleProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleProtocol.swift; sourceTree = "<group>"; };
+		77EAC3F22433FECE007EFF34 /* GoogleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleModel.swift; sourceTree = "<group>"; };
+		77EAC3F42433FECE007EFF34 /* FacebookDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookDelegate.swift; sourceTree = "<group>"; };
+		77EAC3F52433FECE007EFF34 /* FacebookDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookDriver.swift; sourceTree = "<group>"; };
+		77EAC3F62433FECE007EFF34 /* FacebookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookModel.swift; sourceTree = "<group>"; };
 		77FD8EC22431C2BE003D839F /* CreateAd.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAd.storyboard; sourceTree = "<group>"; };
 		77FD8EC52431C447003D839F /* MyAdsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAdsController.swift; sourceTree = "<group>"; };
 		7CD42E7013F938C7FA37C420 /* Pods_D2020.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_D2020.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -586,6 +610,57 @@
 			path = CategoryB;
 			sourceTree = "<group>";
 		};
+		77EAC3E62433FECE007EFF34 /* Socialite */ = {
+			isa = PBXGroup;
+			children = (
+				77EAC3E72433FECE007EFF34 /* Twitter */,
+				77EAC3EB2433FECE007EFF34 /* Core */,
+				77EAC3EF2433FECE007EFF34 /* Google */,
+				77EAC3F32433FECE007EFF34 /* Facebook */,
+			);
+			path = Socialite;
+			sourceTree = "<group>";
+		};
+		77EAC3E72433FECE007EFF34 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				77EAC3E82433FECE007EFF34 /* TwitterModel.swift */,
+				77EAC3E92433FECE007EFF34 /* TwitterDelegate.swift */,
+				77EAC3EA2433FECE007EFF34 /* TwitterDriver.swift */,
+			);
+			path = Twitter;
+			sourceTree = "<group>";
+		};
+		77EAC3EB2433FECE007EFF34 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				77EAC3EC2433FECE007EFF34 /* SocialError.swift */,
+				77EAC3ED2433FECE007EFF34 /* CoreSocial.swift */,
+				77EAC3EE2433FECE007EFF34 /* Setup.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		77EAC3EF2433FECE007EFF34 /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				77EAC3F02433FECE007EFF34 /* GoogleDriver.swift */,
+				77EAC3F12433FECE007EFF34 /* GoogleProtocol.swift */,
+				77EAC3F22433FECE007EFF34 /* GoogleModel.swift */,
+			);
+			path = Google;
+			sourceTree = "<group>";
+		};
+		77EAC3F32433FECE007EFF34 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				77EAC3F42433FECE007EFF34 /* FacebookDelegate.swift */,
+				77EAC3F52433FECE007EFF34 /* FacebookDriver.swift */,
+				77EAC3F62433FECE007EFF34 /* FacebookModel.swift */,
+			);
+			path = Facebook;
+			sourceTree = "<group>";
+		};
 		77FD8EC42431C43C003D839F /* createAd */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,6 +770,7 @@
 				8033E83C24254FF900D0F2A0 /* LocationHelper */,
 				8033E84124254FF900D0F2A0 /* PickerViewHelper */,
 				8033E84424254FF900D0F2A0 /* slideMenu */,
+				77EAC3E62433FECE007EFF34 /* Socialite */,
 				8033E85F24254FF900D0F2A0 /* SwipeRefreshHelper */,
 				8033E86124254FF900D0F2A0 /* UIKit */,
 				8033E88924254FF900D0F2A0 /* UIViewHelper */,
@@ -1234,6 +1310,7 @@
 				CD472DFF24226D9F0017E43C /* MapAnnotationsView.swift in Sources */,
 				8033E90624254FF900D0F2A0 /* UITabHelper.swift in Sources */,
 				8033E79624254D9000D0F2A0 /* ExtensionUITableViewCell.swift in Sources */,
+				77EAC3FB2433FECE007EFF34 /* CoreSocial.swift in Sources */,
 				8033E8FD24254FF900D0F2A0 /* RadioButton.swift in Sources */,
 				8033E8E824254FF900D0F2A0 /* SwipeRefresh.swift in Sources */,
 				FA64D31F23FEB97300D18958 /* AfterSelectingCell.swift in Sources */,
@@ -1241,11 +1318,14 @@
 				8033E80224254E3100D0F2A0 /* UIViewExtensions.swift in Sources */,
 				FA2BAEDE2420D9A0002E6505 /* slideShowCollectionViewCell.swift in Sources */,
 				8033E8A124254FF900D0F2A0 /* AlertableHelper.swift in Sources */,
+				77EAC3FC2433FECE007EFF34 /* Setup.swift in Sources */,
+				77EAC3F82433FECE007EFF34 /* TwitterDelegate.swift in Sources */,
 				52E64933241E7CA700B2B0AE /* city.swift in Sources */,
 				CD472DF02422509D0017E43C /* DriversMapVC.swift in Sources */,
 				7707CBE1242D8C0500FE772F /* PaymentMethod.swift in Sources */,
 				7718041724330C8600B8AA5E /* WishlistModel.swift in Sources */,
 				FA66C90F2403565E00CD6B95 /* NewAdsMan.swift in Sources */,
+				77EAC3FE2433FECE007EFF34 /* GoogleProtocol.swift in Sources */,
 				FA2BAEE624210086002E6505 /* CountryTableViewCell.swift in Sources */,
 				77A1646824331CA300EC1C4B /* AddAdDetailController.swift in Sources */,
 				7707CBE4242D8C4F00FE772F /* ChangeCityTableViewCell.swift in Sources */,
@@ -1271,18 +1351,21 @@
 				773433DE242D493B007B99D6 /* AddProductStoreCell.swift in Sources */,
 				775B046F242E389400A892CC /* MapRouteHelper.swift in Sources */,
 				FA6294672406B6EA00308F25 /* ATCClassicWalkthroughViewController.swift in Sources */,
+				77EAC3FD2433FECE007EFF34 /* GoogleDriver.swift in Sources */,
 				77A65AA424333D69003E5CE4 /* PlacePickerController.swift in Sources */,
 				8033E77D24254D0100D0F2A0 /* BaseModel.swift in Sources */,
 				77704A042430917400FE6D65 /* SearchController.swift in Sources */,
 				8033E8BB24254FF900D0F2A0 /* ApiHelpers.swift in Sources */,
 				775B0467242E389400A892CC /* ARCarMovement.swift in Sources */,
 				8033E8D324254FF900D0F2A0 /* PickerViewHelper.swift in Sources */,
+				77EAC3FA2433FECE007EFF34 /* SocialError.swift in Sources */,
 				FA6D98E4241121F400D71D3C /* ShopsAddedCell.swift in Sources */,
 				80DCF0EC242A891F008FAB6D /* StoreWorkday.swift in Sources */,
 				FA569E57240E6538004507C3 /* NotificationsVC.swift in Sources */,
 				8033E8D824254FF900D0F2A0 /* MeneHelper.swift in Sources */,
 				52E8672D241D2C7200D7CBBC /* catagoryTableViewCell.swift in Sources */,
 				775B046A242E389400A892CC /* GoogleMapHelper.swift in Sources */,
+				77EAC3FF2433FECE007EFF34 /* GoogleModel.swift in Sources */,
 				8033E8C224254FF900D0F2A0 /* Paginator.swift in Sources */,
 				775B0474242E389400A892CC /* GoogleMapZoom.swift in Sources */,
 				FA6E33CC241FF50C00BFAFED /* PageViewControllerA.swift in Sources */,
@@ -1291,6 +1374,7 @@
 				FA66FE77240FBFEA00AFC774 /* PremiumContacts.swift in Sources */,
 				FA2BAEE02420D9CB002E6505 /* slideShow.swift in Sources */,
 				77BA9FC4242DB2150083C17F /* CategoryVC.swift in Sources */,
+				77EAC3F72433FECE007EFF34 /* TwitterModel.swift in Sources */,
 				52E6492B241E292300B2B0AE /* shopTypeTableViewCell.swift in Sources */,
 				775AABA7242F0E3E008FF6B9 /* UIImageExtensions.swift in Sources */,
 				775B046E242E389400A892CC /* PolylineAttrbuite.swift in Sources */,
@@ -1324,6 +1408,7 @@
 				77A65AA824333EB2003E5CE4 /* TimerHelper.swift in Sources */,
 				773433DA242D332F007B99D6 /* SubCategory.swift in Sources */,
 				FA2BAEE42421001E002E6505 /* CountryViewController.swift in Sources */,
+				77EAC4012433FECE007EFF34 /* FacebookDriver.swift in Sources */,
 				8033E8CA24254FF900D0F2A0 /* UIImageViewExtension.swift in Sources */,
 				FA6E33CF241FF50C00BFAFED /* FirstVC.swift in Sources */,
 				77A65AA624333D69003E5CE4 /* PlacePickerSearchController.swift in Sources */,
@@ -1333,6 +1418,8 @@
 				FA85AEC424180320008EAD50 /* ShopOwnerProducts.swift in Sources */,
 				FA842A352416A0F40042DB49 /* AddShopDetailVC.swift in Sources */,
 				8033E79D24254DAA00D0F2A0 /* BaseController.swift in Sources */,
+				77EAC4002433FECE007EFF34 /* FacebookDelegate.swift in Sources */,
+				77EAC3F92433FECE007EFF34 /* TwitterDriver.swift in Sources */,
 				8033E7E824254E3100D0F2A0 /* UIApplicationExtensions.swift in Sources */,
 				8033E77E24254D0100D0F2A0 /* Errors.swift in Sources */,
 				FACD6514240177A400B65A08 /* StoreDetailController.swift in Sources */,
@@ -1373,6 +1460,7 @@
 				FA6E33CE241FF50C00BFAFED /* SecondVC.swift in Sources */,
 				8033E8D524254FF900D0F2A0 /* SideMenuTransition.swift in Sources */,
 				7707CBD7242D8BD400FE772F /* City.swift in Sources */,
+				77EAC4022433FECE007EFF34 /* FacebookModel.swift in Sources */,
 				7707CBDF242D8C0500FE772F /* SubCategoryAndShops.swift in Sources */,
 				FA6E33CD241FF50C00BFAFED /* ThirdVC.swift in Sources */,
 				FA5F546C23F5933B00E7F40B /* AppDelegate.swift in Sources */,
@@ -1582,6 +1670,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mbn.D2020;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1602,6 +1691,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mbn.D2020;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -2811,7 +2811,7 @@
         <image name="check (2)" width="24" height="18.5"/>
         <image name="choose" width="30" height="6"/>
         <image name="logo" width="141" height="66"/>
-        <image name="map" width="19.5" height="24"/>
+        <image name="map" width="20.5" height="24.5"/>
         <image name="more-en" width="24" height="20"/>
         <image name="password" width="24" height="24"/>
         <image name="phone" width="24" height="24"/>

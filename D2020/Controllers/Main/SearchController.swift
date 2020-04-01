@@ -102,6 +102,16 @@ extension SearchController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
  
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if foundResult {
+
+        } else {
+            var history = searchHistory
+            history.reverse()
+            searchBar.text = history[indexPath.row]
+            searchResult()
+        }
+    }
    
 }
 

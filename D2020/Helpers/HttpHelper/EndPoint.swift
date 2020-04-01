@@ -14,6 +14,7 @@ public enum EndPoint: String {
     case editPassword = "user/editPassword"
     case userInfo = "user/userData"
     case login
+    case loginSocial
     case register = "Register"
     case logout
     case MainCountry
