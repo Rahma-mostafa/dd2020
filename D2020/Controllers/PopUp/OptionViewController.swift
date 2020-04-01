@@ -11,15 +11,15 @@ import UIKit
 class OptionViewController: BaseController {
    
     @IBOutlet weak var optionTableView: UITableView!
+    var options:[OptionFilter] = [
+        OptionFilter(name: "nearest.lan".localized, type: .nearest),
+        OptionFilter(name: "top.rated.lan".localized, type: .top_rate)
+    ]
     
     
-    
-    var options:[Option] = [Option(name:"الاقرب"),Option(name:"اماكن مميزه"),Option(name: "الاعلي تقيما")]
-    
-    
-    var shouldHideTable : ((String)->())!
+    var shouldHideTable : ((OptionFilter.FilterType)->())!
     var Color: UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -49,7 +49,7 @@ extension OptionViewController:UITableViewDataSource,UITableViewDelegate{
             cell.closeButton.tag = indexPath.row
             cell.onCloseButtonTapped = { [unowned self] in
                 self.hideTable(rowIndex: indexPath.row)
-                cell.closeButton.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
+                //cell.closeButton.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
             
                 }
                 if indexPath.row % 2 == 0 {
@@ -60,7 +60,7 @@ extension OptionViewController:UITableViewDataSource,UITableViewDelegate{
         return UITableViewCell()
        }
     func hideTable(rowIndex: Int){
-        shouldHideTable(self.options[rowIndex].name)
+        shouldHideTable(self.options[rowIndex].type)
         self.dismiss(animated: true)
 
     }

@@ -23,7 +23,10 @@ struct StoreDetail: Codable {
         let cat_name: String?
         let type, rate: Int?
         var is_favorite: Bool?
+        var is_comment: Bool?
+        var my_comment: Comment?
         let distance: String?
+        let price: Double?
         let snap, instagram, website, whatsapp: String?
         let facebook: String?
         let products: [Facilite]?
@@ -36,10 +39,10 @@ struct StoreDetail: Codable {
     
     // MARK: - Facilite
     struct Facilite: Codable {
-        let id: Int?
-        let name: String?
-        let image: String?
-        let price: Int?
+        var id: Int?
+        var name: String?
+        var image: String?
+        var price: Int?
     }
     // MARK: - Facilite
     struct Days: Codable {
@@ -68,3 +71,19 @@ struct StoreDetail: Codable {
 
 }
 
+struct ProductModel: Codable {
+    let status: Bool?
+    var data: ProductData?
+    var message: String?
+    
+    struct ProductData: Codable {
+        let id: Int?
+        let name: String?
+        let image: String?
+        let price: String?
+    }
+}
+
+struct ShortStoreModel: Codable {
+    let data: MyStores.Datum?
+}

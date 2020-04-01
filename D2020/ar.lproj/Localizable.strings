@@ -18,10 +18,6 @@
 "you_must_accept_the_request_to_login.lan" = "يجب عليك الموافقة علي الطلب لكي يتم تسجيل الدخول";
 "the_login_is_required.lan" = "تسجيل الدخول مطلوب";
 "not_found.lan" = "غير موجودة";
-"username" = "رقم الهاتف أو الإيميل ";
-"password" = "كلمة السر";
-"fullname.lan" = "الاسم كامل";
-
 
 /** validation **/
 
@@ -206,7 +202,7 @@
 "hour.lan" = "الساعة";
 "store.closed.lan" = "يكون المحل (مغلق)";
 "mobile.or.email.lan" = "رقم الهاتف او الأيميل";
-"more-en.image" = "more";
+"more-en.image" = "more-en";
 "select.city.lan" = "اختار المدينة";
 "Path 3344.image" = "Path 3344";
 "change.lan" = "تغيير";
@@ -222,7 +218,7 @@
 "birthdate.lan" = "تاريخ الميلاد";
 "old password.lan" = "كلمة السر الحالية ";
 "upgrade.account.lan" = "ترقيت الحساب لـ ( تاجر أو معلن ) ";
-"select.category.lan" = "حددالقسم";
+"select.category.lan" = "حدد القسم";
 "select_city" = "حدد المدينة";
 "category.lan" = "الفئات";
 "all.lan" = "الكل";
@@ -240,7 +236,7 @@
 "add.product.lan" = "إضافة منتج";
 "upload.product.lan" = "رفع صورة المنتج";
 "product.name.lan" = "اسم المنتج";
-"product.price.lan" = "السعر";
+"price.lan" = "السعر";
 "payment.lan" = "طرق الدفع ";
 "selectMethod.lan" = "اختر طريقة الدفع";
 "bank.lan" = "عن طريق حوالة بنكية";
@@ -261,16 +257,62 @@
 "select.period.lan" = "اختر المدة التي تناسبك";
 "ads.period.lan" = "مدة الاعلان" ;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+"Subtraction45.image" = "Subtraction45-ar";
+"lang.display.lan" ="عرض اللغة";
+"country.lan" ="الدولة";
+"apply.lan" ="تطبيق";
+"new.account.lan" = "حساب جديد";
+"register.as.lan" = "تسجيل ك";
+"have.account.before.lan" = "لدي حساب بالفعل";
+"fullname.lan" = "الأسم بالكامل";
+"enter.data.lan" = "ادخال البيانات";
+"wishlist.lan" = "الحافظة";
+"rent.lan" = "الأيحار";
+"delegates.lan" = "المناديب";
+"family.lan" = "الأسر المنتجة";
+"aboutApp.lan" = "عن الشركة";
+"support.lan" = "تواصل مع الدعم الفني";
+"share.lan" = "مشاركة التطبيق";
+"old.password.lan" = "كلمة السر القديمة";
+"age.lan" = "العمر";
+"upgrade.account.only.lan" = "ترقية الحساب";
+"categories.f.lan" = "الفئات";
+"nearest.lan" = "الأقرب";
+"top.rated.lan" = "الأعلي تقييما";
+"specifications.lan" = "المواصفات";
+"area.lan" = "المساحة م٢";
+"type.lan" = "النوع";
+"fruniture.lan" = "مفروش";
+"newest.lan" = "الأحدث";
+"add.new.store.lan" = "اضافة محل اخر";
+"store.desc.lan" = "وصف المحل";
+"add.images.store.lan" = "اضافة صور للمحل";
+"select.type.lan" = "حدد النوع";
+"image.is.required.lan" = "الصورة مطلوبة";
+"upgrade.for.lan" = "الترقية ل";
+"special.store.lan" = "محل مميز";
+"trust.account.lan" = "توثيق الحساب";
+"show_products_and_prices.lan" = "عرض المنتجات واسعارها";
+"example.wifi.lan" = "مثل: الواي فاي ,الباركينج ... إلخ";
+"barnds.available.for.store.lan" = "البراندات المتاحة بالمحل";
+"example.pepsi.lan" = "مثل: بيبسي , شيبسي ... إلخ";
+"display.work.times.lan" = "عرض مواعيد العمل";
+"add.social.links.lan" = "إضافة وسائل التواصل الإجتماعي";
+"add.video.for.store.lan" = "إضافة فيديو للمحل";
+"subscribe.payment.lan" = "الاشتراك وطرق الدفع";
+"payment.method.lan" = "طرق الدفع";
+"choose.payment.method.lan" = "اختار طريقة الدفع";
+"by.google.pay.lan" = "عن طريق جوجل باي";
+"by.bank.transfer.lan" = "عن طريق حوالة بنكية";
+"by.delegate.company.lan" = "عن طريق مندوب من الشركة";
+"subscribe.lan" = "الأشتراك";
+"my.ads.lan" = "اعلاناتي للايجار";
+"my.products.lan" = "اعلاناتي";
+"my.products.desc.lan" = "اخر المنتجات الي تما اضافتها";
+"not.found.products.lan" = "لا يوجد منتجات مضافة";
+"add.new.ads.lan" = "اضافة منتج (اعلان) للأيجار";
+"add.new.product.lan" = "اضافة منتج (اعلان) اخر";
+"product.category.lan" = "فئة المنتج";
+"product.desc.lan" = "وصف المنتج";
+"product.type.lan" = "نوع المنتج";
+"add.images.for.ads.lan" = "اضافة صور للأعلان";

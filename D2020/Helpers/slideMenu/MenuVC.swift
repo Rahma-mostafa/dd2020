@@ -72,7 +72,7 @@ class MenuVC: BaseController {
         }
     }
     func setLocalize() {
-        countryImage.setImage(url: CountryViewController.deviceCountry?.file)
+        countryImage.setImage(url: CountryViewController.deviceCountry?.image)
         profileBtn.setTitle(Localizations.profile.localized, for: .normal)
         storesBtn.setTitle(Localizations.stores.localized, for: .normal)
         rentBtn.setTitle(Localizations.rent.localized, for: .normal)
@@ -102,24 +102,24 @@ class MenuVC: BaseController {
         familyBtn.isHidden = true
         delegateBtn.isHidden = true
         rentBtn.isHidden = true
-        containSectionHeight.constant = 60
+        containSectionHeight.constant = 50
         sections.forEach { (item) in
             if item.style == 1 {
                 rentBtn.isHidden = false
                 rentImage.isHidden = false
-                containSectionHeight.constant += 60
+                containSectionHeight.constant += 50
             } else if item.style == 2 {
                 storesBtn.isHidden = false
                 storeImage.isHidden = false
-                containSectionHeight.constant += 60
+                containSectionHeight.constant += 50
             } else if item.style == 3 {
                 delegateBtn.isHidden = false
                 delegateImage.isHidden = false
-                containSectionHeight.constant += 60
+                containSectionHeight.constant += 50
             } else if item.style == 4 {
                 familyBtn.isHidden = false
                 familyImage.isHidden = false
-                containSectionHeight.constant += 60
+                containSectionHeight.constant += 50
             }
         }
     }

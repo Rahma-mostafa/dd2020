@@ -23,14 +23,14 @@ struct ShopsByCatID: Codable {
         let catName, distance: String?
         let snap, instagram, website, whatsapp: String?
         let facebook: String?
-       
+        let price: Double?
 
         enum CodingKeys: String, CodingKey {
             case id, name, desc, image, video, phone, type
             case isFavorite = "is_favorite"
             case rate
             case catName = "cat_name"
-            case distance, snap, instagram, website, whatsapp, facebook
+            case distance, snap, instagram, website, whatsapp, facebook, price
         }
     }
 

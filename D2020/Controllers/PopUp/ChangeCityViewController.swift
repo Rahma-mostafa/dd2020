@@ -62,7 +62,7 @@ class ChangeCityViewController: BaseController {
                cell.closeButton.tag = indexPath.row
                cell.onCloseButtonTapped = { [unowned self] in
                     self.hideCityTable(rowIndex: indexPath.row)
-                    cell.closeButton.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
+                    //cell.closeButton.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
                }
                if indexPath.row % 2 == 0 {
                 cell.closeButton.backgroundColor = #colorLiteral(red: 0.9371728301, green: 0.9373074174, blue: 0.9371433854, alpha: 1)

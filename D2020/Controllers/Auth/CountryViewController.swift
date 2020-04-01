@@ -12,6 +12,9 @@ class CountryViewController: BaseController {
     @IBOutlet weak var countyTableView: UITableView!
     @IBOutlet weak var languageButtton1: RoundedButton!
     @IBOutlet weak var languageButtton2: RoundedButton!
+    @IBOutlet weak var langLbl: UILabel!
+    @IBOutlet weak var countryLbl: UILabel!
+    @IBOutlet weak var applyBtn: RoundedButton!
     
     
     var countries: [Country.CountryData] = []
@@ -64,6 +67,10 @@ class CountryViewController: BaseController {
         languageButtton1.backgroundColor = #colorLiteral(red: 0.9862338901, green: 0.6227881312, blue: 0.008487232029, alpha: 1)
         languageButtton2.backgroundColor = .white
         selectedLang = "ar"
+        
+        langLbl.text = "lang.display.lan".localized
+        countryLbl.text = "country.lan".localized
+        applyBtn.setTitle("apply.lan".localized, for: .normal)
         
     }
     func fetchCountries() {

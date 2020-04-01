@@ -33,7 +33,7 @@ class NewCustomer: BaseController{
     var cities: [CityModel.CityData] = []
     var countries: [Country.CountryData] = []
     var selectedCity: Int?
-    var selectedCountry: Country.CountryData?
+    var selectedCountry: Country.CountryData? = CountryViewController.deviceCountry
     
 
     
@@ -42,6 +42,8 @@ class NewCustomer: BaseController{
         //        selectCity.inputView = pickerView
         cityTextField.textAlignment = .center
         self.title = registerType?.registerLike
+        self.enterDataLbl.text = "enter.data.lan".localized
+        self.nextBtn.setTitle("next.lan".localized, for: .normal)
         fetchCities()
         fetchCountries()
         
@@ -54,7 +56,7 @@ class NewCustomer: BaseController{
                  self.countries[row].name ?? ""
             }
             picker.imageClosure = { row in
-                self.countries[row].file ?? ""
+                self.countries[row].image ?? ""
             }
             picker.didSelectClosure = { row in
                 self.selectedCountry = self.countries[row]
@@ -109,40 +111,47 @@ class NewCustomer: BaseController{
         isSecure = !isSecure
         confirmPassword.isSecureTextEntry = isSecure
     }
+    func validate() -> Bool {
+        if case fullName.text?.isEmpty = true {
+            fullName.attributedPlaceholder = NSAttributedString(string: fullName.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            return false
+        }
+        if case phoneNumber.text?.isEmpty = true {
+            phoneNumber.attributedPlaceholder = NSAttributedString(string: phoneNumber.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            return false
+        }
+        if case email.text?.isEmpty = true {
+            email.attributedPlaceholder = NSAttributedString(string: email.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            return false
+        }
+        if case cityTextField.text?.isEmpty = true {
+            cityTextField.attributedPlaceholder = NSAttributedString(string: cityTextField.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            return false
+        }
+        if case password.text?.isEmpty = true {
+            password.attributedPlaceholder = NSAttributedString(string: password.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            return false
+        }
+        if case confirmPassword.text?.isEmpty = true {
+            confirmPassword.attributedPlaceholder = NSAttributedString(string: confirmPassword.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            return false
+        }
+        return true
+    }
     @IBAction func NextTapped(_ sender: Any) {
-        
-        // if no text entered
-        if fullName.text!.isEmpty || password.text!.isEmpty || confirmPassword.text!.isEmpty || email.text!.isEmpty || cityTextField.text!.isEmpty  {
-            
-            // red placeholders
-            phoneNumber.attributedPlaceholder = NSAttributedString(string: "Phone Number".localized, attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
-            password.attributedPlaceholder = NSAttributedString(string: "password".localized, attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
-            
-            // text is entered
-        } else {
-            
+        if validate() {
             // remove keyboard
             self.view.endEditing(true)
             
-            guard let phone = phoneNumber.text, !phoneNumber.text!.isEmpty else {return}
-            guard let password = password.text, !password.isEmpty else {return}
-            guard let confirmPass = confirmPassword.text, !confirmPassword.text!.isEmpty else {return}
-            
-            guard let name = fullName.text, !fullName.text!.isEmpty else {return}
-            
-            guard let emailAddress = email.text, !email.text!.isEmpty else {return}
-            
-            guard let selectingCity = cityTextField.text, !cityTextField.text!.isEmpty else {return}
-         
             let paramters: [String: Any] = [
-                "phone": phone,
-                "email": emailAddress,
-                "name": name,
-                "city_id": cities[selectedCity ?? 0].id,
+                "phone": phoneNumber.text ?? "",
+                "email": email.text ?? "",
+                "name": fullName.text ?? "",
+                "city_id": cities[selectedCity ?? 0].id ?? 0,
                 "SectionsId": registerType?.id ?? 14,
                 "country_code": selectedCountry?.code ?? 0,
-                "password": password,
-                "password_confirmation": confirmPass
+                "password": password.text ?? "",
+                "password_confirmation": confirmPassword.text ?? ""
             ]
             
             ApiManager.instance.paramaters = paramters

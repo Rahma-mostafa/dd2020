@@ -24,7 +24,7 @@ class CountryTableViewCell: UITableViewCell, CellProtocol {
    
     func setup() {
         guard let model = model as? Country.CountryData else { return }
-        countryImageView.setImage(url: model.file)
+        countryImageView.setImage(url: model.image)
         counrtyNameLabel.text = model.name
                       
                          

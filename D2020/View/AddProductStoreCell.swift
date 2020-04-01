@@ -16,10 +16,17 @@ class AddProductStoreCell: UICollectionViewCell, CellProtocol {
     @IBOutlet weak var priceLbl: UILabel!
     
     func setup() {
-        guard let model = model as? AddProductModel else { return }
-        image.image = model.image
+        guard let model = model as? StoreDetail.Facilite else { return }
+        image.setImage(url: model.image)
         nameLbl.text = model.name
-        priceLbl.text = model.price
+        priceLbl.text = "\(model.price ?? 0)"
+        
+    }
+    func setupEdit() {
+        guard let model = model as? StoreDetail.Facilite else { return }
+        image.setImage(url: model.image)
+        nameLbl.text = model.name
+        priceLbl.text = "\(model.price ?? 0)"
         
     }
 }

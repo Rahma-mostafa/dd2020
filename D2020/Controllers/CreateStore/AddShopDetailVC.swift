@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PlacesPicker
 import GooglePlaces
 
 class AddShopDetailVC: BaseController {
@@ -26,7 +25,9 @@ class AddShopDetailVC: BaseController {
     @IBOutlet weak var locationTxf: UITextField!
     @IBOutlet weak var nextBtn: RoundedButton!
 
+    var section: Int?
     var picker: GalleryPickerHelper?
+    var mapHelper: GoogleMapHelper?
     var images: [UIImage] = []
     var logo: UIImage?
     var imagesURL: [URL] = []
@@ -40,27 +41,45 @@ class AddShopDetailVC: BaseController {
     var selectedSubCategory: Int?
     var lat: Double?
     var lng: Double?
-    var sotre: StoreDetail.StoreData?
+    var store: StoreDetail.StoreData?
     var editMode: Bool = false
+    var imagesViewEdited: [UIImageView] = []
     override func viewDidLoad() {
         super.hiddenNav = true
         super.viewDidLoad()
         setup()
+        if editMode {
+            setupEdit()
+        }
         handlers()
     }
     func setup() {
         addImageLbl.text = Localizations.addImages.localized
         nextBtn.setTitle(Localizations.next.localized, for: .normal)
         picker = GalleryPickerHelper()
-        PlacePicker.configure(googleMapsAPIKey: Constants.googleAPI, placesAPIKey:  Constants.googleAPI)
-
+        mapHelper = .init()
+        mapHelper?.placePickerDelegate = self
+        
         sliderCollection.delegate = self
         sliderCollection.dataSource = self
         
         fetchCities()
     }
     func setupEdit() {
+        noPhotoImage.isHidden = true
+        addImageLbl.isHidden = true
+        plusBtn.isHidden = true
+        storeLogoImage.setImage(url: store?.image)
+        storeNameTxf.text = store?.name
+        storeDescTxf.text = store?.desc
+        mobileTxf.text = store?.phone
         
+        store?.images?.forEach({ (image) in
+            let imageView = UIImageView()
+            imageView.setImage(url: image.image)
+            self.images.append(imageView.image ?? UIImage())
+            self.imagesViewEdited.append(imageView)
+        })
     }
     func handlers() {
         noPhotoImage.UIViewAction(selector: pickImage)
@@ -105,7 +124,7 @@ class AddShopDetailVC: BaseController {
         }
     }
     func fetchCategories() {
-        let method = api(.getCategory, [14])
+        let method = api(.getCategory, [section ?? 0])
 //        ApiManager.instance.paramaters["city_id"] = self.cities[selectedCity ?? 0].id ?? 0
         ApiManager.instance.connection(method, type: .get) { (response) in
             let data = try? JSONDecoder().decode(Category.self, from: response ?? Data())
@@ -116,7 +135,7 @@ class AddShopDetailVC: BaseController {
     }
     func fetchSubCategory() {
         guard let selectedCategory = selectedCategory else { return }
-        let method = api(.getSubCategoryAndShop, [categories[selectedCategory ?? 0].id ?? 0])
+        let method = api(.getSubCategoryAndShop, [categories[selectedCategory].id ?? 0])
         ApiManager.instance.connection(method, type: .get) { (response) in
             let data = try? JSONDecoder().decode(SubCategoryModel.self, from: response ?? Data())
             self.subCategories.removeAll()
@@ -173,22 +192,55 @@ class AddShopDetailVC: BaseController {
         fetchCategories()
     }
     @IBAction func locationPick(_ sender: Any) {
-        let controller = PlacePicker.placePickerController()
-        controller.delegate = self
-        let navigationController = UINavigationController(rootViewController: controller)
-        self.show(navigationController, sender: nil)
+        mapHelper?.placePicker()
     }
     
     @IBAction func next(_ sender: Any) {
-        guard let logoURL = logoURL else { return }
+        if !validate() {
+            return
+        }
+        if editMode {
+            editStore()
+        } else {
+            addStore()
+        }
+    }
+    func validate() -> Bool {
+        if case storeNameTxf.text?.isEmpty = true {
+            storeNameTxf.attributedPlaceholder = NSAttributedString(string: storeNameTxf.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            return false
+        }
+        if case storeDescTxf.text?.isEmpty = true {
+            storeDescTxf.attributedPlaceholder = NSAttributedString(string: storeDescTxf.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            return false
+        }
+        if case mobileTxf.text?.isEmpty = true {
+            mobileTxf.attributedPlaceholder = NSAttributedString(string: mobileTxf.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            return false
+        }
+        if case categoryTxf.text?.isEmpty = true {
+            categoryTxf.attributedPlaceholder = NSAttributedString(string: categoryTxf.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            return false
+        }
+        if case typeTxf.text?.isEmpty = true {
+            typeTxf.attributedPlaceholder = NSAttributedString(string: typeTxf.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            return false
+        }
+        if case cityTxf.text?.isEmpty = true {
+            cityTxf.attributedPlaceholder = NSAttributedString(string: cityTxf.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+            return false
+        }
+        return true
+    }
+    func addStore() {
         let paramters: [String: Any] = [
             "name": storeNameTxf.text ?? "",
             "desc": storeDescTxf.text ?? "",
             "categoriesid": "\(subCategories[selectedSubCategory ?? 0].id ?? 0)",
             "city_id": "\(cities[selectedCity ?? 0].id ?? 0)",
             "phone": mobileTxf.text ?? "",
-            "lat": lat ?? 0,
-            "lang": lng ?? 0
+            "lat": "\(lat ?? 0)",
+            "lang": "\(lng ?? 0)"
         ]
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.downloaderDelegate = self
@@ -201,7 +253,29 @@ class AddShopDetailVC: BaseController {
             self.push(vc)
         }
     }
-
+    func editStore() {
+        
+        let paramters: [String: Any] = [
+            "name": storeNameTxf.text ?? "",
+            "desc": storeDescTxf.text ?? "",
+            "categoriesid": "\(subCategories[selectedSubCategory ?? 0].id ?? 0)",
+            "city_id": "\(cities[selectedCity ?? 0].id ?? 0)",
+            "phone": mobileTxf.text ?? "",
+            "lat": "\(lat ?? 0)",
+            "lang": "\(lng ?? 0)"
+        ]
+        let method = api(.editShop, [store?.id ?? 0])
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.downloaderDelegate = self
+        ApiManager.instance.uploadMultiFiles(method, type: .post, files: imagesURL, key: "images", file: ["logo": logoURL]) { (response) in
+            let data = try? JSONDecoder().decode(StoreDetail.self, from: response ?? Data())
+            let vc = self.controller(AddStoreProductVC.self, storyboard: .createStore)
+            vc.storeID = data?.data?.id
+            vc.store = data?.data
+            vc.editMode = true
+            self.push(vc)
+        }
+    }
 }
 
 extension AddShopDetailVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -223,18 +297,12 @@ extension AddShopDetailVC: UICollectionViewDelegateFlowLayout, UICollectionViewD
     
     
 }
-extension AddShopDetailVC: PlacesPickerDelegate, DownloaderDelegate {
-    func placePickerControllerDidCancel(controller: PlacePickerController) {
-         self.dismiss(animated: true, completion: nil)
+extension AddShopDetailVC: DownloaderDelegate, PlacesPickerDelegate {
+
+    func didPickPlace(place: PlacePickerModel.PlacePickerResult) {
+        self.locationTxf.text = place.name
+        self.lat = place.coordinate.latitude
+        self.lng = place.coordinate.longitude
     }
-    
-    func placePickerController(controller: PlacePickerController, didSelectPlace place: GMSPlace) {
-        self.dismiss(animated: true) {
-            self.locationTxf.text = place.formattedAddress
-            self.lat = place.coordinate.latitude
-            self.lng = place.coordinate.longitude
-        }
-    }
-    
     
 }

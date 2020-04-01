@@ -122,11 +122,8 @@ class HomeVC: BaseController {
         
     }
     
-    
-    @IBAction func search(_ sender: Any) {
-    }
-    @IBAction func chat(_ sender: Any) {
-    }
+  
+   
 }
 //extension uipageviewcontrollerdatasource
 
@@ -229,6 +226,17 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
             let navC = storyboard.instantiateViewController(withIdentifier: "navC") as! UINavigationController
             //            let driversMapVC = (navC.viewControllers[0] as? DriversMapVC)!
             self.present(navC, animated: false, completion: nil)
+        } else {
+            sections.forEach { (item) in
+                if item.style == 4 {
+                    let vc = controller(CategoryVC.self, storyboard: .category)
+                    vc.section = item.id
+                    vc.sectionName = item.name
+                    vc.style = .red
+                    push(vc)
+                }
+            }
+            
         }
     }
 }
@@ -300,10 +308,25 @@ extension HomeVC : UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.collectionView {
-            let vc = controller(CategoryVC.self, storyboard: .category)
-            vc.section = sections[indexPath.row].id
-            vc.sectionName = sections[indexPath.row].name
-            push(vc)
+            sections.forEach { (item) in
+                let vc = controller(CategoryVC.self, storyboard: .category)
+                vc.section = item.id
+                vc.sectionName = item.name
+                if item.style == 2 {
+                    vc.style = .orange
+                    push(vc)
+                }
+            }
+        } else {
+            sections.forEach { (item) in
+                let vc = controller(CategoryVC.self, storyboard: .category)
+                vc.section = item.id
+                vc.sectionName = item.name
+                if item.style == 1 {
+                    vc.style = .green
+                    push(vc)
+                }
+            }
         }
     }
 }

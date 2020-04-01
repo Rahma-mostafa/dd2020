@@ -38,10 +38,6 @@
 "empty.password.field.lan" = "Please enter your password";
 "password.doesnot.match.lan" = "Password doesn’t match";
 "password.too.short.lan" = "Password is short must be 8 characters at less.";
-"username" = "E-mail or phone number";
-"password" = "Password";
-"fullname.lan" = "Full name";
-
 //
 "male.lan" = "male";
 "female.lan" = "female";
@@ -161,7 +157,7 @@
 "call.image" = "call٣";
 "map.image" = "map22";
 "arrow-back-icon.image" = "arrow-back-icon-en";
-"more-en.image" = "more-en";
+"more-en.image" = "more";
 "Path 3344.image" = "Path 3344-en";
 "menu.image" = "menu-en";
 "logout.image" = "logout-en";
@@ -192,7 +188,7 @@
 "add.product.lan" = "Add Product";
 "upload.product.lan" = "Upload product";
 "product.name.lan" = "Product name";
-"product.price.lan" = "Product price";
+"price.lan" = "Product price";
 "payment.lan" = "Payment Methods";
 "selectMethod.lan" = "Select payment Method" ;
 "bank.lan" = "By bank transfer";
@@ -211,14 +207,63 @@
 "payments.sub.lan" = "Payment methods And Subscription";
 "mark.product.lan" ="Make your product premium";
 "ads.period.lan" = " period of advertising" ;
-"select.period.lan" = "Select period you prefer ";
-
-
-
-
-
-
-
-
-
-
+"select.period.lan" = "Select period you prefer";
+"Subtraction45.image" = "Subtraction45-en";
+"lang.display.lan" ="Language Display";
+"country.lan" ="Country";
+"apply.lan" ="Apply";
+"new.account.lan" = "New account";
+"register.as.lan" = "Register As";
+"have.account.before.lan" = "Already have account";
+"fullname.lan" = "Full name";
+"enter.data.lan" = "Enter information";
+"wishlist.lan" = "Wishlist";
+"rent.lan" = "Rent";
+"delegates.lan" = "Delegates";
+"family.lan" = "Family Producer";
+"aboutApp.lan" = "About Company";
+"support.lan" = "Contact with support";
+"share.lan" = "Share app";
+"old.password.lan" = "Old password";
+"age.lan" = "Age";
+"upgrade.account.only.lan" = "Upgrade Account";
+"categories.f.lan" = "Categories";
+"nearest.lan" = "Nearest";
+"top.rated.lan" = "Top rated";
+"specifications.lan" = "Specifications";
+"area.lan" = "Area M";
+"type.lan" = "Type";
+"fruniture.lan" = "Furnished";
+"newest.lan" = "Newest";
+"add.new.store.lan" = "Add another store";
+"store.desc.lan" = "Store Description";
+"add.images.store.lan" = "Add images to store";
+"select.type.lan" = "Select Type";
+"image.is.required.lan" = "Image is required";
+"upgrade.for.lan" = "Upgrade for";
+"special.store.lan" = "Special store";
+"trust.account.lan" = "Trusted Account";
+"show_products_and_prices.lan" = "Show products and prices";
+"example.wifi.lan" = "Example: wifi, parking .. etc";
+"barnds.available.for.store.lan" = "Brands available in store";
+"example.pepsi.lan" = "Example: pepsi, chepsi... etc";
+"display.work.times.lan" = "Display worktimes";
+"add.social.links.lan" = "Add contact social";
+"add.video.for.store.lan" = "Add video for store";
+"subscribe.payment.lan" = "Subscribe and payment";
+"payment.method.lan" = "Payment methods";
+"choose.payment.method.lan" = "Choose payment methods";
+"by.google.pay.lan" = "By google pay";
+"by.bank.transfer.lan" = "By bank transfer";
+"by.delegate.company.lan" = "By delegate company";
+"subscribe.lan" = "Subscribe";
+"my.ads.lan" = "My ads for rent";
+"my.products.lan" = "My ads";
+"my.products.desc.lan" = "Latest products added";
+"not.found.products.lan" = "Not found products";
+"add.new.ads.lan" = "Add new product (ad) for rent";
+"add.new.product.lan" = "Add another new product (ad)";
+"product.category.lan" = "Product Category";
+"product.desc.lan" = "Product description";
+"product.type.lan" = "Product type";
+"add.images.for.ads.lan" = "Add images for ad";

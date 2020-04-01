@@ -20,25 +20,31 @@ struct Item {
 }
 class CategoryVC: BaseController {
     
-    
-    
     @IBOutlet weak var titleLabel: UIBarButtonItem!
     @IBOutlet weak var tableViewB: UITableView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var changeCityHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var categoriesTblTop: NSLayoutConstraint!
     @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var cloudView: UIView!
+    @IBOutlet weak var cloud1: UIImageView!
+    @IBOutlet weak var cloud2: UIImageView!
+    @IBOutlet weak var circle: UIImageView!
+    @IBOutlet weak var imageStyle: UIImageView!
     
-    var categoriesB : [Item] = [Item(name: "المحلات الخاصة بي", imageName: "online-store (1)", description: .none, coloredView: .none)]
     var category : Category!
     var categoryArray:[Category.DateElement] = []
-    var section:Int?
+    var section: Int?
     var sectionName: String?
-    var city_id:Int?
-    
+    var city_id: Int?
+    var style: Style = .orange
+    var styleGrediantImage: String = "orangeGrad"
+    var myStoresTitle: String = "my.stores.lan".localized
+    var permessionEnable: Bool = true
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.title = sectionName
+        setupStyle()
         setup()
         fetchCategories()
     }
@@ -46,14 +52,45 @@ class CategoryVC: BaseController {
     func setup() {
         tableViewB.dataSource = self
         tableViewB.delegate = self
-        cityTextField.attributedPlaceholder = NSAttributedString(string: "select_city".localized)
-
         
     }
+    func setupStyle() {
+        switch style {
+        case .orange:
+            self.navigationController?.navigationBar.barTintColor = .appOrange
+            self.view.backgroundColor = .appOrange
+            self.styleGrediantImage = "orangeGrad"
+            self.cloud1.image = UIImage(named: "cloudOrange")
+            self.cloud2.image = UIImage(named: "cloudOrange1")
+            self.circle.image = UIImage(named: "circleOrange")
+            self.imageStyle.image = UIImage(named: "online-store (1)")
+            
+        case .green:
+            self.navigationController?.navigationBar.barTintColor = .appGreen
+            self.view.backgroundColor = .appGreen
+            self.styleGrediantImage = "greenGrad"
+            self.cloud1.image = UIImage(named: "cloudGreen")
+            self.cloud2.image = UIImage(named: "cloudGreen1")
+            self.circle.image = UIImage(named: "circleGreen")
+            self.imageStyle.image = UIImage(named: "calendarGreen")
+            myStoresTitle = "my.ads.lan".localized
+            break
+        case .red:
+            self.navigationController?.navigationBar.barTintColor = .appRed
+            self.view.backgroundColor = .appRed
+            self.styleGrediantImage = "redGrad"
+            self.cloud1.image = UIImage(named: "cloudRed")
+            self.cloud2.image = UIImage(named: "cloudRed1")
+            self.circle.image = UIImage(named: "circleRed")
+            self.imageStyle.image = UIImage(named: "teamRed")
+            myStoresTitle = "my.products.lan".localized
+
+        }
     
+    }
     func fetchCategories() {
         startLoading()
-        let method = api(.getCategory, [section ?? 0] )
+        let method = api(.getCategory, [section ?? 0])
         ApiManager.instance.headers["section_id"] = "\(section ?? 0)"
         if city_id != nil {
             ApiManager.instance.paramaters["city_id"] = "\(city_id ?? 0)"
@@ -63,7 +100,7 @@ class CategoryVC: BaseController {
             print("run")
             let data = try? JSONDecoder().decode(Category.self, from: response ?? Data())
             if case data?.userPermission = false {
-                self?.categoriesB.removeAll()
+                self?.permessionEnable = false
                 self?.categoriesTblTop.constant = 15
             } else {
                 self?.tableView.delegate = self
@@ -89,8 +126,12 @@ extension CategoryVC : UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == self.tableView{
-            return categoriesB.count
+        if tableView == self.tableView {
+            if permessionEnable {
+                return 1
+            } else {
+                return 0
+            }
         }
         return categoryArray.count
         //        return 1
@@ -99,8 +140,9 @@ extension CategoryVC : UITableViewDelegate, UITableViewDataSource {
         
         if tableView == self.tableView{
             let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.ProductCell,for:indexPath) as! ProductCell
-            cell.categoryTitleB.text = categoriesB[indexPath.row].name
-            cell.categoryImgB.image = UIImage(named: categoriesB[indexPath.row].imageName!)
+            cell.categoryTitleB.text = myStoresTitle
+            cell.categoryImgB.image = self.imageStyle.image
+            cell.imageGradient.image = UIImage(named: styleGrediantImage)
             return cell
         }
         
@@ -116,10 +158,19 @@ extension CategoryVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if tableView == self.tableView {
-            let scene = controller(AddShopVC.self, storyboard: .createStore)
-            navigationController?.pushViewController(scene, animated: true)
+            if style == .orange {
+                let scene = controller(MyShopsVC.self, storyboard: .createStore)
+                scene.section = section
+                navigationController?.pushViewController(scene, animated: true)
+            } else {
+                let scene = controller(MyAdsController.self, storyboard: .createAd)
+                scene.style = style
+                scene.section = section
+                navigationController?.pushViewController(scene, animated: true)
+            }
         }else {
             let scene = controller(EachCategoryVC.self, storyboard: .category)
+            scene.style = style
             scene.section = categoryArray[indexPath.row].id
             scene.selectedCategory = categoryArray[indexPath.row].name
             

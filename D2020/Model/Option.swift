@@ -7,6 +7,12 @@
 //
 
 import Foundation
-struct Option{
+
+struct OptionFilter {
+    enum FilterType {
+        case nearest
+        case top_rate
+    }
     var name: String
+    var type: FilterType
 }

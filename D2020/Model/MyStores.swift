@@ -24,7 +24,8 @@ struct MyStores: Codable {
         var distance: String?
         var snap, instagram, website, whatsapp: String?
         var twitter, facebook: String?
-       
+        var price: Double?
+        var isShop: Bool?
 
         enum CodingKeys: String, CodingKey {
             case id, name, desc, image, video, phone, type
@@ -32,7 +33,8 @@ struct MyStores: Codable {
             case isComment = "is_comment"
             case rate
             case catName = "cat_name"
-            case distance, snap, instagram, website, whatsapp, twitter, facebook
+            case distance, snap, instagram, website, whatsapp, twitter, facebook, price
+            case isShop
         }
     }
 

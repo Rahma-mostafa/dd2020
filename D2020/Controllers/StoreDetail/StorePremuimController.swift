@@ -60,6 +60,7 @@ class StorePremuimController: BaseController {
     @IBOutlet weak var underlineContactBtn: UIView!
     @IBOutlet weak var yourRateHeight: NSLayoutConstraint!
     @IBOutlet weak var yourRatView: UIView!
+    @IBOutlet weak var commentBtn: UIButton!
 
     
     
@@ -172,6 +173,16 @@ class StorePremuimController: BaseController {
         countRateLbl.text = "\(store?.user_comment?.count ?? 0) \(Localizations.personRate.localized)"
         collectionSlider.reloadData()
         setupFavorite()
+        setupUserRate()
+    }
+    func setupUserRate() {
+        if case store?.is_comment = true {
+            rateComment.settings.updateOnTouch = false
+            rateComment.rating = Double(store?.my_comment?.rate ?? "0") ?? 0
+            commentTxf.text = store?.my_comment?.comment
+            commentTxf.isUserInteractionEnabled = false
+            commentBtn.isHidden = true
+        }
     }
     func setupFavorite(change: Bool? = nil) {
         if case change = true {
@@ -258,13 +269,14 @@ class StorePremuimController: BaseController {
         
     }
     func createComment() {
-        var model = StoreDetail.Comment()
-        model.name = ""
-        model.image = ""
-        model.rate = String(rateComment.rating)
-        model.comment = commentTxf.text
-        store?.user_comment?.insert(model, at: 0)
-        setupHeights()
+        commentBtn.isHidden = true
+//        var model = StoreDetail.Comment()
+//        model.name = ""
+//        model.image = ""
+//        model.rate = String(rateComment.rating)
+//        model.comment = commentTxf.text
+//        store?.user_comment?.insert(model, at: 0)
+//        setupHeights()
     }
     func handlers() {
         storeImage.UIViewAction {
@@ -274,11 +286,12 @@ class StorePremuimController: BaseController {
             call(text: self.store?.phone)
         }
         locationBtn.UIViewAction {
-            NavigateMap().openMapForPlace(delegate: self)
+            var navigate = NavigateMap()
+            navigate.lat = self.store?.lat ?? 0
+            navigate.lng = self.store?.lang ?? 0
+            navigate.openMapForPlace(delegate: self)
         }
-        messageBtn.UIViewAction {
-            
-        }
+       
         addContactBtn.UIViewAction {
             let store = CNContactStore()
             let contact = CNMutableContact()
@@ -302,10 +315,7 @@ class StorePremuimController: BaseController {
             }
         }
     }
-    @IBAction func search(_ sender: Any) {
-    }
-    @IBAction func chat(_ sender: Any) {
-    }
+ 
     @IBAction func qrCode(_ sender: Any) {
         let vc = controller(QRCodeVC.self, storyboard: .store)
         pushPop(vcr: vc)
