@@ -25,5 +25,8 @@ pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
 pod 'GoogleSignIn'
+#pod "KRProgressHUD"
+#pod 'SVProgressHUD'
+
 
 end

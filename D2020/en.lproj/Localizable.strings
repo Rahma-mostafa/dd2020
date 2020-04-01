@@ -268,3 +268,16 @@
 "product.type.lan" = "Product type";
 "add.images.for.ads.lan" = "Add images for ad";
 "history.lan" = "History";
+"shared.order" = "Group Order";
+"your.order" = "What is your order? ";
+"write.order" = "Write your order here";
+"send.order" = "Send Order";
+"note" = "Note";
+"note.desc" = "Group order is allowed to be sent with a maximum of 3 requests per day" ;
+"delegate.rate" = "Delegate rating";
+"rate.confirm" = "Rating confirmation";
+"report.title" = "Send report";
+"report.send" = "Send report";
+
+
+

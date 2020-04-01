@@ -381,7 +381,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اضافة صور المحل" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JG-j5-JWV">
-                                                <rect key="frame" x="160.5" y="181.5" width="93.5" height="17.5"/>
+                                                <rect key="frame" x="152" y="180" width="110" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="Sukar-Bold" family="Sukar" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -540,14 +540,14 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o83-ua-i8h">
-                                                <rect key="frame" x="323" y="563" width="60" height="56"/>
+                                                <rect key="frame" x="353" y="563" width="30" height="56"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconfinder_ic_my_location_48px_352557 (1)" translatesAutoresizingMaskIntoConstraints="NO" id="FOm-ZR-vjw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="56"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="56"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbg-qc-qzC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="56"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="56"/>
                                                         <connections>
                                                             <action selector="locationPick:" destination="hRx-NB-tgH" eventType="touchUpInside" id="qLN-ce-I4u"/>
                                                         </connections>
@@ -566,13 +566,13 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVV-xc-Hf3">
-                                                <rect key="frame" x="323" y="494" width="60" height="49"/>
+                                                <rect key="frame" x="353" y="494" width="30" height="49"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choose" translatesAutoresizingMaskIntoConstraints="NO" id="rAB-nM-VIW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="49"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="49"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grb-dD-nst">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="49"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="49"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="49" id="Rf4-XY-7b4"/>
                                                         </constraints>
@@ -594,14 +594,14 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2v-La-25L">
-                                                <rect key="frame" x="323" y="356" width="60" height="56"/>
+                                                <rect key="frame" x="353" y="356" width="30" height="56"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choose" translatesAutoresizingMaskIntoConstraints="NO" id="Pmf-DY-Xfm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="56"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="56"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Do-uO-xLd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="56"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="56"/>
                                                         <connections>
                                                             <action selector="categoryPick:" destination="hRx-NB-tgH" eventType="touchUpInside" id="eP1-hK-wrZ"/>
                                                         </connections>
@@ -620,13 +620,13 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnE-NE-LKc">
-                                                <rect key="frame" x="323" y="425" width="60" height="56"/>
+                                                <rect key="frame" x="353" y="425" width="30" height="56"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choose" translatesAutoresizingMaskIntoConstraints="NO" id="PLy-59-PvS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="56"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="56"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dl-OG-apj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="56"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="56"/>
                                                         <connections>
                                                             <action selector="typePick:" destination="hRx-NB-tgH" eventType="touchUpInside" id="0hM-jp-s7m"/>
                                                         </connections>
@@ -802,7 +802,7 @@
         <image name="cloudGreen1" width="39" height="10"/>
         <image name="greenGradLarge" width="94" height="94"/>
         <image name="iconfinder_add_134224" width="40" height="40"/>
-        <image name="iconfinder_ic_my_location_48px_352557 (1)" width="20" height="20"/>
+        <image name="iconfinder_ic_my_location_48px_352557 (1)" width="24" height="24"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="photo_change" width="87" height="87"/>
         <image name="red_trash" width="28" height="30"/>

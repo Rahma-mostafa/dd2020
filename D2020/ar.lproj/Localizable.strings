@@ -317,3 +317,15 @@
 "product.type.lan" = "نوع المنتج";
 "add.images.for.ads.lan" = "اضافة صور للأعلان";
 "history.lan" = "السجل";
+"shared.order" = "طلب جماعي";
+"your.order" = "ماهو طلبك ؟";
+"write.order" = "اكتب طلبك هنا";
+"send.order" = "ارسال الطلب";
+"note" = "ملحوظة";
+"note.desc" = "يسمح لإرسال الطلب الجماعة بحد اقصي 3 طلبات باليوم";
+"delegate.rate" = "تقييم المندوب";
+"rate.confirm" = "تأكيد التقييم";
+"report.title" = "ارسال بلاغ";
+"report.send" = "ارسال البلاغ";
+
+

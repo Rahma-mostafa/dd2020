@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		34565C36D13772A3A4FE7FF1 /* Pods_D2020.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CD42E7013F938C7FA37C420 /* Pods_D2020.framework */; };
+		522F0BF22434D5B300B071C2 /* Delegate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 522F0BF12434D5B300B071C2 /* Delegate.storyboard */; };
+		522F0BF52434DF3200B071C2 /* SendOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F0BF42434DF3200B071C2 /* SendOrderVC.swift */; };
+		522F0BF724352DC000B071C2 /* DelegateRateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F0BF624352DC000B071C2 /* DelegateRateVC.swift */; };
+		522F0BF92435477600B071C2 /* SendReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F0BF82435477600B071C2 /* SendReportVC.swift */; };
 		52E6492B241E292300B2B0AE /* shopTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6492A241E292300B2B0AE /* shopTypeTableViewCell.swift */; };
 		52E6492F241E749300B2B0AE /* cityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6492E241E749300B2B0AE /* cityViewController.swift */; };
 		52E64931241E792100B2B0AE /* cityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E64930241E792100B2B0AE /* cityTableViewCell.swift */; };
@@ -250,6 +254,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		522F0BF12434D5B300B071C2 /* Delegate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Delegate.storyboard; sourceTree = "<group>"; };
+		522F0BF42434DF3200B071C2 /* SendOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOrderVC.swift; sourceTree = "<group>"; };
+		522F0BF624352DC000B071C2 /* DelegateRateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateRateVC.swift; sourceTree = "<group>"; };
+		522F0BF82435477600B071C2 /* SendReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendReportVC.swift; sourceTree = "<group>"; };
 		52E6492A241E292300B2B0AE /* shopTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shopTypeTableViewCell.swift; sourceTree = "<group>"; };
 		52E6492E241E749300B2B0AE /* cityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cityViewController.swift; sourceTree = "<group>"; };
 		52E64930241E792100B2B0AE /* cityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cityTableViewCell.swift; sourceTree = "<group>"; };
@@ -520,6 +528,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		522F0BF32434DEF400B071C2 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				522F0BF42434DF3200B071C2 /* SendOrderVC.swift */,
+				522F0BF624352DC000B071C2 /* DelegateRateVC.swift */,
+				522F0BF82435477600B071C2 /* SendReportVC.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		7721D504242D0B4200609946 /* CreateStore */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,6 +716,7 @@
 				7721DD81242D8B2A005C3C38 /* Upgrade.storyboard */,
 				77FD8EC22431C2BE003D839F /* CreateAd.storyboard */,
 				771804122432DEEF00B8AA5E /* ForRent.storyboard */,
+				522F0BF12434D5B300B071C2 /* Delegate.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1107,6 +1126,7 @@
 		FA6294622406B64500308F25 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				522F0BF32434DEF400B071C2 /* Delegate */,
 				77FD8EC42431C43C003D839F /* createAd */,
 				779E6F6F2430B52F0039C61D /* AdsDetail */,
 				77BA9FB8242DB2060083C17F /* CategoryB */,
@@ -1220,6 +1240,7 @@
 				8033E8FF24254FF900D0F2A0 /* RadioView.xib in Resources */,
 				77FD8EC32431C2BE003D839F /* CreateAd.storyboard in Resources */,
 				FA5F547523F5934000E7F40B /* Assets.xcassets in Resources */,
+				522F0BF22434D5B300B071C2 /* Delegate.storyboard in Resources */,
 				809B14FE242AABA600359D3A /* StoreWorkdayCell.xib in Resources */,
 				8033E77524254CE700D0F2A0 /* Localizable.strings in Resources */,
 				8033E92724257D5B00D0F2A0 /* CreateStore.storyboard in Resources */,
@@ -1314,6 +1335,7 @@
 				8033E8FD24254FF900D0F2A0 /* RadioButton.swift in Sources */,
 				8033E8E824254FF900D0F2A0 /* SwipeRefresh.swift in Sources */,
 				FA64D31F23FEB97300D18958 /* AfterSelectingCell.swift in Sources */,
+				522F0BF92435477600B071C2 /* SendReportVC.swift in Sources */,
 				7748E106242D991F0041C490 /* RegisterAsVC.swift in Sources */,
 				8033E80224254E3100D0F2A0 /* UIViewExtensions.swift in Sources */,
 				FA2BAEDE2420D9A0002E6505 /* slideShowCollectionViewCell.swift in Sources */,
@@ -1400,6 +1422,7 @@
 				8033E8BD24254FF900D0F2A0 /* ApiProtocol.swift in Sources */,
 				77BA9FC1242DB2150083C17F /* MyShopsVC.swift in Sources */,
 				8033E78F24254D3600D0F2A0 /* Storyboards.swift in Sources */,
+				522F0BF52434DF3200B071C2 /* SendOrderVC.swift in Sources */,
 				7718040B2432DE9700B8AA5E /* ForRentAdsVC.swift in Sources */,
 				FA2BAEE8242100F6002E6505 /* CountryModel.swift in Sources */,
 				77A3B4BB242EC45C00842730 /* Downloader.swift in Sources */,
@@ -1445,6 +1468,7 @@
 				FA62946B2406B73100308F25 /* ATCWalkthroughViewController.swift in Sources */,
 				8033E77F24254D0100D0F2A0 /* SelectDropDownModel.swift in Sources */,
 				77BA9FC3242DB2150083C17F /* EachCategoryVC.swift in Sources */,
+				522F0BF724352DC000B071C2 /* DelegateRateVC.swift in Sources */,
 				FA5E6E51240C119800041736 /* AgentsCell.swift in Sources */,
 				77A1646624330FE300EC1C4B /* SearchModel.swift in Sources */,
 				FA5C6DDD24015A8300E11A98 /* SelectedCategoryCell.swift in Sources */,
